@@ -1,0 +1,622 @@
+import React, { useEffect, useState } from 'react';
+import { View, StyleSheet, ScrollView, Pressable, Image, Alert, ImageBackground } from 'react-native';
+import { Text, useTheme, Button, Modal, Portal } from 'react-native-paper';
+import { MaterialIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
+import { DatePickerModal } from 'react-native-paper-dates';
+import { useTripStore } from '../../src/stores/trip-store';
+import { useAppStore } from '../../src/stores/app-store';
+import { COUNTRIES } from '../../src/lib/countries';
+import { COVER_IMAGES } from '../../src/lib/assets';
+import AddTripModal from '../../src/components/AddTripModal';
+import PastTripSummaryModal from '../../src/components/PastTripSummaryModal';
+
+export default function TripsScreen() {
+  const theme = useTheme();
+  const router = useRouter();
+  const { trips, activeTrip, loadTrips, removeTrip, updateTrip, expenses } = useTripStore();
+  const { settings, loadSettings } = useAppStore();
+
+  const [editingTrip, setEditingTrip] = useState<any>(null);
+  const [editStartDate, setEditStartDate] = useState<Date | null>(null);
+  const [editEndDate, setEditEndDate] = useState<Date | null>(null);
+  const [editNotSetYet, setEditNotSetYet] = useState(false);
+  const [showPicker, setShowPicker] = useState(false);
+  const [isAddTripVisible, setAddTripVisible] = useState(false);
+  const [budgetViewMode, setBudgetViewMode] = useState<'total' | 'daily'>('total');
+  const [summaryTrip, setSummaryTrip] = useState<any>(null);
+  const [isSummaryVisible, setIsSummaryVisible] = useState(false);
+
+  useEffect(() => {
+    loadTrips();
+    loadSettings();
+  }, []);
+
+  const openEditModal = (trip: any) => {
+    setEditingTrip(trip);
+    setEditStartDate(trip.startDate ? new Date(trip.startDate) : null);
+    setEditEndDate(trip.endDate ? new Date(trip.endDate) : null);
+    setEditNotSetYet(!trip.startDate && !trip.endDate);
+  };
+
+  const openSummaryModal = (trip: any) => {
+    setSummaryTrip(trip);
+    setIsSummaryVisible(true);
+  };
+
+  const saveEditTrip = async () => {
+    if (editingTrip) {
+      await updateTrip(editingTrip.id, {
+        startDate: editNotSetYet ? null : editStartDate,
+        endDate: editNotSetYet ? null : editEndDate,
+      });
+      setEditingTrip(null);
+      loadTrips();
+    }
+  };
+
+  const handleDelete = (id: string, destination: string) => {
+    Alert.alert(
+      "Delete Trip",
+      `Are you sure you want to delete your trip to ${destination}?`,
+      [
+        { text: "Cancel", style: "cancel" },
+        { 
+          text: "Delete", 
+          style: "destructive", 
+          onPress: () => removeTrip(id) 
+        }
+      ]
+    );
+  };
+
+  const formatDateRange = (start: Date | null | undefined, end: Date | null | undefined) => {
+    if (!start || !end) return 'Dates pending';
+    const s = new Date(start);
+    const e = new Date(end);
+    return `${s.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} — ${e.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+  };
+
+  // Basic separation logic
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  const isPastTrip = (t: any) => {
+    if (!t.endDate) return false;
+    const e = new Date(t.endDate);
+    e.setHours(0,0,0,0);
+    return e < today;
+  };
+
+  const upcomingTrips = trips
+    .filter(t => t.id !== activeTrip?.id && !isPastTrip(t))
+    .sort((a, b) => {
+      if (!a.startDate && !b.startDate) return 0;
+      if (!a.startDate) return 1;
+      if (!b.startDate) return -1;
+      return new Date(a.startDate).getTime() - new Date(b.startDate).getTime();
+    });
+  const pastTrips = trips.filter(t => t.id !== activeTrip?.id && isPastTrip(t));
+
+  const getTripStatus = (start: Date | null | undefined, end: Date | null | undefined) => {
+    if (!start || !end) return { title: 'Pending', subtitle: 'Dates not set yet' };
+    
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const s = new Date(start);
+    s.setHours(0,0,0,0);
+    const e = new Date(end);
+    e.setHours(0,0,0,0);
+    
+    if (today < s) {
+      const diffTime = Math.abs(s.getTime() - today.getTime());
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      return { title: 'Upcoming', subtitle: `Starts in ${diffDays} day${diffDays === 1 ? '' : 's'}` };
+    } else if (today >= s && today <= e) {
+      const diffTimeStart = Math.abs(today.getTime() - s.getTime());
+      const currentDay = Math.floor(diffTimeStart / (1000 * 60 * 60 * 24)) + 1;
+      
+      const totalTime = Math.abs(e.getTime() - s.getTime());
+      const totalDays = Math.ceil(totalTime / (1000 * 60 * 60 * 24)) + 1;
+      
+      return { title: 'Ongoing', subtitle: `Day ${currentDay} of ${totalDays}` };
+    } else {
+      return { title: 'Completed', subtitle: 'Trip has ended' };
+    }
+  };
+
+  const statusInfo = activeTrip ? getTripStatus(activeTrip.startDate, activeTrip.endDate) : { title: 'Pending', subtitle: 'Dates not set yet' };
+
+  // Budget calculations for active trip
+  const homeCountry = settings?.homeCountry;
+  const homeCurrency = settings?.homeCurrency || (homeCountry ? COUNTRIES.find((c: any) => c.code === homeCountry || c.name === homeCountry)?.currencyCode : null) || 'USD';
+  
+  const budgetNum = activeTrip?.budget || 0;
+  const budgetType = activeTrip?.budgetType || 'trip';
+  const trackCurrency = activeTrip?.trackCurrency || 'local';
+  
+  const tripDays = activeTrip?.startDate && activeTrip?.endDate ? 
+    Math.max(1, Math.ceil((new Date(activeTrip.endDate).getTime() - new Date(activeTrip.startDate).getTime()) / (1000 * 60 * 60 * 24))) 
+    : 1;
+
+  const totalTripBudget = budgetType === 'trip' ? budgetNum : budgetNum * tripDays;
+  
+  const todayStart = new Date();
+  todayStart.setHours(0, 0, 0, 0);
+  const spentTodayDisplay = expenses
+    .filter(e => new Date(e.date).getTime() >= todayStart.getTime())
+    .reduce((sum, e) => sum + (trackCurrency === 'home' ? (e.convertedAmount || 0) : e.localAmount), 0);
+
+  const totalSpentDisplay = expenses.reduce((sum, e) => sum + (trackCurrency === 'home' ? (e.convertedAmount || 0) : e.localAmount), 0);
+  const totalProgress = totalTripBudget > 0 ? Math.min(1, totalSpentDisplay / totalTripBudget) : 0;
+  
+  const todayBudgetLimit = budgetType === 'trip' ? (budgetNum / tripDays) : budgetNum;
+  const todayProgress = todayBudgetLimit > 0 ? Math.min(1, spentTodayDisplay / todayBudgetLimit) : 0;
+
+  const currentProgress = budgetViewMode === 'total' ? totalProgress : todayProgress;
+  const currentProgressPercent = Math.round(currentProgress * 100);
+
+  const getProgressColor = (progress: number) => {
+    if (progress < 0.5) return '#4CAF50'; // Green
+    if (progress < 0.7) return '#FF9800'; // Light Orange
+    if (progress < 0.9) return '#F57C00'; // Dark Orange
+    return '#F44336'; // Red
+  };
+
+  return (
+    <>
+    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+      {/* Header */}
+      <View style={styles.header}>
+        <Text variant="headlineLarge" style={{ color: theme.colors.onSurface, fontWeight: 'bold' }}>My Trips</Text>
+        <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant, marginTop: 4 }}>
+          Manage your active destination and upcoming adventures.
+        </Text>
+      </View>
+
+      {/* Plan New Trip */}
+      <Pressable 
+        onPress={() => setAddTripVisible(true)}
+        style={({pressed}) => [
+          styles.addCardRow, 
+          { borderColor: theme.colors.outlineVariant, marginBottom: 32 },
+          pressed && { backgroundColor: theme.colors.surfaceVariant }
+        ]}
+      >
+        <View style={[styles.addIconContainerSmall, { backgroundColor: theme.colors.surfaceVariant }]}>
+          <MaterialIcons name="add" size={24} color={theme.colors.primary} />
+        </View>
+        <View style={{ marginLeft: 16 }}>
+          <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>Plan New Trip</Text>
+          <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>Discovery awaits</Text>
+        </View>
+      </Pressable>
+
+      {/* Active Trip Bento */}
+      {activeTrip && (
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <MaterialIcons name="near-me" size={24} color={theme.colors.primary} />
+            <Text variant="titleLarge" style={[styles.sectionTitle, { color: theme.colors.onSurface }]}>Active Trip</Text>
+          </View>
+          <View style={[styles.combinedCard, { backgroundColor: theme.colors.surface, borderColor: theme.colors.outlineVariant }]}>
+            {/* Main Feature */}
+            <View style={styles.combinedFeatureArea}>
+              {(() => {
+                const activeCountryCode = COUNTRIES.find(c => c.name === activeTrip.destinationCountry)?.code;
+                if (activeCountryCode && COVER_IMAGES[activeCountryCode]) {
+                  return <Image source={COVER_IMAGES[activeCountryCode]} style={[styles.mainFeatureBg, { width: '100%', height: '100%' }]} resizeMode="cover" />;
+                }
+                return <View style={[styles.mainFeatureBg, { backgroundColor: theme.colors.primaryContainer }]} />;
+              })()}
+              <View style={styles.mainFeatureContent}>
+                <View style={[styles.badge, { backgroundColor: theme.colors.primary }]}>
+                  <Text style={[styles.badgeText, { color: theme.colors.onPrimary }]}>{statusInfo.title.toUpperCase()}</Text>
+                </View>
+                <Text variant="headlineMedium" style={{ color: '#fff', fontWeight: 'bold' }}>
+                  {activeTrip.destinationCountry}
+                </Text>
+                <Text variant="bodyLarge" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                  {formatDateRange(activeTrip.startDate, activeTrip.endDate)}
+                </Text>
+              </View>
+            </View>
+
+            {/* Status Info */}
+            <View style={styles.combinedStatusArea}>
+              <Text variant="labelLarge" style={{ color: theme.colors.onSurfaceVariant, marginBottom: 16 }}>TRIP STATUS</Text>
+              <View style={styles.statusRow}>
+                <View style={[styles.statusIcon, { backgroundColor: theme.colors.surfaceVariant }]}>
+                  <MaterialIcons name="calendar-today" size={20} color={theme.colors.primary} />
+                </View>
+                <View>
+                  <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{statusInfo.title}</Text>
+                  <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{statusInfo.subtitle}</Text>
+                </View>
+              </View>
+
+              <View style={[styles.budgetArea, { borderTopColor: theme.colors.outlineVariant }]}>
+                <View style={[styles.budgetHeader, { alignItems: 'center' }]}>
+                  <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>
+                    {budgetViewMode === 'total' ? 'Trip Budget Used' : 'Daily Budget Used'}
+                  </Text>
+                  
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+                    <Pressable 
+                      onPress={() => router.push('/modules/budget-tracker')}
+                      style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: theme.colors.primary, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 12 }}
+                    >
+                      <Text variant="labelSmall" style={{ color: theme.colors.onPrimary }}>
+                        {(!activeTrip.budget || activeTrip.budget <= 0) ? 'Set' : 'Adjust'}
+                      </Text>
+                    </Pressable>
+                    <Pressable 
+                      onPress={() => setBudgetViewMode(budgetViewMode === 'total' ? 'daily' : 'total')}
+                      style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: theme.colors.surfaceVariant, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 12 }}
+                    >
+                      <MaterialIcons name="swap-horiz" size={16} color={theme.colors.onSurfaceVariant} style={{ marginRight: 4 }} />
+                      <Text variant="labelSmall" style={{ color: theme.colors.onSurfaceVariant }}>
+                        {budgetViewMode === 'total' ? 'Daily' : 'Trip'}
+                      </Text>
+                    </Pressable>
+                    <Text variant="bodySmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{currentProgressPercent}%</Text>
+                  </View>
+                </View>
+                <View style={[styles.progressBar, { backgroundColor: theme.colors.surfaceVariant }]}>
+                  <View style={[styles.progressFill, { backgroundColor: getProgressColor(currentProgress), width: `${currentProgressPercent}%` }]} />
+                </View>
+              </View>
+
+              {/* Action Buttons */}
+              <View style={{ flexDirection: 'row', gap: 12, marginTop: 16 }}>
+                <Button 
+                  mode="outlined" 
+                  onPress={() => openEditModal(activeTrip)} 
+                  style={{ flex: 1, borderColor: theme.colors.outlineVariant }}
+                >
+                  Edit Trip
+                </Button>
+                <Button 
+                  mode="outlined" 
+                  textColor={theme.colors.error}
+                  onPress={() => handleDelete(activeTrip.id, activeTrip.destinationCountry)} 
+                  style={{ flex: 1, borderColor: theme.colors.error }}
+                >
+                  Delete
+                </Button>
+              </View>
+            </View>
+          </View>
+        </View>
+      )}
+
+      {/* Upcoming Trips */}
+      <View style={styles.section}>
+        <View style={styles.sectionHeader}>
+          <MaterialIcons name="event" size={24} color={theme.colors.primary} />
+          <Text variant="titleLarge" style={[styles.sectionTitle, { color: theme.colors.onSurface }]}>Upcoming Trips</Text>
+        </View>
+
+        <View style={styles.grid}>
+          {upcomingTrips.map(trip => {
+            const countryCode = COUNTRIES.find(c => c.name === trip.destinationCountry)?.code;
+            return (
+              <View key={trip.id} style={[styles.tripCard, { borderColor: theme.colors.outlineVariant, backgroundColor: theme.colors.surface }]}>
+                {countryCode && COVER_IMAGES[countryCode] ? (
+                  <ImageBackground 
+                    source={COVER_IMAGES[countryCode]} 
+                    style={styles.tripCardImagePlaceholder}
+                    imageStyle={{ resizeMode: 'cover' }}
+                  >
+                    <View style={styles.tripCardOverlay}>
+                      <Text variant="titleLarge" style={{ fontWeight: 'bold', color: '#fff' }}>
+                        {trip.destinationCountry}
+                      </Text>
+                    </View>
+                  </ImageBackground>
+                ) : (
+                  <View style={[styles.tripCardImagePlaceholder, { backgroundColor: theme.colors.surfaceVariant }]}>
+                    <View style={styles.tripCardOverlay}>
+                      <MaterialIcons name="image" size={32} color={theme.colors.onSurfaceVariant} style={{ position: 'absolute', alignSelf: 'center', top: '40%' }} />
+                      <Text variant="titleLarge" style={{ fontWeight: 'bold', color: theme.colors.onSurfaceVariant }}>
+                        {trip.destinationCountry}
+                      </Text>
+                    </View>
+                  </View>
+                )}
+                <View style={styles.tripCardContent}>
+                  <Text variant="labelMedium" style={{ color: theme.colors.primary, fontWeight: 'bold', marginBottom: 12 }}>
+                    {trip.startDate && trip.endDate ? formatDateRange(trip.startDate, trip.endDate) : 'TBD'}
+                  </Text>
+                  
+                  <View style={{ marginTop: 'auto', flexDirection: 'row', justifyContent: 'space-between', gap: 8 }}>
+                    <Button 
+                      mode="contained" 
+                      compact 
+                      buttonColor={theme.colors.primaryContainer}
+                      textColor={theme.colors.onPrimaryContainer}
+                      onPress={() => useTripStore.getState().setActiveTrip(trip.id)} 
+                      style={{ flex: 1 }}
+                      labelStyle={{ fontSize: 12 }}
+                    >
+                      Set Active
+                    </Button>
+                    <Button 
+                      mode="outlined" 
+                      compact 
+                      onPress={() => openEditModal(trip)} 
+                      style={{ flex: 1 }}
+                      labelStyle={{ fontSize: 12 }}
+                    >
+                      Edit
+                    </Button>
+                    <Button 
+                      mode="outlined" 
+                      compact 
+                      textColor={theme.colors.error} 
+                      onPress={() => handleDelete(trip.id, trip.destinationCountry)} 
+                      style={{ flex: 1, borderColor: theme.colors.error }}
+                      labelStyle={{ fontSize: 12 }}
+                    >
+                      Delete
+                    </Button>
+                  </View>
+                </View>
+              </View>
+            );
+          })}
+        </View>
+      </View>
+
+      {/* Past Trips */}
+      {pastTrips.length > 0 && (
+        <View style={styles.section}>
+          <View style={styles.sectionHeader}>
+            <MaterialIcons name="history" size={24} color={theme.colors.primary} />
+            <Text variant="titleLarge" style={[styles.sectionTitle, { color: theme.colors.onSurface }]}>Past Trips</Text>
+          </View>
+
+          <View style={[styles.listContainer, { backgroundColor: theme.colors.surface, borderColor: theme.colors.outlineVariant }]}>
+            {pastTrips.map((trip, idx) => (
+              <View key={trip.id} style={[
+                styles.listItem,
+                idx !== pastTrips.length - 1 && { borderBottomWidth: 1, borderBottomColor: theme.colors.outlineVariant }
+              ]}>
+                <View style={styles.listItemContent}>
+                  <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>
+                    {trip.destinationCountry}
+                  </Text>
+                  <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
+                    {formatDateRange(trip.startDate, trip.endDate)}
+                  </Text>
+                </View>
+                <View style={{ flexDirection: 'row', gap: 16, alignItems: 'center' }}>
+                  <Pressable onPress={() => openSummaryModal(trip)}>
+                    <MaterialIcons name="assessment" size={24} color={theme.colors.primary} />
+                  </Pressable>
+                  <Pressable onPress={() => handleDelete(trip.id, trip.destinationCountry)}>
+                    <MaterialIcons name="delete-outline" size={24} color={theme.colors.error} />
+                  </Pressable>
+                </View>
+              </View>
+            ))}
+          </View>
+        </View>
+      )}
+
+    </ScrollView>
+    
+    <Portal>
+      <Modal visible={!!editingTrip} onDismiss={() => setEditingTrip(null)} contentContainerStyle={{ backgroundColor: theme.colors.surface, margin: 24, padding: 24, borderRadius: 16 }}>
+        {editingTrip && (
+          <View>
+            <Text variant="titleLarge" style={{ fontWeight: 'bold', marginBottom: 16 }}>Edit Trip to {editingTrip.destinationCountry}</Text>
+            
+            <View style={{ marginBottom: 24 }}>
+              <Pressable 
+                style={[{ flexDirection: 'row', alignItems: 'center', paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: theme.colors.outlineVariant }]}
+                onPress={() => setEditNotSetYet(!editNotSetYet)}
+              >
+                <MaterialIcons name={editNotSetYet ? 'check-circle' : 'radio-button-unchecked'} size={24} color={theme.colors.primary} />
+                <Text style={{ marginLeft: 8, color: theme.colors.onSurface }}>Dates Not Set Yet</Text>
+              </Pressable>
+
+              {!editNotSetYet && (
+                <View style={{ marginTop: 16 }}>
+                  <Button 
+                    mode="outlined" 
+                    onPress={() => setShowPicker(true)} 
+                    icon="calendar-range"
+                    style={{ borderColor: theme.colors.outlineVariant }}
+                    labelStyle={{ paddingVertical: 4 }}
+                  >
+                    {editStartDate && editEndDate 
+                      ? `${editStartDate.toLocaleDateString()} - ${editEndDate.toLocaleDateString()}`
+                      : 'Select Date Range'}
+                  </Button>
+                </View>
+              )}
+            </View>
+
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', gap: 8 }}>
+              <Button onPress={() => setEditingTrip(null)}>Cancel</Button>
+              <Button mode="contained" onPress={saveEditTrip}>Save Changes</Button>
+            </View>
+
+            <DatePickerModal
+              locale="en"
+              mode="range"
+              visible={showPicker}
+              onDismiss={() => setShowPicker(false)}
+              startDate={editStartDate || undefined}
+              endDate={editEndDate || undefined}
+              onConfirm={({ startDate, endDate }) => {
+                setShowPicker(false);
+                if (startDate) setEditStartDate(startDate);
+                if (endDate) setEditEndDate(endDate);
+              }}
+            />
+          </View>
+        )}
+      </Modal>
+    </Portal>
+
+    <AddTripModal 
+      visible={isAddTripVisible} 
+      onDismiss={() => setAddTripVisible(false)} 
+    />
+
+    <PastTripSummaryModal 
+      visible={isSummaryVisible} 
+      trip={summaryTrip} 
+      onDismiss={() => setIsSummaryVisible(false)} 
+    />
+    </>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  content: {
+    padding: 16,
+    paddingBottom: 40,
+  },
+  header: {
+    marginBottom: 32,
+  },
+  section: {
+    marginBottom: 40,
+  },
+  sectionHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 16,
+    gap: 8,
+  },
+  sectionTitle: {
+    fontWeight: 'bold',
+  },
+  combinedCard: {
+    borderRadius: 16,
+    borderWidth: 1,
+    overflow: 'hidden',
+  },
+  combinedFeatureArea: {
+    aspectRatio: 16/9,
+  },
+  combinedStatusArea: {
+    padding: 24,
+  },
+  mainFeatureBg: {
+    ...StyleSheet.absoluteFillObject,
+    opacity: 0.8,
+  },
+  mainFeatureContent: {
+    flex: 1,
+    padding: 24,
+    justifyContent: 'flex-end',
+    backgroundColor: 'rgba(0,0,0,0.2)'
+  },
+  badge: {
+    alignSelf: 'flex-start',
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 16,
+    marginBottom: 12,
+  },
+  badgeText: {
+    fontSize: 10,
+    fontWeight: 'bold',
+  },
+  statusCard: {
+    borderRadius: 16,
+    padding: 24,
+    borderWidth: 1,
+  },
+  statusRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 16,
+    marginBottom: 24,
+  },
+  statusIcon: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  budgetArea: {
+    borderTopWidth: 1,
+    paddingTop: 24,
+  },
+  budgetHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 8,
+  },
+  progressBar: {
+    height: 8,
+    borderRadius: 4,
+    overflow: 'hidden',
+  },
+  progressFill: {
+    height: '100%',
+    borderRadius: 4,
+  },
+  grid: {
+    flexDirection: 'column',
+    gap: 16,
+  },
+  addCardRow: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderStyle: 'dashed',
+    borderRadius: 16,
+    padding: 16,
+  },
+  addIconContainerSmall: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  tripCard: {
+    width: '100%',
+    borderRadius: 16,
+    borderWidth: 1,
+    overflow: 'hidden',
+  },
+  tripCardImagePlaceholder: {
+    height: 140,
+    width: '100%',
+  },
+  tripCardOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    justifyContent: 'flex-end',
+    padding: 12,
+  },
+  tripCardContent: {
+    padding: 12,
+    flex: 1,
+  },
+  listContainer: {
+    borderWidth: 1,
+    borderRadius: 16,
+    overflow: 'hidden',
+  },
+  listItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+  },
+  listItemContent: {
+    flex: 1,
+  }
+});

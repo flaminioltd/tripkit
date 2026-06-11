@@ -1,0 +1,50 @@
+{
+  "name": "@tripkit/mobile",
+  "version": "1.0.0",
+  "private": true,
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "test": "jest",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "build": "expo export"
+  },
+  "dependencies": {
+    "@react-native-community/datetimepicker": "^9.1.0",
+    "@react-native-community/netinfo": "11.4.1",
+    "@react-native-community/slider": "5.0.1",
+    "drizzle-orm": "^0.30.0",
+    "expo": "~54.0.0",
+    "expo-crypto": "~15.0.9",
+    "expo-linear-gradient": "^56.0.4",
+    "expo-localization": "~17.0.9",
+    "expo-router": "~6.0.24",
+    "expo-speech": "~14.0.8",
+    "expo-sqlite": "~16.0.10",
+    "i18next": "^26.3.1",
+    "react": "19.1.0",
+    "react-hook-form": "^7.0.0",
+    "react-i18next": "^17.0.8",
+    "react-native": "0.81.5",
+    "react-native-calendars": "^1.1314.0",
+    "react-native-paper": "^5.0.0",
+    "react-native-paper-dates": "^0.23.9",
+    "react-native-safe-area-context": "~5.6.0",
+    "react-native-screens": "~4.16.0",
+    "react-native-svg": "^15.15.5",
+    "zod": "^3.0.0",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@tripkit/shared": "workspace:*",
+    "@types/react": "~19.1.17",
+    "drizzle-kit": "^0.20.14",
+    "jest-expo": "~54.0.17",
+    "typescript": "^5.1.3"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "phrases": {
+    "categories": {
+      "Basics": "Básicos",
+      "Shopping": "Compras",
+      "Hotel & Dining": "Hotel y Comida",
+      "Emergencies": "Emergencias"
+    },
+    "items": {
+      "hello": "Hola",
+      "goodbye": "Adiós",
+      "please": "Por favor",
+      "thank_you": "Gracias",
+      "yes": "Sí",
+      "no": "No",
+      "excuse_me": "Disculpe",
+      "do_you_speak_english": "¿Habla inglés?",
+      "how_much": "¿Cuánto cuesta esto?",
+      "credit_cards": "¿Aceptan tarjetas de crédito?",
+      "buy_this": "Me gustaría comprar esto",
+      "too_expensive": "Demasiado caro",
+      "can_you_help": "¿Puede ayudarme?",
+      "fitting_room": "¿Dónde están los probadores?",
+      "just_looking": "Sólo estoy mirando, gracias",
+      "menu": "¿Puedo ver el menú?",
+      "table_for_two": "Una mesa para dos, por favor",
+      "bill": "La cuenta, por favor",
+      "water": "Agua, por favor",
+      "reservation": "Tengo una reserva",
+      "delicious": "Delicioso",
+      "bathroom": "¿Dónde está el baño?",
+      "help": "¡Ayuda!",
+      "need_doctor": "Necesito un médico",
+      "call_police": "Llame a la policía",
+      "hospital": "¿Dónde está el hospital?",
+      "lost_passport": "He perdido mi pasaporte",
+      "emergency": "Es una emergencia",
+      "embassy": "¿Dónde está la embajada?"
+    }
+  }
+}

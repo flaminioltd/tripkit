@@ -1,0 +1,152 @@
+import React, { useState } from 'react';
+import { View, StyleSheet, SafeAreaView, ScrollView, Pressable, Platform } from 'react-native';
+import { Text, Card, useTheme, IconButton } from 'react-native-paper';
+import { useTranslation } from 'react-i18next';
+import * as Speech from 'expo-speech';
+import ModuleHeader from '../../src/components/app-header/ModuleHeader';
+import { useTripStore } from '../../src/stores/trip-store';
+import { COUNTRIES } from '../../src/lib/countries';
+import { PHRASES_DATA, getLanguageForCountry, getSpeechLanguageCode } from '../../src/lib/basic-phrases-data';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+export default function BasicPhrasesScreen() {
+  const theme = useTheme();
+  const { activeTrip } = useTripStore();
+  const { t, i18n } = useTranslation();
+  
+  const activeCountryData = COUNTRIES.find((c: any) => c.name === activeTrip?.destinationCountry);
+  const destinationCode = activeCountryData?.code || 'FR';
+
+  const languageKey = getLanguageForCountry(destinationCode);
+  const speechLanguageCode = getSpeechLanguageCode(languageKey);
+  const phrasesCategories = PHRASES_DATA[languageKey] || PHRASES_DATA['EN'];
+
+  const [activeTab, setActiveTab] = useState(phrasesCategories[0]?.category || 'Basics');
+
+  const activeCategoryData = phrasesCategories.find(c => c.category === activeTab);
+
+  const speakPhrase = (text: string) => {
+    // Remove text in parentheses like "(Konnichiwa)" so the TTS engine doesn't read it twice
+    const cleanText = text.replace(/\s*\(.*?\)\s*/g, '').trim();
+    
+    Speech.speak(cleanText, {
+      language: speechLanguageCode,
+      rate: Platform.OS === 'ios' ? 0.4 : 0.8,
+    });
+  };
+
+  const systemLanguage = i18n.language.toUpperCase().split('-')[0]; // Handle cases like 'en-US' -> 'EN'
+  const isSameLanguage = systemLanguage === languageKey;
+
+  return (
+    <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
+      <ModuleHeader title="Basic Phrases" />
+
+      {isSameLanguage ? (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 }}>
+          <MaterialCommunityIcons name="translate" size={64} color={theme.colors.outline} style={{ marginBottom: 16 }} opacity={0.5} />
+          <Text variant="titleLarge" style={{ textAlign: 'center', color: theme.colors.onSurface, fontWeight: 'bold', marginBottom: 8 }}>
+            No Translation Needed
+          </Text>
+          <Text variant="bodyLarge" style={{ textAlign: 'center', color: theme.colors.onSurfaceVariant }}>
+            The primary language in {activeTrip?.destinationCountry || destinationCode} matches your system language.
+          </Text>
+        </View>
+      ) : (
+        <>
+          <View style={{ width: '100%', position: 'relative' }}>
+            <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 1, backgroundColor: theme.colors.outlineVariant, zIndex: 0 }} />
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: 'row', gap: 4, paddingHorizontal: 16 }}>
+              {phrasesCategories.map((tab) => {
+                const isSelected = activeTab === tab.category;
+                return (
+                  <Pressable
+                    key={tab.category}
+                    onPress={() => setActiveTab(tab.category)}
+                    style={[
+                      { 
+                        paddingHorizontal: 16, 
+                        paddingVertical: 10, 
+                        borderTopLeftRadius: 8, 
+                        borderTopRightRadius: 8,
+                        borderTopWidth: 1,
+                        borderLeftWidth: 1,
+                        borderRightWidth: 1,
+                        borderBottomWidth: 1,
+                        borderColor: theme.colors.outlineVariant,
+                        backgroundColor: theme.colors.surfaceVariant,
+                        zIndex: 1
+                      },
+                      isSelected && { 
+                        backgroundColor: theme.colors.background, 
+                        borderBottomColor: theme.colors.background,
+                        zIndex: 2
+                      }
+                    ]}
+                  >
+                    <Text style={{ 
+                      fontSize: 14, 
+                      fontWeight: isSelected ? '600' : '500', 
+                      color: isSelected ? theme.colors.onSurface : theme.colors.onSurfaceVariant 
+                    }}>
+                      {t(`phrases.categories.${tab.category}`)}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </ScrollView>
+          </View>
+
+          <ScrollView contentContainerStyle={styles.content}>
+            <View style={{ marginBottom: 16 }}>
+              <Text variant="titleMedium" style={{ color: theme.colors.onBackground, fontWeight: 'bold' }}>
+                Phrases in {languageKey} for {activeTrip?.destinationCountry || destinationCode}
+              </Text>
+            </View>
+
+            {activeCategoryData?.phrases.map((phrase, index) => (
+              <Card key={index} style={styles.card} mode="contained">
+                <Card.Content style={styles.cardContent}>
+                  <View style={styles.textContainer}>
+                    <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.primary, marginBottom: 4 }}>
+                      {t(`phrases.items.${phrase.id}`)}
+                    </Text>
+                    <Text variant="bodyLarge" style={{ color: theme.colors.onSurface, marginBottom: 4, fontStyle: 'italic' }}>
+                      {phrase.local}
+                    </Text>
+                    {i18n.language.startsWith('en') && (
+                      <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
+                        "{phrase.phonetic}"
+                      </Text>
+                    )}
+                  </View>
+                  <IconButton
+                    icon="volume-high"
+                    iconColor={theme.colors.primary}
+                    size={28}
+                    onPress={() => speakPhrase(phrase.local)}
+                    style={{ backgroundColor: theme.colors.primaryContainer }}
+                  />
+                </Card.Content>
+              </Card>
+            ))}
+
+            {!activeCategoryData && (
+              <Text style={{ color: theme.colors.onSurfaceVariant, textAlign: 'center', marginTop: 32 }}>
+                No phrases available for this category.
+              </Text>
+            )}
+          </ScrollView>
+        </>
+      )}
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1 },
+  content: { padding: 16, paddingBottom: 40 },
+  card: { backgroundColor: '#ffffff', marginBottom: 12, elevation: 1 },
+  cardContent: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  textContainer: { flex: 1, paddingRight: 16 },
+});
