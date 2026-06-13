@@ -8,7 +8,7 @@ export interface PhraseCategory {
   phrases: Phrase[];
 }
 
-export const getLanguageForCountry =: string => {
+export const getLanguageForCountry = (countryCode: string): string => {
   const map: Record<string, string> = {
     US: 'EN', GB: 'EN', CA: 'EN', AU: 'EN', NZ: 'EN', IE: 'EN',
     FR: 'FR', ES: 'ES', MX: 'ES', AR: 'ES', IT: 'IT', TR: 'TR',
@@ -20,7 +20,7 @@ export const getLanguageForCountry =: string => {
   return map[countryCode] || 'EN';
 };
 
-export const getSpeechLanguageCode =: string => {
+export const getSpeechLanguageCode = (languageCode: string): string => {
   const map: Record<string, string> = {
     EN: 'en-US', FR: 'fr-FR', ES: 'es-ES', IT: 'it-IT', TR: 'tr-TR',
     DE: 'de-DE', EL: 'el-GR', PT: 'pt-PT', NL: 'nl-NL', PL: 'pl-PL',
@@ -666,7 +666,7 @@ export const PHRASES_DATA: Record<string, PhraseCategory[]> = {
       phrases: [
         { id: 'how_much', local: 'Kolik to stojí?' },
         { id: 'credit_cards', local: 'Berete kreditní karty?' },
-        { id: 'buy_this', local: 'Rád bych si to koupil' },
+        { id: 'buy_this', local: 'Rád(a) bych si to koupil' },
         { id: 'too_expensive', local: 'Příliš drahé' },
         { id: 'can_you_help', local: 'Můžete mi pomoci?' },
         { id: 'fitting_room', local: 'Kde je zkušební kabinka?' },
@@ -692,7 +692,7 @@ export const PHRASES_DATA: Record<string, PhraseCategory[]> = {
         { id: 'need_doctor', local: 'Potřebuji doktora' },
         { id: 'call_police', local: 'Zavolejte policii' },
         { id: 'hospital', local: 'Kde je nemocnice?' },
-        { id: 'lost_passport', local: 'Ztratil jsem pas' },
+        { id: 'lost_passport', local: 'Ztratil(a) jsem pas' },
         { id: 'emergency', local: 'Je to nouzová situace' },
         { id: 'embassy', local: 'Kde je velvyslanectví?' },
       ]
