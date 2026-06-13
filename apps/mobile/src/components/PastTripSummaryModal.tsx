@@ -4,6 +4,7 @@ import { Text, useTheme, Modal, Portal, Button, Divider, List } from 'react-nati
 import { budgetRepo } from '../repositories/budget-repository';
 import { useAppStore } from '../stores/app-store';
 import { COUNTRIES } from '../lib/countries';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   visible: boolean;
@@ -13,6 +14,7 @@ interface Props {
 
 export default function PastTripSummaryModal({ visible, trip, onDismiss }: Props) {
   const theme = useTheme();
+  const { t } = useTranslation();
   const { settings } = useAppStore();
   const [expenses, setExpenses] = useState<any[]>([]);
 
@@ -48,39 +50,39 @@ export default function PastTripSummaryModal({ visible, trip, onDismiss }: Props
       <Modal visible={visible} onDismiss={onDismiss} contentContainerStyle={[styles.modalContainer, { backgroundColor: theme.colors.surface }]}>
         <View style={styles.header}>
           <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>
-            {trip.destinationCountry} Summary
+            {t("components.pastTripSummary.title", "{{country}} Summary", { country: trip.destinationCountry })}
           </Text>
         </View>
 
         <ScrollView style={styles.content}>
           <View style={[styles.card, { backgroundColor: theme.colors.surfaceVariant }]}>
-            <Text variant="labelMedium" style={{ color: theme.colors.onSurfaceVariant, marginBottom: 8 }}>CONFIGURED BUDGET</Text>
+            <Text variant="labelMedium" style={{ color: theme.colors.onSurfaceVariant, marginBottom: 8 }}>{t("components.pastTripSummary.configuredBudget", "CONFIGURED BUDGET")}</Text>
             <Text variant="headlineMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>
               {totalTripBudget.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {displayCurrency}
             </Text>
             {budgetType === 'daily' && (
               <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>
-                ({budgetNum.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {displayCurrency} / day for {tripDays} days)
+                ({t("components.pastTripSummary.perDayForDays", "{{amount}} {{currency}} / day for {{days}} days", { amount: budgetNum.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }), currency: displayCurrency, days: tripDays })})
               </Text>
             )}
           </View>
 
           <View style={[styles.card, { backgroundColor: theme.colors.primaryContainer, marginTop: 16 }]}>
-            <Text variant="labelMedium" style={{ color: theme.colors.onPrimaryContainer, marginBottom: 8 }}>USED BUDGET</Text>
+            <Text variant="labelMedium" style={{ color: theme.colors.onPrimaryContainer, marginBottom: 8 }}>{t("components.pastTripSummary.usedBudget", "USED BUDGET")}</Text>
             <Text variant="headlineMedium" style={{ fontWeight: 'bold', color: theme.colors.onPrimaryContainer }}>
               {totalSpentDisplay.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {displayCurrency}
             </Text>
             <Text variant="bodySmall" style={{ color: theme.colors.onPrimaryContainer }}>
               {totalTripBudget > 0 
-                ? (totalSpentDisplay <= totalTripBudget ? 'Under budget!' : 'Over budget')
-                : 'No budget limit set'}
+                ? (totalSpentDisplay <= totalTripBudget ? t('components.pastTripSummary.underBudget', 'Under budget!') : t('components.pastTripSummary.overBudget', 'Over budget'))
+                : t('components.pastTripSummary.noBudgetLimit', 'No budget limit set')}
             </Text>
           </View>
 
           <View style={{ marginTop: 24 }}>
-            <Text variant="titleMedium" style={{ fontWeight: 'bold', marginBottom: 8, color: theme.colors.onSurface }}>Expenses ({expenses.length})</Text>
+            <Text variant="titleMedium" style={{ fontWeight: 'bold', marginBottom: 8, color: theme.colors.onSurface }}>{t("components.pastTripSummary.expensesCount", "Expenses ({{count}})", { count: expenses.length })}</Text>
             {expenses.length === 0 ? (
-              <Text style={{ color: theme.colors.onSurfaceVariant }}>No expenses recorded for this trip.</Text>
+              <Text style={{ color: theme.colors.onSurfaceVariant }}>{t("components.pastTripSummary.noExpenses", "No expenses recorded for this trip.")}</Text>
             ) : (
               expenses.map((exp, idx) => (
                 <View key={exp.id}>
@@ -102,7 +104,7 @@ export default function PastTripSummaryModal({ visible, trip, onDismiss }: Props
           </View>
         </ScrollView>
         <View style={[styles.footer, { alignItems: 'center' }]}>
-          <Button variant="main" onPress={onDismiss} style={{ width: 130 }}>Close</Button>
+          <Button variant="main" onPress={onDismiss} style={{ width: 130 }}>{t("components.pastTripSummary.close", "Close")}</Button>
         </View>
       </Modal>
     </Portal>

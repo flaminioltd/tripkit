@@ -6,6 +6,7 @@ import { FLAG_IMAGES } from '../lib/assets';
 import { db } from '../db/client';
 import { countries } from '../db/schema';
 import { useAppStore } from '../stores/app-store';
+import { useTranslation } from 'react-i18next';
 
 interface ChangeHomeCountryModalProps {
   visible: boolean;
@@ -14,6 +15,7 @@ interface ChangeHomeCountryModalProps {
 
 export default function ChangeHomeCountryModal({ visible, onDismiss }: ChangeHomeCountryModalProps) {
   const theme = useTheme();
+  const { t } = useTranslation();
   const { updateSettings } = useAppStore();
   
   const [searchQuery, setSearchQuery] = useState('');
@@ -55,7 +57,7 @@ export default function ChangeHomeCountryModal({ visible, onDismiss }: ChangeHom
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         >
           <View style={styles.header}>
-            <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>Change Home Country</Text>
+            <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{t("components.changeHomeCountry.title", "Change Home Country")}</Text>
             <Pressable onPress={onDismiss} style={styles.closeButton}>
               <MaterialIcons name="close" size={24} color={theme.colors.onSurfaceVariant} />
             </Pressable>
@@ -75,7 +77,7 @@ export default function ChangeHomeCountryModal({ visible, onDismiss }: ChangeHom
                 <PaperInput
                   value={searchQuery}
                   onChangeText={setSearchQuery}
-                  placeholder="Search countries..."
+                  placeholder={t("components.changeHomeCountry.searchPlaceholder", "Search countries...")}
                   style={styles.input}
                   underlineStyle={{ display: 'none' }}
                   textColor={theme.colors.onSurface}

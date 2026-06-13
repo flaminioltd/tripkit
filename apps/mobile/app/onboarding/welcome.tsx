@@ -9,6 +9,7 @@ import { FLAG_IMAGES } from '../../src/lib/assets';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useAppStore } from '../../src/stores/app-store';
+import { useTranslation } from 'react-i18next';
 
 const getCurrencyDisplayName = (code: string) => {
   try {
@@ -37,6 +38,7 @@ export default function WelcomeScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { updateSettings } = useAppStore();
+  const { t } = useTranslation();
   
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCountry, setSelectedCountry] = useState<any | null>(null);
@@ -81,16 +83,16 @@ export default function WelcomeScreen() {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
       <View style={[styles.header, { paddingTop: insets.top }]}>
-        <Text variant="titleLarge" style={[styles.headerTitle, { color: theme.colors.primary }]}>TripKit</Text>
+        <Text variant="titleLarge" style={[styles.headerTitle, { color: theme.colors.primary }]}>{t('welcomeScreen.title')}</Text>
       </View>
 
       <View style={styles.content}>
         <View style={styles.heroText}>
           <Text variant="headlineMedium" style={[styles.title, { color: theme.colors.onSurface }]}>
-            Where is home?
+            {t('welcomeScreen.heroTitle')}
           </Text>
           <Text variant="bodyLarge" style={[styles.subtitle, { color: theme.colors.onSurfaceVariant }]}>
-            TripKit sets useful defaults based on your home country.
+            {t('welcomeScreen.heroSubtitle')}
           </Text>
         </View>
 
@@ -113,7 +115,7 @@ export default function WelcomeScreen() {
               }}
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
-              placeholder="Enter a country..."
+              placeholder={t('welcomeScreen.searchPlaceholder')}
               style={styles.input}
               underlineStyle={{ display: 'none' }}
               textColor={theme.colors.onSurface}
@@ -133,16 +135,16 @@ export default function WelcomeScreen() {
             <Card style={{ marginTop: 24, backgroundColor: theme.colors.surfaceVariant }} mode="contained">
               <Card.Content>
                 <Text variant="titleLarge" style={[{ fontWeight: 'bold', marginBottom: 8 }, { color: theme.colors.onSurface }]}>
-                  {selectedCountry.name} Settings
+                  {t('welcomeScreen.settingsTitle', { countryName: selectedCountry.name })}
                 </Text>
                 <List.Item
                   title={getCurrencyDisplayName(selectedCountry.currencyCode)}
-                  description="Base Currency"
+                  description={t('welcomeScreen.baseCurrency')}
                   left={props => <List.Icon {...props} icon="cash" />}
                 />
                 <List.Item
                   title={selectedCountry.measurementSystem === 'metric' ? 'Metric System' : 'Imperial System'}
-                  description="Measurement System"
+                  description={t('welcomeScreen.measurementSystem')}
                   left={props => <List.Icon {...props} icon="ruler" />}
                 />
               </Card.Content>
@@ -197,7 +199,7 @@ export default function WelcomeScreen() {
           contentStyle={{ height: 56 }}
           labelStyle={{ fontSize: 16, fontWeight: 'bold' }}
         >
-          {isSet ? 'Continue' : 'Set'}
+          {isSet ? t('welcomeScreen.buttonContinue') : t('welcomeScreen.buttonSet')}
         </Button>
       </View>
     </KeyboardAvoidingView>

@@ -13,6 +13,7 @@ import { eq } from 'drizzle-orm';
 import { useTripStore } from '../../src/stores/trip-store';
 import * as Crypto from 'expo-crypto';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 const CURRENCY_SYMBOLS: Record<string, string> = {
   'USD': '$', 'EUR': '€', 'GBP': '£', 'JPY': '¥', 'AUD': 'A$', 'CAD': 'C$',
@@ -24,6 +25,7 @@ const CURRENCY_SYMBOLS: Record<string, string> = {
 
 export default function TipCalculatorScreen() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const router = useRouter();
   
   const [billAmount, setBillAmount] = useState('');
@@ -153,7 +155,7 @@ export default function TipCalculatorScreen() {
 
       await addExpense({
         tripId: activeTrip.id,
-        title: 'Restaurant Bill (Tip Included)',
+        title: t('modules.tipCalculator.expenseTitle', 'Restaurant Bill (Tip Included)'),
         category: 'food',
         localAmount: result.totalAmount,
         convertedAmount: convertedAmt,
@@ -185,7 +187,7 @@ export default function TipCalculatorScreen() {
       { value: '10', label: '10%' },
       { value: '15', label: '15%' },
       { value: '20', label: '20%' },
-      { value: 'custom', label: 'Custom' },
+      { value: 'custom', label: t('modules.tipCalculator.customTip', 'Custom') },
     ];
     
     if (activeCountry.tippingType === 'none') {
@@ -193,33 +195,33 @@ export default function TipCalculatorScreen() {
         { value: '5', label: '5%' },
         { value: '10', label: '10%' },
         { value: '15', label: '15%' },
-        { value: 'custom', label: 'Custom' },
+        { value: 'custom', label: t('modules.tipCalculator.customTip', 'Custom') },
       ];
     } else if (activeCountry.tippingType === 'round_up') {
       return [
-        { value: 'round_up', label: 'Round Up', style: { flex: 1.4 } },
+        { value: 'round_up', label: t('modules.tipCalculator.roundUpTip', 'Round Up'), style: { flex: 1.4 } },
         { value: '5', label: '5%', style: { flex: 1 } },
         { value: '10', label: '10%', style: { flex: 1 } },
-        { value: 'custom', label: 'Custom', style: { flex: 1.4 } },
+        { value: 'custom', label: t('modules.tipCalculator.customTip', 'Custom'), style: { flex: 1.4 } },
       ];
     } else {
       return [
         { value: '10', label: '10%' },
         { value: '15', label: '15%' },
         { value: '20', label: '20%' },
-        { value: 'custom', label: 'Custom' },
+        { value: 'custom', label: t('modules.tipCalculator.customTip', 'Custom') },
       ];
     }
   };
 
-  let headerText = `Standard tipping in your destination is roughly 15-20%.`;
+  let headerText = t('modules.tipCalculator.defaultTippingText', 'Standard tipping in your destination is roughly 15-20%.');
   if (activeCountry) {
     if (activeCountry.tippingType === 'none') {
-      headerText = `Tipping in ${activeCountry.name} is generally not required.`;
+      headerText = t('modules.tipCalculator.noTippingText', 'Tipping in {{country}} is generally not required.', { country: activeCountry.name });
     } else if (activeCountry.tippingType === 'round_up') {
-      headerText = `Standard tipping policy in ${activeCountry.name} is to round up the bill.`;
+      headerText = t('modules.tipCalculator.roundUpTippingText', 'Standard tipping policy in {{country}} is to round up the bill.', { country: activeCountry.name });
     } else {
-      headerText = `Standard tipping in ${activeCountry.name} is ${activeCountry.tippingStandard || '15-20%'}.`;
+      headerText = t('modules.tipCalculator.standardTippingText', 'Standard tipping in {{country}} is {{standard}}.', { country: activeCountry.name, standard: activeCountry.tippingStandard || '15-20%' });
     }
   }
     
@@ -228,7 +230,7 @@ export default function TipCalculatorScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
-      <ModuleHeader title="Tip Calculator" />
+      <ModuleHeader title={t("modules.tipCalculator.headerTitle", "Tip Calculator")} />
 
       <ScrollView contentContainerStyle={styles.content}>
         <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant, marginBottom: 16 }}>
@@ -238,7 +240,7 @@ export default function TipCalculatorScreen() {
         <Card style={styles.card} mode="contained">
           <Card.Content>
             <TextInput
-              label={`Bill Amount (${currencySymbol})`}
+              label={t("modules.tipCalculator.billAmountLabel", "Bill Amount ({{symbol}})", { symbol: currencySymbol })}
               value={billAmount}
               onChangeText={setBillAmount}
               keyboardType="numeric"
@@ -247,12 +249,12 @@ export default function TipCalculatorScreen() {
             />
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 16, marginBottom: 8 }}>
-              <Text variant="labelLarge">Tip Percentage</Text>
+              <Text variant="labelLarge">{t("modules.tipCalculator.tipPercentage", "Tip Percentage")}</Text>
               <Pressable 
                 onPress={() => setTipPercentage(tipPercentage === '0' ? (activeCountry?.tippingType === 'none' ? '5' : '15') : '0')}
                 style={{ flexDirection: 'row', alignItems: 'center' }}
               >
-                <Text variant="labelMedium" style={{ color: theme.colors.onSurfaceVariant, marginRight: 8 }}>No Tip</Text>
+                <Text variant="labelMedium" style={{ color: theme.colors.onSurfaceVariant, marginRight: 8 }}>{t("modules.tipCalculator.noTip", "No Tip")}</Text>
                 <View pointerEvents="none">
                   <MaterialIcons 
                     name={tipPercentage === '0' ? 'check-circle' : 'radio-button-unchecked'} 
@@ -308,7 +310,7 @@ export default function TipCalculatorScreen() {
               })}
             </View>
 
-            <Text variant="labelLarge" style={{ marginTop: 16, marginBottom: 8 }}>Split Between (people)</Text>
+            <Text variant="labelLarge" style={{ marginTop: 16, marginBottom: 8 }}>{t("modules.tipCalculator.splitBetween", "Split Between (people)")}</Text>
             <View style={[styles.counterContainer, { backgroundColor: theme.colors.surfaceVariant }]}>
               <IconButton 
                 icon="minus" 
@@ -331,16 +333,16 @@ export default function TipCalculatorScreen() {
         <Card style={[styles.resultCard, { backgroundColor: theme.colors.primaryContainer }]} mode="contained">
           <Card.Content style={styles.resultContent}>
             <View style={styles.resultRow}>
-              <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant }}>Suggested Tip Amount</Text>
+              <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.tipCalculator.suggestedTip", "Suggested Tip Amount")}</Text>
               <Text variant="titleLarge" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{currencySymbol}{result.tipAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
             </View>
             <View style={styles.resultRow}>
-              <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant }}>Total Bill</Text>
+              <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.tipCalculator.totalBill", "Total Bill")}</Text>
               <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: theme.colors.primary }}>{currencySymbol}{result.totalAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
             </View>
             {splitCount > 1 && (
               <View style={[styles.resultRow, { marginTop: 8, paddingTop: 8, borderTopWidth: 1, borderTopColor: theme.colors.outline }]}>
-                <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>Per Person</Text>
+                <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.tipCalculator.perPerson", "Per Person")}</Text>
                 <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{currencySymbol}{result.perPersonAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
               </View>
             )}
@@ -349,7 +351,7 @@ export default function TipCalculatorScreen() {
 
         <View style={{ flexDirection: 'row', gap: 12, marginTop: 16 }}>
           <Button mode="contained" onPress={handleSync} style={{ flex: 1 }} disabled={syncSuccess || !billAmount || parseFloat(billAmount) === 0}>
-            {syncSuccess ? "Synced!" : "Sync to Budget"}
+            {syncSuccess ? t("modules.tipCalculator.synced", "Synced!") : t("modules.tipCalculator.syncToBudget", "Sync to Budget")}
           </Button>
           <Button mode="outlined" onPress={handleReset} style={{ flex: 1 }}>
             Reset
@@ -359,18 +361,18 @@ export default function TipCalculatorScreen() {
         {syncSuccess && (
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 12 }}>
             <MaterialIcons name="check-circle" size={20} color={theme.colors.primary} />
-            <Text style={{ marginLeft: 6, color: theme.colors.primary, fontWeight: '500' }}>Added to Expenses</Text>
+            <Text style={{ marginLeft: 6, color: theme.colors.primary, fontWeight: '500' }}>{t("modules.tipCalculator.addedToExpenses", "Added to Expenses")}</Text>
           </View>
         )}
       </ScrollView>
       
       <Portal>
         <Dialog visible={isCustomModalVisible} onDismiss={() => setIsCustomModalVisible(false)} style={{ backgroundColor: theme.colors.surface }}>
-          <Dialog.Title>Custom Tip</Dialog.Title>
+          <Dialog.Title>{t("modules.tipCalculator.customTipTitle", "Custom Tip")}</Dialog.Title>
           <Dialog.Content>
             <View style={{ flexDirection: 'row', gap: 12 }}>
               <TextInput
-                label="Percentage (%)"
+                label={t("modules.tipCalculator.percentageLabel", "Percentage (%)")}
                 value={customPercentStr}
                 onChangeText={handleCustomPercentChange}
                 keyboardType="numeric"
@@ -378,7 +380,7 @@ export default function TipCalculatorScreen() {
                 style={{ flex: 1, backgroundColor: theme.colors.surface }}
               />
               <TextInput
-                label={`Amount (${currencySymbol})`}
+                label={t("modules.tipCalculator.amountLabel", "Amount ({{symbol}})", { symbol: currencySymbol })}
                 value={customAmountStr}
                 onChangeText={handleCustomAmountChange}
                 keyboardType="numeric"
@@ -388,8 +390,8 @@ export default function TipCalculatorScreen() {
             </View>
           </Dialog.Content>
           <Dialog.Actions style={{ flexDirection: 'row', gap: 12, paddingHorizontal: 16, justifyContent: 'center', paddingBottom: 16 }}>
-            <Button variant="alternative" style={{ width: 130 }} onPress={() => setIsCustomModalVisible(false)}>Cancel</Button>
-            <Button variant="main" style={{ width: 130 }} onPress={confirmCustomTip}>Confirm</Button>
+            <Button variant="alternative" style={{ width: 130 }} onPress={() => setIsCustomModalVisible(false)}>{t("modules.tipCalculator.cancel", "Cancel")}</Button>
+            <Button variant="main" style={{ width: 130 }} onPress={confirmCustomTip}>{t("modules.tipCalculator.confirm", "Confirm")}</Button>
           </Dialog.Actions>
         </Dialog>
       </Portal>

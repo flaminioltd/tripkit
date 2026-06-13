@@ -3,9 +3,11 @@ import React from 'react';
 import { View, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 import { Text, useTheme, Card, List, IconButton } from 'react-native-paper';
 import { useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 
 export default function UpgradeScreen() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const router = useRouter();
 
   return (
@@ -26,25 +28,25 @@ export default function UpgradeScreen() {
 
         <Card style={styles.card} mode="contained">
           <Card.Content>
-            <Text variant="titleMedium" style={{ fontWeight: 'bold', marginBottom: 16 }}>What remains free:</Text>
-            <List.Item title="Tip Calculator" left={props => <List.Icon {...props} icon="calculator" color={theme.colors.onSurfaceVariant} />} style={styles.listItem} />
-            <List.Item title="Size Converter" left={props => <List.Icon {...props} icon="tshirt-crew" color={theme.colors.onSurfaceVariant} />} style={styles.listItem} />
-            <List.Item title="Plug & Voltage" left={props => <List.Icon {...props} icon="power-plug" color={theme.colors.onSurfaceVariant} />} style={styles.listItem} />
-            <List.Item title="Emergency Numbers" left={props => <List.Icon {...props} icon="phone-alert" color={theme.colors.onSurfaceVariant} />} style={styles.listItem} />
+            <Text variant="titleMedium" style={{ fontWeight: 'bold', marginBottom: 16 }}>{t("access.upgrade.freeTitle", "What remains free:")}</Text>
+            <List.Item title={t("modules.tipCalculator.headerTitle", "Tip Calculator")} left={props => <List.Icon {...props} icon="calculator" color={theme.colors.onSurfaceVariant} />} style={styles.listItem} />
+            <List.Item title={t("modules.sizeConverter.headerTitle", "Size Converter")} left={props => <List.Icon {...props} icon="tshirt-crew" color={theme.colors.onSurfaceVariant} />} style={styles.listItem} />
+            <List.Item title={t("access.upgrade.freePlug", "Plug & Voltage")} left={props => <List.Icon {...props} icon="power-plug" color={theme.colors.onSurfaceVariant} />} style={styles.listItem} />
+            <List.Item title={t("modules.emergencyEssentials.headerTitle", "Emergency Numbers")} left={props => <List.Icon {...props} icon="phone-alert" color={theme.colors.onSurfaceVariant} />} style={styles.listItem} />
           </Card.Content>
         </Card>
 
         <Card style={[styles.card, { backgroundColor: theme.colors.primaryContainer, borderColor: theme.colors.primary, borderWidth: 1 }]} mode="contained">
           <Card.Content>
-            <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.primary, marginBottom: 16 }}>Unlock Includes:</Text>
-            <List.Item title="Budget Tracker" left={props => <List.Icon {...props} icon="wallet" color={theme.colors.primary} />} style={styles.listItem} />
-            <List.Item title="VAT Refund Calculator" left={props => <List.Icon {...props} icon="cash-refund" color={theme.colors.primary} />} style={styles.listItem} />
-            <List.Item title="ATM Withdrawal Fees" left={props => <List.Icon {...props} icon="bank" color={theme.colors.primary} />} style={styles.listItem} />
-            <List.Item title="Timezone Helper" left={props => <List.Icon {...props} icon="clock" color={theme.colors.primary} />} style={styles.listItem} />
+            <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.primary, marginBottom: 16 }}>{t("access.upgrade.unlockTitle", "Unlock Includes:")}</Text>
+            <List.Item title={t("modules.budgetTracker.headerTitle", "Budget Tracker")} left={props => <List.Icon {...props} icon="wallet" color={theme.colors.primary} />} style={styles.listItem} />
+            <List.Item title={t("modules.vatRefund.headerTitle", "VAT Refund")} left={props => <List.Icon {...props} icon="cash-refund" color={theme.colors.primary} />} style={styles.listItem} />
+            <List.Item title={t("modules.atm.headerTitle", "ATM Exchange")} left={props => <List.Icon {...props} icon="bank" color={theme.colors.primary} />} style={styles.listItem} />
+            <List.Item title={t("modules.timezoneHelper.headerTitle", "Time Zones")} left={props => <List.Icon {...props} icon="clock" color={theme.colors.primary} />} style={styles.listItem} />
             
             <View style={styles.priceBox}>
               <Text variant="displaySmall" style={{ fontWeight: 'bold', color: theme.colors.primary }}>$14.99</Text>
-              <Text variant="bodyMedium" style={{ color: theme.colors.primary }}>One-time payment</Text>
+              <Text variant="bodyMedium" style={{ color: theme.colors.primary }}>{t("access.upgrade.oneTimePayment", "One-time payment")}</Text>
             </View>
           </Card.Content>
         </Card>

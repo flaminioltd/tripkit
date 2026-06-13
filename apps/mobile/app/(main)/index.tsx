@@ -8,6 +8,7 @@ import { useTripStore } from '../../src/stores/trip-store';
 import { useAppStore } from '../../src/stores/app-store';
 import { FLAG_IMAGES } from '../../src/lib/assets';
 import AddTripModal from '../../src/components/AddTripModal';
+import { useTranslation } from 'react-i18next';
 
 import { LinearGradient } from 'expo-linear-gradient';
 import { FINANCE_MODULES, ESSENTIALS_MODULES, RedesignModuleProps } from '../../src/lib/modules';
@@ -26,6 +27,7 @@ export default function HomeScreen() {
   const router = useRouter();
   const { trips, activeTrip, setActiveTrip, loadTrips } = useTripStore();
   const { loadSettings } = useAppStore();
+  const { t } = useTranslation();
   const [menuVisible, setMenuVisible] = useState(false);
   const [activeCountryCode, setActiveCountryCode] = useState<string | null>(null);
   const [isAddTripVisible, setAddTripVisible] = useState(false);
@@ -103,7 +105,7 @@ export default function HomeScreen() {
             letterSpacing: 0.5,
             alignSelf: 'flex-start'
           }}>
-            {mod.category}
+            {t(`categories.${mod.category}`, mod.category)}
           </Text>
 
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -124,7 +126,7 @@ export default function HomeScreen() {
               textAlign: 'center',
             }}
           >
-            {mod.title}
+            {t(`homeScreen.modules.${mod.id}.title`, mod.title)}
           </Text>
         </View>
       </Pressable>
@@ -137,7 +139,7 @@ export default function HomeScreen() {
         
         {/* Active Trip Strip */}
         <View style={[styles.tripStripContainer, { flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', paddingHorizontal: 14, marginTop: 12, gap: 12 }]}>
-          <Text style={{ fontSize: 13, fontWeight: 'bold', color: theme.colors.onSurfaceVariant, textTransform: 'uppercase', letterSpacing: 0.5 }}>Active Trip:</Text>
+          <Text style={{ fontSize: 13, fontWeight: 'bold', color: theme.colors.onSurfaceVariant, textTransform: 'uppercase', letterSpacing: 0.5 }}>{t('tripsScreen.activeTripLabel', 'Active Trip:')}</Text>
           <Menu
             visible={menuVisible}
             onDismiss={() => setMenuVisible(false)}
@@ -222,7 +224,7 @@ export default function HomeScreen() {
                 setMenuVisible(false);
                 setAddTripVisible(true);
               }}
-              title="Plan New Trip"
+              title={t('modals.addTrip.title', 'Plan New Trip')}
               leadingIcon="plus"
             />
           </Menu>

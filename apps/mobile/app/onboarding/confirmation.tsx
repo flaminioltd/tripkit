@@ -3,10 +3,12 @@ import React from 'react';
 import { View, StyleSheet, SafeAreaView } from 'react-native';
 import { Text, useTheme, Card, List } from 'react-native-paper';
 import { useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 
 export default function ConfirmationScreen() {
   const theme = useTheme();
   const router = useRouter();
+  const { t } = useTranslation();
 
   const handleEnter = () => {
     // Navigate to tabs
@@ -16,30 +18,30 @@ export default function ConfirmationScreen() {
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <View style={styles.header}>
-        <Text variant="titleMedium" style={{ color: theme.colors.onSurfaceVariant }}>Setup Complete</Text>
+        <Text variant="titleMedium" style={{ color: theme.colors.onSurfaceVariant }}>{t('confirmationScreen.headerTitle')}</Text>
       </View>
       
       <View style={styles.content}>
         <Card style={styles.card} mode="contained">
           <Card.Content>
             <Text variant="titleLarge" style={[styles.cardTitle, { color: theme.colors.onSurface }]}>
-              Defaults Inferred
+              {t('confirmationScreen.cardTitle')}
             </Text>
             <List.Item
               title="United States"
-              description="Home Country"
+              description={t('confirmationScreen.homeCountry')}
               left={props => <List.Icon {...props} icon="earth" />}
               right={props => <List.Icon {...props} icon="check" color={theme.colors.secondary} />}
             />
             <List.Item
               title="USD ($)"
-              description="Inferred Currency"
+              description={t('confirmationScreen.inferredCurrency')}
               left={props => <List.Icon {...props} icon="currency-usd" />}
               right={props => <List.Icon {...props} icon="check" color={theme.colors.secondary} />}
             />
             <List.Item
               title="US Sizes"
-              description="Inferred Size Format"
+              description={t('confirmationScreen.inferredSizeFormat')}
               left={props => <List.Icon {...props} icon="shoe-sneaker" />}
               right={props => <List.Icon {...props} icon="check" color={theme.colors.secondary} />}
             />
@@ -47,7 +49,7 @@ export default function ConfirmationScreen() {
         </Card>
         
         <Text variant="bodyMedium" style={[styles.note, { color: theme.colors.onSurfaceVariant }]}>
-          Additional trip details can be set later.
+          {t('confirmationScreen.note')}
         </Text>
       </View>
 
@@ -57,7 +59,7 @@ export default function ConfirmationScreen() {
           onPress={handleEnter} 
           style={styles.button}
         >
-          Enter TripKit
+          {t('confirmationScreen.enterTripKitButton')}
         </Button>
       </View>
     </SafeAreaView>

@@ -12,6 +12,7 @@ import { countries, vatPurchases, expenses, exchangeRates, settings as dbSetting
 import { eq } from 'drizzle-orm';
 import * as Crypto from 'expo-crypto';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 const CURRENCY_SYMBOLS: Record<string, string> = {
   'USD': '$', 'EUR': '€', 'GBP': '£', 'JPY': '¥', 'AUD': 'A$', 'CAD': 'C$',
@@ -22,16 +23,17 @@ const CURRENCY_SYMBOLS: Record<string, string> = {
 };
 
 const CATEGORIES = [
-  { value: 'clothes', icon: 'tshirt-crew', label: 'Clothes' },
-  { value: 'electronics', icon: 'cellphone', label: 'Electronics' },
-  { value: 'jewelry', icon: 'ring', label: 'Jewelry' },
-  { value: 'accessories', icon: 'glasses', label: 'Accessories' },
-  { value: 'gifts', icon: 'gift', label: 'Gifts' },
-  { value: 'other', icon: 'dots-horizontal', label: 'Other' },
+  { value: 'clothes', icon: 'tshirt-crew', label: t('modules.vatRefund.catClothes', 'Clothes') },
+  { value: 'electronics', icon: 'cellphone', label: t('modules.vatRefund.catElectronics', 'Electronics') },
+  { value: 'jewelry', icon: 'ring', label: t('modules.vatRefund.catJewelry', 'Jewelry') },
+  { value: 'accessories', icon: 'glasses', label: t('modules.vatRefund.catAccessories', 'Accessories') },
+  { value: 'gifts', icon: 'gift', label: t('modules.vatRefund.catGifts', 'Gifts') },
+  { value: 'other', icon: 'dots-horizontal', label: t('modules.vatRefund.catOther', 'Other') },
 ];
 
 export default function VatRefundScreen() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const router = useRouter();
   const { activeTrip, addExpense } = useTripStore();
   const activeCountryCode = activeTrip ? COUNTRIES.find((c: any) => c.name === activeTrip.destinationCountry)?.code : null;
@@ -186,7 +188,7 @@ export default function VatRefundScreen() {
 
       await addExpense({
         tripId: activeTrip.id,
-        title: 'Shopping (VAT Refund Applied)',
+        title: t('modules.vatRefund.expenseTitle', 'Shopping (VAT Refund Applied)'),
         category: 'shopping',
         localAmount: finalAmount,
         convertedAmount: convertedAmt,
@@ -218,18 +220,18 @@ export default function VatRefundScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
-      <ModuleHeader title="VAT Refund" />
+      <ModuleHeader title={t("modules.vatRefund.headerTitle", "VAT Refund")} />
 
       <ScrollView contentContainerStyle={styles.content}>
         <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant, marginBottom: 16 }}>
-          Estimate your tax-free shopping refund for {activeCountry ? activeCountry.name : 'your destination'}.
+          {t("modules.vatRefund.estimateDesc", "Estimate your tax-free shopping refund for {{country}}.", { country: activeCountry ? activeCountry.name : t("modules.vatRefund.yourDestination", "your destination") })}
         </Text>
 
         <Card style={styles.card} mode="contained">
           <Card.Content>
             <View style={{ flexDirection: 'row', gap: 16 }}>
               <View style={{ flex: 1 }}>
-                <Text variant="labelMedium" style={{ marginBottom: 8 }}>Standard VAT Rate</Text>
+                <Text variant="labelMedium" style={{ marginBottom: 8 }}>{t("modules.vatRefund.standardVat", "Standard VAT Rate")}</Text>
                 <TextInput
                   value={vatRate}
                   onChangeText={setVatRate}
@@ -243,12 +245,12 @@ export default function VatRefundScreen() {
                   mode={isEditingVatRate ? "contained" : "outlined"} 
                   onPress={() => setIsEditingVatRate(!isEditingVatRate)}
                 >
-                  {isEditingVatRate ? "Set" : "Adjust"}
+                  {isEditingVatRate ? t("modules.vatRefund.setButton", "Set") : t("modules.vatRefund.adjustButton", "Adjust")}
                 </Button>
               </View>
 
               <View style={{ flex: 1 }}>
-                <Text variant="labelMedium" style={{ marginBottom: 8 }}>Estimated Admin Fee</Text>
+                <Text variant="labelMedium" style={{ marginBottom: 8 }}>{t("modules.vatRefund.adminFee", "Estimated Admin Fee")}</Text>
                 <TextInput
                   value={adminFee}
                   onChangeText={setAdminFee}
@@ -262,7 +264,7 @@ export default function VatRefundScreen() {
                   mode={isEditingAdminFee ? "contained" : "outlined"} 
                   onPress={() => setIsEditingAdminFee(!isEditingAdminFee)}
                 >
-                  {isEditingAdminFee ? "Set" : "Adjust"}
+                  {isEditingAdminFee ? t("modules.vatRefund.setButton", "Set") : t("modules.vatRefund.adjustButton", "Adjust")}
                 </Button>
               </View>
             </View>
@@ -270,13 +272,13 @@ export default function VatRefundScreen() {
         </Card>
 
         <View style={styles.sectionHeader}>
-          <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>Purchases</Text>
-          <Button mode="text" onPress={openAddModal}>+ Add New</Button>
+          <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>{t("modules.vatRefund.purchases", "Purchases")}</Text>
+          <Button mode="text" onPress={openAddModal}>{t("modules.vatRefund.addNew", "+ Add New")}</Button>
         </View>
 
         {purchases.length === 0 ? (
           <View style={styles.emptyState}>
-            <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>No purchases added yet.</Text>
+            <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.vatRefund.noPurchases", "No purchases added yet.")}</Text>
           </View>
         ) : (
           purchases.map(p => {
@@ -288,7 +290,7 @@ export default function VatRefundScreen() {
                     <IconButton icon={categoryObj.icon} size={24} iconColor={theme.colors.onSurfaceVariant} />
                   </View>
                   <View style={styles.purchaseInfo}>
-                    <Text variant="titleMedium">{categoryObj.label}</Text>
+                    <Text variant="titleMedium">{t(`modules.vatRefund.cat${categoryObj.label}`, categoryObj.label)}</Text>
                     {p.details ? <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{p.details}</Text> : null}
                   </View>
                   <View style={styles.purchaseAmount}>
@@ -305,20 +307,20 @@ export default function VatRefundScreen() {
         )}
 
         <View style={styles.grandTotalRow}>
-          <Text variant="titleMedium" style={{ color: theme.colors.onSurfaceVariant }}>Grand Total</Text>
+          <Text variant="titleMedium" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.vatRefund.grandTotal", "Grand Total")}</Text>
           <Text variant="titleLarge" style={{ fontWeight: 'bold' }}>{currencySymbol}{grandTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
         </View>
 
         <Card style={[styles.resultCard, { backgroundColor: theme.colors.primaryContainer }]} mode="contained">
           <Card.Content style={styles.resultContent}>
             <View style={styles.resultRow}>
-              <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant }}>Estimated Refund</Text>
+              <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.vatRefund.estimatedRefund", "Estimated Refund")}</Text>
               <Text variant="headlineMedium" style={{ fontWeight: 'bold', color: theme.colors.primary }}>
                 {currencySymbol}{estimatedRefund > 0 ? estimatedRefund.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '0.00'}
               </Text>
             </View>
             <View style={styles.resultRow}>
-              <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>Effective Refund Rate</Text>
+              <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.vatRefund.effectiveRefundRate", "Effective Refund Rate")}</Text>
               <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>
                 {effectiveRefundRate > 0 ? effectiveRefundRate.toFixed(1) : '0.0'}%
               </Text>
@@ -328,7 +330,7 @@ export default function VatRefundScreen() {
 
         <View style={{ flexDirection: 'row', gap: 12, marginTop: 16 }}>
           <Button mode="contained" onPress={handleSync} style={{ flex: 1 }} disabled={syncSuccess || purchases.length === 0}>
-            {syncSuccess ? "Synced!" : "Sync to Budget"}
+            {syncSuccess ? t("modules.tipCalculator.synced", "Synced!") : t("modules.tipCalculator.syncToBudget", "Sync to Budget")}
           </Button>
           <Button mode="outlined" onPress={handleReset} style={{ flex: 1 }}>
             Reset
@@ -338,16 +340,16 @@ export default function VatRefundScreen() {
         {syncSuccess && (
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 12 }}>
             <MaterialIcons name="check-circle" size={20} color={theme.colors.primary} />
-            <Text style={{ marginLeft: 6, color: theme.colors.primary, fontWeight: '500' }}>Added to Expenses</Text>
+            <Text style={{ marginLeft: 6, color: theme.colors.primary, fontWeight: '500' }}>{t("modules.tipCalculator.addedToExpenses", "Added to Expenses")}</Text>
           </View>
         )}
       </ScrollView>
 
       <Portal>
         <Dialog visible={isModalVisible} onDismiss={() => setIsModalVisible(false)} style={{ backgroundColor: theme.colors.surface }}>
-          <Dialog.Title>{editingPurchaseId ? 'Edit Purchase' : 'Add New Purchase'}</Dialog.Title>
+          <Dialog.Title>{editingPurchaseId ? t('modules.vatRefund.editPurchase', 'Edit Purchase') : t('modules.vatRefund.addPurchase', 'Add New Purchase')}</Dialog.Title>
           <Dialog.Content>
-            <Text variant="labelMedium" style={{ marginBottom: 8 }}>Category</Text>
+            <Text variant="labelMedium" style={{ marginBottom: 8 }}>{t("modules.vatRefund.category", "Category")}</Text>
             <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginBottom: 16 }}>
               {CATEGORIES.map(cat => (
                 <Pressable
@@ -367,14 +369,14 @@ export default function VatRefundScreen() {
                 >
                   <IconButton icon={cat.icon} size={16} style={{ margin: 0, padding: 0, width: 16, height: 16 }} />
                   <Text style={{ color: modalCategory === cat.value ? theme.colors.onPrimaryContainer : theme.colors.onSurface }}>
-                    {cat.label}
+                    {t(`modules.vatRefund.cat${cat.label}`, cat.label)}
                   </Text>
                 </Pressable>
               ))}
             </View>
 
             <TextInput
-              label="Details (Optional)"
+              label={t("modules.vatRefund.detailsOptional", "Details (Optional)")}
               value={modalDetails}
               onChangeText={setModalDetails}
               mode="outlined"
@@ -382,7 +384,7 @@ export default function VatRefundScreen() {
             />
 
             <TextInput
-              label={`Purchase Amount (in ${currencySymbol})`}
+              label={t("modules.vatRefund.purchaseAmountLabel", "Purchase Amount (in {{symbol}})", { symbol: currencySymbol })}
               value={modalAmount}
               onChangeText={setModalAmount}
               keyboardType="numeric"
@@ -391,8 +393,8 @@ export default function VatRefundScreen() {
             />
           </Dialog.Content>
           <Dialog.Actions style={{ flexDirection: 'row', gap: 12, paddingHorizontal: 16, justifyContent: 'center', paddingBottom: 16 }}>
-            <Button variant="alternative" style={{ width: 130 }} onPress={() => setIsModalVisible(false)}>Cancel</Button>
-            <Button variant="main" style={{ width: 130 }} onPress={handleSavePurchase}>Save</Button>
+            <Button variant="alternative" style={{ width: 130 }} onPress={() => setIsModalVisible(false)}>{t("modules.tipCalculator.cancel", "Cancel")}</Button>
+            <Button variant="main" style={{ width: 130 }} onPress={handleSavePurchase}>{t("modules.vatRefund.save", "Save")}</Button>
           </Dialog.Actions>
         </Dialog>
       </Portal>

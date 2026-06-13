@@ -4,6 +4,8 @@ import { Text, useTheme, Modal, Portal } from 'react-native-paper';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useAppStore } from '../stores/app-store';
 
+import { useTranslation } from 'react-i18next';
+
 interface ChangeLanguageModalProps {
   visible: boolean;
   onDismiss: () => void;
@@ -18,9 +20,11 @@ const LANGUAGES = [
 export default function ChangeLanguageModal({ visible, onDismiss }: ChangeLanguageModalProps) {
   const theme = useTheme();
   const { updateSettings, settings } = useAppStore();
+  const { i18n } = useTranslation();
 
   const handleSelectLanguage = async (code: string) => {
     await updateSettings({ systemLanguage: code });
+    i18n.changeLanguage(code);
     onDismiss();
   };
 

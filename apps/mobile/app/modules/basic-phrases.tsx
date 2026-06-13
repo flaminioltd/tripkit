@@ -41,7 +41,7 @@ export default function BasicPhrasesScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
-      <ModuleHeader title="Basic Phrases" />
+      <ModuleHeader title={t("modules.basicPhrases.headerTitle", "Basic Phrases")} />
 
       {isSameLanguage ? (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 }}>
@@ -50,7 +50,7 @@ export default function BasicPhrasesScreen() {
             No Translation Needed
           </Text>
           <Text variant="bodyLarge" style={{ textAlign: 'center', color: theme.colors.onSurfaceVariant }}>
-            The primary language in {activeTrip?.destinationCountry || destinationCode} matches your system language.
+            {t("modules.basicPhrases.noTranslationDesc", "The primary language in {{country}} matches your system language.", { country: activeTrip?.destinationCountry || destinationCode })}
           </Text>
         </View>
       ) : (
@@ -101,7 +101,7 @@ export default function BasicPhrasesScreen() {
           <ScrollView contentContainerStyle={styles.content}>
             <View style={{ marginBottom: 16 }}>
               <Text variant="titleMedium" style={{ color: theme.colors.onBackground, fontWeight: 'bold' }}>
-                Phrases in {languageKey} for {activeTrip?.destinationCountry || destinationCode}
+                {t("modules.basicPhrases.phrasesInCountry", "Phrases in {{language}} for {{country}}", { language: languageKey, country: activeTrip?.destinationCountry || destinationCode })}
               </Text>
             </View>
 
@@ -115,11 +115,7 @@ export default function BasicPhrasesScreen() {
                     <Text variant="bodyLarge" style={{ color: tokens.colors.ui.textPrimary, marginBottom: 4, fontStyle: 'italic' }}>
                       {phrase.local}
                     </Text>
-                    {i18n.language.startsWith('en') && (
-                      <Text variant="bodyMedium" style={{ color: tokens.colors.ui.textSecondary }}>
-                        "{phrase.phonetic}"
-                      </Text>
-                    )}
+
                   </View>
                   <IconButton
                     icon="volume-high"

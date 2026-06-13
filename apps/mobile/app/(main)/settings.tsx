@@ -14,7 +14,7 @@ export default function SettingsScreen() {
   const { settings } = useAppStore();
   const [countryModalVisible, setCountryModalVisible] = useState(false);
   const [languageModalVisible, setLanguageModalVisible] = useState(false);
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const homeCountry = COUNTRIES.find(c => c.code === settings?.homeCountry);
   const currentLanguageCode = settings?.systemLanguage || i18n.language.split('-')[0] || 'en';
@@ -29,16 +29,16 @@ export default function SettingsScreen() {
   return (
     <View style={styles.container}>
       <Text variant="headlineMedium" style={{ color: theme.colors.onSurface, alignSelf: 'flex-start', marginBottom: 8 }}>
-        Settings
+        {t('settingsScreen.headerTitle')}
       </Text>
       <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant, alignSelf: 'flex-start', marginBottom: 24 }}>
-        Manage app preferences and data synchronization.
+        {t('settingsScreen.headerSubtitle')}
       </Text>
 
       <View style={[styles.section, { backgroundColor: theme.colors.surfaceVariant, borderRadius: 16 }]}>
         <List.Item
-          title="Home Country"
-          description={homeCountry ? homeCountry.name : 'Not set'}
+          title={t('settingsScreen.homeCountry')}
+          description={homeCountry ? homeCountry.name : t('settingsScreen.notSet')}
           left={props => (
             homeCountry && FLAG_IMAGES[homeCountry.code] ? 
               <Image source={FLAG_IMAGES[homeCountry.code]} style={{ width: 32, height: 32, borderRadius: 16, margin: 8 }} />
@@ -48,7 +48,7 @@ export default function SettingsScreen() {
           onPress={() => setCountryModalVisible(true)}
         />
         <List.Item
-          title="System Language"
+          title={t('settingsScreen.systemLanguage')}
           description={currentLanguageName}
           left={props => <List.Icon {...props} icon="translate" />}
           right={props => <List.Icon {...props} icon="chevron-right" />}
@@ -58,7 +58,7 @@ export default function SettingsScreen() {
 
       <View style={{ marginTop: 'auto', width: '100%', alignItems: 'center' }}>
         <Button mode="contained" onPress={handleSync} icon="sync">
-          Force Sync Offline Data
+          {t('settingsScreen.forceSyncButton')}
         </Button>
       </View>
 

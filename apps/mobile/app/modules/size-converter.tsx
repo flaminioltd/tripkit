@@ -6,6 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import { useTripStore } from '../../src/stores/trip-store';
+import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../../src/stores/app-store';
 import { sizeGuideService, SizeGuidePackage } from '../../src/services/sizeGuideService';
 import { getCountryCodeByName, getSizeRegion, getMeasurementSystem, usesLetterSizes } from '../../src/lib/countryMappers';
@@ -236,6 +237,7 @@ const ArraySlider = ({ title, homeLabel, destLabel, homeArray, destArray, min, m
 
 export default function SizeConverterScreen() {
   const theme = useTheme();
+  const { t } = useTranslation();
   
   const { activeTrip } = useTripStore();
   const { settings } = useAppStore();
@@ -287,7 +289,7 @@ export default function SizeConverterScreen() {
   if (loading) {
     return (
       <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
-        <ModuleHeader title="Sizes & Units" />
+        <ModuleHeader title={t("modules.sizeConverter.headerTitle", "Sizes & Units")} />
         <View style={styles.centerContent}>
           <ActivityIndicator size="large" />
         </View>
@@ -296,9 +298,9 @@ export default function SizeConverterScreen() {
   }
 
   const availableTabs = [
-    { value: 'shoes', label: 'Shoes', icon: 'shoe-sneaker' },
-    { value: 'clothes', label: 'Clothes', icon: 'tshirt-crew' },
-    { value: 'units', label: 'Units', icon: 'ruler' }
+    { value: 'shoes', label: t('modules.sizeConverter.tabShoes', 'Shoes'), icon: 'shoe-sneaker' },
+    { value: 'clothes', label: t('modules.sizeConverter.tabClothes', 'Clothes'), icon: 'tshirt-crew' },
+    { value: 'units', label: t('modules.sizeConverter.tabUnits', 'Units'), icon: 'ruler' }
   ];
 
   const renderShoesTab = () => {
@@ -319,7 +321,7 @@ export default function SizeConverterScreen() {
             Shoe Sizes Match!
           </Text>
           <Text variant="bodyLarge" style={[styles.emptyText, { color: theme.colors.onSurfaceVariant }]}>
-            {homeCountryName} and {destCountryName} use the exact same shoe sizes.
+            {t("modules.sizeConverter.shoeSizesMatchDesc", "{{home}} and {{dest}} use the exact same shoe sizes.", { home: homeCountryName, dest: destCountryName })}
           </Text>
         </View>
       );
@@ -334,14 +336,14 @@ export default function SizeConverterScreen() {
           value={personType}
           onValueChange={(val) => setPersonType(val as any)}
           buttons={[
-            { value: 'mens', label: 'Mens' },
-            { value: 'womens', label: 'Womens' },
-            { value: 'kids', label: 'Kids' }
+            { value: 'mens', label: t('modules.sizeConverter.mens', 'Mens') },
+            { value: 'womens', label: t('modules.sizeConverter.womens', 'Womens') },
+            { value: 'kids', label: t('modules.sizeConverter.kids', 'Kids') }
           ]}
           style={{ marginBottom: 24 }}
         />
         <ArraySlider
-          title={`${personType.charAt(0).toUpperCase() + personType.slice(1)} Shoes`}
+          title={t("modules.sizeConverter.shoesType", "{{personType}} Shoes", { personType: t(`modules.sizeConverter.${personType}`) })}
           homeLabel={homeCountryName}
           destLabel={destCountryName}
           homeArray={homeSizes}
@@ -380,7 +382,7 @@ export default function SizeConverterScreen() {
             Clothing Sizes Match!
           </Text>
           <Text variant="bodyLarge" style={[styles.emptyText, { color: theme.colors.onSurfaceVariant }]}>
-            {homeCountryName} and {destCountryName} use the exact same clothing sizes.
+            {t("modules.sizeConverter.clothingSizesMatchDesc", "{{home}} and {{dest}} use the exact same clothing sizes.", { home: homeCountryName, dest: destCountryName })}
           </Text>
         </View>
       );
@@ -398,13 +400,13 @@ export default function SizeConverterScreen() {
           value={personType}
           onValueChange={(val) => setPersonType(val as any)}
           buttons={[
-            { value: 'mens', label: 'Mens' },
-            { value: 'womens', label: 'Womens' }
+            { value: 'mens', label: t('modules.sizeConverter.mens', 'Mens') },
+            { value: 'womens', label: t('modules.sizeConverter.womens', 'Womens') }
           ]}
           style={{ marginBottom: 24 }}
         />
         <ArraySlider
-          title={`${personType.charAt(0).toUpperCase() + personType.slice(1)} Shirts / Tops`}
+          title={t("modules.sizeConverter.shirtsTops", "{{personType}} Shirts / Tops", { personType: t(`modules.sizeConverter.${personType}`) })}
           homeLabel={homeCountryName}
           destLabel={destCountryName}
           homeArray={homeTops}
@@ -416,7 +418,7 @@ export default function SizeConverterScreen() {
           theme={theme}
         />
         <ArraySlider
-          title={`${personType.charAt(0).toUpperCase() + personType.slice(1)} Pants / Bottoms`}
+          title={t("modules.sizeConverter.pantsBottoms", "{{personType}} Pants / Bottoms", { personType: t(`modules.sizeConverter.${personType}`) })}
           homeLabel={homeCountryName}
           destLabel={destCountryName}
           homeArray={homeBottoms}
@@ -440,7 +442,7 @@ export default function SizeConverterScreen() {
             Units Match!
           </Text>
           <Text variant="bodyLarge" style={[styles.emptyText, { color: theme.colors.onSurfaceVariant }]}>
-            {homeCountryName} and {destCountryName} use the exact same measurement systems.
+            {t("modules.sizeConverter.unitsMatchDesc", "{{home}} and {{dest}} use the exact same measurement systems.", { home: homeCountryName, dest: destCountryName })}
           </Text>
         </View>
       );
@@ -449,12 +451,12 @@ export default function SizeConverterScreen() {
     return (
       <View>
         <Text variant="bodyLarge" style={{ marginBottom: 16, color: theme.colors.onSurfaceVariant }}>
-          Here are the measurements that differ between {homeCountryName} and {destCountryName}. Use the sliders to convert.
+          {t("modules.sizeConverter.unitsDifferDesc", "Here are the measurements that differ between {{home}} and {{dest}}. Use the sliders to convert.", { home: homeCountryName, dest: destCountryName })}
         </Text>
         
         {homeUnits.distance !== destUnits.distance && (
           <MathSlider
-            title="Distance"
+            title={t("modules.sizeConverter.distance", "Distance")}
             homeLabel={homeUnits.distance === 'metric' ? 'km' : 'mi'}
             destLabel={destUnits.distance === 'metric' ? 'km' : 'mi'}
             min={0}
@@ -468,7 +470,7 @@ export default function SizeConverterScreen() {
 
         {homeUnits.temperature !== destUnits.temperature && (
           <MathSlider
-            title="Temperature"
+            title={t("modules.sizeConverter.temperature", "Temperature")}
             homeLabel={homeUnits.temperature === 'metric' ? '°C' : '°F'}
             destLabel={destUnits.temperature === 'metric' ? '°C' : '°F'}
             min={homeUnits.temperature === 'metric' ? -20 : 0}
@@ -482,7 +484,7 @@ export default function SizeConverterScreen() {
 
         {homeUnits.weight !== destUnits.weight && (
           <MathSlider
-            title="Weight (Luggage)"
+            title={t("modules.sizeConverter.weight", "Weight (Luggage)")}
             homeLabel={homeUnits.weight === 'metric' ? 'kg' : 'lbs'}
             destLabel={destUnits.weight === 'metric' ? 'kg' : 'lbs'}
             min={0}
@@ -496,7 +498,7 @@ export default function SizeConverterScreen() {
 
         {homeUnits.volume !== destUnits.volume && (
           <MathSlider
-            title="Volume (Liquids/Gas)"
+            title={t("modules.sizeConverter.volume", "Volume (Liquids/Gas)")}
             homeLabel={homeUnits.volume === 'metric' ? 'L' : 'gal'}
             destLabel={destUnits.volume === 'metric' ? 'L' : 'gal'}
             min={0}
@@ -510,7 +512,7 @@ export default function SizeConverterScreen() {
         
         {homeUnits.speed !== destUnits.speed && (
           <MathSlider
-            title="Speed"
+            title={t("modules.sizeConverter.speed", "Speed")}
             homeLabel={homeUnits.speed === 'metric' ? 'km/h' : 'mph'}
             destLabel={destUnits.speed === 'metric' ? 'km/h' : 'mph'}
             min={0}
@@ -527,7 +529,7 @@ export default function SizeConverterScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
-      <ModuleHeader title="Sizes & Units" />
+      <ModuleHeader title={t("modules.sizeConverter.headerTitle", "Sizes & Units")} />
 
       <View style={{ width: '100%', position: 'relative', marginTop: 16 }}>
         <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 1, backgroundColor: tokens.colors.ui.warmBorder, zIndex: 0 }} />

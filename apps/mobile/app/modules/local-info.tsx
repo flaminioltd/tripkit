@@ -10,10 +10,12 @@ import { settings as dbSettings, countries } from '../../src/db/schema';
 import { eq } from 'drizzle-orm';
 import { EMERGENCY_NUMBERS, PUBLIC_HOLIDAYS, EMBASSIES } from '../../src/lib/local-info-data';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { PlugIcon } from '../../src/components/PlugIcons';
 
 export default function LocalInfoScreen() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const { activeTrip } = useTripStore();
   
   const [activeTab, setActiveTab] = useState('emergency');
@@ -66,16 +68,16 @@ export default function LocalInfoScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
-      <ModuleHeader title="Local Info" />
+      <ModuleHeader title={t("modules.localInfo.headerTitle", "Local Info")} />
 
       <View style={{ width: '100%', position: 'relative', marginTop: 24 }}>
         <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 1, backgroundColor: theme.colors.outlineVariant, zIndex: 0 }} />
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: 'row', gap: 4, paddingHorizontal: 16 }}>
           {[
-            { value: 'emergency', label: 'Emergency' },
-            { value: 'holidays', label: 'Holidays' },
-            { value: 'embassy', label: 'Embassy' },
-            { value: 'plugs', label: 'Plugs' },
+            { value: 'emergency', label: t('modules.localInfo.tabEmergency', 'Emergency') },
+            { value: 'holidays', label: t('modules.localInfo.tabHolidays', 'Holidays') },
+            { value: 'embassy', label: t('modules.localInfo.tabEmbassy', 'Embassy') },
+            { value: 'plugs', label: t('modules.localInfo.tabPlugs', 'Plugs') },
           ].map((tab) => {
             const isSelected = activeTab === tab.value;
             return (
@@ -121,7 +123,7 @@ export default function LocalInfoScreen() {
         {activeTab === 'emergency' && (
           <View>
             <Text variant="titleMedium" style={{ marginBottom: 16, color: theme.colors.onBackground, fontWeight: 'bold' }}>
-              Emergency Numbers in {activeTrip?.destinationCountry || destinationCode}
+              {t("modules.localInfo.emergencyNumbersIn", "Emergency Numbers in {{country}}", { country: activeTrip?.destinationCountry || destinationCode })}
             </Text>
             {emergencyData ? (
               <Card style={styles.card} mode="contained">
@@ -131,11 +133,11 @@ export default function LocalInfoScreen() {
                     <View style={styles.iconContainer}>
                       <IconButton icon="phone-alert" size={24} iconColor={theme.colors.error} />
                       <View>
-                        <Text variant="labelLarge" style={{ color: theme.colors.onSurfaceVariant }}>General Emergency</Text>
+                        <Text variant="labelLarge" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.localInfo.generalEmergency", "General Emergency")}</Text>
                         <Text variant="headlineMedium" style={{ fontWeight: 'bold', color: theme.colors.error }}>{emergencyData.general}</Text>
                       </View>
                     </View>
-                    <Button mode="contained" buttonColor={theme.colors.error} onPress={() => handleCall(emergencyData.general)}>Call</Button>
+                    <Button mode="contained" buttonColor={theme.colors.error} onPress={() => handleCall(emergencyData.general)}>{t("modules.localInfo.callButton", "Call")}</Button>
                   </View>
                   <Divider />
 
@@ -143,11 +145,11 @@ export default function LocalInfoScreen() {
                     <View style={styles.iconContainer}>
                       <IconButton icon="police-badge" size={24} iconColor={theme.colors.primary} />
                       <View>
-                        <Text variant="labelLarge" style={{ color: theme.colors.onSurfaceVariant }}>Police</Text>
+                        <Text variant="labelLarge" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.localInfo.police", "Police")}</Text>
                         <Text variant="headlineMedium" style={{ fontWeight: 'bold', color: theme.colors.primary }}>{emergencyData.police}</Text>
                       </View>
                     </View>
-                    <Button mode="contained" onPress={() => handleCall(emergencyData.police)}>Call</Button>
+                    <Button mode="contained" onPress={() => handleCall(emergencyData.police)}>{t("modules.localInfo.callButton", "Call")}</Button>
                   </View>
                   <Divider />
 
@@ -155,11 +157,11 @@ export default function LocalInfoScreen() {
                     <View style={styles.iconContainer}>
                       <IconButton icon="ambulance" size={24} iconColor="#E57373" />
                       <View>
-                        <Text variant="labelLarge" style={{ color: theme.colors.onSurfaceVariant }}>Ambulance</Text>
+                        <Text variant="labelLarge" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.localInfo.ambulance", "Ambulance")}</Text>
                         <Text variant="headlineMedium" style={{ fontWeight: 'bold', color: "#E57373" }}>{emergencyData.ambulance}</Text>
                       </View>
                     </View>
-                    <Button mode="contained" buttonColor="#E57373" onPress={() => handleCall(emergencyData.ambulance)}>Call</Button>
+                    <Button mode="contained" buttonColor="#E57373" onPress={() => handleCall(emergencyData.ambulance)}>{t("modules.localInfo.callButton", "Call")}</Button>
                   </View>
                   <Divider />
 
@@ -167,17 +169,17 @@ export default function LocalInfoScreen() {
                     <View style={styles.iconContainer}>
                       <IconButton icon="fire-truck" size={24} iconColor="#FF9800" />
                       <View>
-                        <Text variant="labelLarge" style={{ color: theme.colors.onSurfaceVariant }}>Fire Department</Text>
+                        <Text variant="labelLarge" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.localInfo.fire", "Fire Department")}</Text>
                         <Text variant="headlineMedium" style={{ fontWeight: 'bold', color: "#FF9800" }}>{emergencyData.fire}</Text>
                       </View>
                     </View>
-                    <Button mode="contained" buttonColor="#FF9800" onPress={() => handleCall(emergencyData.fire)}>Call</Button>
+                    <Button mode="contained" buttonColor="#FF9800" onPress={() => handleCall(emergencyData.fire)}>{t("modules.localInfo.callButton", "Call")}</Button>
                   </View>
 
                 </Card.Content>
               </Card>
             ) : (
-              <Text style={{ color: theme.colors.onSurfaceVariant }}>No emergency data available for this country.</Text>
+              <Text style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.localInfo.noEmergencyData", "No emergency data available for this country.")}</Text>
             )}
           </View>
         )}
@@ -186,7 +188,7 @@ export default function LocalInfoScreen() {
           <View>
             <View style={{ flexDirection: 'column', alignItems: 'flex-start', marginBottom: 16, gap: 12 }}>
               <Text variant="titleMedium" style={{ color: theme.colors.onBackground, fontWeight: 'bold' }}>
-                Public Holidays in {activeTrip?.destinationCountry || destinationCode}
+                {t("modules.localInfo.holidaysIn", "Public Holidays in {{country}}", { country: activeTrip?.destinationCountry || destinationCode })}
               </Text>
               <Menu
                 visible={yearMenuVisible}
@@ -271,7 +273,7 @@ export default function LocalInfoScreen() {
                         </View>
                         {isDuringTrip && (
                           <View style={{ position: 'absolute', bottom: 12, right: 16, backgroundColor: '#4A2C8F', paddingHorizontal: 6, paddingVertical: 2, borderRadius: 4 }}>
-                            <Text style={{ color: '#FFFFFF', fontSize: 10, fontWeight: 'bold' }}>DURING TRIP</Text>
+                            <Text style={{ color: '#FFFFFF', fontSize: 10, fontWeight: 'bold' }}>{t("modules.localInfo.duringTrip", "DURING TRIP")}</Text>
                           </View>
                         )}
                       </View>
@@ -280,7 +282,7 @@ export default function LocalInfoScreen() {
                 </Card.Content>
               </Card>
             ) : (
-              <Text style={{ color: theme.colors.onSurfaceVariant }}>No holiday data available for {holidayYear}.</Text>
+              <Text style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.localInfo.noHolidayData", "No holiday data available for {{year}}.", { year: holidayYear })}</Text>
             )}
           </View>
         )}
@@ -291,7 +293,7 @@ export default function LocalInfoScreen() {
               Embassy Info
             </Text>
             <Text variant="bodyMedium" style={{ marginBottom: 16, color: theme.colors.onSurfaceVariant }}>
-              Your home country is set to {homeCountryCode}. Showing embassy details in {activeTrip?.destinationCountry || destinationCode}.
+              {t("modules.localInfo.embassyDesc", "Your home country is set to {{homeCountry}}. Showing embassy details in {{destCountry}}.", { homeCountry: homeCountryCode, destCountry: activeTrip?.destinationCountry || destinationCode })}
             </Text>
 
             {embassyData ? (
@@ -300,7 +302,7 @@ export default function LocalInfoScreen() {
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
                     <IconButton icon="bank" size={32} iconColor={theme.colors.primary} style={{ margin: 0, backgroundColor: theme.colors.primaryContainer }} />
                     <View style={{ flex: 1 }}>
-                      <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>{embassyData.name || 'Embassy / Consulate'}</Text>
+                      <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>{embassyData.name || t('modules.localInfo.embassyConsulate', 'Embassy / Consulate')}</Text>
                       <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{embassyData.address}</Text>
                     </View>
                   </View>
@@ -312,7 +314,7 @@ export default function LocalInfoScreen() {
                       <IconButton icon="phone" size={20} iconColor={theme.colors.primary} />
                       <Text variant="bodyLarge">{embassyData.phone}</Text>
                     </View>
-                    <Button mode="outlined" onPress={() => handleCall(embassyData.phone)}>Call</Button>
+                    <Button mode="outlined" onPress={() => handleCall(embassyData.phone)}>{t("modules.localInfo.callButton", "Call")}</Button>
                   </View>
 
                   {embassyData.website && (
@@ -324,7 +326,7 @@ export default function LocalInfoScreen() {
                           <Text variant="bodyLarge" style={{ flex: 1 }}>{embassyData.website}</Text>
                         </View>
                         <View style={{ alignItems: 'flex-start', paddingLeft: 56 }}>
-                          <Button mode="outlined" onPress={() => handleOpenUrl(embassyData.website!)}>Visit</Button>
+                          <Button mode="outlined" onPress={() => handleOpenUrl(embassyData.website!)}>{t("modules.localInfo.visitButton", "Visit")}</Button>
                         </View>
                       </View>
                     </>
@@ -336,7 +338,7 @@ export default function LocalInfoScreen() {
               <Card style={styles.card} mode="contained">
                 <Card.Content>
                   <Text variant="bodyLarge" style={{ textAlign: 'center', color: theme.colors.onSurfaceVariant, marginVertical: 24 }}>
-                    Embassy information for {homeCountryCode} in {destinationCode} is currently unavailable.
+                    {t("modules.localInfo.embassyUnavailable", "Embassy information for {{homeCountry}} in {{destCountry}} is currently unavailable.", { homeCountry: homeCountryCode, destCountry: destinationCode })}
                   </Text>
                 </Card.Content>
               </Card>
@@ -355,12 +357,10 @@ export default function LocalInfoScreen() {
                   style={{ marginBottom: 8 }}
                 />
                 <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: needsAdapter ? theme.colors.onErrorContainer : theme.colors.onPrimaryContainer, textAlign: 'center' }}>
-                  {needsAdapter ? 'Adapter Required' : 'No Adapter Needed'}
+                  {needsAdapter ? t('modules.plugVoltage.incompatibleTitle', 'Adapter Required') : t('modules.plugVoltage.compatibleTitle', 'No Adapter Needed')}
                 </Text>
                 <Text variant="bodyMedium" style={{ color: needsAdapter ? theme.colors.onErrorContainer : theme.colors.onPrimaryContainer, textAlign: 'center', marginTop: 8 }}>
-                  {needsAdapter 
-                    ? `You will need an adapter to plug your ${homeCountry.code} devices into ${destCountry.code} sockets.`
-                    : `Your ${homeCountry.code} devices will plug directly into ${destCountry.code} sockets.`}
+                  {needsAdapter ? t('modules.plugVoltage.incompatibleDesc', `You will need an adapter to plug your ${homeCountry.code} devices into ${destCountry.code} sockets.`, { home: homeCountry.code, dest: destCountry.code }) : t('modules.plugVoltage.compatibleDesc', `Your ${homeCountry.code} devices will plug directly into ${destCountry.code} sockets.`, { home: homeCountry.code, dest: destCountry.code })}
                 </Text>
               </Card.Content>
             </Card>
@@ -369,21 +369,21 @@ export default function LocalInfoScreen() {
               <View style={[styles.warningBox, { backgroundColor: theme.colors.tertiaryContainer }]}>
                 <MaterialIcons name="warning" size={24} color={theme.colors.onTertiaryContainer} />
                 <View style={{ flex: 1, marginLeft: 12 }}>
-                  <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onTertiaryContainer }}>Voltage Difference</Text>
+                  <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onTertiaryContainer }}>{t("modules.plugVoltage.voltageMismatchTitle", "Voltage Difference")}</Text>
                   <Text variant="bodySmall" style={{ color: theme.colors.onTertiaryContainer, marginTop: 4 }}>
-                    {homeCountry.name} uses {homePlugs.voltage}, but {destCountry.name} uses {destPlugs.voltage}. Check if your devices say "100-240V". If not, you need a voltage converter, not just an adapter.
+                    {t("modules.plugVoltage.voltageMismatchDesc", '{{home}} uses {{homeVolts}}, but {{dest}} uses {{destVolts}}. Check if your devices say "100-240V". If not, you need a voltage converter, not just an adapter.', { home: homeCountry.name, homeVolts: homePlugs.voltage, dest: destCountry.name, destVolts: destPlugs.voltage })}
                   </Text>
                 </View>
               </View>
             )}
 
-            <Text variant="titleMedium" style={{ fontWeight: 'bold', marginBottom: 16, marginTop: 8, textAlign: 'center' }}>{destCountry.name} Socket Types</Text>
+            <Text variant="titleMedium" style={{ fontWeight: 'bold', marginBottom: 16, marginTop: 8, textAlign: 'center' }}>{t("modules.plugVoltage.plugTypesTitle", "{{country}} Socket Types", { country: destCountry.name })}</Text>
             
             <View style={styles.iconsGrid}>
               {destPlugs.types.map((type: string) => (
                 <View key={type} style={[styles.iconWrapper, { backgroundColor: theme.colors.surface }]}>
                   <PlugIcon type={type} size={90} color={theme.colors.onSurface} />
-                  <Text variant="titleMedium" style={{ fontWeight: 'bold', marginTop: 12 }}>Type {type}</Text>
+                  <Text variant="titleMedium" style={{ fontWeight: 'bold', marginTop: 12 }}>{t("modules.plugVoltage.typeN", "Type {{type}}", { type })}</Text>
                 </View>
               ))}
             </View>
@@ -392,19 +392,19 @@ export default function LocalInfoScreen() {
 
             <View style={styles.detailsRow}>
               <View style={styles.detailBox}>
-                <Text variant="labelMedium" style={{ color: theme.colors.onSurfaceVariant, fontWeight: '600' }}>HOME ({homeCountry.code})</Text>
+                <Text variant="labelMedium" style={{ color: theme.colors.onSurfaceVariant, fontWeight: '600' }}>{t("modules.plugVoltage.homeCountryCode", "HOME ({{code}})", { code: homeCountry.code })}</Text>
                 <Text variant="titleLarge" style={{ fontWeight: 'bold', marginTop: 4 }}>{homePlugs.voltage}</Text>
                 <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{homePlugs.frequency}</Text>
-                <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant, marginTop: 4 }}>Type {homePlugs.types.join(', ')}</Text>
+                <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant, marginTop: 4 }}>{t("modules.plugVoltage.typesList", "Type {{types}}", { types: homePlugs.types.join(', ') })}</Text>
               </View>
 
               <View style={[styles.verticalDivider, { backgroundColor: theme.colors.outlineVariant }]} />
 
               <View style={styles.detailBox}>
-                <Text variant="labelMedium" style={{ color: theme.colors.onSurfaceVariant, fontWeight: '600' }}>LOCAL ({destCountry.code})</Text>
+                <Text variant="labelMedium" style={{ color: theme.colors.onSurfaceVariant, fontWeight: '600' }}>{t("modules.plugVoltage.destCountryCode", "LOCAL ({{code}})", { code: destCountry.code })}</Text>
                 <Text variant="titleLarge" style={{ fontWeight: 'bold', marginTop: 4 }}>{destPlugs.voltage}</Text>
                 <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{destPlugs.frequency}</Text>
-                <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant, marginTop: 4 }}>Type {destPlugs.types.join(', ')}</Text>
+                <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant, marginTop: 4 }}>{t("modules.plugVoltage.typesList", "Type {{types}}", { types: destPlugs.types.join(', ') })}</Text>
               </View>
             </View>
           </View>

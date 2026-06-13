@@ -11,12 +11,14 @@ import { COUNTRIES } from '../../src/lib/countries';
 import { COVER_IMAGES } from '../../src/lib/assets';
 import AddTripModal from '../../src/components/AddTripModal';
 import PastTripSummaryModal from '../../src/components/PastTripSummaryModal';
+import { useTranslation } from 'react-i18next';
 
 export default function TripsScreen() {
   const theme = useTheme();
   const router = useRouter();
   const { trips, activeTrip, loadTrips, removeTrip, updateTrip, expenses } = useTripStore();
   const { settings, loadSettings } = useAppStore();
+  const { t } = useTranslation();
 
   const [editingTrip, setEditingTrip] = useState<any>(null);
   const [editStartDate, setEditStartDate] = useState<Date | null>(null);
@@ -102,12 +104,12 @@ export default function TripsScreen() {
 
   const handleDelete = (id: string, destination: string) => {
     Alert.alert(
-      "Delete Trip",
-      `Are you sure you want to delete your trip to ${destination}?`,
+      t('tripsScreen.deleteTripAlertTitle', 'Delete Trip'),
+      t('tripsScreen.deleteTripAlertMessage', { country: destination, defaultValue: `Are you sure you want to delete your trip to ${destination}?` }),
       [
-        { text: "Cancel", style: "cancel" },
+        { text: t('tripsScreen.editTripCancel', 'Cancel'), style: "cancel" },
         { 
-          text: "Delete", 
+          text: t('tripsScreen.deleteTripAlertTitle', 'Delete'), 
           style: "destructive", 
           onPress: () => removeTrip(id) 
         }
@@ -116,7 +118,7 @@ export default function TripsScreen() {
   };
 
   const formatDateRange = (start: Date | null | undefined, end: Date | null | undefined) => {
-    if (!start || !end) return 'Dates pending';
+    if (!start || !end) return t('tripsScreen.datesPending', 'Dates pending');
     const s = new Date(start);
     const e = new Date(end);
     return `${s.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} — ${e.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
@@ -144,7 +146,7 @@ export default function TripsScreen() {
   const pastTrips = trips.filter(t => t.id !== activeTrip?.id && isPastTrip(t));
 
   const getTripStatus = (start: Date | null | undefined, end: Date | null | undefined) => {
-    if (!start || !end) return { title: 'Pending', subtitle: 'Dates not set yet' };
+    if (!start || !end) return { title: t('tripsScreen.tripStatus.pending'), subtitle: t('tripsScreen.tripStatus.pendingSubtitle') };
     
     const today = new Date();
     today.setHours(0,0,0,0);
@@ -156,7 +158,7 @@ export default function TripsScreen() {
     if (today < s) {
       const diffTime = Math.abs(s.getTime() - today.getTime());
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      return { title: 'Upcoming', subtitle: `Starts in ${diffDays} day${diffDays === 1 ? '' : 's'}` };
+      return { title: t('tripsScreen.tripStatus.upcoming'), subtitle: t('tripsScreen.tripStatus.upcomingSubtitle', { days: diffDays }) };
     } else if (today >= s && today <= e) {
       const diffTimeStart = Math.abs(today.getTime() - s.getTime());
       const currentDay = Math.floor(diffTimeStart / (1000 * 60 * 60 * 24)) + 1;
@@ -164,13 +166,13 @@ export default function TripsScreen() {
       const totalTime = Math.abs(e.getTime() - s.getTime());
       const totalDays = Math.ceil(totalTime / (1000 * 60 * 60 * 24)) + 1;
       
-      return { title: 'Ongoing', subtitle: `Day ${currentDay} of ${totalDays}` };
+      return { title: t('tripsScreen.tripStatus.ongoing'), subtitle: t('tripsScreen.tripStatus.ongoingSubtitle', { current: currentDay, total: totalDays }) };
     } else {
-      return { title: 'Completed', subtitle: 'Trip has ended' };
+      return { title: t('tripsScreen.tripStatus.completed'), subtitle: t('tripsScreen.tripStatus.completedSubtitle') };
     }
   };
 
-  const statusInfo = activeTrip ? getTripStatus(activeTrip.startDate, activeTrip.endDate) : { title: 'Pending', subtitle: 'Dates not set yet' };
+  const statusInfo = activeTrip ? getTripStatus(activeTrip.startDate, activeTrip.endDate) : { title: t('tripsScreen.tripStatus.pending'), subtitle: t('tripsScreen.tripStatus.pendingSubtitle') };
 
   // Budget calculations for active trip
   const homeCountry = settings?.homeCountry;
@@ -213,9 +215,9 @@ export default function TripsScreen() {
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       {/* Header */}
       <View style={styles.header}>
-        <Text variant="headlineLarge" style={{ color: theme.colors.onSurface, fontWeight: 'bold' }}>My Trips</Text>
+        <Text variant="headlineLarge" style={{ color: theme.colors.onSurface, fontWeight: 'bold' }}>{t('tripsScreen.headerTitle')}</Text>
         <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant, marginTop: 4 }}>
-          Manage your active destination and upcoming adventures.
+          {t('tripsScreen.headerSubtitle')}
         </Text>
       </View>
 
@@ -232,8 +234,8 @@ export default function TripsScreen() {
           <MaterialIcons name="add" size={24} color={theme.colors.primary} />
         </View>
         <View style={{ marginLeft: 16 }}>
-          <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>Plan New Trip</Text>
-          <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>Discovery awaits</Text>
+          <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{t('tripsScreen.planNewTripTitle')}</Text>
+          <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{t('tripsScreen.planNewTripSubtitle')}</Text>
         </View>
       </Pressable>
 
@@ -242,7 +244,7 @@ export default function TripsScreen() {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <MaterialIcons name="near-me" size={24} color={theme.colors.primary} />
-            <Text variant="titleLarge" style={[styles.sectionTitle, { color: theme.colors.onSurface }]}>Active Trip</Text>
+            <Text variant="titleLarge" style={[styles.sectionTitle, { color: theme.colors.onSurface }]}>{t('tripsScreen.activeTripTitle')}</Text>
           </View>
           <View style={[styles.combinedCard, { backgroundColor: theme.colors.surface, borderColor: theme.colors.outlineVariant }]}>
             {/* Main Feature */}
@@ -269,7 +271,7 @@ export default function TripsScreen() {
 
             {/* Status Info */}
             <View style={styles.combinedStatusArea}>
-              <Text variant="labelLarge" style={{ color: theme.colors.onSurfaceVariant, marginBottom: 16 }}>TRIP STATUS</Text>
+              <Text variant="labelLarge" style={{ color: theme.colors.onSurfaceVariant, marginBottom: 16 }}>{t('tripsScreen.tripStatusLabel')}</Text>
               <View style={styles.statusRow}>
                 <View style={[styles.statusIcon, { backgroundColor: theme.colors.surfaceVariant }]}>
                   <MaterialIcons name="calendar-today" size={20} color={theme.colors.primary} />
@@ -284,7 +286,7 @@ export default function TripsScreen() {
                 {/* Row 1 */}
                 <View style={{ marginBottom: 8 }}>
                   <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>
-                    {budgetViewMode === 'total' ? 'Trip Budget Used' : 'Daily Budget Used'}
+                    {budgetViewMode === 'total' ? t('tripsScreen.tripBudgetUsed') : t('tripsScreen.dailyBudgetUsed')}
                   </Text>
                 </View>
 
@@ -295,22 +297,21 @@ export default function TripsScreen() {
                     style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: theme.colors.primary, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 12 }}
                   >
                     <Text variant="labelSmall" style={{ color: theme.colors.onPrimary }}>
-                      {(!activeTrip.budget || activeTrip.budget <= 0) ? 'Set' : 'Adjust'}
+                      {(!activeTrip.budget || activeTrip.budget <= 0) ? t('tripsScreen.budgetSet') : t('tripsScreen.budgetAdjust')}
                     </Text>
                   </Pressable>
-
-                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
-                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                      <Text style={{ fontSize: 12, marginRight: 8, color: budgetViewMode === 'daily' ? theme.colors.onSurface : theme.colors.onSurfaceVariant, fontWeight: budgetViewMode === 'daily' ? 'bold' : 'normal' }}>Daily</Text>
-                      <Switch 
-                        value={budgetViewMode === 'total'} 
-                        onValueChange={(val) => setBudgetViewMode(val ? 'total' : 'daily')} 
-                        color={theme.colors.primary}
-                        style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }] }}
-                      />
-                      <Text style={{ fontSize: 12, marginLeft: 8, color: budgetViewMode === 'total' ? theme.colors.onSurface : theme.colors.onSurfaceVariant, fontWeight: budgetViewMode === 'total' ? 'bold' : 'normal' }}>Trip</Text>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+                      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Text style={{ fontSize: 12, marginRight: 8, color: budgetViewMode === 'daily' ? theme.colors.onSurface : theme.colors.onSurfaceVariant, fontWeight: budgetViewMode === 'daily' ? 'bold' : 'normal' }}>{t('tripsScreen.budgetDaily')}</Text>
+                        <Switch 
+                          value={budgetViewMode === 'total'} 
+                          onValueChange={(val) => setBudgetViewMode(val ? 'total' : 'daily')} 
+                          color={theme.colors.primary}
+                          style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }] }}
+                        />
+                        <Text style={{ fontSize: 12, marginLeft: 8, color: budgetViewMode === 'total' ? theme.colors.onSurface : theme.colors.onSurfaceVariant, fontWeight: budgetViewMode === 'total' ? 'bold' : 'normal' }}>{t('tripsScreen.budgetTrip')}</Text>
+                      </View>
                     </View>
-                  </View>
                 </View>
 
                 {/* Row 3 */}
@@ -331,14 +332,14 @@ export default function TripsScreen() {
                   onPress={() => openEditModal(activeTrip)} 
                   style={{ flex: 1 }}
                 >
-                  Edit Trip
+                  {t('tripsScreen.editTripButton')}
                 </Button>
                 <Button 
                   variant="destructive"
                   onPress={() => handleDelete(activeTrip.id, activeTrip.destinationCountry)} 
                   style={{ flex: 1 }}
                 >
-                  Delete Trip
+                  {t('tripsScreen.deleteTripButton')}
                 </Button>
               </View>
             </View>
@@ -350,7 +351,7 @@ export default function TripsScreen() {
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <MaterialIcons name="event" size={24} color={theme.colors.primary} />
-          <Text variant="titleLarge" style={[styles.sectionTitle, { color: theme.colors.onSurface }]}>Upcoming Trips</Text>
+          <Text variant="titleLarge" style={[styles.sectionTitle, { color: theme.colors.onSurface }]}>{t('tripsScreen.upcomingTripsTitle')}</Text>
         </View>
 
         <View style={styles.grid}>
@@ -394,7 +395,7 @@ export default function TripsScreen() {
                         style={{ width: 85 }}
                         labelStyle={{ marginHorizontal: 0, fontSize: 12 }}
                       >
-                        Edit
+                        {t('tripsScreen.editButton')}
                       </Button>
                       <Button 
                         variant="destructive"
@@ -403,7 +404,7 @@ export default function TripsScreen() {
                         style={{ width: 85 }}
                         labelStyle={{ marginHorizontal: 0, fontSize: 12 }}
                       >
-                        Delete
+                        {t('tripsScreen.deleteButton')}
                       </Button>
                     </View>
                     <Button 
@@ -413,7 +414,7 @@ export default function TripsScreen() {
                       style={{ width: 85 }}
                       labelStyle={{ marginHorizontal: 0, fontSize: 12 }}
                     >
-                      Set Active
+                      {t('tripsScreen.setActiveButton')}
                     </Button>
                   </View>
                 </View>
@@ -428,7 +429,7 @@ export default function TripsScreen() {
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <MaterialIcons name="history" size={24} color={theme.colors.primary} />
-            <Text variant="titleLarge" style={[styles.sectionTitle, { color: theme.colors.onSurface }]}>Past Trips</Text>
+            <Text variant="titleLarge" style={[styles.sectionTitle, { color: theme.colors.onSurface }]}>{t('tripsScreen.pastTripsTitle')}</Text>
           </View>
 
           <View style={[styles.listContainer, { backgroundColor: theme.colors.surface, borderColor: theme.colors.outlineVariant }]}>
@@ -465,7 +466,7 @@ export default function TripsScreen() {
       <Modal visible={!!editingTrip} onDismiss={() => setEditingTrip(null)} contentContainerStyle={{ backgroundColor: theme.colors.surface, margin: 24, padding: 24, borderRadius: 16 }}>
         {editingTrip && (
           <View>
-            <Text variant="titleLarge" style={{ fontWeight: 'bold', marginBottom: 16 }}>Edit Trip to {editingTrip.destinationCountry}</Text>
+            <Text variant="titleLarge" style={{ fontWeight: 'bold', marginBottom: 16 }}>{t('tripsScreen.editTripModalTitle', { country: editingTrip.destinationCountry })}</Text>
             
             <View style={{ marginBottom: 24 }}>
               <View style={{ marginBottom: 8 }}>
@@ -490,7 +491,7 @@ export default function TripsScreen() {
                   <Text style={{ fontSize: 16, color: theme.colors.primary, fontWeight: '500' }}>
                     {editStartDate && editEndDate 
                       ? `${editStartDate.toLocaleDateString()} - ${editEndDate.toLocaleDateString()}`
-                      : 'Select Date Range'}
+                      : t('tripsScreen.selectDateRange')}
                   </Text>
                 </Pressable>
               </View>
@@ -500,18 +501,18 @@ export default function TripsScreen() {
                  onPress={() => setEditNotSetYet(!editNotSetYet)}
               >
                 <MaterialIcons name={editNotSetYet ? 'check-circle' : 'radio-button-unchecked'} size={24} color={theme.colors.primary} />
-                <Text style={{ marginLeft: 8, color: theme.colors.onSurface }}>Dates Not Set Yet</Text>
+                <Text style={{ marginLeft: 8, color: theme.colors.onSurface }}>{t('tripsScreen.datesNotSetYet')}</Text>
               </Pressable>
             </View>
 
             <View style={{ flexDirection: 'row', justifyContent: 'flex-end', gap: 12 }}>
-              <Button variant="alternative" onPress={() => setEditingTrip(null)}>Cancel</Button>
+              <Button variant="alternative" onPress={() => setEditingTrip(null)}>{t('tripsScreen.editTripCancel')}</Button>
               <Button 
                 variant="main" 
                 onPress={saveEditTrip}
                 disabled={!editNotSetYet && (!editStartDate || !editEndDate)}
               >
-                Save Changes
+                {t('tripsScreen.editTripSave')}
               </Button>
             </View>
 

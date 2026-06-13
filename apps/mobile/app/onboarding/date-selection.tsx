@@ -13,6 +13,7 @@ import { countries, exchangeRates } from '../../src/db/schema';
 import { eq } from 'drizzle-orm';
 import { getExchangeRate } from '../../src/services/exchangeRates';
 import { FLAG_IMAGES } from '../../src/lib/assets';
+import { useTranslation } from 'react-i18next';
 
 export default function DateSelectionScreen() {
   const theme = useTheme();
@@ -20,6 +21,7 @@ export default function DateSelectionScreen() {
   const insets = useSafeAreaInsets();
   const { createTrip } = useTripStore();
   const { updateSettings } = useAppStore();
+  const { t } = useTranslation();
   
   const { homeCountryCode = 'US' } = useLocalSearchParams<{ homeCountryCode: string }>();
 
@@ -101,8 +103,8 @@ export default function DateSelectionScreen() {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
       <View style={[styles.header, { paddingTop: insets.top }]}>
-        <Text variant="titleLarge" style={[styles.headerTitle, { color: theme.colors.primary }]}>Plan Trip</Text>
-        <Button onPress={handleSkip}>Skip</Button>
+        <Text variant="titleLarge" style={[styles.headerTitle, { color: theme.colors.primary }]}>{t('dateSelectionScreen.headerTitle')}</Text>
+        <Button onPress={handleSkip}>{t('dateSelectionScreen.skipButton')}</Button>
       </View>
 
       <View style={styles.content}>
@@ -110,7 +112,7 @@ export default function DateSelectionScreen() {
           <>
             <View style={styles.heroText}>
               <Text variant="headlineMedium" style={[styles.title, { color: theme.colors.onSurface }]}>
-                Where are you going?
+                {t('dateSelectionScreen.heroTitle')}
               </Text>
             </View>
 
@@ -132,7 +134,7 @@ export default function DateSelectionScreen() {
                   }}
                   onFocus={() => setIsFocused(true)}
                   onBlur={() => setIsFocused(false)}
-                  placeholder="Enter destination..."
+                  placeholder={t('dateSelectionScreen.searchPlaceholder')}
                   style={styles.input}
                   underlineStyle={{ display: 'none' }}
                   textColor={theme.colors.onSurface}
@@ -182,39 +184,39 @@ export default function DateSelectionScreen() {
              <Card style={styles.card} mode="contained">
                 <Card.Content>
                   <Text variant="titleLarge" style={[styles.cardTitle, { color: theme.colors.onSurface }]}>
-                    {selectedDestination.name} Details
+                    {t('dateSelectionScreen.detailsTitle', { countryName: selectedDestination.name })}
                   </Text>
                   <List.Item
-                    title={`${selectedDestination.currencyCode} to ${exchangeRateInfo ? exchangeRateInfo.baseCurrency : 'Home Currency'}`}
-                    description={exchangeRateInfo ? `1 ${exchangeRateInfo.targetCurrency} = ${exchangeRateInfo.rate.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${exchangeRateInfo.baseCurrency} (as of ${exchangeRateInfo.date})` : 'Exchange rate offline'}
+                    title={t('dateSelectionScreen.exchangeRateTitle', { currency: selectedDestination.currencyCode, baseCurrency: exchangeRateInfo ? exchangeRateInfo.baseCurrency : 'Home Currency' })}
+                    description={exchangeRateInfo ? t('dateSelectionScreen.exchangeRateDesc', { targetCurrency: exchangeRateInfo.targetCurrency, rate: exchangeRateInfo.rate.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }), baseCurrency: exchangeRateInfo.baseCurrency, date: exchangeRateInfo.date }) : t('dateSelectionScreen.exchangeRateOffline')}
                     left={props => <List.Icon {...props} icon="cash" />}
                   />
                   <List.Item
                     title={selectedDestination.measurementSystem === 'metric' ? 'Metric System' : 'Imperial System'}
-                    description="Local Measurement"
+                    description={t('dateSelectionScreen.localMeasurement')}
                     left={props => <List.Icon {...props} icon="ruler" />}
                   />
                 </Card.Content>
              </Card>
 
              <View style={styles.datesSection}>
-               <Text variant="titleMedium" style={{ marginBottom: 12 }}>When are you traveling?</Text>
+               <Text variant="titleMedium" style={{ marginBottom: 12 }}>{t('dateSelectionScreen.datesTitle')}</Text>
                
                <Pressable 
                   style={[styles.dateButton, { borderColor: theme.colors.outlineVariant, backgroundColor: notSetYet ? theme.colors.surfaceVariant : 'transparent' }]}
                   onPress={() => setNotSetYet(!notSetYet)}
                >
                  <MaterialIcons name={notSetYet ? 'check-circle' : 'radio-button-unchecked'} size={24} color={theme.colors.primary} />
-                 <Text style={{ marginLeft: 8, color: theme.colors.onSurface }}>Not Set Yet</Text>
+                 <Text style={{ marginLeft: 8, color: theme.colors.onSurface }}>{t('dateSelectionScreen.notSetYet')}</Text>
                </Pressable>
 
                {!notSetYet && (
                  <View style={styles.datePickers}>
                    <Button mode="outlined" onPress={() => setShowPicker('start')} style={{ flex: 1, marginRight: 4 }}>
-                     {startDate ? startDate.toLocaleDateString() : 'Start Date'}
+                     {startDate ? startDate.toLocaleDateString() : t('dateSelectionScreen.startDate')}
                    </Button>
                    <Button mode="outlined" onPress={() => setShowPicker('end')} style={{ flex: 1, marginLeft: 4 }}>
-                     {endDate ? endDate.toLocaleDateString() : 'End Date'}
+                     {endDate ? endDate.toLocaleDateString() : t('dateSelectionScreen.endDate')}
                    </Button>
                  </View>
                )}
@@ -246,7 +248,7 @@ export default function DateSelectionScreen() {
           style={styles.button}
           contentStyle={{ height: 56 }}
         >
-          {selectedDestination ? 'Save Trip' : 'Continue'}
+          {selectedDestination ? t('dateSelectionScreen.saveTripButton') : t('dateSelectionScreen.continueButton')}
         </Button>
       </View>
     </KeyboardAvoidingView>

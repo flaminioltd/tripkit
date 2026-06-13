@@ -8,11 +8,13 @@ import { Text, useTheme, Card, SegmentedButtons, Menu, IconButton, Switch } from
 import { TimePicker, en, registerTranslation } from 'react-native-paper-dates';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { settingsRepo } from '../../src/repositories/settings-repository';
+import { useTranslation } from 'react-i18next';
 
 registerTranslation('en', en);
 
 export default function TimezoneHelperScreen() {
   const theme = useTheme();
+  const { t } = useTranslation();
   const { activeTrip } = useTripStore();
   
   const [homeCountryCode, setHomeCountryCode] = useState('US');
@@ -107,7 +109,7 @@ export default function TimezoneHelperScreen() {
         if (calculatedTime.getDate() < targetTime.getDate()) dayOffset = -1;
     }
 
-    const dayOffsetStr = dayOffset > 0 ? '+1 Day' : dayOffset < 0 ? '-1 Day' : 'Same Day';
+    const dayOffsetStr = dayOffset > 0 ? t('modules.timezoneHelper.plus1Day', '+1 Day') : dayOffset < 0 ? t('modules.timezoneHelper.minus1Day', '-1 Day') : t('modules.timezoneHelper.sameDay', 'Same Day');
 
     if (isReversed) {
        return { homeTime: calculatedTime, destTime: targetTime, dayOffsetStr };
@@ -140,7 +142,7 @@ export default function TimezoneHelperScreen() {
     const menuVisible = isHome ? homeMenuVisible : destMenuVisible;
     const timezones = isHome ? homeCountry.timezones : destCountry.timezones;
     
-    const title = isHome ? `HOME (${country.code})` : `LOCAL (${country.code})`;
+    const title = isHome ? t("modules.timezoneHelper.homeLabel", "HOME ({{code}})", { code: country.code }) : t("modules.timezoneHelper.localLabel", "LOCAL ({{code}})", { code: country.code });
 
     return (
       <View style={styles.timeBox} key={type}>
@@ -227,7 +229,7 @@ export default function TimezoneHelperScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
-      <ModuleHeader title="Time Zones" />
+      <ModuleHeader title={t("modules.timezoneHelper.headerTitle", "Time Zones")} />
 
       <ScrollView contentContainerStyle={styles.content}>
         
@@ -259,16 +261,16 @@ export default function TimezoneHelperScreen() {
         </Card>
 
         <View style={styles.controlsRow}>
-          <Text variant="titleMedium" style={{ color: theme.colors.onSurface, fontWeight: 'bold' }}>Time Setting</Text>
+          <Text variant="titleMedium" style={{ color: theme.colors.onSurface, fontWeight: 'bold' }}>{t("modules.timezoneHelper.timeSetting", "Time Setting")}</Text>
           
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Text style={{ fontSize: 14, marginRight: 8, color: !is24hMode ? theme.colors.primary : theme.colors.onSurfaceVariant, fontWeight: !is24hMode ? 'bold' : 'normal' }}>AM/PM</Text>
+            <Text style={{ fontSize: 14, marginRight: 8, color: !is24hMode ? theme.colors.primary : theme.colors.onSurfaceVariant, fontWeight: !is24hMode ? 'bold' : 'normal' }}>{t("modules.timezoneHelper.ampm", "AM/PM")}</Text>
             <Switch 
               value={is24hMode} 
               onValueChange={setIs24hMode} 
               color={theme.colors.primary}
             />
-            <Text style={{ fontSize: 14, marginLeft: 8, color: is24hMode ? theme.colors.primary : theme.colors.onSurfaceVariant, fontWeight: is24hMode ? 'bold' : 'normal' }}>24h</Text>
+            <Text style={{ fontSize: 14, marginLeft: 8, color: is24hMode ? theme.colors.primary : theme.colors.onSurfaceVariant, fontWeight: is24hMode ? 'bold' : 'normal' }}>{t("modules.timezoneHelper.h24", "24h")}</Text>
           </View>
         </View>
         
@@ -292,7 +294,7 @@ export default function TimezoneHelperScreen() {
             const sourceTimeNow = getTzTime(sourceTz);
             setSliderHours(sourceTimeNow.getHours());
             setSliderMinutes(sourceTimeNow.getMinutes());
-        }} style={styles.resetBtn}>Reset to Current Time</Button>
+        }} style={styles.resetBtn}>{t("modules.timezoneHelper.resetCurrentTime", "Reset to Current Time")}</Button>
 
       </ScrollView>
 
