@@ -23,12 +23,12 @@ const CURRENCY_SYMBOLS: Record<string, string> = {
 };
 
 const CATEGORIES = [
-  { value: 'clothes', icon: 'tshirt-crew', label: t('modules.vatRefund.catClothes', 'Clothes') },
-  { value: 'electronics', icon: 'cellphone', label: t('modules.vatRefund.catElectronics', 'Electronics') },
-  { value: 'jewelry', icon: 'ring', label: t('modules.vatRefund.catJewelry', 'Jewelry') },
-  { value: 'accessories', icon: 'glasses', label: t('modules.vatRefund.catAccessories', 'Accessories') },
-  { value: 'gifts', icon: 'gift', label: t('modules.vatRefund.catGifts', 'Gifts') },
-  { value: 'other', icon: 'dots-horizontal', label: t('modules.vatRefund.catOther', 'Other') },
+  { value: 'clothes', icon: 'tshirt-crew', label: 'Clothes' },
+  { value: 'electronics', icon: 'cellphone', label: 'Electronics' },
+  { value: 'jewelry', icon: 'ring', label: 'Jewelry' },
+  { value: 'accessories', icon: 'glasses', label: 'Accessories' },
+  { value: 'gifts', icon: 'gift', label: 'Gifts' },
+  { value: 'other', icon: 'dots-horizontal', label: 'Other' },
 ];
 
 export default function VatRefundScreen() {
