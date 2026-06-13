@@ -1,6 +1,7 @@
+import Button from '../../src/components/ui/Button';
 import React from 'react';
 import { View, StyleSheet, SafeAreaView } from 'react-native';
-import { Text, Button, useTheme, Card, List } from 'react-native-paper';
+import { Text, useTheme, Card, List } from 'react-native-paper';
 import { useRouter } from 'expo-router';
 
 export default function ConfirmationScreen() {

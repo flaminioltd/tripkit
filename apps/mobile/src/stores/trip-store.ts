@@ -34,10 +34,36 @@ export const useTripStore = create<TripState>((set, get) => ({
       const allTrips = await tripRepo.getTrips();
       set({ trips: allTrips });
       
-      // Auto-set active trip if none is set and there are trips
+      // Auto-set or auto-unset active trip based on date
       const { activeTrip } = get();
-      if (!activeTrip && allTrips.length > 0) {
-        await get().setActiveTrip(allTrips[0].id);
+      const today = new Date();
+      today.setHours(0,0,0,0);
+      
+      let shouldAutoSet = false;
+      if (!activeTrip) {
+        shouldAutoSet = true;
+      } else if (activeTrip.endDate) {
+        const endDate = new Date(activeTrip.endDate);
+        endDate.setHours(0,0,0,0);
+        if (endDate < today) {
+          shouldAutoSet = true;
+          set({ activeTrip: null, expenses: [] });
+        }
+      }
+
+      if (shouldAutoSet && allTrips.length > 0) {
+        const upcoming = allTrips
+          .filter(t => !t.endDate || new Date(t.endDate) >= today)
+          .sort((a, b) => {
+            if (!a.startDate && !b.startDate) return 0;
+            if (!a.startDate) return 1;
+            if (!b.startDate) return -1;
+            return new Date(a.startDate).getTime() - new Date(b.startDate).getTime();
+          });
+          
+        if (upcoming.length > 0) {
+          await get().setActiveTrip(upcoming[0].id);
+        }
       }
     } catch (error) {
       console.error('Failed to load trips:', error);

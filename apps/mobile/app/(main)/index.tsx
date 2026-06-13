@@ -78,7 +78,7 @@ export default function HomeScreen() {
         key={idx}
         onPress={() => router.push(mod.route as any)}
         style={({ pressed }) => [
-          { width: isFullWidth ? '100%' : '50%', paddingHorizontal: 2, marginBottom: 4 },
+          { width: isFullWidth ? '100%' : '50%', paddingHorizontal: 1, marginBottom: 2 },
           pressed && styles.cardPressed
         ]}
       >
@@ -87,44 +87,45 @@ export default function HomeScreen() {
             styles.redesignCard,
             { 
               backgroundColor: mod.backgroundColor,
-              minHeight: 160,
-              padding: 20,
+              minHeight: 140,
+              padding: 16,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
             }
           ]}
         >
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
-            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-              {mod.CustomIcon ? (
-                <mod.CustomIcon size={24} color={mod.color} />
-              ) : (
-                <MaterialIcons name={mod.fallbackIcon} size={24} color={mod.color} />
-              )}
-            </View>
-            <MaterialIcons name="arrow-forward" size={20} color={mod.color} style={{ opacity: 0.6 }} />
+          <Text style={{ 
+            fontSize: 11, 
+            fontWeight: '600', 
+            color: 'rgba(0,0,0,0.4)', 
+            textTransform: 'uppercase', 
+            letterSpacing: 0.5,
+            alignSelf: 'flex-start'
+          }}>
+            {mod.category}
+          </Text>
+
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            {mod.CustomIcon ? (
+              <mod.CustomIcon size={48} color={mod.color} />
+            ) : (
+              <MaterialIcons name={mod.fallbackIcon} size={48} color={mod.color} />
+            )}
           </View>
           
-          <View style={{ marginTop: 'auto' }}>
-            <Text style={{ 
-              fontSize: 12, 
-              fontWeight: '600', 
-              color: '#787878', 
-              marginBottom: 8, 
-              textTransform: 'uppercase', 
-              letterSpacing: 0.5 
-            }}>
-              {mod.category}
-            </Text>
-            <Text style={{ 
-              fontSize: 20,
+          <Text 
+            numberOfLines={1}
+            adjustsFontSizeToFit
+            style={{ 
+              fontSize: 16,
               fontWeight: '700', 
               color: '#1A1A1A', 
-            }}>
-              {mod.title}
-            </Text>
-          </View>
+              textAlign: 'center',
+            }}
+          >
+            {mod.title}
+          </Text>
         </View>
       </Pressable>
     );
@@ -251,7 +252,7 @@ const styles = StyleSheet.create({
   content: {
     paddingTop: 0,
     paddingBottom: 40,
-    paddingHorizontal: 2,
+    paddingHorizontal: 1,
   },
   tripStripContainer: {
     alignItems: 'center',
@@ -284,16 +285,11 @@ const styles = StyleSheet.create({
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginHorizontal: -2,
+    marginHorizontal: -1,
   },
   redesignCard: {
     borderRadius: 24,
     flex: 1,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.08,
-    shadowRadius: 12,
-    elevation: 4,
   },
   cardPressed: {
     transform: [{ scale: 0.98 }],

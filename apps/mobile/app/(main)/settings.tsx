@@ -1,6 +1,7 @@
+import Button from '../../src/components/ui/Button';
 import React, { useState } from 'react';
 import { View, StyleSheet, Image } from 'react-native';
-import { Text, useTheme, Button, List } from 'react-native-paper';
+import { Text, useTheme, List } from 'react-native-paper';
 import { useAppStore } from '../../src/stores/app-store';
 import { COUNTRIES } from '../../src/lib/countries';
 import { FLAG_IMAGES } from '../../src/lib/assets';

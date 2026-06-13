@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, SafeAreaView, ScrollView, TextInput, Pressable } from 'react-native';
 import { Text, useTheme, Card, ActivityIndicator, SegmentedButtons } from 'react-native-paper';
+import { tokens } from '../../src/theme/tokens';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import ModuleHeader from '../../src/components/app-header/ModuleHeader';
@@ -52,7 +53,7 @@ const MathSlider = ({ title, homeLabel, destLabel, min, max, step, convertHomeTo
   };
 
   return (
-    <Card style={styles.card} mode="contained">
+    <Card style={styles.card} mode="outlined">
       <Card.Content>
         <Text variant="titleMedium" style={{ marginBottom: 16 }}>{title}</Text>
         <View style={styles.ioContainer}>
@@ -62,7 +63,7 @@ const MathSlider = ({ title, homeLabel, destLabel, min, max, step, convertHomeTo
               value={homeStr}
               onChangeText={handleHomeChange}
               keyboardType="numeric"
-              style={[styles.input, { color: theme.colors.onSurface }]}
+              style={[styles.input, { color: tokens.colors.ui.textPrimary, borderBottomColor: tokens.colors.ui.warmBorder }]}
             />
           </View>
           <MaterialCommunityIcons name="arrow-right" size={24} color={theme.colors.onSurfaceVariant} style={{ marginTop: 16 }} />
@@ -72,7 +73,7 @@ const MathSlider = ({ title, homeLabel, destLabel, min, max, step, convertHomeTo
               value={destStr}
               onChangeText={handleDestChange}
               keyboardType="numeric"
-              style={[styles.input, { color: theme.colors.primary }]}
+              style={[styles.input, { color: tokens.colors.ui.primaryPurple, borderBottomColor: tokens.colors.ui.warmBorder }]}
             />
           </View>
         </View>
@@ -83,9 +84,9 @@ const MathSlider = ({ title, homeLabel, destLabel, min, max, step, convertHomeTo
           step={step}
           value={sliderVal}
           onValueChange={handleSliderChange}
-          minimumTrackTintColor={theme.colors.primary}
-          maximumTrackTintColor={theme.colors.surfaceVariant}
-          thumbTintColor={theme.colors.primary}
+          minimumTrackTintColor={tokens.colors.ui.primaryPurple}
+          maximumTrackTintColor={tokens.colors.ui.warmBorder}
+          thumbTintColor={tokens.colors.ui.primaryPurple}
         />
       </Card.Content>
     </Card>
@@ -192,7 +193,7 @@ const ArraySlider = ({ title, homeLabel, destLabel, homeArray, destArray, min, m
   };
 
   return (
-    <Card style={styles.card} mode="contained">
+    <Card style={styles.card} mode="outlined">
       <Card.Content>
         <Text variant="titleMedium" style={{ marginBottom: 16 }}>{title}</Text>
         <View style={styles.ioContainer}>
@@ -202,7 +203,7 @@ const ArraySlider = ({ title, homeLabel, destLabel, homeArray, destArray, min, m
               value={homeStr}
               onChangeText={handleHomeChange}
               keyboardType={isLetters ? "default" : "numeric"}
-              style={[styles.input, { color: theme.colors.onSurface }]}
+              style={[styles.input, { color: tokens.colors.ui.textPrimary, borderBottomColor: tokens.colors.ui.warmBorder }]}
             />
           </View>
           <MaterialCommunityIcons name="arrow-right" size={24} color={theme.colors.onSurfaceVariant} style={{ marginTop: 16 }} />
@@ -212,7 +213,7 @@ const ArraySlider = ({ title, homeLabel, destLabel, homeArray, destArray, min, m
               value={destStr}
               onChangeText={handleDestChange}
               keyboardType={destIsNumeric ? "numeric" : "default"}
-              style={[styles.input, { color: theme.colors.primary }]}
+              style={[styles.input, { color: tokens.colors.ui.primaryPurple, borderBottomColor: tokens.colors.ui.warmBorder }]}
             />
           </View>
         </View>
@@ -223,9 +224,9 @@ const ArraySlider = ({ title, homeLabel, destLabel, homeArray, destArray, min, m
           step={step}
           value={sliderVal}
           onValueChange={handleSliderChange}
-          minimumTrackTintColor={theme.colors.primary}
-          maximumTrackTintColor={theme.colors.surfaceVariant}
-          thumbTintColor={theme.colors.primary}
+          minimumTrackTintColor={tokens.colors.ui.primaryPurple}
+          maximumTrackTintColor={tokens.colors.ui.warmBorder}
+          thumbTintColor={tokens.colors.ui.primaryPurple}
         />
       </Card.Content>
     </Card>
@@ -529,7 +530,7 @@ export default function SizeConverterScreen() {
       <ModuleHeader title="Sizes & Units" />
 
       <View style={{ width: '100%', position: 'relative', marginTop: 16 }}>
-        <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 1, backgroundColor: theme.colors.outlineVariant, zIndex: 0 }} />
+        <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 1, backgroundColor: tokens.colors.ui.warmBorder, zIndex: 0 }} />
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: 'row', gap: 4, paddingHorizontal: 16 }}>
           {availableTabs.map((tab) => {
             const isSelected = activeTab === tab.value;
@@ -552,13 +553,13 @@ export default function SizeConverterScreen() {
                     borderLeftWidth: 1,
                     borderRightWidth: 1,
                     borderBottomWidth: 1,
-                    borderColor: theme.colors.outlineVariant,
-                    backgroundColor: theme.colors.surfaceVariant,
+                    borderColor: tokens.colors.ui.warmBorder,
+                    backgroundColor: tokens.colors.ui.warmSand,
                     zIndex: 1
                   },
                   isSelected && { 
-                    backgroundColor: theme.colors.background, 
-                    borderBottomColor: theme.colors.background,
+                    backgroundColor: tokens.colors.ui.appBackground, 
+                    borderBottomColor: tokens.colors.ui.appBackground,
                     zIndex: 2
                   }
                 ]}
@@ -566,7 +567,7 @@ export default function SizeConverterScreen() {
                 <Text style={{ 
                   fontSize: 14, 
                   fontWeight: isSelected ? '600' : '500', 
-                  color: isSelected ? theme.colors.onSurface : theme.colors.onSurfaceVariant 
+                  color: isSelected ? tokens.colors.ui.primaryPurple : tokens.colors.ui.textSecondary 
                 }}>
                   {tab.label}
                 </Text>
@@ -594,11 +595,13 @@ const styles = StyleSheet.create({
   emptyText: { textAlign: 'center', lineHeight: 24 },
   tabsWrapper: { marginBottom: 24, flexGrow: 0 },
   segmented: { minWidth: '100%' },
-  card: { backgroundColor: '#ffffff', marginBottom: 16 },
+  card: { backgroundColor: '#FFFFFF', marginBottom: 16, borderColor: '#E5DED7' },
   ioContainer: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   ioBox: { flex: 1, alignItems: 'center' },
   ioLabel: { marginBottom: 4, opacity: 0.7 },
   ioValue: { fontWeight: 'bold' },
-  input: { fontSize: 24, fontWeight: 'bold', textAlign: 'center', borderBottomWidth: 2, borderBottomColor: '#ccc', minWidth: 60, padding: 0 },
+  input: { fontSize: 24, fontWeight: 'bold', textAlign: 'center', borderBottomWidth: 2, minWidth: 60, padding: 0 },
   slider: { width: '75%', alignSelf: 'center', height: 40, marginTop: 24, transform: [{ scale: 1.3 }] },
 });
+
+

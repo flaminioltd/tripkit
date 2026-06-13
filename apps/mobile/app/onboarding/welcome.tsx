@@ -1,6 +1,7 @@
+import Button from '../../src/components/ui/Button';
 import React, { useState, useMemo, useEffect } from 'react';
 import { View, StyleSheet, FlatList, Pressable, KeyboardAvoidingView, Platform, Keyboard, Image } from 'react-native';
-import { Text, Button, useTheme, TextInput as PaperInput, Card, List } from 'react-native-paper';
+import { Text, useTheme, TextInput as PaperInput, Card, List } from 'react-native-paper';
 import { useRouter } from 'expo-router';
 import { db } from '../../src/db/client';
 import { countries } from '../../src/db/schema';

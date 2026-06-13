@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, SafeAreaView, ScrollView, Pressable, Platform } from 'react-native';
+import { tokens } from '../../src/theme/tokens';
 import { Text, Card, useTheme, IconButton } from 'react-native-paper';
 import { useTranslation } from 'react-i18next';
 import * as Speech from 'expo-speech';
@@ -54,8 +55,8 @@ export default function BasicPhrasesScreen() {
         </View>
       ) : (
         <>
-          <View style={{ width: '100%', position: 'relative' }}>
-            <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 1, backgroundColor: theme.colors.outlineVariant, zIndex: 0 }} />
+          <View style={{ width: '100%', position: 'relative', marginTop: 16 }}>
+            <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 1, backgroundColor: tokens.colors.ui.warmBorder, zIndex: 0 }} />
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: 'row', gap: 4, paddingHorizontal: 16 }}>
               {phrasesCategories.map((tab) => {
                 const isSelected = activeTab === tab.category;
@@ -73,13 +74,13 @@ export default function BasicPhrasesScreen() {
                         borderLeftWidth: 1,
                         borderRightWidth: 1,
                         borderBottomWidth: 1,
-                        borderColor: theme.colors.outlineVariant,
-                        backgroundColor: theme.colors.surfaceVariant,
+                        borderColor: tokens.colors.ui.warmBorder,
+                        backgroundColor: tokens.colors.ui.warmSand,
                         zIndex: 1
                       },
                       isSelected && { 
-                        backgroundColor: theme.colors.background, 
-                        borderBottomColor: theme.colors.background,
+                        backgroundColor: tokens.colors.ui.appBackground, 
+                        borderBottomColor: tokens.colors.ui.appBackground,
                         zIndex: 2
                       }
                     ]}
@@ -87,7 +88,7 @@ export default function BasicPhrasesScreen() {
                     <Text style={{ 
                       fontSize: 14, 
                       fontWeight: isSelected ? '600' : '500', 
-                      color: isSelected ? theme.colors.onSurface : theme.colors.onSurfaceVariant 
+                      color: isSelected ? tokens.colors.ui.primaryPurple : tokens.colors.ui.textSecondary 
                     }}>
                       {t(`phrases.categories.${tab.category}`)}
                     </Text>
@@ -105,27 +106,27 @@ export default function BasicPhrasesScreen() {
             </View>
 
             {activeCategoryData?.phrases.map((phrase, index) => (
-              <Card key={index} style={styles.card} mode="contained">
+              <Card key={index} style={styles.card} mode="outlined">
                 <Card.Content style={styles.cardContent}>
                   <View style={styles.textContainer}>
-                    <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.primary, marginBottom: 4 }}>
+                    <Text variant="titleMedium" style={{ fontWeight: 'bold', color: tokens.colors.ui.primaryPurple, marginBottom: 4 }}>
                       {t(`phrases.items.${phrase.id}`)}
                     </Text>
-                    <Text variant="bodyLarge" style={{ color: theme.colors.onSurface, marginBottom: 4, fontStyle: 'italic' }}>
+                    <Text variant="bodyLarge" style={{ color: tokens.colors.ui.textPrimary, marginBottom: 4, fontStyle: 'italic' }}>
                       {phrase.local}
                     </Text>
                     {i18n.language.startsWith('en') && (
-                      <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
+                      <Text variant="bodyMedium" style={{ color: tokens.colors.ui.textSecondary }}>
                         "{phrase.phonetic}"
                       </Text>
                     )}
                   </View>
                   <IconButton
                     icon="volume-high"
-                    iconColor={theme.colors.primary}
+                    iconColor={tokens.colors.ui.primaryPurple}
                     size={28}
                     onPress={() => speakPhrase(phrase.local)}
-                    style={{ backgroundColor: theme.colors.primaryContainer }}
+                    style={{ backgroundColor: tokens.colors.ui.selectedPurple }}
                   />
                 </Card.Content>
               </Card>
@@ -146,7 +147,9 @@ export default function BasicPhrasesScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   content: { padding: 16, paddingBottom: 40 },
-  card: { backgroundColor: '#ffffff', marginBottom: 12, elevation: 1 },
+  card: { backgroundColor: '#FFFFFF', marginBottom: 12, elevation: 0, borderColor: '#E5DED7' },
   cardContent: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   textContainer: { flex: 1, paddingRight: 16 },
 });
+
+

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, ScrollView, Pressable, Image, Alert, ImageBackground } from 'react-native';
-import { Text, useTheme, Button, Modal, Portal } from 'react-native-paper';
-import { MaterialIcons } from '@expo/vector-icons';
+import { Text, useTheme, Modal, Portal, Divider, Switch } from 'react-native-paper';
+import Button from '../../src/components/ui/Button';
+import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { DatePickerModal } from 'react-native-paper-dates';
+import { Calendar } from 'react-native-calendars';
 import { useTripStore } from '../../src/stores/trip-store';
 import { useAppStore } from '../../src/stores/app-store';
 import { COUNTRIES } from '../../src/lib/countries';
@@ -26,6 +27,9 @@ export default function TripsScreen() {
   const [budgetViewMode, setBudgetViewMode] = useState<'total' | 'daily'>('total');
   const [summaryTrip, setSummaryTrip] = useState<any>(null);
   const [isSummaryVisible, setIsSummaryVisible] = useState(false);
+  
+  const [editTempStart, setEditTempStart] = useState<string | null>(null);
+  const [editMarkedDates, setEditMarkedDates] = useState<any>({});
 
   useEffect(() => {
     loadTrips();
@@ -42,6 +46,47 @@ export default function TripsScreen() {
   const openSummaryModal = (trip: any) => {
     setSummaryTrip(trip);
     setIsSummaryVisible(true);
+  };
+
+  const handleEditDayPress = (day: any) => {
+    if (!editTempStart) {
+      setEditTempStart(day.dateString);
+      setEditMarkedDates({
+        [day.dateString]: { startingDay: true, endingDay: true, color: theme.colors.primary, textColor: 'white' }
+      });
+      setEditStartDate(new Date(day.timestamp));
+      setEditEndDate(null);
+    } else {
+      const start = new Date(editTempStart);
+      const end = new Date(day.timestamp);
+      if (end < start) {
+        setEditTempStart(day.dateString);
+        setEditMarkedDates({
+          [day.dateString]: { startingDay: true, endingDay: true, color: theme.colors.primary, textColor: 'white' }
+        });
+        setEditStartDate(new Date(day.timestamp));
+        setEditEndDate(null);
+      } else {
+        const range: any = {};
+        let current = new Date(start);
+        while (current <= end) {
+          const dateString = current.toISOString().split('T')[0];
+          if (current.getTime() === start.getTime()) {
+            range[dateString] = { startingDay: true, color: theme.colors.primary, textColor: 'white' };
+          } else if (current.getTime() === end.getTime()) {
+            range[dateString] = { endingDay: true, color: theme.colors.primary, textColor: 'white' };
+          } else {
+            range[dateString] = { color: theme.colors.primaryContainer, textColor: theme.colors.onPrimaryContainer };
+          }
+          current.setDate(current.getDate() + 1);
+        }
+        setEditMarkedDates(range);
+        setEditStartDate(start);
+        setEditEndDate(end);
+        setEditTempStart(null);
+        setTimeout(() => setShowPicker(false), 300);
+      }
+    }
   };
 
   const saveEditTrip = async () => {
@@ -236,53 +281,64 @@ export default function TripsScreen() {
               </View>
 
               <View style={[styles.budgetArea, { borderTopColor: theme.colors.outlineVariant }]}>
-                <View style={[styles.budgetHeader, { alignItems: 'center' }]}>
+                {/* Row 1 */}
+                <View style={{ marginBottom: 8 }}>
                   <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>
                     {budgetViewMode === 'total' ? 'Trip Budget Used' : 'Daily Budget Used'}
                   </Text>
-                  
+                </View>
+
+                {/* Row 2 */}
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                  <Pressable 
+                    onPress={() => router.push('/modules/budget-tracker')}
+                    style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: theme.colors.primary, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 12 }}
+                  >
+                    <Text variant="labelSmall" style={{ color: theme.colors.onPrimary }}>
+                      {(!activeTrip.budget || activeTrip.budget <= 0) ? 'Set' : 'Adjust'}
+                    </Text>
+                  </Pressable>
+
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
-                    <Pressable 
-                      onPress={() => router.push('/modules/budget-tracker')}
-                      style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: theme.colors.primary, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 12 }}
-                    >
-                      <Text variant="labelSmall" style={{ color: theme.colors.onPrimary }}>
-                        {(!activeTrip.budget || activeTrip.budget <= 0) ? 'Set' : 'Adjust'}
-                      </Text>
-                    </Pressable>
-                    <Pressable 
-                      onPress={() => setBudgetViewMode(budgetViewMode === 'total' ? 'daily' : 'total')}
-                      style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: theme.colors.surfaceVariant, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 12 }}
-                    >
-                      <MaterialIcons name="swap-horiz" size={16} color={theme.colors.onSurfaceVariant} style={{ marginRight: 4 }} />
-                      <Text variant="labelSmall" style={{ color: theme.colors.onSurfaceVariant }}>
-                        {budgetViewMode === 'total' ? 'Daily' : 'Trip'}
-                      </Text>
-                    </Pressable>
-                    <Text variant="bodySmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{currentProgressPercent}%</Text>
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                      <Text style={{ fontSize: 12, marginRight: 8, color: budgetViewMode === 'daily' ? theme.colors.onSurface : theme.colors.onSurfaceVariant, fontWeight: budgetViewMode === 'daily' ? 'bold' : 'normal' }}>Daily</Text>
+                      <Switch 
+                        value={budgetViewMode === 'total'} 
+                        onValueChange={(val) => setBudgetViewMode(val ? 'total' : 'daily')} 
+                        color={theme.colors.primary}
+                        style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }] }}
+                      />
+                      <Text style={{ fontSize: 12, marginLeft: 8, color: budgetViewMode === 'total' ? theme.colors.onSurface : theme.colors.onSurfaceVariant, fontWeight: budgetViewMode === 'total' ? 'bold' : 'normal' }}>Trip</Text>
+                    </View>
                   </View>
                 </View>
-                <View style={[styles.progressBar, { backgroundColor: theme.colors.surfaceVariant }]}>
-                  <View style={[styles.progressFill, { backgroundColor: getProgressColor(currentProgress), width: `${currentProgressPercent}%` }]} />
+
+                {/* Row 3 */}
+                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <View style={[styles.progressBar, { backgroundColor: theme.colors.surfaceVariant, flex: 1, marginRight: 12 }]}>
+                    <View style={[styles.progressFill, { backgroundColor: getProgressColor(currentProgress), width: `${currentProgressPercent}%` }]} />
+                  </View>
+                  <Text variant="bodySmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{currentProgressPercent}%</Text>
                 </View>
               </View>
 
+              <Divider style={{ marginVertical: 16 }} />
+
               {/* Action Buttons */}
-              <View style={{ flexDirection: 'row', gap: 12, marginTop: 16 }}>
+              <View style={{ flexDirection: 'row', gap: 12 }}>
                 <Button 
-                  mode="outlined" 
+                  variant="alternative"
                   onPress={() => openEditModal(activeTrip)} 
-                  style={{ flex: 1, borderColor: theme.colors.outlineVariant }}
+                  style={{ flex: 1 }}
                 >
                   Edit Trip
                 </Button>
                 <Button 
-                  mode="outlined" 
-                  textColor={theme.colors.error}
+                  variant="destructive"
                   onPress={() => handleDelete(activeTrip.id, activeTrip.destinationCountry)} 
-                  style={{ flex: 1, borderColor: theme.colors.error }}
+                  style={{ flex: 1 }}
                 >
-                  Delete
+                  Delete Trip
                 </Button>
               </View>
             </View>
@@ -329,36 +385,35 @@ export default function TripsScreen() {
                     {trip.startDate && trip.endDate ? formatDateRange(trip.startDate, trip.endDate) : 'TBD'}
                   </Text>
                   
-                  <View style={{ marginTop: 'auto', flexDirection: 'row', justifyContent: 'space-between', gap: 8 }}>
+                  <View style={{ marginTop: 'auto', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <View style={{ flexDirection: 'row', gap: 8 }}>
+                      <Button 
+                        variant="alternative"
+                        compact
+                        onPress={() => openEditModal(trip)} 
+                        style={{ width: 85 }}
+                        labelStyle={{ marginHorizontal: 0, fontSize: 12 }}
+                      >
+                        Edit
+                      </Button>
+                      <Button 
+                        variant="destructive"
+                        compact
+                        onPress={() => handleDelete(trip.id, trip.destinationCountry)} 
+                        style={{ width: 85 }}
+                        labelStyle={{ marginHorizontal: 0, fontSize: 12 }}
+                      >
+                        Delete
+                      </Button>
+                    </View>
                     <Button 
-                      mode="contained" 
-                      compact 
-                      buttonColor={theme.colors.primaryContainer}
-                      textColor={theme.colors.onPrimaryContainer}
+                      variant="main"
+                      compact
                       onPress={() => useTripStore.getState().setActiveTrip(trip.id)} 
-                      style={{ flex: 1 }}
-                      labelStyle={{ fontSize: 12 }}
+                      style={{ width: 85 }}
+                      labelStyle={{ marginHorizontal: 0, fontSize: 12 }}
                     >
                       Set Active
-                    </Button>
-                    <Button 
-                      mode="outlined" 
-                      compact 
-                      onPress={() => openEditModal(trip)} 
-                      style={{ flex: 1 }}
-                      labelStyle={{ fontSize: 12 }}
-                    >
-                      Edit
-                    </Button>
-                    <Button 
-                      mode="outlined" 
-                      compact 
-                      textColor={theme.colors.error} 
-                      onPress={() => handleDelete(trip.id, trip.destinationCountry)} 
-                      style={{ flex: 1, borderColor: theme.colors.error }}
-                      labelStyle={{ fontSize: 12 }}
-                    >
-                      Delete
                     </Button>
                   </View>
                 </View>
@@ -392,7 +447,7 @@ export default function TripsScreen() {
                 </View>
                 <View style={{ flexDirection: 'row', gap: 16, alignItems: 'center' }}>
                   <Pressable onPress={() => openSummaryModal(trip)}>
-                    <MaterialIcons name="assessment" size={24} color={theme.colors.primary} />
+                    <MaterialCommunityIcons name="file-document-outline" size={24} color={theme.colors.primary} />
                   </Pressable>
                   <Pressable onPress={() => handleDelete(trip.id, trip.destinationCountry)}>
                     <MaterialIcons name="delete-outline" size={24} color={theme.colors.error} />
@@ -413,49 +468,66 @@ export default function TripsScreen() {
             <Text variant="titleLarge" style={{ fontWeight: 'bold', marginBottom: 16 }}>Edit Trip to {editingTrip.destinationCountry}</Text>
             
             <View style={{ marginBottom: 24 }}>
+              <View style={{ marginBottom: 8 }}>
+                <Pressable 
+                  onPress={() => setShowPicker(true)} 
+                  disabled={editNotSetYet}
+                  style={({ pressed }) => [
+                    { 
+                      flexDirection: 'row', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      borderColor: theme.colors.outlineVariant, 
+                      borderWidth: 1,
+                      borderRadius: 999,
+                      opacity: editNotSetYet ? 0.5 : 1, 
+                      height: 52,
+                      backgroundColor: pressed ? theme.colors.surfaceVariant : 'transparent'
+                    }
+                  ]}
+                >
+                  <MaterialIcons name="date-range" size={20} color={theme.colors.primary} style={{ marginRight: 8 }} />
+                  <Text style={{ fontSize: 16, color: theme.colors.primary, fontWeight: '500' }}>
+                    {editStartDate && editEndDate 
+                      ? `${editStartDate.toLocaleDateString()} - ${editEndDate.toLocaleDateString()}`
+                      : 'Select Date Range'}
+                  </Text>
+                </Pressable>
+              </View>
+
               <Pressable 
-                style={[{ flexDirection: 'row', alignItems: 'center', paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: theme.colors.outlineVariant }]}
-                onPress={() => setEditNotSetYet(!editNotSetYet)}
+                 style={[{ flexDirection: 'row', alignItems: 'center', padding: 16, borderRadius: 12, backgroundColor: 'transparent' }]}
+                 onPress={() => setEditNotSetYet(!editNotSetYet)}
               >
                 <MaterialIcons name={editNotSetYet ? 'check-circle' : 'radio-button-unchecked'} size={24} color={theme.colors.primary} />
                 <Text style={{ marginLeft: 8, color: theme.colors.onSurface }}>Dates Not Set Yet</Text>
               </Pressable>
-
-              {!editNotSetYet && (
-                <View style={{ marginTop: 16 }}>
-                  <Button 
-                    mode="outlined" 
-                    onPress={() => setShowPicker(true)} 
-                    icon="calendar-range"
-                    style={{ borderColor: theme.colors.outlineVariant }}
-                    labelStyle={{ paddingVertical: 4 }}
-                  >
-                    {editStartDate && editEndDate 
-                      ? `${editStartDate.toLocaleDateString()} - ${editEndDate.toLocaleDateString()}`
-                      : 'Select Date Range'}
-                  </Button>
-                </View>
-              )}
             </View>
 
-            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', gap: 8 }}>
-              <Button onPress={() => setEditingTrip(null)}>Cancel</Button>
-              <Button mode="contained" onPress={saveEditTrip}>Save Changes</Button>
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', gap: 12 }}>
+              <Button variant="alternative" onPress={() => setEditingTrip(null)}>Cancel</Button>
+              <Button 
+                variant="main" 
+                onPress={saveEditTrip}
+                disabled={!editNotSetYet && (!editStartDate || !editEndDate)}
+              >
+                Save Changes
+              </Button>
             </View>
 
-            <DatePickerModal
-              locale="en"
-              mode="range"
-              visible={showPicker}
-              onDismiss={() => setShowPicker(false)}
-              startDate={editStartDate || undefined}
-              endDate={editEndDate || undefined}
-              onConfirm={({ startDate, endDate }) => {
-                setShowPicker(false);
-                if (startDate) setEditStartDate(startDate);
-                if (endDate) setEditEndDate(endDate);
-              }}
-            />
+            <Portal>
+              <Modal visible={showPicker} onDismiss={() => setShowPicker(false)} contentContainerStyle={{ margin: 24, borderRadius: 16, overflow: 'hidden', backgroundColor: theme.colors.surface }}>
+                <Calendar
+                  markingType={'period'}
+                  markedDates={editMarkedDates}
+                  onDayPress={handleEditDayPress}
+                  theme={{
+                    todayTextColor: theme.colors.primary,
+                    arrowColor: theme.colors.primary,
+                  }}
+                />
+              </Modal>
+            </Portal>
           </View>
         )}
       </Modal>

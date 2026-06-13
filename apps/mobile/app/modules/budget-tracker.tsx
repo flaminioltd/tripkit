@@ -5,7 +5,8 @@ import { FLAG_IMAGES } from '../../src/lib/assets';
 import { useTripStore } from '../../src/stores/trip-store';
 import { useAppStore } from '../../src/stores/app-store';
 import { View, Image, StyleSheet, SafeAreaView, FlatList, Pressable, ScrollView, Alert } from 'react-native';
-import { Text, Card, useTheme, IconButton, FAB, Avatar, Portal, Dialog, TextInput, Button, SegmentedButtons, ProgressBar } from 'react-native-paper';
+import { Text, Card, useTheme, IconButton, FAB, Avatar, Portal, Dialog, TextInput, SegmentedButtons, ProgressBar, Switch } from 'react-native-paper';
+import Button from '../../src/components/ui/Button';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { db } from '../../src/db/client';
 import { exchangeRates, countries, settings as dbSettings } from '../../src/db/schema';
@@ -254,6 +255,18 @@ export default function BudgetTrackerScreen() {
           <>
             <Card style={styles.settingsCard} mode="outlined">
               <Card.Content>
+                <View style={{ marginBottom: 12 }}>
+                  <Text variant="labelMedium" style={{ marginBottom: 4 }}>Track Expenses In</Text>
+                  <SegmentedButtons
+                    value={trackCurrency}
+                    onValueChange={setTrackCurrency}
+                    buttons={[
+                      { value: 'home', label: `Home (${homeCurrencyState})` },
+                      { value: 'local', label: `Local (${localCurrency})` },
+                    ]}
+                  />
+                </View>
+
                 <View style={styles.settingRow}>
                   <View style={{ flex: 1, paddingRight: 8 }}>
                     <Text variant="labelMedium" style={{ marginBottom: 4 }}>Budget Amount</Text>
@@ -266,7 +279,7 @@ export default function BudgetTrackerScreen() {
                       style={{ backgroundColor: theme.colors.surface, height: 40 }}
                     />
                   </View>
-                  <View style={{ flex: 1, paddingLeft: 8 }}>
+                  <View style={{ flex: 1.15, paddingLeft: 8 }}>
                     <Text variant="labelMedium" style={{ marginBottom: 4 }}>Budget Scope</Text>
                     <SegmentedButtons
                       value={budgetType}
@@ -279,18 +292,6 @@ export default function BudgetTrackerScreen() {
                     />
                   </View>
                 </View>
-
-                <View style={{ marginTop: 12 }}>
-                  <Text variant="labelMedium" style={{ marginBottom: 4 }}>Track Expenses In</Text>
-                  <SegmentedButtons
-                    value={trackCurrency}
-                    onValueChange={setTrackCurrency}
-                    buttons={[
-                      { value: 'home', label: `Home (${homeCurrencyState})` },
-                      { value: 'local', label: `Local (${localCurrency})` },
-                    ]}
-                  />
-                </View>
               </Card.Content>
             </Card>
 
@@ -301,17 +302,15 @@ export default function BudgetTrackerScreen() {
                     <Text variant="titleMedium" style={{ color: theme.colors.onPrimaryContainer, fontWeight: 'bold' }}>
                       {viewMode === 'total' ? 'Total Spent' : 'Spent Today'}
                     </Text>
-                    <SegmentedButtons
-                      value={viewMode}
-                      onValueChange={(val) => setViewMode(val as 'total' | 'daily')}
-                      buttons={[
-                        { value: 'daily', label: 'Daily' },
-                        { value: 'total', label: 'Trip' },
-                      ]}
-                      density="high"
-                      style={{ width: 140 }}
-                      theme={{ colors: { secondaryContainer: '#BBDEFB', onSecondaryContainer: '#1565C0' } }}
-                    />
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                      <Text style={{ fontSize: 14, marginRight: 8, color: viewMode === 'daily' ? theme.colors.onPrimaryContainer : theme.colors.onSurfaceVariant, fontWeight: viewMode === 'daily' ? 'bold' : 'normal' }}>Daily</Text>
+                      <Switch 
+                        value={viewMode === 'total'} 
+                        onValueChange={(val) => setViewMode(val ? 'total' : 'daily')} 
+                        color={theme.colors.primary}
+                      />
+                      <Text style={{ fontSize: 14, marginLeft: 8, color: viewMode === 'total' ? theme.colors.onPrimaryContainer : theme.colors.onSurfaceVariant, fontWeight: viewMode === 'total' ? 'bold' : 'normal' }}>Trip</Text>
+                    </View>
                   </View>
                   <View style={{ alignItems: 'flex-end', marginBottom: 8 }}>
                     <Text variant="titleMedium" style={{ color: theme.colors.primary, fontWeight: 'bold' }}>
@@ -384,7 +383,23 @@ export default function BudgetTrackerScreen() {
 
       <Portal>
         <Dialog visible={isModalVisible} onDismiss={() => setIsModalVisible(false)} style={{ backgroundColor: theme.colors.surface }}>
-          <Dialog.Title>{editingExpenseId ? 'Edit Expense' : 'Add Expense'}</Dialog.Title>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 24, paddingTop: 16, paddingBottom: 16 }}>
+            <Text variant="headlineSmall" style={{ color: theme.colors.onSurface }}>
+              {editingExpenseId ? 'Edit Expense' : 'Add Expense'}
+            </Text>
+            {editingExpenseId && (
+              <IconButton 
+                icon="delete-outline" 
+                iconColor={theme.colors.error} 
+                size={24} 
+                onPress={async () => {
+                  await removeExpense(editingExpenseId);
+                  setIsModalVisible(false);
+                }}
+                style={{ margin: 0 }}
+              />
+            )}
+          </View>
           <Dialog.Content>
             <Text variant="labelMedium" style={{ marginBottom: 8 }}>Category</Text>
             <View style={styles.categoryGrid}>
@@ -425,19 +440,10 @@ export default function BudgetTrackerScreen() {
               style={{ backgroundColor: theme.colors.surface }}
             />
           </Dialog.Content>
-          <Dialog.Actions style={{ justifyContent: 'space-between' }}>
-            {editingExpenseId ? (
-              <Button 
-                textColor={theme.colors.error} 
-                onPress={async () => {
-                  await removeExpense(editingExpenseId);
-                  setIsModalVisible(false);
-                }}
-              >Delete</Button>
-            ) : <View />}
-            <View style={{ flexDirection: 'row' }}>
-              <Button onPress={() => setIsModalVisible(false)}>Cancel</Button>
-              <Button mode="contained" onPress={handleSaveExpense}>Save</Button>
+          <Dialog.Actions style={{ flexDirection: 'column', gap: 12, alignItems: 'center', paddingBottom: 24, paddingHorizontal: 24 }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '100%' }}>
+              <Button variant="alternative" style={{ width: 125 }} onPress={() => setIsModalVisible(false)}>Cancel</Button>
+              <Button variant="main" style={{ width: 125 }} onPress={handleSaveExpense}>Save</Button>
             </View>
           </Dialog.Actions>
         </Dialog>

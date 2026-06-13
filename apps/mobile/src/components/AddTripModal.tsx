@@ -209,28 +209,40 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
             <View style={styles.datesSection}>
               <Text variant="titleMedium" style={{ marginBottom: 12, fontWeight: 'bold' }}>Trip Dates</Text>
               
+              <View style={{ marginBottom: 8 }}>
+                <Pressable 
+                  onPress={() => setShowPicker(true)} 
+                  disabled={notSetYet}
+                  style={({ pressed }) => [
+                    { 
+                      flexDirection: 'row', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      borderColor: theme.colors.outlineVariant, 
+                      borderWidth: 1,
+                      borderRadius: 999,
+                      opacity: notSetYet ? 0.5 : 1, 
+                      height: 52,
+                      backgroundColor: pressed ? theme.colors.surfaceVariant : 'transparent'
+                    }
+                  ]}
+                >
+                  <MaterialIcons name="date-range" size={20} color={theme.colors.primary} style={{ marginRight: 8 }} />
+                  <Text style={{ fontSize: 16, color: theme.colors.primary, fontWeight: '500' }}>
+                    {startDate && endDate 
+                      ? `${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}`
+                      : 'Select Date Range'}
+                  </Text>
+                </Pressable>
+              </View>
+
               <Pressable 
-                 style={[styles.dateButton, { borderColor: theme.colors.outlineVariant, backgroundColor: notSetYet ? theme.colors.surfaceVariant : 'transparent' }]}
+                 style={[styles.dateButton, { backgroundColor: 'transparent' }]}
                  onPress={() => setNotSetYet(!notSetYet)}
               >
                 <MaterialIcons name={notSetYet ? 'check-circle' : 'radio-button-unchecked'} size={24} color={theme.colors.primary} />
                 <Text style={{ marginLeft: 8, color: theme.colors.onSurface }}>Not Set Yet</Text>
               </Pressable>
-
-              <View style={{ marginTop: 8 }}>
-                <Button 
-                  mode="outlined" 
-                  onPress={() => setShowPicker(true)} 
-                  icon="calendar-range"
-                  disabled={notSetYet}
-                  style={{ borderColor: theme.colors.outlineVariant, opacity: notSetYet ? 0.5 : 1 }}
-                  labelStyle={{ paddingVertical: 4 }}
-                >
-                  {startDate && endDate 
-                    ? `${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}`
-                    : 'Select Date Range'}
-                </Button>
-              </View>
 
                 <Portal>
                   <Modal visible={showPicker} onDismiss={() => setShowPicker(false)} contentContainerStyle={{ margin: 24, borderRadius: 16, overflow: 'hidden', backgroundColor: theme.colors.surface }}>
@@ -336,15 +348,14 @@ const styles = StyleSheet.create({
   },
   datesSection: {
     marginTop: 16,
-    paddingBottom: 24,
+    paddingBottom: 0,
   },
   dateButton: {
     flexDirection: 'row',
     alignItems: 'center',
     padding: 16,
-    borderWidth: 1,
     borderRadius: 12,
-    marginBottom: 16,
+    marginBottom: 0,
   },
   datePickers: {
     flexDirection: 'row',
@@ -352,7 +363,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     padding: 24,
-    paddingTop: 16,
+    paddingTop: 8,
   },
   button: {
     borderRadius: 28,

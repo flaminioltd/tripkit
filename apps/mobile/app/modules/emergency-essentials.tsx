@@ -6,6 +6,7 @@ import { useTripStore } from '../../src/stores/trip-store';
 import { View, Image, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 import { Text, useTheme, IconButton, Card, List } from 'react-native-paper';
 import { useRouter } from 'expo-router';
+import { tokens } from '../../src/theme/tokens';
 
 export default function EmergencyEssentialsScreen() {
   const theme = useTheme();
@@ -19,9 +20,9 @@ export default function EmergencyEssentialsScreen() {
 
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.destinationHeader}>
-          <Text variant="headlineMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>France</Text>
-          <View style={[styles.offlineBadge, { backgroundColor: theme.colors.secondaryContainer }]}>
-            <Text variant="labelSmall" style={{ color: theme.colors.secondary }}>Offline Ready</Text>
+          <Text variant="headlineMedium" style={{ fontWeight: 'bold', color: tokens.colors.ui.textPrimary }}>France</Text>
+          <View style={[styles.offlineBadge, { backgroundColor: tokens.colors.ui.selectedPurple }]}>
+            <Text variant="labelSmall" style={{ color: tokens.colors.ui.primaryPurple }}>Offline Ready</Text>
           </View>
         </View>
 
@@ -37,8 +38,8 @@ export default function EmergencyEssentialsScreen() {
           </Card.Content>
         </Card>
 
-        <Text variant="titleMedium" style={[styles.sectionTitle, { color: theme.colors.onSurface }]}>Specific Services</Text>
-        <Card style={styles.card} mode="contained">
+        <Text variant="titleMedium" style={[styles.sectionTitle, { color: tokens.colors.ui.textPrimary }]}>Specific Services</Text>
+        <Card style={styles.card} mode="outlined">
           <List.Item
             title="15"
             description="Medical Emergency / Ambulance (SAMU)"
@@ -59,10 +60,10 @@ export default function EmergencyEssentialsScreen() {
           />
         </Card>
 
-        <Text variant="titleMedium" style={[styles.sectionTitle, { color: theme.colors.onSurface, marginTop: 24 }]}>Local Pharmacy Note</Text>
-        <Card style={styles.card} mode="contained">
+        <Text variant="titleMedium" style={[styles.sectionTitle, { color: tokens.colors.ui.textPrimary, marginTop: 24 }]}>Local Pharmacy Note</Text>
+        <Card style={styles.card} mode="outlined">
           <Card.Content>
-            <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
+            <Text variant="bodyMedium" style={{ color: tokens.colors.ui.textSecondary }}>
               Look for a flashing green cross. In France, pharmacists can provide medical advice for minor ailments. For after-hours pharmacies ("Pharmacie de garde"), check the notices on any closed pharmacy door.
             </Text>
           </Card.Content>
@@ -78,8 +79,10 @@ const styles = StyleSheet.create({
   content: { padding: 16 },
   destinationHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24 },
   offlineBadge: { paddingHorizontal: 8, paddingVertical: 4, borderRadius: 12 },
-  emergencyCard: { backgroundColor: '#FDECEC', marginBottom: 32 },
+  emergencyCard: { backgroundColor: '#FDECEC', marginBottom: 32, elevation: 0 },
   emergencyRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   sectionTitle: { fontWeight: 'bold', marginBottom: 12 },
-  card: { backgroundColor: '#ffffff' }
+  card: { backgroundColor: '#FFFFFF', borderColor: '#E5DED7' }
 });
+
+

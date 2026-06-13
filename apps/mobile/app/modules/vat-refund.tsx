@@ -1,9 +1,10 @@
+import Button from '../../src/components/ui/Button';
 import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { FLAG_IMAGES } from '../../src/lib/assets';
 import { View, Image, StyleSheet, SafeAreaView, ScrollView, Pressable } from 'react-native';
-import { Text, TextInput, Card, Button, useTheme, IconButton, Portal, Dialog, SegmentedButtons } from 'react-native-paper';
+import { Text, TextInput, Card, useTheme, IconButton, Portal, Dialog, SegmentedButtons } from 'react-native-paper';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { useTripStore } from '../../src/stores/trip-store';
 import { db } from '../../src/db/client';
@@ -389,9 +390,9 @@ export default function VatRefundScreen() {
               style={{ backgroundColor: theme.colors.surface }}
             />
           </Dialog.Content>
-          <Dialog.Actions>
-            <Button onPress={() => setIsModalVisible(false)}>Cancel</Button>
-            <Button mode="contained" onPress={handleSavePurchase}>Save</Button>
+          <Dialog.Actions style={{ flexDirection: 'row', gap: 12, paddingHorizontal: 16, justifyContent: 'center', paddingBottom: 16 }}>
+            <Button variant="alternative" style={{ width: 130 }} onPress={() => setIsModalVisible(false)}>Cancel</Button>
+            <Button variant="main" style={{ width: 130 }} onPress={handleSavePurchase}>Save</Button>
           </Dialog.Actions>
         </Dialog>
       </Portal>

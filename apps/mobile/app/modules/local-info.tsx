@@ -1,9 +1,10 @@
+import Button from '../../src/components/ui/Button';
 import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { useTripStore } from '../../src/stores/trip-store';
 import { View, StyleSheet, SafeAreaView, ScrollView, Linking, Pressable } from 'react-native';
-import { Text, Card, useTheme, SegmentedButtons, IconButton, Button, Divider, Menu } from 'react-native-paper';
+import { Text, Card, useTheme, SegmentedButtons, IconButton, Divider, Menu } from 'react-native-paper';
 import { db } from '../../src/db/client';
 import { settings as dbSettings, countries } from '../../src/db/schema';
 import { eq } from 'drizzle-orm';
@@ -67,7 +68,7 @@ export default function LocalInfoScreen() {
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <ModuleHeader title="Local Info" />
 
-      <View style={{ width: '100%', position: 'relative' }}>
+      <View style={{ width: '100%', position: 'relative', marginTop: 24 }}>
         <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 1, backgroundColor: theme.colors.outlineVariant, zIndex: 0 }} />
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: 'row', gap: 4, paddingHorizontal: 16 }}>
           {[
@@ -269,7 +270,7 @@ export default function LocalInfoScreen() {
                           </Text>
                         </View>
                         {isDuringTrip && (
-                          <View style={{ position: 'absolute', bottom: 12, right: 16, backgroundColor: '#1E88E5', paddingHorizontal: 6, paddingVertical: 2, borderRadius: 4 }}>
+                          <View style={{ position: 'absolute', bottom: 12, right: 16, backgroundColor: '#4A2C8F', paddingHorizontal: 6, paddingVertical: 2, borderRadius: 4 }}>
                             <Text style={{ color: '#FFFFFF', fontSize: 10, fontWeight: 'bold' }}>DURING TRIP</Text>
                           </View>
                         )}

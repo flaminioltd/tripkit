@@ -1,10 +1,11 @@
+import Button from '../../src/components/ui/Button';
 import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { FLAG_IMAGES } from '../../src/lib/assets';
 import { useTripStore } from '../../src/stores/trip-store';
 import { View, Image, StyleSheet, SafeAreaView, ScrollView, Pressable, TextInput as NativeTextInput } from 'react-native';
-import { Text, TextInput, Card, Button, useTheme, IconButton, Divider, SegmentedButtons } from 'react-native-paper';
+import { Text, TextInput, Card, useTheme, IconButton, Divider, SegmentedButtons } from 'react-native-paper';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { compareAtmAndExchange } from '@tripkit/shared';
 import { db } from '../../src/db/client';
@@ -362,8 +363,8 @@ export default function AtmExchangeScreen() {
             
           </Card.Content>
         </Card>
-        <View style={{ marginTop: 8, marginBottom: 24, paddingHorizontal: 16 }}>
-          <Button mode="outlined" onPress={handleReset} style={{ borderColor: theme.colors.outline }}>
+        <View style={{ marginTop: 32, marginBottom: 40, paddingHorizontal: 16, alignItems: 'center' }}>
+          <Button variant="alternative" onPress={handleReset} style={{ width: 160 }}>
             Reset Values
           </Button>
         </View>

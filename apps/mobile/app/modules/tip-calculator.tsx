@@ -1,9 +1,10 @@
+import Button from '../../src/components/ui/Button';
 import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { FLAG_IMAGES } from '../../src/lib/assets';
 import { View, Image, StyleSheet, SafeAreaView, ScrollView, Pressable } from 'react-native';
-import { Text, TextInput, Card, useTheme, SegmentedButtons, IconButton, Button, Checkbox, Portal, Dialog } from 'react-native-paper';
+import { Text, TextInput, Card, useTheme, SegmentedButtons, IconButton, Checkbox, Portal, Dialog } from 'react-native-paper';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { calculateTip } from '@tripkit/shared';
 import { db } from '../../src/db/client';
@@ -386,9 +387,9 @@ export default function TipCalculatorScreen() {
               />
             </View>
           </Dialog.Content>
-          <Dialog.Actions>
-            <Button onPress={() => setIsCustomModalVisible(false)}>Cancel</Button>
-            <Button mode="contained" onPress={confirmCustomTip}>Confirm</Button>
+          <Dialog.Actions style={{ flexDirection: 'row', gap: 12, paddingHorizontal: 16, justifyContent: 'center', paddingBottom: 16 }}>
+            <Button variant="alternative" style={{ width: 130 }} onPress={() => setIsCustomModalVisible(false)}>Cancel</Button>
+            <Button variant="main" style={{ width: 130 }} onPress={confirmCustomTip}>Confirm</Button>
           </Dialog.Actions>
         </Dialog>
       </Portal>

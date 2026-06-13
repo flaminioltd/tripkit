@@ -1,5 +1,6 @@
 export const tokens = {
   colors: {
+    // Keep existing brand colors just in case they are used elsewhere, but add uiColors
     brand: {
       primary: '#9BB3E0', // Blue
       secondary: '#F4E9A0', // Yellow
@@ -7,10 +8,46 @@ export const tokens = {
       quaternary: '#D9A391', // Coral
       quinary: '#E8C4B8', // Pink
     },
+    ui: {
+      // Base
+      appBackground: '#FFFDFC',
+      screenSurface: '#FFFFFF',
+      headerSurface: '#EAF7E5',
+      
+      // Text
+      textPrimary: '#161313',
+      textSecondary: '#5F5853',
+      textMuted: '#8E8781',
+      textDisabled: '#B7B0AA',
+      
+      // Brand / hierarchy
+      primaryPurple: '#5B3FA3',
+      primaryPurpleSoft: '#EEE9FA',
+      
+      // Warm surfaces
+      warmSand: '#EFE7DC',
+      warmSandLight: '#F7F1EA',
+      warmBorder: '#E5DED7',
+      
+      // Selected / active
+      selectedPurple: '#D8C2F2',
+      selectedPurpleStrong: '#C1A3F5',
+      selectedText: '#3F2E7E',
+      
+      // Feedback
+      successSage: '#91C788',
+      warningGold: '#E6B84D',
+      dangerCoral: '#D86666',
+      infoBlue: '#9CC7E8',
+      
+      // Progress
+      progressTrack: '#DDD6CF',
+      progressFill: '#2B145F',
+    },
     surface: {
-      canvas: '#E8D5C4', // Primary background
-      card: '#FFFFFF', // Card background
-      subtle: '#F5F0EB', // Secondary background
+      canvas: '#E8D5C4',
+      card: '#FFFFFF',
+      subtle: '#F5F0EB',
     },
     text: {
       primary: '#1A1A1A',
@@ -47,3 +84,5 @@ export const tokens = {
     full: 9999,
   }
 };
+
+

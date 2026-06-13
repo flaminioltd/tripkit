@@ -101,9 +101,8 @@ export default function PastTripSummaryModal({ visible, trip, onDismiss }: Props
             )}
           </View>
         </ScrollView>
-
-        <View style={styles.footer}>
-          <Button mode="contained" onPress={onDismiss}>Close</Button>
+        <View style={[styles.footer, { alignItems: 'center' }]}>
+          <Button variant="main" onPress={onDismiss} style={{ width: 130 }}>Close</Button>
         </View>
       </Modal>
     </Portal>

@@ -55,8 +55,12 @@ export default function ModuleHeader({ title }: Props) {
     }, 0);
   };
 
+  const allModules = [...FINANCE_MODULES, ...ESSENTIALS_MODULES];
+  const currentModule = allModules.find(m => m.title === title);
+  const headerBgColor = currentModule ? currentModule.backgroundColor : theme.colors.surface;
+
   return (
-    <View style={[styles.header, { borderBottomColor: theme.colors.outline }]}>
+    <View style={[styles.header, { borderBottomColor: theme.colors.outline, backgroundColor: headerBgColor }]}>
       <IconButton icon="arrow-left" onPress={() => router.back()} />
       <Text variant="titleLarge" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{title}</Text>
       
@@ -75,7 +79,7 @@ export default function ModuleHeader({ title }: Props) {
           anchor={
             <Pressable onPress={() => setTripMenuVisible(true)}>
               {activeCountryCode && FLAG_IMAGES[activeCountryCode] && (
-                <Image source={FLAG_IMAGES[activeCountryCode]} style={{ width: 28, height: 28, borderRadius: 14, marginRight: 4 }} />
+                <Image source={FLAG_IMAGES[activeCountryCode]} style={{ width: 28, height: 28, borderRadius: 14, marginRight: 4, borderWidth: 1, borderColor: theme.colors.outlineVariant }} />
               )}
             </Pressable>
           }
@@ -96,7 +100,7 @@ export default function ModuleHeader({ title }: Props) {
                   pressed && { backgroundColor: theme.colors.surfaceVariant }
                 ]}
               >
-                <View style={[styles.flagPlaceholder, { marginRight: 16 }]}>
+                <View style={[styles.flagPlaceholder, { marginRight: 16, borderWidth: 1, borderColor: theme.colors.outlineVariant }]}>
                   {countryCode && FLAG_IMAGES[countryCode] ? (
                     <Image source={FLAG_IMAGES[countryCode]} style={{ width: 24, height: 24, borderRadius: 12 }} />
                   ) : (
@@ -144,7 +148,11 @@ export default function ModuleHeader({ title }: Props) {
               key={mod.title}
               onPress={() => handleNav(mod.route)} 
               title={mod.title} 
-              leadingIcon={({ color, size }) => mod.CustomIcon ? <mod.CustomIcon size={size} color={color} /> : <MaterialIcons name={mod.fallbackIcon} size={size} color={color} />} 
+              leadingIcon={({ size }) => (
+                <View style={{ backgroundColor: mod.backgroundColor, borderRadius: 16, width: 32, height: 32, alignItems: 'center', justifyContent: 'center' }}>
+                  {mod.CustomIcon ? <mod.CustomIcon size={18} color="#4A4C50" /> : <MaterialIcons name={mod.fallbackIcon} size={18} color="#4A4C50" />}
+                </View>
+              )} 
             />
           ))}
           <Divider />
@@ -154,7 +162,11 @@ export default function ModuleHeader({ title }: Props) {
               key={mod.title}
               onPress={() => handleNav(mod.route)} 
               title={mod.title} 
-              leadingIcon={({ color, size }) => mod.CustomIcon ? <mod.CustomIcon size={size} color={color} /> : <MaterialIcons name={mod.fallbackIcon} size={size} color={color} />} 
+              leadingIcon={({ size }) => (
+                <View style={{ backgroundColor: mod.backgroundColor, borderRadius: 16, width: 32, height: 32, alignItems: 'center', justifyContent: 'center' }}>
+                  {mod.CustomIcon ? <mod.CustomIcon size={18} color="#4A4C50" /> : <MaterialIcons name={mod.fallbackIcon} size={18} color="#4A4C50" />}
+                </View>
+              )} 
             />
           ))}
         </Menu>

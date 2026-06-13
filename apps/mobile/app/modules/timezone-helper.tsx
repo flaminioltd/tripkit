@@ -1,9 +1,10 @@
+import Button from '../../src/components/ui/Button';
 import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { useTripStore } from '../../src/stores/trip-store';
 import { View, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
-import { Text, useTheme, Card, Button, SegmentedButtons, Menu, IconButton } from 'react-native-paper';
+import { Text, useTheme, Card, SegmentedButtons, Menu, IconButton, Switch } from 'react-native-paper';
 import { TimePicker, en, registerTranslation } from 'react-native-paper-dates';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { settingsRepo } from '../../src/repositories/settings-repository';
@@ -226,11 +227,11 @@ export default function TimezoneHelperScreen() {
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
-      <ModuleHeader title="Timezone Helper" />
+      <ModuleHeader title="Time Zones" />
 
       <ScrollView contentContainerStyle={styles.content}>
         
-        <Card style={[styles.heroCard, { backgroundColor: theme.colors.primaryContainer }]} mode="contained">
+        <Card style={[styles.heroCard, { backgroundColor: theme.colors.surfaceVariant }]} mode="contained">
           <Card.Content style={styles.heroContent}>
             
             {boxes[0]}
@@ -240,6 +241,7 @@ export default function TimezoneHelperScreen() {
               <IconButton 
                 icon="swap-horizontal" 
                 mode="contained-tonal"
+                containerColor={theme.colors.primaryContainer}
                 size={22}
                 style={{ borderWidth: 1, borderColor: theme.colors.outlineVariant }}
                 onPress={() => {
@@ -259,15 +261,15 @@ export default function TimezoneHelperScreen() {
         <View style={styles.controlsRow}>
           <Text variant="titleMedium" style={{ color: theme.colors.onSurface, fontWeight: 'bold' }}>Time Setting</Text>
           
-          <SegmentedButtons
-            value={is24hMode ? '24h' : 'ampm'}
-            onValueChange={(val) => setIs24hMode(val === '24h')}
-            style={{ width: 160 }}
-            buttons={[
-              { value: 'ampm', label: 'AM/PM' },
-              { value: '24h', label: '24h' }
-            ]}
-          />
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={{ fontSize: 14, marginRight: 8, color: !is24hMode ? theme.colors.primary : theme.colors.onSurfaceVariant, fontWeight: !is24hMode ? 'bold' : 'normal' }}>AM/PM</Text>
+            <Switch 
+              value={is24hMode} 
+              onValueChange={setIs24hMode} 
+              color={theme.colors.primary}
+            />
+            <Text style={{ fontSize: 14, marginLeft: 8, color: is24hMode ? theme.colors.primary : theme.colors.onSurfaceVariant, fontWeight: is24hMode ? 'bold' : 'normal' }}>24h</Text>
+          </View>
         </View>
         
         <View style={{ alignSelf: 'center', marginVertical: 8, paddingVertical: 4 }}>

@@ -1,6 +1,7 @@
+import Button from '../../src/components/ui/Button';
 import React from 'react';
 import { View, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
-import { Text, useTheme, Card, List, Button, IconButton } from 'react-native-paper';
+import { Text, useTheme, Card, List, IconButton } from 'react-native-paper';
 import { useRouter } from 'expo-router';
 
 export default function UpgradeScreen() {
