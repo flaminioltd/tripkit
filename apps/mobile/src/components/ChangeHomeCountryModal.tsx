@@ -34,10 +34,17 @@ export default function ChangeHomeCountryModal({ visible, onDismiss }: ChangeHom
 
   const filteredCountries = useMemo(() => {
     const list = searchQuery 
-      ? allCountries.filter(c => c.name.toLowerCase().includes(searchQuery.toLowerCase()))
+      ? allCountries.filter(c => {
+          const translatedName = t(`countries.${c.code}`, c.name);
+          return translatedName.toLowerCase().includes(searchQuery.toLowerCase());
+        })
       : allCountries;
-    return list.slice().sort((a, b) => a.name.localeCompare(b.name));
-  }, [searchQuery, allCountries]);
+    return list.slice().sort((a, b) => {
+      const aName = t(`countries.${a.code}`, a.name);
+      const bName = t(`countries.${b.code}`, b.name);
+      return aName.localeCompare(bName);
+    });
+  }, [searchQuery, allCountries, t]);
 
   const handleSelectCountry = async (country: any) => {
     Keyboard.dismiss();
@@ -57,7 +64,7 @@ export default function ChangeHomeCountryModal({ visible, onDismiss }: ChangeHom
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         >
           <View style={styles.header}>
-            <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{t("components.changeHomeCountry.title", "Change Home Country")}</Text>
+            <Text variant="headlineSmall" style={{ flex: 1, fontWeight: 'bold', color: theme.colors.onSurface }}>{t("settingsScreen.changeHomeCountryTitle", "Change Home Country")}</Text>
             <Pressable onPress={onDismiss} style={styles.closeButton}>
               <MaterialIcons name="close" size={24} color={theme.colors.onSurfaceVariant} />
             </Pressable>
@@ -77,7 +84,7 @@ export default function ChangeHomeCountryModal({ visible, onDismiss }: ChangeHom
                 <PaperInput
                   value={searchQuery}
                   onChangeText={setSearchQuery}
-                  placeholder={t("components.changeHomeCountry.searchPlaceholder", "Search countries...")}
+                  placeholder={t("modals.addTrip.searchPlaceholder", "Enter a country...")}
                   style={styles.input}
                   underlineStyle={{ display: 'none' }}
                   textColor={theme.colors.onSurface}
@@ -113,10 +120,10 @@ export default function ChangeHomeCountryModal({ visible, onDismiss }: ChangeHom
                       )}
                       <View style={{ flex: 1 }}>
                         <Text variant="bodyLarge" style={{ color: theme.colors.onSurface, fontWeight: '500' }}>
-                          {item.name}
+                          {t(`countries.${item.code}`, item.name)}
                         </Text>
                         <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
-                          {item.region}
+                          {t(`regions.${item.region}`, item.region)}
                         </Text>
                       </View>
                     </Pressable>
@@ -143,7 +150,7 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
     padding: 24,
     paddingBottom: 16,

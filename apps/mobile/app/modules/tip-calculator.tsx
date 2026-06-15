@@ -36,7 +36,9 @@ export default function TipCalculatorScreen() {
   const [isCustomModalVisible, setIsCustomModalVisible] = useState(false);
   const [customPercentStr, setCustomPercentStr] = useState('');
   const [customAmountStr, setCustomAmountStr] = useState('');
+  const [customTipType, setCustomTipType] = useState<'percentage' | 'amount'>('percentage');
   const [customTipValue, setCustomTipValue] = useState<number | null>(null);
+  const [confirmedCustomDisplay, setConfirmedCustomDisplay] = useState('');
 
   const { activeTrip, addExpense } = useTripStore();
   const activeCountryCode = activeTrip ? COUNTRIES.find((c: any) => c.name === activeTrip.destinationCountry)?.code : null;
@@ -98,6 +100,14 @@ export default function TipCalculatorScreen() {
     if (!isNaN(p)) {
       setCustomTipValue(p);
       setTipPercentage('custom');
+      
+      const cCode = activeCountry ? activeCountry.currencyCode : 'USD';
+      const cSymbol = CURRENCY_SYMBOLS[cCode] || cCode;
+      if (customTipType === 'percentage') {
+        setConfirmedCustomDisplay(p + '%');
+      } else {
+        setConfirmedCustomDisplay(cSymbol + customAmountStr);
+      }
     }
     setIsCustomModalVisible(false);
   };
@@ -294,13 +304,26 @@ export default function TipCalculatorScreen() {
                         justifyContent: 'center',
                       })}
                     >
-                      <Text style={{ 
-                        color: isSelected ? theme.colors.onSecondaryContainer : theme.colors.onSurface,
-                        fontWeight: '500',
-                        fontSize: 14
-                      }}>
-                        {btn.value === 'custom' && tipPercentage === 'custom' && customTipValue !== null ? `${customTipValue}%` : btn.label}
-                      </Text>
+                      {btn.value === 'custom' && tipPercentage === 'custom' && customTipValue !== null ? (
+                        <View style={{ alignItems: 'center' }}>
+                          <Text style={{ fontSize: 10, color: isSelected ? theme.colors.onSecondaryContainer : theme.colors.onSurfaceVariant }}>(Custom)</Text>
+                          <Text style={{ 
+                            color: isSelected ? theme.colors.onSecondaryContainer : theme.colors.onSurface,
+                            fontWeight: '500',
+                            fontSize: 14
+                          }}>
+                            {confirmedCustomDisplay}
+                          </Text>
+                        </View>
+                      ) : (
+                        <Text style={{ 
+                          color: isSelected ? theme.colors.onSecondaryContainer : theme.colors.onSurface,
+                          fontWeight: '500',
+                          fontSize: 14
+                        }}>
+                          {btn.label}
+                        </Text>
+                      )}
                     </Pressable>
                     {index < arr.length - 1 && (
                       <View style={{ width: 1, backgroundColor: theme.colors.outline }} />
@@ -370,22 +393,22 @@ export default function TipCalculatorScreen() {
         <Dialog visible={isCustomModalVisible} onDismiss={() => setIsCustomModalVisible(false)} style={{ backgroundColor: theme.colors.surface }}>
           <Dialog.Title>{t("modules.tipCalculator.customTipTitle", "Custom Tip")}</Dialog.Title>
           <Dialog.Content>
-            <View style={{ flexDirection: 'row', gap: 12 }}>
-              <TextInput
-                label={t("modules.tipCalculator.percentageLabel", "Percentage (%)")}
-                value={customPercentStr}
-                onChangeText={handleCustomPercentChange}
-                keyboardType="numeric"
-                mode="outlined"
-                style={{ flex: 1, backgroundColor: theme.colors.surface }}
+            <View style={{ gap: 16 }}>
+              <SegmentedButtons
+                value={customTipType}
+                onValueChange={(v) => setCustomTipType(v as 'percentage' | 'amount')}
+                buttons={[
+                  { value: 'percentage', label: t('modules.tipCalculator.percentageLabel', 'Percentage (%)') },
+                  { value: 'amount', label: t('modules.tipCalculator.amountLabel', 'Amount ({{symbol}})', { symbol: currencySymbol }) },
+                ]}
+                style={{ backgroundColor: theme.colors.surface }}
               />
               <TextInput
-                label={t("modules.tipCalculator.amountLabel", "Amount ({{symbol}})", { symbol: currencySymbol })}
-                value={customAmountStr}
-                onChangeText={handleCustomAmountChange}
+                value={customTipType === 'percentage' ? customPercentStr : customAmountStr}
+                onChangeText={customTipType === 'percentage' ? handleCustomPercentChange : handleCustomAmountChange}
                 keyboardType="numeric"
                 mode="outlined"
-                style={{ flex: 1, backgroundColor: theme.colors.surface }}
+                style={{ backgroundColor: theme.colors.surface, width: 140, alignSelf: 'center', textAlign: 'center', fontSize: 24, paddingVertical: 8 }}
               />
             </View>
           </Dialog.Content>

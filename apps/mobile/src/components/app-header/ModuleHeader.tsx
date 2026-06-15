@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Image, Pressable } from 'react-native';
 import { Text, useTheme, IconButton, Menu, Divider } from 'react-native-paper';
-import { useRouter } from 'expo-router';
+import { useRouter, usePathname } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useTripStore } from '../../stores/trip-store';
 import { COUNTRIES } from '../../lib/countries';
 import { FLAG_IMAGES } from '../../lib/assets';
 import { FINANCE_MODULES, ESSENTIALS_MODULES } from '../../lib/modules';
+import { useTranslation } from 'react-i18next';
 
-const formatDateRange = (start: Date | null | undefined, end: Date | null | undefined) => {
-  if (!start || !end) return 'TBD';
+const formatDateRange = (start: Date | null | undefined, end: Date | null | undefined, locale: string = 'en-US', tbdStr: string = 'TBD') => {
+  if (!start || !end) return tbdStr;
   const s = new Date(start);
   const e = new Date(end);
   return `${s.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} — ${e.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
@@ -22,6 +23,7 @@ interface Props {
 export default function ModuleHeader({ title }: Props) {
   const theme = useTheme();
   const router = useRouter();
+  const { t, i18n } = useTranslation();
   const { trips, activeTrip, setActiveTrip } = useTripStore();
   
   const activeCountryCode = activeTrip 
@@ -55,14 +57,23 @@ export default function ModuleHeader({ title }: Props) {
     }, 0);
   };
 
+  const pathname = usePathname();
   const allModules = [...FINANCE_MODULES, ...ESSENTIALS_MODULES];
-  const currentModule = allModules.find(m => m.title === title);
-  const headerBgColor = currentModule ? currentModule.backgroundColor : theme.colors.surface;
+  const currentModule = allModules.find(m => (pathname && (pathname.includes(m.route) || pathname.includes(m.route.split('/').pop()))) || m.title === title || t(`homeScreen.modules.${m.id}.title`, m.title) === title);
+  
 
   return (
-    <View style={[styles.header, { borderBottomColor: theme.colors.outline, backgroundColor: headerBgColor }]}>
-      <IconButton icon="arrow-left" onPress={() => router.back()} />
-      <Text variant="titleLarge" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{title}</Text>
+    <View>
+      <View style={{ height: 8, width: '100%', backgroundColor: currentModule ? currentModule.backgroundColor : theme.colors.primary }} />
+      <View style={[styles.header, { borderBottomColor: theme.colors.outline, backgroundColor: theme.colors.surface }]}>
+        <IconButton icon="arrow-left" onPress={() => {
+          if (router.canGoBack()) {
+            router.back();
+          } else {
+            router.replace('/(main)');
+          }
+        }} />
+        <Text variant="titleLarge" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{currentModule ? t(`homeScreen.modules.${currentModule.id}.title`, title) : title}</Text>
       
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Menu
@@ -84,7 +95,7 @@ export default function ModuleHeader({ title }: Props) {
             </Pressable>
           }
         >
-          {upcomingTrips.length === 0 && <Menu.Item title="No upcoming trips" disabled />}
+          {upcomingTrips.length === 0 && <Menu.Item title={t('components.moduleHeader.noUpcomingTrips', 'No upcoming trips')} disabled />}
           
           {upcomingTrips.length > 0 && upcomingTrips.map(trip => {
             const countryCode = COUNTRIES.find(c => c.name === trip.destinationCountry)?.code;
@@ -109,10 +120,10 @@ export default function ModuleHeader({ title }: Props) {
                 </View>
                 <View style={{ flex: 1, justifyContent: 'center', paddingRight: 8 }}>
                   <Text variant="bodyLarge" style={{ fontWeight: trip.id === activeTrip?.id ? 'bold' : 'normal' }}>
-                    {trip.destinationCountry || 'Unknown Trip'}
+                    {countryCode ? t(`countries.${countryCode}`, trip.destinationCountry) : (trip.destinationCountry || t('components.moduleHeader.unknownTrip', 'Unknown Trip'))}
                   </Text>
                   <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>
-                    {formatDateRange(trip.startDate, trip.endDate)}
+                    {formatDateRange(trip.startDate, trip.endDate, i18n.language, t('tripsScreen.tbd', 'TBD'))}
                   </Text>
                 </View>
                 {trip.id === activeTrip?.id && (
@@ -140,14 +151,14 @@ export default function ModuleHeader({ title }: Props) {
           }
         >
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingRight: 4 }}>
-            <Text style={styles.menuSectionHeader}>Finance</Text>
+            <Text style={styles.menuSectionHeader}>{t('categories.finance', 'Finance')}</Text>
             <IconButton icon="close" size={20} onPress={() => setNavMenuVisible(false)} style={{ margin: 0 }} />
           </View>
           {FINANCE_MODULES.map(mod => (
             <Menu.Item 
               key={mod.title}
               onPress={() => handleNav(mod.route)} 
-              title={mod.title} 
+              title={t(`homeScreen.modules.${mod.id}.title`, mod.title)} 
               leadingIcon={({ size }) => (
                 <View style={{ backgroundColor: mod.backgroundColor, borderRadius: 16, width: 32, height: 32, alignItems: 'center', justifyContent: 'center' }}>
                   {mod.CustomIcon ? <mod.CustomIcon size={18} color="#4A4C50" /> : <MaterialIcons name={mod.fallbackIcon} size={18} color="#4A4C50" />}
@@ -156,12 +167,12 @@ export default function ModuleHeader({ title }: Props) {
             />
           ))}
           <Divider />
-          <Text style={styles.menuSectionHeader}>Essentials</Text>
+          <Text style={styles.menuSectionHeader}>{t('categories.essentials', 'Essentials')}</Text>
           {ESSENTIALS_MODULES.map(mod => (
             <Menu.Item 
               key={mod.title}
               onPress={() => handleNav(mod.route)} 
-              title={mod.title} 
+              title={t(`homeScreen.modules.${mod.id}.title`, mod.title)} 
               leadingIcon={({ size }) => (
                 <View style={{ backgroundColor: mod.backgroundColor, borderRadius: 16, width: 32, height: 32, alignItems: 'center', justifyContent: 'center' }}>
                   {mod.CustomIcon ? <mod.CustomIcon size={18} color="#4A4C50" /> : <MaterialIcons name={mod.fallbackIcon} size={18} color="#4A4C50" />}
@@ -170,6 +181,7 @@ export default function ModuleHeader({ title }: Props) {
             />
           ))}
         </Menu>
+      </View>
       </View>
     </View>
   );

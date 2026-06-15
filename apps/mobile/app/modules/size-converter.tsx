@@ -1,5 +1,6 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, SafeAreaView, ScrollView, TextInput, Pressable } from 'react-native';
+import { View, StyleSheet, ScrollView, TextInput, Pressable } from 'react-native';;
 import { Text, useTheme, Card, ActivityIndicator, SegmentedButtons } from 'react-native-paper';
 import { tokens } from '../../src/theme/tokens';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -250,8 +251,8 @@ export default function SizeConverterScreen() {
   const homeCode = settings?.homeCountry;
   const destCode = activeTrip ? getCountryCodeByName(activeTrip.destinationCountry) : null;
 
-  const homeCountryName = homeCode ? COUNTRIES.find((c: any) => c.code === homeCode)?.name : 'Home';
-  const destCountryName = activeTrip?.destinationCountry || 'Destination';
+  const homeCountryName = homeCode ? t(`countries.${homeCode}`, COUNTRIES.find((c: any) => c.code === homeCode)?.name) : 'Origin';
+  const destCountryName = destCode ? t(`countries.${destCode}`, activeTrip?.destinationCountry) : (activeTrip?.destinationCountry || 'Destination');
 
   const homeSizeRegion = homeCode ? getSizeRegion(homeCode) : 'US';
   const destSizeRegion = destCode ? getSizeRegion(destCode) : 'US';
@@ -288,7 +289,7 @@ export default function SizeConverterScreen() {
 
   if (loading) {
     return (
-      <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
+      <SafeAreaView edges={['bottom', 'left', 'right']} style={[styles.container, { backgroundColor: theme.colors.background }]}>
         <ModuleHeader title={t("modules.sizeConverter.headerTitle", "Sizes & Units")} />
         <View style={styles.centerContent}>
           <ActivityIndicator size="large" />
@@ -318,7 +319,7 @@ export default function SizeConverterScreen() {
         <View style={styles.centerContent}>
           <MaterialCommunityIcons name="check-circle-outline" size={64} color={theme.colors.primary} />
           <Text variant="headlineSmall" style={[styles.emptyTitle, { color: theme.colors.onSurface }]}>
-            Shoe Sizes Match!
+            {t("modules.sizeConverter.matchTitleShoes", "Shoe sizes match!")}
           </Text>
           <Text variant="bodyLarge" style={[styles.emptyText, { color: theme.colors.onSurfaceVariant }]}>
             {t("modules.sizeConverter.shoeSizesMatchDesc", "{{home}} and {{dest}} use the exact same shoe sizes.", { home: homeCountryName, dest: destCountryName })}
@@ -379,7 +380,7 @@ export default function SizeConverterScreen() {
         <View style={styles.centerContent}>
           <MaterialCommunityIcons name="check-circle-outline" size={64} color={theme.colors.primary} />
           <Text variant="headlineSmall" style={[styles.emptyTitle, { color: theme.colors.onSurface }]}>
-            Clothing Sizes Match!
+            {t("modules.sizeConverter.matchTitleClothes", "Clothing sizes match!")}
           </Text>
           <Text variant="bodyLarge" style={[styles.emptyText, { color: theme.colors.onSurfaceVariant }]}>
             {t("modules.sizeConverter.clothingSizesMatchDesc", "{{home}} and {{dest}} use the exact same clothing sizes.", { home: homeCountryName, dest: destCountryName })}
@@ -439,7 +440,7 @@ export default function SizeConverterScreen() {
         <View style={styles.centerContent}>
           <MaterialCommunityIcons name="check-circle-outline" size={64} color={theme.colors.primary} />
           <Text variant="headlineSmall" style={[styles.emptyTitle, { color: theme.colors.onSurface }]}>
-            Units Match!
+            {t("modules.sizeConverter.matchTitleUnits", "Units match!")}
           </Text>
           <Text variant="bodyLarge" style={[styles.emptyText, { color: theme.colors.onSurfaceVariant }]}>
             {t("modules.sizeConverter.unitsMatchDesc", "{{home}} and {{dest}} use the exact same measurement systems.", { home: homeCountryName, dest: destCountryName })}
@@ -528,7 +529,7 @@ export default function SizeConverterScreen() {
   };
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
+    <SafeAreaView edges={['bottom', 'left', 'right']} style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <ModuleHeader title={t("modules.sizeConverter.headerTitle", "Sizes & Units")} />
 
       <View style={{ width: '100%', position: 'relative', marginTop: 16 }}>

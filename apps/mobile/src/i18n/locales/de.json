@@ -8,14 +8,16 @@
   },
   "welcomeScreen": {
     "title": "TripKit",
-    "heroTitle": "Wo ist dein Zuhause?",
-    "heroSubtitle": "TripKit setzt nützliche Standardwerte basierend auf deinem Heimatland.",
+    "heroTitle": "Was ist Ihr Herkunftsland?",
+    "heroSubtitle": "TripKit legt nützliche Standardwerte basierend auf Ihrem Herkunftsland fest.",
     "searchPlaceholder": "Ein Land eingeben...",
     "settingsTitle": "{{countryName}} Einstellungen",
     "baseCurrency": "Basiswährung",
     "measurementSystem": "Maßsystem",
     "buttonContinue": "Weiter",
-    "buttonSet": "Einstellen"
+    "buttonSet": "Einstellen",
+    "metricSystem": "Metrisches System",
+    "imperialSystem": "Imperiales System"
   },
   "dateSelectionScreen": {
     "headerTitle": "Reise Planen",
@@ -24,9 +26,9 @@
     "searchPlaceholder": "Ein Ziel eingeben...",
     "detailsTitle": "{{countryName}} Details",
     "exchangeRateTitle": "{{currency}} in {{baseCurrency}}",
-    "exchangeRateDesc": "1 {{targetCurrency}} = {{rate}} {{baseCurrency}} (Stand: {{date}})",
+    "exchangeRateDesc": "1 {{baseCurrency}} = {{rate}} {{targetCurrency}} (Stand: {{date}})",
     "exchangeRateOffline": "Offline-Wechselkurs",
-    "localMeasurement": "Lokales Maßsystem",
+    "localMeasurement": "Zielortes Maßsystem",
     "datesTitle": "Wann reist du?",
     "notSetYet": "Noch nicht festgelegt",
     "startDate": "Startdatum",
@@ -38,7 +40,7 @@
   "confirmationScreen": {
     "headerTitle": "Einrichtung Abgeschlossen",
     "cardTitle": "Abgeleitete Standardwerte",
-    "homeCountry": "Heimatland",
+    "homeCountry": "Herkunftsland",
     "inferredCurrency": "Abgeleitete Währung",
     "inferredSizeFormat": "Abgeleitetes Größenformat",
     "note": "Du kannst später weitere Reisedetails hinzufügen.",
@@ -60,46 +62,47 @@
     "modulesTitle": "Module",
     "modules": {
       "localInfo": {
-        "title": "Lokale Infos",
+        "title": "Lokale Info",
         "description": "Wichtige Details, Bräuche und Kultur"
       },
       "basicPhrases": {
-        "title": "Grundlegende Phrasen",
+        "title": "Wörterbuch",
         "description": "Gängige Begrüßungen und Grundlagen"
       },
       "plugVoltage": {
-        "title": "Stecker & Spannung",
+        "title": "Stecker",
         "description": "Adapterbedarf und Spannungsinfos"
       },
       "emergencyNumbers": {
         "title": "Notrufnummern",
-        "description": "Lokale 112-Äquivalente"
+        "description": "Zielorte 112-Äquivalente"
       },
       "budgetTracker": {
         "title": "Budget-Tracker",
         "description": "Ausgaben verfolgen und im Budget bleiben"
       },
       "atmExchange": {
-        "title": "Geldautomat & Wechsel",
+        "title": "Geldautomaten",
         "description": "Kurse, Gebühren und Währungsrechner"
       },
       "vatRefund": {
-        "title": "MwSt.-Rückerstattungsrechner",
+        "title": "MwSt.-Erstattung",
         "description": "Schätzungen für steuerfreies Einkaufen"
       },
       "tipCalculator": {
-        "title": "Trinkgeld-Rechner",
-        "description": "Lokale Trinkgeldgewohnheiten und Rechnen"
+        "title": "Trinkgeld",
+        "description": "Zielorte Trinkgeldgewohnheiten und Rechnen"
       },
       "sizeConverter": {
-        "title": "Größenumrechner",
+        "title": "Größen",
         "description": "Schuhe, Kleidung und Maße"
       },
       "timezoneHelper": {
-        "title": "Zeitzonen-Helfer",
-        "description": "Abstimmung mit zu Hause"
+        "title": "Zeitzonen",
+        "description": "Mit Herkunft koordinieren"
       }
-    }
+    },
+    "headerSubtitle": "Dein Reisebegleiter."
   },
   "tripsScreen": {
     "headerTitle": "Meine Reisen",
@@ -113,7 +116,7 @@
     "addTripButton": "Neue Reise Hinzufügen",
     "activeTripLabel": "AKTIVE REISE",
     "changeCountryButton": "Land Ändern",
-    "deleteTripButton": "Reise Löschen",
+    "deleteTripButton": "Löschen",
     "finishTripButton": "Reise Beenden",
     "tripSummaryButton": "Reisezusammenfassung",
     "resumeTripButton": "Reise Fortsetzen",
@@ -122,18 +125,60 @@
     "setDatesButton": "Daten Einstellen",
     "deleteTripAlertTitle": "Löschen",
     "editTripCancel": "Abbrechen",
-    "datesPending": "Daten ausstehend"
+    "datesPending": "Daten ausstehend",
+    "headerSubtitle": "Verwalte deine Abenteuer.",
+    "planNewTripTitle": "Neue Reise planen",
+    "planNewTripSubtitle": "Wohin geht es als nächstes?",
+    "activeTripTitle": "Aktive Reise",
+    "tripStatusLabel": "Reisestatus",
+    "tripBudgetUsed": "Verwendetes Reisebudget",
+    "dailyBudgetUsed": "Verwendetes Tagesbudget",
+    "budgetSet": "Festlegen",
+    "budgetAdjust": "Anpassen",
+    "budgetDaily": "TÄGLICH",
+    "budgetTrip": "REISE",
+    "editTripButton": "Bearbeiten",
+    "upcomingTripsTitle": "Kommende Reisen",
+    "editButton": "Bearbeiten",
+    "deleteButton": "Löschen",
+    "setActiveButton": "Aktivieren",
+    "pastTripsTitle": "Vergangene Reisen",
+    "editTripModalTitle": "{{country}} bearbeiten",
+    "selectDateRange": "Datum auswählen",
+    "datesNotSetYet": "Daten noch nicht festgelegt",
+    "editTripSave": "Änderungen speichern",
+    "tripStatus": {
+      "pending": "Ausstehend",
+      "pendingSubtitle": "Noch keine Daten festgelegt",
+      "upcoming": "Anstehend",
+      "upcomingSubtitle": "In {{days}} Tagen",
+      "ongoing": "Laufend",
+      "ongoingSubtitle": "Tag {{current}} von {{total}}",
+      "completed": "Abgeschlossen",
+      "completedSubtitle": "Reise beendet"
+    },
+    "tbd": "Noch offen"
   },
   "settingsScreen": {
     "headerTitle": "Einstellungen",
     "sectionPreferences": "EINSTELLUNGEN",
     "systemLanguage": "Systemsprache",
-    "homeCountry": "Heimatland",
-    "homeCurrency": "Heimatwährung",
+    "homeCountry": "Herkunftsland",
+    "homeCurrency": "Herkunftswährung",
     "sectionData": "DATEN & SPEICHER",
     "exportData": "Alle Daten Exportieren",
     "clearData": "Alle Daten Löschen",
-    "version": "Version"
+    "version": "Version",
+    "headerSubtitle": "Verwalte deine Einstellungen.",
+    "notSet": "Nicht festgelegt",
+    "changeHomeCountryTitle": "Herkunftsland ändern",
+    "changeSystemLanguageTitle": "Systemsprache",
+    "systemLanguages": {
+      "en": "Englisch",
+      "es": "Spanisch",
+      "de": "Deutsch"
+    },
+    "forceSyncButton": "Daten Synchronisieren"
   },
   "access": {
     "upgrade": {
@@ -166,14 +211,14 @@
       "syncToBudgetButton": "Mit Budget Synchronisieren",
       "resetButton": "Zurücksetzen",
       "addedToExpenses": "Zu Ausgaben Hinzugefügt",
-      "description": "Vergleiche Abhebungen am Geldautomaten mit lokalen Wechselstuben.",
+      "description": "Vergleiche Abhebungen am Geldautomaten mit Zielorten Wechselstuben.",
       "targetAmount": "Zielbetrag",
-      "home": "Heimat",
-      "local": "Lokal",
+      "home": "Herkunft",
+      "local": "Zielort",
       "amount": "Betrag",
       "marketRate": "Marktkurs",
       "optionA": "Option A: Abhebung am Geldautomaten",
-      "localFee": "Lokale Gebühr",
+      "localFee": "Zielorte Gebühr",
       "in": "in",
       "bankFlatFee": "Pauschalgebühr der Bank",
       "bankFxFee": "Bank-Wechselgebühr %",
@@ -188,7 +233,10 @@
       "recommendationEqual": "Gleich",
       "savesYou": "Spart dir ",
       "givesYou": "Gibt dir ",
-      "more": " mehr"
+      "more": " mehr",
+      "resetValues": "Werte Zurücksetzen",
+      "recommendationAtm": "Geldautomat",
+      "recommendationBureau": "Wechselstube"
     },
     "basicPhrases": {
       "headerTitle": "Grundlegende Phrasen",
@@ -196,8 +244,8 @@
       "essentialsTab": "Grundlagen",
       "numbersTab": "Zahlen",
       "languageContext": "Sprachkontext",
-      "noTranslationNeeded": "Keine Übersetzung erforderlich...",
-      "noTranslationDesc": "Die Hauptsprache in {{country}} entspricht deiner Systemsprache.",
+      "noTranslationNeeded": "Keine Übersetzung erforderlich",
+      "noTranslationDesc": "Die Hauptsprache in {{country}} stimmt mit Ihrer Systemsprache überein.",
       "phrasesInCountry": "Phrasen auf {{language}} für {{country}}",
       "noPhrasesAvailable": "Keine Phrasen für diese Kategorie verfügbar."
     },
@@ -208,8 +256,8 @@
       "setBudgetButton": "Budget Festlegen",
       "budgetLimit": "Budgetbetrag",
       "trackIn": "Ausgaben Verfolgen In",
-      "localCurrency": "Lokal",
-      "homeCurrency": "Heimat",
+      "localCurrency": "Zielort",
+      "homeCurrency": "Herkunft",
       "budgetType": "Budgetbereich",
       "dailyBudget": "Täglich",
       "totalTripBudget": "Reise",
@@ -229,14 +277,24 @@
       "daysLabel": "Tage",
       "overBudget": "Budget Überschritten",
       "expensesTitle": "Letzte Ausgaben",
-      "addExpenseButton": "+ Neu Hinzufügen",
+      "addExpenseButton": "Neu Hinzufügen",
       "noExpensesLabel": "Noch keine Ausgaben hinzugefügt.",
       "expenseModalTitleAdd": "Ausgabe Hinzufügen",
       "expenseModalTitleEdit": "Ausgabe Bearbeiten",
       "categoryLabel": "Kategorie",
       "detailsOptional": "Beschreibung (Optional)",
       "amountLocal": "Betrag ({{currency}})",
-      "saveExpenseButton": "Speichern"
+      "saveExpenseButton": "Speichern",
+      "resetBudgetButton": "Budget Zurücksetzen & Ausgaben Löschen",
+      "tags": {
+        "food": "Essen",
+        "transport": "Transport",
+        "accommodation": "Hotel",
+        "flights": "Flüge",
+        "entertainment": "Spaß",
+        "shopping": "Einkaufen",
+        "other": "Sonstiges"
+      }
     },
     "emergencyEssentials": {
       "headerTitle": "Notrufnummern",
@@ -247,16 +305,16 @@
       "fire": "Feuerwehr",
       "medicalAmbulance": "Medizinischer Notfall / Krankenwagen (SAMU)",
       "tapToDial": "Zum Wählen tippen",
-      "localSafetyAdvice": "Lokale Sicherheitshinweise",
+      "localSafetyAdvice": "Zielorte Sicherheitshinweise",
       "embassyConsulate": "Botschaft oder Konsulat",
-      "embassyDesc": "Wenn du deinen Reisepass verlierst oder rechtlichen Beistand benötigst, wende dich an die Botschaft deines Heimatlandes.",
+      "embassyDesc": "Wenn Sie Ihren Reisepass verlieren oder rechtliche Unterstützung benötigen, kontaktieren Sie die Botschaft Ihres Herkunftslandes.",
       "offlineReady": "Offline Bereit",
       "specificServices": "Spezifische Dienste",
       "pharmacyNoteTitle": "Hinweis zu Lokalen Apotheken",
       "pharmacyNoteDesc": "Achten Sie auf ein blinkendes grünes Kreuz. In Frankreich können Apotheker medizinische Beratung bei leichten Beschwerden anbieten. Für Apotheken nach Geschäftsschluss ("
     },
     "localInfo": {
-      "headerTitle": "Lokale Infos",
+      "headerTitle": "Zielort-Infos",
       "overviewTab": "Übersicht",
       "cultureTab": "Kultur",
       "transportTab": "Verkehr",
@@ -280,10 +338,12 @@
       "holidaysIn": "Feiertage in {{country}}",
       "duringTrip": "WÄHREND DER REISE",
       "noHolidayData": "Für {{year}} sind keine Feiertagsdaten verfügbar.",
-      "embassyDesc": "Dein Heimatland ist auf {{homeCountry}} eingestellt. Es werden die Botschaftsdetails in {{destCountry}} angezeigt.",
+      "embassyDesc": "Ihr Herkunftsland ist auf {{homeCountry}} eingestellt. Zeige Botschaftsdetails in {{destCountry}}.",
       "embassyConsulate": "Botschaft / Konsulat",
       "visitButton": "Besuchen",
-      "embassyUnavailable": "Botschaftsinformationen für {{homeCountry}} in {{destCountry}} sind derzeit nicht verfügbar."
+      "embassyUnavailable": "Botschaftsinformationen für {{homeCountry}} in {{destCountry}} sind derzeit nicht verfügbar.",
+      "embassyTitle": "Botschaft",
+      "origin": "Herkunft"
     },
     "plugVoltage": {
       "headerTitle": "Stecker & Spannung",
@@ -295,13 +355,13 @@
       "voltageMatchDesc": "Deine Elektronik kann sicher direkt eingesteckt werden.",
       "voltageMismatchTitle": "Spannungsunterschied",
       "voltageMismatchDesc": "{{home}} verwendet {{homeVolts}}, aber {{dest}} verwendet {{destVolts}}. Überprüfe, ob auf deinen Geräten steht ",
-      "homeCountry": "Heimatland",
+      "homeCountry": "Herkunftsland",
       "destinationCountry": "Zielland",
       "plugTypesTitle": "{{country}} Steckertypen",
       "typeN": "Typ {{type}}",
-      "homeCountryCode": "HEIMAT ({{code}})",
+      "homeCountryCode": "HERKUNFT ({{code}})",
       "typesList": "Typ {{types}}",
-      "destCountryCode": "LOKAL ({{code}})"
+      "destCountryCode": "ZIELORT ({{code}})"
     },
     "sizeConverter": {
       "headerTitle": "Größen & Einheiten",
@@ -322,19 +382,24 @@
       "temperature": "Temperatur",
       "weight": "Gewicht (Gepäck)",
       "volume": "Volumen (Flüssigkeiten/Gas)",
-      "speed": "Geschwindigkeit"
+      "speed": "Geschwindigkeit",
+      "matchSubtitle": "Hier muss nichts umgerechnet werden.",
+      "matchTitleShoes": "Schuhgrößen stimmen überein!",
+      "matchTitleClothes": "Kleidergrößen stimmen überein!",
+      "matchTitleUnits": "Einheiten stimmen überein!"
     },
     "timezoneHelper": {
       "headerTitle": "Zeitzonen",
-      "homeLabel": "HEIMAT ({{code}})",
-      "localLabel": "LOKAL ({{code}})",
+      "homeLabel": "HERKUNFT ({{code}})",
+      "localLabel": "ZIELORT ({{code}})",
       "timeSetting": "Zeiteinstellung",
       "plus1Day": "+1 Tag",
       "minus1Day": "-1 Tag",
       "sameDay": "Selber Tag",
       "ampm": "AM/PM",
       "h24": "24h",
-      "resetCurrentTime": "Auf Aktuelle Zeit Zurücksetzen"
+      "resetCurrentTime": "Auf Aktuelle Zeit Zurücksetzen",
+      "origin": "Herkunft"
     },
     "tipCalculator": {
       "headerTitle": "Trinkgeld-Rechner",
@@ -347,7 +412,7 @@
       "tipPercentage": "Trinkgeldprozentsatz",
       "noTip": "Kein Trinkgeld",
       "roundUpTip": "Aufrunden",
-      "customTip": "Benutzerdefiniert",
+      "customTip": "Anderes",
       "splitBetween": "Aufteilen Unter (Personen)",
       "suggestedTip": "Vorgeschlagenes Trinkgeld",
       "totalBill": "Gesamtrechnung",
@@ -369,7 +434,7 @@
       "adjustButton": "Anpassen",
       "adminFee": "Geschätzte Verwaltungsgebühr",
       "purchases": "Einkäufe",
-      "addNew": "+ Neu Hinzufügen",
+      "addNew": "Neu Hinzufügen",
       "noPurchases": "Noch keine Einkäufe hinzugefügt.",
       "grandTotal": "Gesamtsumme",
       "estimatedRefund": "Geschätzte Rückerstattung",
@@ -404,7 +469,7 @@
       "createTripButton": "Reise Erstellen"
     },
     "changeHomeCountry": {
-      "title": "Heimatland Ändern",
+      "title": "Herkunftsland ändern",
       "searchPlaceholder": "Länder suchen..."
     },
     "changeLanguage": {
@@ -429,7 +494,9 @@
     "accommodation": "Unterkunft",
     "activities": "Aktivitäten & Touren",
     "shopping": "Einkaufen",
-    "other": "Andere"
+    "other": "Andere",
+    "Essentials": "Wesentliches",
+    "Finance": "Finanzen"
   },
   "countries": {
     "US": "Vereinigte Staaten",
@@ -469,7 +536,29 @@
   "languages": {
     "en": "Englisch",
     "es": "Spanisch",
-    "de": "Deutsch"
+    "de": "Deutsch",
+    "EN": "Englisch",
+    "FR": "Französisch",
+    "ES": "Spanisch",
+    "IT": "Italienisch",
+    "TR": "Türkisch",
+    "DE": "Deutsch",
+    "EL": "Griechisch",
+    "PT": "Portugiesisch",
+    "NL": "Niederländisch",
+    "PL": "Polnisch",
+    "HR": "Kroatisch",
+    "CS": "Tschechisch",
+    "DA": "Dänisch",
+    "HU": "Ungarisch",
+    "SV": "Schwedisch",
+    "NO": "Norwegisch",
+    "ZH": "Chinesisch",
+    "JA": "Japanisch",
+    "TH": "Thailändisch",
+    "VI": "Vietnamesisch",
+    "KO": "Koreanisch",
+    "HI": "Hindi"
   },
   "calendar": {
     "months": {
@@ -522,10 +611,70 @@
   "phrases": {
     "categories": {
       "Basics": "Grundlagen",
-      "GettingAround": "Unterwegs",
-      "Dining": "Essen",
       "Shopping": "Einkaufen",
+      "Hotel & Dining": "Hotel & Gastronomie",
+      "Emergencies": "Notfälle",
+      "Dining": "Essen gehen",
       "Emergency": "Notfall"
+    },
+    "items": {
+      "hello": "Hallo",
+      "goodbye": "Auf Wiedersehen",
+      "please": "Bitte",
+      "thank_you": "Danke",
+      "yes": "Ja",
+      "no": "Nein",
+      "excuse_me": "Entschuldigung",
+      "do_you_speak_english": "Sprechen Sie Englisch?",
+      "how_much": "Wie viel kostet das?",
+      "credit_cards": "Nehmen Sie Kreditkarten?",
+      "buy_this": "Ich möchte das kaufen",
+      "too_expensive": "Zu teuer",
+      "can_you_help": "Können Sie mir helfen?",
+      "fitting_room": "Wo ist die Umkleidekabine?",
+      "just_looking": "Ich schaue nur, danke",
+      "menu": "Kann ich die Speisekarte sehen?",
+      "table_for_two": "Einen Tisch für zwei, bitte",
+      "bill": "Die Rechnung, bitte",
+      "water": "Wasser, bitte",
+      "reservation": "Ich habe eine Reservierung",
+      "delicious": "Es ist köstlich!",
+      "bathroom": "Wo ist die Toilette?",
+      "help": "Hilfe!",
+      "need_doctor": "Ich brauche einen Arzt",
+      "call_police": "Rufen Sie die Polizei!",
+      "hospital": "Wo ist das Krankenhaus?",
+      "lost_passport": "Ich habe meinen Reisepass verloren",
+      "emergency": "Das ist ein Notfall",
+      "embassy": "Wo ist die Botschaft?",
+      "menu_please": "Die Speisekarte, bitte",
+      "water_please": "Wasser, bitte",
+      "check_please": "Die Rechnung, bitte",
+      "vegetarian": "Haben Sie vegetarische Optionen?",
+      "allergies": "Ich habe Allergien",
+      "lost": "Ich bin verloren",
+      "stolen": "Meine Brieftasche wurde gestohlen"
     }
+  },
+  "components": {
+    "pastTripSummary": {
+      "title": "{{country}} Zusammenfassung",
+      "configuredBudget": "KONFIGURIERTES BUDGET",
+      "perDayForDays": "{{amount}} {{currency}} / Tag für {{days}} Tage",
+      "usedBudget": "VERBRAUCHTES BUDGET",
+      "underBudget": "Im Budget!",
+      "overBudget": "Budget überschritten",
+      "noBudgetLimit": "Kein Budgetlimit",
+      "expensesCount": "Ausgaben ({{count}})",
+      "noExpenses": "Keine Ausgaben für diese Reise erfasst."
+    }
+  },
+  "regions": {
+    "Latin America": "Lateinamerika",
+    "Oceania": "Ozeanien",
+    "North America": "Nordamerika",
+    "Europe/Asia": "Europa/Asien",
+    "Europe": "Europa",
+    "Asia": "Asien"
   }
 }

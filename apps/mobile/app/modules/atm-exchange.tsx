@@ -1,10 +1,11 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Button from '../../src/components/ui/Button';
 import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { FLAG_IMAGES } from '../../src/lib/assets';
 import { useTripStore } from '../../src/stores/trip-store';
-import { View, Image, StyleSheet, SafeAreaView, ScrollView, Pressable, TextInput as NativeTextInput } from 'react-native';
+import { View, Image, StyleSheet, ScrollView, Pressable, TextInput as NativeTextInput } from 'react-native';;
 import { Text, TextInput, Card, useTheme, IconButton, Divider, SegmentedButtons } from 'react-native-paper';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { useTranslation } from 'react-i18next';
@@ -156,7 +157,7 @@ export default function AtmExchangeScreen() {
   });
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
+    <SafeAreaView edges={['bottom', 'left', 'right']} style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <ModuleHeader title={t("modules.atmExchange.headerTitle", "ATM & Exchange")} />
 
       <ScrollView contentContainerStyle={styles.content}>
@@ -172,8 +173,8 @@ export default function AtmExchangeScreen() {
               value={baseCurrencyType}
               onValueChange={setBaseCurrencyType}
               buttons={[
-                { value: 'home', label: `${t('modules.atmExchange.home', 'Home')} (${homeSymbol})` },
-                { value: 'local', label: `${t('modules.atmExchange.local', 'Local')} (${localSymbol})` },
+                { value: 'home', label: `${t('modules.atmExchange.home', 'Origin')} (${homeSymbol})` },
+                { value: 'local', label: `${t('modules.atmExchange.local', 'Destination')} (${localSymbol})` },
               ]}
               style={{ marginBottom: 12 }}
             />
@@ -207,8 +208,10 @@ export default function AtmExchangeScreen() {
           <Card.Content>
             <Text variant="titleMedium" style={{ marginBottom: 12, fontWeight: 'bold' }}>{t('modules.atmExchange.optionA', 'Option A: ATM Withdrawal')}</Text>
             <View style={{ flexDirection: 'row', gap: 8 }}>
-              <View style={{ flex: 1 }}>
-                <Text style={{ fontSize: 12, color: theme.colors.onSurfaceVariant, marginBottom: 4, marginLeft: 4 }}>{t('modules.atmExchange.localFee', 'Local Fee')}</Text>
+              <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+                <View style={{ flex: 1 }}>
+                  <Text style={{ fontSize: 12, color: theme.colors.onSurfaceVariant, marginBottom: 4, marginLeft: 4 }}>{t('modules.atmExchange.localFee', 'Local Fee')}</Text>
+                </View>
                 <TextInput 
                   value={atmLocalFeeLocal} 
                   onChangeText={setAtmLocalFeeLocal} 
@@ -218,8 +221,10 @@ export default function AtmExchangeScreen() {
                 />
                 <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant, fontSize: 10 }}>{t('modules.atmExchange.in', 'in')} {localSymbol}</Text>
               </View>
-              <View style={{ flex: 1 }}>
-                <Text style={{ fontSize: 12, color: theme.colors.onSurfaceVariant, marginBottom: 4, marginLeft: 4 }}>{t('modules.atmExchange.bankFlatFee', 'Bank Flat Fee')}</Text>
+              <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+                <View style={{ flex: 1 }}>
+                  <Text style={{ fontSize: 12, color: theme.colors.onSurfaceVariant, marginBottom: 4, marginLeft: 4 }}>{t('modules.atmExchange.bankFlatFee', 'Bank Flat Fee')}</Text>
+                </View>
                 <TextInput 
                   value={atmHomeBankFlatFeeHome} 
                   onChangeText={setAtmHomeBankFlatFeeHome} 
@@ -229,8 +234,10 @@ export default function AtmExchangeScreen() {
                 />
                 <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant, fontSize: 10 }}>{t('modules.atmExchange.in', 'in')} {homeSymbol}</Text>
               </View>
-              <View style={{ flex: 1 }}>
-                <Text style={{ fontSize: 12, color: theme.colors.onSurfaceVariant, marginBottom: 4, marginLeft: 4 }}>{t('modules.atmExchange.bankFxFee', 'Bank FX %')}</Text>
+              <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+                <View style={{ flex: 1 }}>
+                  <Text style={{ fontSize: 12, color: theme.colors.onSurfaceVariant, marginBottom: 4, marginLeft: 4 }}>{t('modules.atmExchange.bankFxFee', 'Bank FX %')}</Text>
+                </View>
                 <TextInput 
                   value={atmHomeBankFxFeePercentage} 
                   onChangeText={setAtmHomeBankFxFeePercentage} 
@@ -238,6 +245,7 @@ export default function AtmExchangeScreen() {
                   mode="outlined" 
                   style={[styles.input, { height: 48, marginBottom: 4 }]} 
                 />
+                <Text variant="bodySmall" style={{ fontSize: 10 }}> </Text>
               </View>
             </View>
           </Card.Content>
@@ -266,7 +274,7 @@ export default function AtmExchangeScreen() {
                   style={{ width: '100%', height: 32 }}
                   minimumValue={(parseFloat(midMarketRate) || 1) * 0.7}
                   maximumValue={parseFloat(midMarketRate) || 1}
-                  step={0.0001}
+                  step={Math.max(0.0001, (parseFloat(midMarketRate) || 1) * 0.001)}
                   value={parseFloat(exchangeBureauRate) || parseFloat(midMarketRate) || 1}
                   onValueChange={(val) => setExchangeBureauRate(val.toFixed(4))}
                   minimumTrackTintColor={theme.colors.primary}
@@ -352,7 +360,7 @@ export default function AtmExchangeScreen() {
             
             <View style={styles.recommendationContainer}>
               <Text variant="titleMedium" style={{ color: theme.colors.primary, textAlign: 'center', fontWeight: 'bold' }}>
-                {t('modules.atmExchange.recommendation', 'Recommendation:')} {result.recommendation}
+                {t('modules.atmExchange.recommendation', 'Recommendation:')} {t(`modules.atmExchange.recommendation${result.recommendation}`, result.recommendation)}
               </Text>
               {result.recommendation !== t('modules.atmExchange.recommendationEqual', 'Equal') && (
                 <Text variant="bodyMedium" style={{ color: theme.colors.primary, textAlign: 'center', marginTop: 4 }}>
@@ -367,7 +375,7 @@ export default function AtmExchangeScreen() {
         </Card>
         <View style={{ marginTop: 32, marginBottom: 40, paddingHorizontal: 16, alignItems: 'center' }}>
           <Button variant="alternative" onPress={handleReset} style={{ width: 160 }}>
-            Reset Values
+            {t('modules.atmExchange.resetValues', 'Reset Values')}
           </Button>
         </View>
         <View style={{ height: 40 }} />

@@ -1,9 +1,10 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Button from '../../src/components/ui/Button';
 import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { FLAG_IMAGES } from '../../src/lib/assets';
-import { View, Image, StyleSheet, SafeAreaView, ScrollView, Pressable } from 'react-native';
+import { View, Image, StyleSheet, ScrollView, Pressable } from 'react-native';;
 import { Text, TextInput, Card, useTheme, IconButton, Portal, Dialog, SegmentedButtons } from 'react-native-paper';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { useTripStore } from '../../src/stores/trip-store';
@@ -219,19 +220,21 @@ export default function VatRefundScreen() {
   };
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
+    <SafeAreaView edges={['bottom', 'left', 'right']} style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <ModuleHeader title={t("modules.vatRefund.headerTitle", "VAT Refund")} />
 
       <ScrollView contentContainerStyle={styles.content}>
         <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant, marginBottom: 16 }}>
-          {t("modules.vatRefund.estimateDesc", "Estimate your tax-free shopping refund for {{country}}.", { country: activeCountry ? activeCountry.name : t("modules.vatRefund.yourDestination", "your destination") })}
+          {t("modules.vatRefund.estimateDesc", "Estimate your tax-free shopping refund for {{country}}.", { country: activeCountry ? t(`countries.${activeCountry.code}`, activeCountry.name) : t("modules.vatRefund.yourDestination", "your destination") })}
         </Text>
 
         <Card style={styles.card} mode="contained">
           <Card.Content>
             <View style={{ flexDirection: 'row', gap: 16 }}>
-              <View style={{ flex: 1 }}>
-                <Text variant="labelMedium" style={{ marginBottom: 8 }}>{t("modules.vatRefund.standardVat", "Standard VAT Rate")}</Text>
+              <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+                <View style={{ flex: 1 }}>
+                  <Text variant="labelMedium" style={{ marginBottom: 8 }}>{t("modules.vatRefund.standardVat", "Standard VAT Rate")}</Text>
+                </View>
                 <TextInput
                   value={vatRate}
                   onChangeText={setVatRate}
@@ -249,8 +252,10 @@ export default function VatRefundScreen() {
                 </Button>
               </View>
 
-              <View style={{ flex: 1 }}>
-                <Text variant="labelMedium" style={{ marginBottom: 8 }}>{t("modules.vatRefund.adminFee", "Estimated Admin Fee")}</Text>
+              <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+                <View style={{ flex: 1 }}>
+                  <Text variant="labelMedium" style={{ marginBottom: 8 }}>{t("modules.vatRefund.adminFee", "Estimated Admin Fee")}</Text>
+                </View>
                 <TextInput
                   value={adminFee}
                   onChangeText={setAdminFee}
@@ -273,8 +278,29 @@ export default function VatRefundScreen() {
 
         <View style={styles.sectionHeader}>
           <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>{t("modules.vatRefund.purchases", "Purchases")}</Text>
-          <Button mode="text" onPress={openAddModal}>{t("modules.vatRefund.addNew", "+ Add New")}</Button>
         </View>
+
+        <Pressable 
+          onPress={openAddModal}
+          style={({pressed}) => [
+            { 
+              flexDirection: 'row', 
+              alignItems: 'center', 
+              padding: 16, 
+              borderRadius: 16, 
+              backgroundColor: pressed ? theme.colors.surfaceVariant : theme.colors.primaryContainer,
+              marginBottom: 16
+            }
+          ]}
+        >
+          <View style={{ width: 40, height: 40, borderRadius: 20, backgroundColor: theme.colors.surfaceVariant, alignItems: 'center', justifyContent: 'center', marginRight: 16 }}>
+            <MaterialIcons name="add" size={24} color={theme.colors.primary} />
+          </View>
+          <View style={{ flex: 1 }}>
+            <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{t("modules.vatRefund.addNew", "Add New")}</Text>
+            <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.vatRefund.addNewDesc", "Add an item to estimate your refund")}</Text>
+          </View>
+        </Pressable>
 
         {purchases.length === 0 ? (
           <View style={styles.emptyState}>
@@ -328,12 +354,12 @@ export default function VatRefundScreen() {
           </Card.Content>
         </Card>
 
-        <View style={{ flexDirection: 'row', gap: 12, marginTop: 16 }}>
-          <Button mode="contained" onPress={handleSync} style={{ flex: 1 }} disabled={syncSuccess || purchases.length === 0}>
-            {syncSuccess ? t("modules.tipCalculator.synced", "Synced!") : t("modules.tipCalculator.syncToBudget", "Sync to Budget")}
-          </Button>
-          <Button mode="outlined" onPress={handleReset} style={{ flex: 1 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 16 }}>
+          <Button mode="outlined" onPress={handleReset}>
             Reset
+          </Button>
+          <Button mode="contained" onPress={handleSync} disabled={syncSuccess || purchases.length === 0}>
+            {syncSuccess ? t("modules.tipCalculator.synced", "Synced!") : t("modules.tipCalculator.syncToBudget", "Sync to Budget")}
           </Button>
         </View>
 

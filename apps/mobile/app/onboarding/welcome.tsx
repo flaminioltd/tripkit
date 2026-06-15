@@ -33,17 +33,28 @@ const getCurrencyDisplayName = (code: string) => {
   return fallbacks[code] ? `${fallbacks[code]} (${code})` : code;
 };
 
+const LANGUAGES = [
+  { code: 'de', name: 'Deutsch' },
+  { code: 'en', name: 'English' },
+  { code: 'es', name: 'Español' },
+  { code: 'fr', name: 'Français' },
+  { code: 'it', name: 'Italiano' },
+  { code: 'pt', name: 'Português' },
+];
+
 export default function WelcomeScreen() {
   const theme = useTheme();
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { updateSettings } = useAppStore();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   
+  const [step, setStep] = useState<0 | 1>(0);
+  const [selectedLanguage, setSelectedLanguage] = useState<string>(i18n.language.split('-')[0] || 'en');
+
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCountry, setSelectedCountry] = useState<any | null>(null);
   const [isFocused, setIsFocused] = useState(false);
-  const [isSet, setIsSet] = useState(false);
   const [allCountries, setAllCountries] = useState<any[]>([]);
 
   useEffect(() => {
@@ -51,29 +62,37 @@ export default function WelcomeScreen() {
   }, []);
 
   const filteredCountries = useMemo(() => {
-    let list = allCountries;
+    const translatedCountries = allCountries.map(c => ({
+      ...c,
+      translatedName: t(`countries.${c.code}`, c.name),
+      translatedRegion: t(`regions.${c.region}`, c.region)
+    }));
+    
+    let list = translatedCountries;
     if (searchQuery) {
-      list = allCountries.filter(c => c.name.toLowerCase().includes(searchQuery.toLowerCase()));
+      list = translatedCountries.filter(c => c.translatedName.toLowerCase().includes(searchQuery.toLowerCase()));
     }
-    return list.slice().sort((a, b) => a.name.localeCompare(b.name));
-  }, [searchQuery, allCountries]);
+    return list.sort((a, b) => a.translatedName.localeCompare(b.translatedName));
+  }, [searchQuery, allCountries, t]);
 
   const handleAction = async () => {
+    if (step === 0) {
+      await updateSettings({ systemLanguage: selectedLanguage });
+      i18n.changeLanguage(selectedLanguage);
+      setStep(1);
+      return;
+    }
+
     if (!selectedCountry) return;
     
-    if (!isSet) {
-      setIsSet(true);
-    } else {
-      await updateSettings({ homeCountry: selectedCountry.code, homeCurrency: selectedCountry.currencyCode });
-      router.push({ pathname: '/onboarding/date-selection', params: { homeCountryCode: selectedCountry.code } });
-    }
+    await updateSettings({ homeCountry: selectedCountry.code, homeCurrency: selectedCountry.currencyCode });
+    router.push({ pathname: '/onboarding/date-selection', params: { homeCountryCode: selectedCountry.code } });
   };
 
   const handleSelectCountry = (country: any) => {
     setSelectedCountry(country);
-    setSearchQuery(country.name);
+    setSearchQuery(country.translatedName || country.name);
     setIsFocused(false);
-    setIsSet(false);
     Keyboard.dismiss();
   };
 
@@ -86,120 +105,160 @@ export default function WelcomeScreen() {
         <Text variant="titleLarge" style={[styles.headerTitle, { color: theme.colors.primary }]}>{t('welcomeScreen.title')}</Text>
       </View>
 
-      <View style={styles.content}>
-        <View style={styles.heroText}>
-          <Text variant="headlineMedium" style={[styles.title, { color: theme.colors.onSurface }]}>
-            {t('welcomeScreen.heroTitle')}
-          </Text>
-          <Text variant="bodyLarge" style={[styles.subtitle, { color: theme.colors.onSurfaceVariant }]}>
-            {t('welcomeScreen.heroSubtitle')}
-          </Text>
-        </View>
-
-        <View style={[styles.searchArea, { flex: 1 }]}>
-          <View style={[
-            styles.searchContainer, 
-            { 
-              backgroundColor: theme.colors.surface,
-              borderColor: isFocused ? theme.colors.primary : theme.colors.outlineVariant,
-              borderWidth: isFocused ? 2 : 1
-            }
-          ]}>
-            <MaterialIcons name="search" size={24} color={theme.colors.primary} style={styles.searchIcon} />
-            <PaperInput
-              value={searchQuery}
-              onChangeText={(text) => {
-                setSearchQuery(text);
-                setSelectedCountry(null);
-                setIsSet(false);
-              }}
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
-              placeholder={t('welcomeScreen.searchPlaceholder')}
-              style={styles.input}
-              underlineStyle={{ display: 'none' }}
-              textColor={theme.colors.onSurface}
-            />
-            {searchQuery.length > 0 && (
-              <Pressable onPress={() => {
-                setSearchQuery('');
-                setSelectedCountry(null);
-                setIsSet(false);
-              }} style={styles.clearIcon}>
-                <MaterialIcons name="close" size={20} color={theme.colors.onSurfaceVariant} />
-              </Pressable>
-            )}
+      {step === 0 ? (
+        <View style={styles.content}>
+          <View style={styles.heroText}>
+            <Text variant="headlineMedium" style={[styles.title, { color: theme.colors.onSurface }]}>
+              System Language
+            </Text>
+            <Text variant="bodyLarge" style={[styles.subtitle, { color: theme.colors.onSurfaceVariant }]}>
+              Choose your language to continue.
+            </Text>
           </View>
-
-          {isSet && selectedCountry && (
-            <Card style={{ marginTop: 24, backgroundColor: theme.colors.surfaceVariant }} mode="contained">
-              <Card.Content>
-                <Text variant="titleLarge" style={[{ fontWeight: 'bold', marginBottom: 8 }, { color: theme.colors.onSurface }]}>
-                  {t('welcomeScreen.settingsTitle', { countryName: selectedCountry.name })}
-                </Text>
-                <List.Item
-                  title={getCurrencyDisplayName(selectedCountry.currencyCode)}
-                  description={t('welcomeScreen.baseCurrency')}
-                  left={props => <List.Icon {...props} icon="cash" />}
-                />
-                <List.Item
-                  title={selectedCountry.measurementSystem === 'metric' ? 'Metric System' : 'Imperial System'}
-                  description={t('welcomeScreen.measurementSystem')}
-                  left={props => <List.Icon {...props} icon="ruler" />}
-                />
-              </Card.Content>
-            </Card>
-          )}
-
-          {isFocused && (
-            <View style={[styles.dropdown, { position: 'relative', top: 0, flex: 1, marginTop: 8, backgroundColor: theme.colors.surface, borderColor: theme.colors.outlineVariant }]}>
-              <FlatList
-                data={filteredCountries}
-                keyExtractor={(item) => item.code}
-                keyboardShouldPersistTaps="handled"
-                nestedScrollEnabled={true}
-                style={{ flex: 1 }}
-                renderItem={({ item }) => (
+          
+          <View style={[styles.dropdown, { backgroundColor: theme.colors.surface, borderColor: theme.colors.outlineVariant, position: 'relative', top: 0, elevation: 0, shadowOpacity: 0, flex: 1, marginBottom: 24 }]}>
+            <FlatList
+              data={LANGUAGES}
+              keyExtractor={(item) => item.code}
+              renderItem={({ item, index }) => {
+                const isSelected = selectedLanguage === item.code;
+                return (
                   <Pressable 
                     style={({ pressed }) => [
                       styles.resultItem,
+                      index === LANGUAGES.length - 1 && { borderBottomWidth: 0 },
                       pressed && { backgroundColor: theme.colors.surfaceVariant }
                     ]}
-                    onPress={() => handleSelectCountry(item)}
+                    onPress={() => setSelectedLanguage(item.code)}
                   >
-                    {FLAG_IMAGES[item.code] ? (
-                      <Image source={FLAG_IMAGES[item.code]} style={[styles.resultIcon, { width: 36, height: 36, borderRadius: 18 }]} />
-                    ) : (
-                      <View style={[styles.resultIcon, { backgroundColor: theme.colors.surfaceVariant }]}>
-                        <MaterialIcons name="location-on" size={20} color={theme.colors.onSurfaceVariant} />
-                      </View>
-                    )}
-                    <View>
-                      <Text variant="bodyLarge" style={{ color: theme.colors.onSurface, fontWeight: '500' }}>
+                    <View style={{ flex: 1 }}>
+                      <Text variant="bodyLarge" style={{ color: isSelected ? theme.colors.primary : theme.colors.onSurface, fontWeight: isSelected ? 'bold' : '500' }}>
                         {item.name}
                       </Text>
-                      <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
-                        {item.region}
-                      </Text>
                     </View>
+                    {isSelected && (
+                      <MaterialIcons name="check" size={20} color={theme.colors.primary} />
+                    )}
                   </Pressable>
-                )}
-              />
-            </View>
-          )}
+                );
+              }}
+            />
+          </View>
         </View>
-      </View>
+      ) : (
+        <View style={styles.content}>
+          <View style={styles.heroText}>
+            <Text variant="headlineMedium" style={[styles.title, { color: theme.colors.onSurface }]}>
+              {t('welcomeScreen.heroTitle')}
+            </Text>
+            <Text variant="bodyLarge" style={[styles.subtitle, { color: theme.colors.onSurfaceVariant }]}>
+              {t('welcomeScreen.heroSubtitle')}
+            </Text>
+          </View>
+
+          <View style={[styles.searchArea, { flex: 1 }]}>
+            <View style={[
+              styles.searchContainer, 
+              { 
+                backgroundColor: theme.colors.surface,
+                borderColor: isFocused ? theme.colors.primary : theme.colors.outlineVariant,
+                borderWidth: isFocused ? 2 : 1
+              }
+            ]}>
+              <MaterialIcons name="search" size={24} color={theme.colors.primary} style={styles.searchIcon} />
+              <PaperInput
+                value={searchQuery}
+                onChangeText={(text) => {
+                  setSearchQuery(text);
+                  setSelectedCountry(null);
+                }}
+                onFocus={() => setIsFocused(true)}
+                onBlur={() => setIsFocused(false)}
+                placeholder={t('welcomeScreen.searchPlaceholder')}
+                style={styles.input}
+                underlineStyle={{ display: 'none' }}
+                textColor={theme.colors.onSurface}
+              />
+              {searchQuery.length > 0 && (
+                <Pressable onPress={() => {
+                  setSearchQuery('');
+                  setSelectedCountry(null);
+                }} style={styles.clearIcon}>
+                  <MaterialIcons name="close" size={20} color={theme.colors.onSurfaceVariant} />
+                </Pressable>
+              )}
+            </View>
+
+            {selectedCountry && (
+              <Card style={{ marginTop: 24, backgroundColor: theme.colors.surfaceVariant }} mode="contained">
+                <Card.Content>
+                  <Text variant="titleLarge" style={[{ fontWeight: 'bold', marginBottom: 8 }, { color: theme.colors.onSurface }]}>
+                    {t('welcomeScreen.settingsTitle', { countryName: selectedCountry.translatedName || selectedCountry.name })}
+                  </Text>
+                  <List.Item
+                    title={getCurrencyDisplayName(selectedCountry.currencyCode)}
+                    description={t('welcomeScreen.baseCurrency')}
+                    left={props => <List.Icon {...props} icon="cash" />}
+                  />
+                  <List.Item
+                    title={selectedCountry.measurementSystem === 'metric' ? t('welcomeScreen.metricSystem') : t('welcomeScreen.imperialSystem')}
+                    description={t('welcomeScreen.measurementSystem')}
+                    left={props => <List.Icon {...props} icon="ruler" />}
+                  />
+                </Card.Content>
+              </Card>
+            )}
+
+            {isFocused && (
+              <View style={[styles.dropdown, { position: 'relative', top: 0, flex: 1, marginTop: 8, backgroundColor: theme.colors.surface, borderColor: theme.colors.outlineVariant }]}>
+                <FlatList
+                  data={filteredCountries}
+                  keyExtractor={(item) => item.code}
+                  keyboardShouldPersistTaps="handled"
+                  nestedScrollEnabled={true}
+                  style={{ flex: 1 }}
+                  renderItem={({ item }) => (
+                    <Pressable 
+                      style={({ pressed }) => [
+                        styles.resultItem,
+                        pressed && { backgroundColor: theme.colors.surfaceVariant }
+                      ]}
+                      onPress={() => handleSelectCountry(item)}
+                    >
+                      {FLAG_IMAGES[item.code] ? (
+                        <Image source={FLAG_IMAGES[item.code]} style={[styles.resultIcon, { width: 36, height: 36, borderRadius: 18 }]} />
+                      ) : (
+                        <View style={[styles.resultIcon, { backgroundColor: theme.colors.surfaceVariant }]}>
+                          <MaterialIcons name="location-on" size={20} color={theme.colors.onSurfaceVariant} />
+                        </View>
+                      )}
+                      <View>
+                        <Text variant="bodyLarge" style={{ color: theme.colors.onSurface, fontWeight: '500' }}>
+                          {item.translatedName || item.name}
+                        </Text>
+                        <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
+                          {item.translatedRegion || item.region}
+                        </Text>
+                      </View>
+                    </Pressable>
+                  )}
+                />
+              </View>
+            )}
+          </View>
+        </View>
+      )}
 
       <View style={styles.footer}>
         <Button 
           mode="contained" 
           onPress={handleAction} 
-          disabled={!selectedCountry}
+          disabled={step === 1 && !selectedCountry}
           style={styles.button}
           contentStyle={{ height: 56 }}
           labelStyle={{ fontSize: 16, fontWeight: 'bold' }}
         >
-          {isSet ? t('welcomeScreen.buttonContinue') : t('welcomeScreen.buttonSet')}
+          {step === 0 ? 'Continue' : t('welcomeScreen.buttonContinue')}
         </Button>
       </View>
     </KeyboardAvoidingView>

@@ -1,6 +1,7 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Button from '../../src/components/ui/Button';
 import React from 'react';
-import { View, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';;
 import { Text, useTheme, Card, List, IconButton } from 'react-native-paper';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';

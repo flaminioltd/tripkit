@@ -14,7 +14,7 @@ interface Props {
 
 export default function PastTripSummaryModal({ visible, trip, onDismiss }: Props) {
   const theme = useTheme();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { settings } = useAppStore();
   const [expenses, setExpenses] = useState<any[]>([]);
 
@@ -50,7 +50,10 @@ export default function PastTripSummaryModal({ visible, trip, onDismiss }: Props
       <Modal visible={visible} onDismiss={onDismiss} contentContainerStyle={[styles.modalContainer, { backgroundColor: theme.colors.surface }]}>
         <View style={styles.header}>
           <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>
-            {t("components.pastTripSummary.title", "{{country}} Summary", { country: trip.destinationCountry })}
+            {t("components.pastTripSummary.title", "{{country}} Summary", { country: (() => {
+              const pastCode = COUNTRIES.find(c => c.name === trip.destinationCountry)?.code;
+              return pastCode ? t(`countries.${pastCode}`, trip.destinationCountry) : trip.destinationCountry;
+            })() })}
           </Text>
         </View>
 
@@ -88,7 +91,7 @@ export default function PastTripSummaryModal({ visible, trip, onDismiss }: Props
                 <View key={exp.id}>
                   <List.Item
                     title={exp.title}
-                    description={new Date(exp.date).toLocaleDateString()}
+                    description={new Date(exp.date).toLocaleDateString(i18n.language || 'en-US')}
                     right={() => (
                       <View style={{ justifyContent: 'center' }}>
                         <Text style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>

@@ -8,14 +8,16 @@
   },
   "welcomeScreen": {
     "title": "TripKit",
-    "heroTitle": "¿Dónde está tu hogar?",
+    "heroTitle": "¿Cuál es tu país de origen?",
     "heroSubtitle": "TripKit establece valores predeterminados útiles según tu país de origen.",
     "searchPlaceholder": "Ingresa un país...",
     "settingsTitle": "Ajustes de {{countryName}}",
     "baseCurrency": "Moneda Base",
     "measurementSystem": "Sistema de Medición",
     "buttonContinue": "Continuar",
-    "buttonSet": "Establecer"
+    "buttonSet": "Establecer",
+    "metricSystem": "Sistema Métrico",
+    "imperialSystem": "Sistema Imperial"
   },
   "dateSelectionScreen": {
     "headerTitle": "Planear Viaje",
@@ -24,9 +26,9 @@
     "searchPlaceholder": "Ingresa un destino...",
     "detailsTitle": "Detalles de {{countryName}}",
     "exchangeRateTitle": "{{currency}} a {{baseCurrency}}",
-    "exchangeRateDesc": "1 {{targetCurrency}} = {{rate}} {{baseCurrency}} (a partir de {{date}})",
+    "exchangeRateDesc": "1 {{baseCurrency}} = {{rate}} {{targetCurrency}} (a partir de {{date}})",
     "exchangeRateOffline": "Tasa de cambio sin conexión",
-    "localMeasurement": "Medición Local",
+    "localMeasurement": "Medición Destino",
     "datesTitle": "¿Cuándo viajas?",
     "notSetYet": "Aún no establecido",
     "startDate": "Fecha de Inicio",
@@ -68,38 +70,39 @@
         "description": "Saludos comunes y esenciales"
       },
       "plugVoltage": {
-        "title": "Enchufe y Voltaje",
+        "title": "Enchufes",
         "description": "Necesidades de adaptador e información de voltaje"
       },
       "emergencyNumbers": {
-        "title": "Números de Emergencia",
-        "description": "Equivalentes locales del 911"
+        "title": "Emergencias",
+        "description": "Equivalentes destinoes del 911"
       },
       "budgetTracker": {
-        "title": "Rastreador de Presupuesto",
+        "title": "Presupuesto",
         "description": "Rastrea gastos y mantente dentro del presupuesto"
       },
       "atmExchange": {
-        "title": "Cajero y Cambio",
+        "title": "Cajeros",
         "description": "Tarifas, propinas y convertidor de moneda"
       },
       "vatRefund": {
-        "title": "Calculadora de Devolución de IVA",
+        "title": "Devolución IVA",
         "description": "Estimaciones de devolución de impuestos"
       },
       "tipCalculator": {
-        "title": "Calculadora de Propinas",
-        "description": "Costumbres locales de propinas y matemáticas"
+        "title": "Propinas",
+        "description": "Costumbres destinoes de propinas y matemáticas"
       },
       "sizeConverter": {
-        "title": "Convertidor de Tallas",
+        "title": "Tallas",
         "description": "Zapatos, ropa y medidas"
       },
       "timezoneHelper": {
-        "title": "Ayudante de Zona Horaria",
-        "description": "Coordínate con casa"
+        "title": "Zonas Horarias",
+        "description": "Coordinar con origen"
       }
-    }
+    },
+    "headerSubtitle": "Tu compañero de viaje."
   },
   "tripsScreen": {
     "headerTitle": "Mis Viajes",
@@ -113,7 +116,7 @@
     "addTripButton": "Agregar Nuevo Viaje",
     "activeTripLabel": "VIAJE ACTIVO",
     "changeCountryButton": "Cambiar País",
-    "deleteTripButton": "Eliminar Viaje",
+    "deleteTripButton": "Eliminar",
     "finishTripButton": "Finalizar Viaje",
     "tripSummaryButton": "Resumen del Viaje",
     "resumeTripButton": "Reanudar Viaje",
@@ -122,7 +125,39 @@
     "setDatesButton": "Establecer Fechas",
     "deleteTripAlertTitle": "Eliminar",
     "editTripCancel": "Cancelar",
-    "datesPending": "Fechas pendientes"
+    "datesPending": "Fechas pendientes",
+    "headerSubtitle": "Gestiona tus aventuras.",
+    "planNewTripTitle": "Planear un Nuevo Viaje",
+    "planNewTripSubtitle": "¿Hacia dónde te diriges?",
+    "activeTripTitle": "Viaje Activo",
+    "tripStatusLabel": "Estado del Viaje",
+    "tripBudgetUsed": "Presupuesto del Viaje Utilizado",
+    "dailyBudgetUsed": "Presupuesto Diario Utilizado",
+    "budgetSet": "Establecer",
+    "budgetAdjust": "Ajustar",
+    "budgetDaily": "DIARIO",
+    "budgetTrip": "VIAJE",
+    "editTripButton": "Editar",
+    "upcomingTripsTitle": "Próximos Viajes",
+    "editButton": "Editar",
+    "deleteButton": "Eliminar",
+    "setActiveButton": "Hacer Activo",
+    "pastTripsTitle": "Viajes Pasados",
+    "editTripModalTitle": "Editar {{country}}",
+    "selectDateRange": "Seleccionar Fechas",
+    "datesNotSetYet": "Fechas no establecidas aún",
+    "editTripSave": "Guardar Cambios",
+    "tripStatus": {
+      "pending": "Pendiente",
+      "pendingSubtitle": "Aún no hay fechas",
+      "upcoming": "Próximo",
+      "upcomingSubtitle": "En {{days}} días",
+      "ongoing": "En Curso",
+      "ongoingSubtitle": "Día {{current}} de {{total}}",
+      "completed": "Completado",
+      "completedSubtitle": "Viaje terminado"
+    },
+    "tbd": "Por determinar"
   },
   "settingsScreen": {
     "headerTitle": "Ajustes",
@@ -133,7 +168,17 @@
     "sectionData": "DATOS Y ALMACENAMIENTO",
     "exportData": "Exportar Todos los Datos",
     "clearData": "Borrar Todos los Datos",
-    "version": "Versión"
+    "version": "Versión",
+    "headerSubtitle": "Gestiona tus preferencias.",
+    "notSet": "No establecido",
+    "changeHomeCountryTitle": "Cambiar País de Origen",
+    "changeSystemLanguageTitle": "Idioma del Sistema",
+    "systemLanguages": {
+      "en": "Inglés",
+      "es": "Español",
+      "de": "Alemán"
+    },
+    "forceSyncButton": "Sincronizar Datos"
   },
   "access": {
     "upgrade": {
@@ -166,14 +211,14 @@
       "syncToBudgetButton": "Sincronizar al Presupuesto",
       "resetButton": "Restablecer",
       "addedToExpenses": "Agregado a Gastos",
-      "description": "Compara retiros en cajeros automáticos con casas de cambio locales.",
+      "description": "Compara retiros en cajeros automáticos con casas de cambio destinoes.",
       "targetAmount": "Cantidad Objetivo",
       "home": "Origen",
-      "local": "Local",
+      "local": "Destino",
       "amount": "Cantidad",
       "marketRate": "Tasa de Mercado",
       "optionA": "Opción A: Retiro en Cajero",
-      "localFee": "Tarifa Local",
+      "localFee": "Tarifa Destino",
       "in": "en",
       "bankFlatFee": "Tarifa Fija del Banco",
       "bankFxFee": "% de Cambio del Banco",
@@ -188,7 +233,10 @@
       "recommendationEqual": "Igual",
       "savesYou": "Te ahorra ",
       "givesYou": "Te da ",
-      "more": " más"
+      "more": " más",
+      "resetValues": "Restablecer Valores",
+      "recommendationAtm": "Cajero Automático",
+      "recommendationBureau": "Casa de Cambio"
     },
     "basicPhrases": {
       "headerTitle": "Frases Básicas",
@@ -196,8 +244,8 @@
       "essentialsTab": "Esenciales",
       "numbersTab": "Números",
       "languageContext": "Contexto de Idioma",
-      "noTranslationNeeded": "No se necesita traducción...",
-      "noTranslationDesc": "El idioma principal en {{country}} coincide con el idioma de tu sistema.",
+      "noTranslationNeeded": "No requiere traducción",
+      "noTranslationDesc": "El idioma principal en {{country}} coincide con el idioma de su sistema.",
       "phrasesInCountry": "Frases en {{language}} para {{country}}",
       "noPhrasesAvailable": "No hay frases disponibles para esta categoría."
     },
@@ -208,7 +256,7 @@
       "setBudgetButton": "Establecer Presupuesto",
       "budgetLimit": "Cantidad del Presupuesto",
       "trackIn": "Rastrear Gastos en",
-      "localCurrency": "Local",
+      "localCurrency": "Destino",
       "homeCurrency": "Origen",
       "budgetType": "Alcance del Presupuesto",
       "dailyBudget": "Diario",
@@ -229,14 +277,24 @@
       "daysLabel": "días",
       "overBudget": "Fuera del Presupuesto",
       "expensesTitle": "Gastos Recientes",
-      "addExpenseButton": "+ Agregar Nuevo",
+      "addExpenseButton": "Agregar Nuevo",
       "noExpensesLabel": "Aún no se han agregado gastos.",
       "expenseModalTitleAdd": "Agregar Gasto",
       "expenseModalTitleEdit": "Editar Gasto",
       "categoryLabel": "Categoría",
       "detailsOptional": "Descripción (Opcional)",
       "amountLocal": "Cantidad ({{currency}})",
-      "saveExpenseButton": "Guardar"
+      "saveExpenseButton": "Guardar",
+      "resetBudgetButton": "Restablecer Presupuesto y Borrar Gastos",
+      "tags": {
+        "food": "Comida",
+        "transport": "Transporte",
+        "accommodation": "Hotel",
+        "flights": "Vuelos",
+        "entertainment": "Diversión",
+        "shopping": "Compras",
+        "other": "Otro"
+      }
     },
     "emergencyEssentials": {
       "headerTitle": "Números de Emergencia",
@@ -247,16 +305,16 @@
       "fire": "Bomberos",
       "medicalAmbulance": "Emergencia Médica / Ambulancia (SAMU)",
       "tapToDial": "Toca para marcar",
-      "localSafetyAdvice": "Consejo Local de Seguridad",
+      "localSafetyAdvice": "Consejo Destino de Seguridad",
       "embassyConsulate": "Embajada o Consulado",
-      "embassyDesc": "Si pierdes tu pasaporte o necesitas asistencia legal, contacta a la embajada de tu país de origen.",
+      "embassyDesc": "Si pierdes tu pasaporte o necesitas asistencia legal, comunícate con la embajada de tu país de origen.",
       "offlineReady": "Listo sin conexión",
       "specificServices": "Servicios Específicos",
-      "pharmacyNoteTitle": "Nota de Farmacia Local",
+      "pharmacyNoteTitle": "Nota de Farmacia del Destino Local",
       "pharmacyNoteDesc": "Busca una cruz verde parpadeante. En Francia, los farmacéuticos pueden brindar asesoramiento médico para dolencias menores. Para farmacias fuera de horario ("
     },
     "localInfo": {
-      "headerTitle": "Info Local",
+      "headerTitle": "Info de Destino",
       "overviewTab": "Resumen",
       "cultureTab": "Cultura",
       "transportTab": "Transporte",
@@ -283,7 +341,9 @@
       "embassyDesc": "Tu país de origen está configurado como {{homeCountry}}. Mostrando detalles de la embajada en {{destCountry}}.",
       "embassyConsulate": "Embajada / Consulado",
       "visitButton": "Visitar",
-      "embassyUnavailable": "La información de la embajada para {{homeCountry}} en {{destCountry}} no está disponible actualmente."
+      "embassyUnavailable": "La información de la embajada para {{homeCountry}} en {{destCountry}} no está disponible actualmente.",
+      "embassyTitle": "Embajada",
+      "origin": "Origen"
     },
     "plugVoltage": {
       "headerTitle": "Enchufe y Voltaje",
@@ -299,9 +359,9 @@
       "destinationCountry": "País de Destino",
       "plugTypesTitle": "Tipos de Enchufe en {{country}}",
       "typeN": "Tipo {{type}}",
-      "homeCountryCode": "CASA ({{code}})",
+      "homeCountryCode": "ORIGEN ({{code}})",
       "typesList": "Tipo {{types}}",
-      "destCountryCode": "LOCAL ({{code}})"
+      "destCountryCode": "DESTINO ({{code}})"
     },
     "sizeConverter": {
       "headerTitle": "Tallas y Unidades",
@@ -322,19 +382,24 @@
       "temperature": "Temperatura",
       "weight": "Peso (Equipaje)",
       "volume": "Volumen (Líquidos/Gas)",
-      "speed": "Velocidad"
+      "speed": "Velocidad",
+      "matchSubtitle": "No hay necesidad de convertir nada aquí.",
+      "matchTitleShoes": "¡Las tallas de zapatos coinciden!",
+      "matchTitleClothes": "¡Las tallas de ropa coinciden!",
+      "matchTitleUnits": "¡Las unidades coinciden!"
     },
     "timezoneHelper": {
       "headerTitle": "Zonas Horarias",
-      "homeLabel": "CASA ({{code}})",
-      "localLabel": "LOCAL ({{code}})",
+      "homeLabel": "ORIGEN ({{code}})",
+      "localLabel": "DESTINO ({{code}})",
       "timeSetting": "Ajuste de Tiempo",
       "plus1Day": "+1 Día",
       "minus1Day": "-1 Día",
       "sameDay": "Mismo Día",
       "ampm": "AM/PM",
       "h24": "24h",
-      "resetCurrentTime": "Restablecer a Hora Actual"
+      "resetCurrentTime": "Restablecer a Hora Actual",
+      "origin": "Origen"
     },
     "tipCalculator": {
       "headerTitle": "Calculadora de Propinas",
@@ -347,7 +412,7 @@
       "tipPercentage": "Porcentaje de Propina",
       "noTip": "Sin Propina",
       "roundUpTip": "Redondear",
-      "customTip": "Personalizado",
+      "customTip": "Otro",
       "splitBetween": "Dividir Entre (personas)",
       "suggestedTip": "Propina Sugerida",
       "totalBill": "Cuenta Total",
@@ -369,7 +434,7 @@
       "adjustButton": "Ajustar",
       "adminFee": "Tarifa Administrativa Estimada",
       "purchases": "Compras",
-      "addNew": "+ Agregar Nuevo",
+      "addNew": "Agregar Nuevo",
       "noPurchases": "Aún no se han agregado compras.",
       "grandTotal": "Gran Total",
       "estimatedRefund": "Devolución Estimada",
@@ -404,7 +469,7 @@
       "createTripButton": "Crear Viaje"
     },
     "changeHomeCountry": {
-      "title": "Cambiar País de Origen",
+      "title": "Cambiar país de origen",
       "searchPlaceholder": "Buscar países..."
     },
     "changeLanguage": {
@@ -429,7 +494,9 @@
     "accommodation": "Alojamiento",
     "activities": "Actividades y Tours",
     "shopping": "Compras",
-    "other": "Otro"
+    "other": "Otro",
+    "Essentials": "Esenciales",
+    "Finance": "Finanzas"
   },
   "countries": {
     "US": "Estados Unidos",
@@ -469,7 +536,29 @@
   "languages": {
     "en": "Inglés",
     "es": "Español",
-    "de": "Alemán"
+    "de": "Alemán",
+    "EN": "Inglés",
+    "FR": "Francés",
+    "ES": "Español",
+    "IT": "Italiano",
+    "TR": "Turco",
+    "DE": "Alemán",
+    "EL": "Griego",
+    "PT": "Portugués",
+    "NL": "Holandés",
+    "PL": "Polaco",
+    "HR": "Croata",
+    "CS": "Checo",
+    "DA": "Danés",
+    "HU": "Húngaro",
+    "SV": "Sueco",
+    "NO": "Noruego",
+    "ZH": "Chino",
+    "JA": "Japonés",
+    "TH": "Tailandés",
+    "VI": "Vietnamita",
+    "KO": "Coreano",
+    "HI": "Hindi"
   },
   "calendar": {
     "months": {
@@ -522,10 +611,70 @@
   "phrases": {
     "categories": {
       "Basics": "Básicos",
-      "GettingAround": "Moverse",
-      "Dining": "Restaurantes",
       "Shopping": "Compras",
+      "Hotel & Dining": "Hotel y Comida",
+      "Emergencies": "Emergencias",
+      "Dining": "Comida",
       "Emergency": "Emergencia"
+    },
+    "items": {
+      "hello": "Hola",
+      "goodbye": "Adiós",
+      "please": "Por favor",
+      "thank_you": "Gracias",
+      "yes": "Sí",
+      "no": "No",
+      "excuse_me": "Disculpe",
+      "do_you_speak_english": "¿Habla inglés?",
+      "how_much": "¿Cuánto cuesta?",
+      "credit_cards": "¿Aceptan tarjetas de crédito?",
+      "buy_this": "Me gustaría comprar esto",
+      "too_expensive": "Demasiado caro",
+      "can_you_help": "¿Me puede ayudar?",
+      "fitting_room": "¿Dónde está el probador?",
+      "just_looking": "Solo estoy mirando, gracias",
+      "menu": "¿Puedo ver el menú?",
+      "table_for_two": "Una mesa para dos, por favor",
+      "bill": "La cuenta, por favor",
+      "water": "Agua, por favor",
+      "reservation": "Tengo una reserva",
+      "delicious": "¡Está delicioso!",
+      "bathroom": "¿Dónde está el baño?",
+      "help": "¡Ayuda!",
+      "need_doctor": "Necesito un médico",
+      "call_police": "¡Llame a la policía!",
+      "hospital": "¿Dónde está el hospital?",
+      "lost_passport": "Perdí mi pasaporte",
+      "emergency": "Es una emergencia",
+      "embassy": "¿Dónde está la embajada?",
+      "menu_please": "El menú, por favor",
+      "water_please": "Agua, por favor",
+      "check_please": "La cuenta, por favor",
+      "vegetarian": "¿Tienen opciones vegetarianas?",
+      "allergies": "Tengo alergias",
+      "lost": "Estoy perdido",
+      "stolen": "Me han robado la cartera"
     }
+  },
+  "components": {
+    "pastTripSummary": {
+      "title": "Resumen de {{country}}",
+      "configuredBudget": "PRESUPUESTO CONFIGURADO",
+      "perDayForDays": "{{amount}} {{currency}} / día por {{days}} días",
+      "usedBudget": "PRESUPUESTO UTILIZADO",
+      "underBudget": "¡Dentro del presupuesto!",
+      "overBudget": "Fuera del presupuesto",
+      "noBudgetLimit": "Sin límite de presupuesto",
+      "expensesCount": "Gastos ({{count}})",
+      "noExpenses": "No hay gastos registrados para este viaje."
+    }
+  },
+  "regions": {
+    "Latin America": "Latinoamérica",
+    "Oceania": "Oceanía",
+    "North America": "América del Norte",
+    "Europe/Asia": "Europa/Asia",
+    "Europe": "Europa",
+    "Asia": "Asia"
   }
 }

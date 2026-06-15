@@ -1,9 +1,10 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import React from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { FLAG_IMAGES } from '../../src/lib/assets';
 import { useTripStore } from '../../src/stores/trip-store';
-import { View, Image, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { View, Image, StyleSheet, ScrollView } from 'react-native';;
 import { Text, useTheme, IconButton, Card, List } from 'react-native-paper';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
@@ -17,7 +18,7 @@ export default function EmergencyEssentialsScreen() {
   const activeCountryCode = activeTrip ? COUNTRIES.find((c: any) => c.name === activeTrip.destinationCountry)?.code : null;
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
+    <SafeAreaView edges={['bottom', 'left', 'right']} style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <ModuleHeader title={t("modules.emergencyEssentials.headerTitle", "Emergency Numbers")} />
 
       <ScrollView contentContainerStyle={styles.content}>

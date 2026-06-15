@@ -12,21 +12,26 @@ interface ChangeLanguageModalProps {
 }
 
 const LANGUAGES = [
+  { code: 'de', name: 'Deutsch' },
   { code: 'en', name: 'English' },
-  { code: 'es', name: 'Spanish' },
-  { code: 'de', name: 'German' },
+  { code: 'es', name: 'Español' },
+  { code: 'fr', name: 'Français' },
+  { code: 'it', name: 'Italiano' },
+  { code: 'pt', name: 'Português' },
 ];
 
 export default function ChangeLanguageModal({ visible, onDismiss }: ChangeLanguageModalProps) {
   const theme = useTheme();
   const { updateSettings, settings } = useAppStore();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const handleSelectLanguage = async (code: string) => {
     await updateSettings({ systemLanguage: code });
     i18n.changeLanguage(code);
     onDismiss();
   };
+
+  const currentLanguage = LANGUAGES.find(l => l.code === (settings?.systemLanguage || i18n.language.split('-')[0])) || LANGUAGES[0];
 
   return (
     <Portal>
@@ -36,29 +41,27 @@ export default function ChangeLanguageModal({ visible, onDismiss }: ChangeLangua
         contentContainerStyle={[styles.modalContainer, { backgroundColor: theme.colors.background }]}
       >
         <View style={styles.header}>
-          <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>System Language</Text>
+          <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{t("settingsScreen.changeSystemLanguageTitle", "System Language")}</Text>
           <Pressable onPress={onDismiss} style={styles.closeButton}>
             <MaterialIcons name="close" size={24} color={theme.colors.onSurfaceVariant} />
           </Pressable>
         </View>
 
-        <View style={styles.content}>
-          <View style={[styles.dropdown, { backgroundColor: theme.colors.surface, borderColor: theme.colors.outlineVariant }]}>
-            <ScrollView bounces={false}>
-              {LANGUAGES.map((item) => {
-                const isSelected = settings?.systemLanguage === item.code || (!settings?.systemLanguage && item.code === 'en');
+        <View style={[styles.content, { paddingBottom: 0 }]}>
+          <View style={[styles.dropdown, { backgroundColor: theme.colors.surface, borderColor: theme.colors.outlineVariant, marginBottom: 24 }]}>
+            <ScrollView nestedScrollEnabled={true}>
+              {LANGUAGES.map((item, index) => {
+                const isSelected = currentLanguage.code === item.code;
                 return (
                   <Pressable 
                     key={item.code}
                     style={({ pressed }) => [
                       styles.resultItem,
+                      index === LANGUAGES.length - 1 && { borderBottomWidth: 0 },
                       pressed && { backgroundColor: theme.colors.surfaceVariant }
                     ]}
                     onPress={() => handleSelectLanguage(item.code)}
                   >
-                    <View style={[styles.resultIcon, { backgroundColor: theme.colors.surfaceVariant }]}>
-                      <MaterialIcons name="language" size={20} color={isSelected ? theme.colors.primary : theme.colors.onSurfaceVariant} />
-                    </View>
                     <View style={{ flex: 1 }}>
                       <Text variant="bodyLarge" style={{ color: isSelected ? theme.colors.primary : theme.colors.onSurface, fontWeight: isSelected ? 'bold' : '500' }}>
                         {item.name}
@@ -103,6 +106,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     borderWidth: 1,
     overflow: 'hidden',
+    flexShrink: 1,
   },
   resultItem: {
     flexDirection: 'row',
@@ -110,13 +114,5 @@ const styles = StyleSheet.create({
     padding: 16,
     borderBottomWidth: 1,
     borderBottomColor: '#f0f0f0',
-  },
-  resultIcon: {
-    width: 36,
-    height: 36,
-    borderRadius: 18,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 16,
   },
 });

@@ -1,9 +1,10 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Button from '../../src/components/ui/Button';
 import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { useTripStore } from '../../src/stores/trip-store';
-import { View, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';;
 import { Text, useTheme, Card, SegmentedButtons, Menu, IconButton, Switch } from 'react-native-paper';
 import { TimePicker, en, registerTranslation } from 'react-native-paper-dates';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
@@ -142,7 +143,7 @@ export default function TimezoneHelperScreen() {
     const menuVisible = isHome ? homeMenuVisible : destMenuVisible;
     const timezones = isHome ? homeCountry.timezones : destCountry.timezones;
     
-    const title = isHome ? t("modules.timezoneHelper.homeLabel", "HOME ({{code}})", { code: country.code }) : t("modules.timezoneHelper.localLabel", "LOCAL ({{code}})", { code: country.code });
+    const title = isHome ? `${t("modules.timezoneHelper.origin", "Origin").toUpperCase()} (${country.code})` : t("modules.timezoneHelper.localLabel", "LOCAL ({{code}})", { code: country.code });
 
     return (
       <View style={styles.timeBox} key={type}>
@@ -228,7 +229,7 @@ export default function TimezoneHelperScreen() {
   }
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
+    <SafeAreaView edges={['bottom', 'left', 'right']} style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <ModuleHeader title={t("modules.timezoneHelper.headerTitle", "Time Zones")} />
 
       <ScrollView contentContainerStyle={styles.content}>

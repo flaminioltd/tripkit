@@ -1,11 +1,11 @@
 import Button from '../../src/components/ui/Button';
 import React, { useState, useMemo, useEffect } from 'react';
 import { View, StyleSheet, FlatList, Pressable, KeyboardAvoidingView, Platform, Keyboard, Image } from 'react-native';
-import { Text, useTheme, TextInput as PaperInput, Card, List } from 'react-native-paper';
+import { Text, useTheme, TextInput as PaperInput, Card, List, Modal, Portal } from 'react-native-paper';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import DateTimePicker from '@react-native-community/datetimepicker';
+import { Calendar } from 'react-native-calendars';
 import { useTripStore } from '../../src/stores/trip-store';
 import { useAppStore } from '../../src/stores/app-store';
 import { db } from '../../src/db/client';
@@ -33,8 +33,52 @@ export default function DateSelectionScreen() {
   // Dates
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
-  const [showPicker, setShowPicker] = useState<'start' | 'end' | null>(null);
+  const [showPicker, setShowPicker] = useState<boolean>(false);
   const [notSetYet, setNotSetYet] = useState(false);
+  
+  const [tempStart, setTempStart] = useState<string | null>(null);
+  const [markedDates, setMarkedDates] = useState<any>({});
+
+  const handleDayPress = (day: any) => {
+    if (!tempStart) {
+      setTempStart(day.dateString);
+      setMarkedDates({
+        [day.dateString]: { startingDay: true, endingDay: true, color: theme.colors.primary, textColor: 'white' }
+      });
+      setStartDate(new Date(day.timestamp));
+      setEndDate(null);
+    } else {
+      const start = new Date(tempStart);
+      const end = new Date(day.timestamp);
+      if (end < start) {
+        setTempStart(day.dateString);
+        setMarkedDates({
+          [day.dateString]: { startingDay: true, endingDay: true, color: theme.colors.primary, textColor: 'white' }
+        });
+        setStartDate(new Date(day.timestamp));
+        setEndDate(null);
+      } else {
+        const range: any = {};
+        let current = new Date(start);
+        while (current <= end) {
+          const dateString = current.toISOString().split('T')[0];
+          if (current.getTime() === start.getTime()) {
+            range[dateString] = { startingDay: true, color: theme.colors.primary, textColor: 'white' };
+          } else if (current.getTime() === end.getTime()) {
+            range[dateString] = { endingDay: true, color: theme.colors.primary, textColor: 'white' };
+          } else {
+            range[dateString] = { color: theme.colors.primaryContainer, textColor: theme.colors.onPrimaryContainer };
+          }
+          current.setDate(current.getDate() + 1);
+        }
+        setMarkedDates(range);
+        setStartDate(start);
+        setEndDate(end);
+        setTempStart(null);
+        setTimeout(() => setShowPicker(false), 300);
+      }
+    }
+  };
 
   // Exchange Rate
   const [exchangeRateInfo, setExchangeRateInfo] = useState<{ rate: number, baseCurrency: string, targetCurrency: string, date: string } | null>(null);
@@ -45,16 +89,22 @@ export default function DateSelectionScreen() {
   }, []);
 
   const filteredCountries = useMemo(() => {
-    let list = allCountries;
+    const translatedCountries = allCountries.map(c => ({
+      ...c,
+      translatedName: t(`countries.${c.code}`, c.name),
+      translatedRegion: t(`regions.${c.region}`, c.region)
+    }));
+    
+    let list = translatedCountries;
     if (searchQuery) {
-      list = allCountries.filter(c => c.name.toLowerCase().includes(searchQuery.toLowerCase()));
+      list = translatedCountries.filter(c => c.translatedName.toLowerCase().includes(searchQuery.toLowerCase()));
     }
-    return list.slice().sort((a, b) => a.name.localeCompare(b.name));
-  }, [searchQuery, allCountries]);
+    return list.sort((a, b) => a.translatedName.localeCompare(b.translatedName));
+  }, [searchQuery, allCountries, t]);
 
   const handleSelectCountry = async (country: any) => {
     setSelectedDestination(country);
-    setSearchQuery(country.name);
+    setSearchQuery(country.translatedName || country.name);
     setIsFocused(false);
     Keyboard.dismiss();
 
@@ -66,7 +116,7 @@ export default function DateSelectionScreen() {
     const homeRateData = await getExchangeRate(homeCurrency);
 
     if (destRateData && homeRateData) {
-      const conversionRate = homeRateData.rate / destRateData.rate;
+      const conversionRate = destRateData.rate / homeRateData.rate;
       setExchangeRateInfo({
         rate: conversionRate,
         baseCurrency: homeCurrency,
@@ -102,47 +152,55 @@ export default function DateSelectionScreen() {
       style={[styles.container, { backgroundColor: theme.colors.background }]} 
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
-      <View style={[styles.header, { paddingTop: insets.top }]}>
+      <View style={[styles.header, { paddingTop: insets.top + 16 }]}>
         <Text variant="titleLarge" style={[styles.headerTitle, { color: theme.colors.primary }]}>{t('dateSelectionScreen.headerTitle')}</Text>
-        <Button onPress={handleSkip}>{t('dateSelectionScreen.skipButton')}</Button>
+        <Button mode="text" onPress={handleSkip}>{t('dateSelectionScreen.skipButton')}</Button>
       </View>
 
       <View style={styles.content}>
-        {!selectedDestination ? (
-          <>
-            <View style={styles.heroText}>
-              <Text variant="headlineMedium" style={[styles.title, { color: theme.colors.onSurface }]}>
-                {t('dateSelectionScreen.heroTitle')}
-              </Text>
-            </View>
+        {!selectedDestination && (
+          <View style={styles.heroText}>
+            <Text variant="headlineMedium" style={[styles.title, { color: theme.colors.onSurface }]}>
+              {t('dateSelectionScreen.heroTitle')}
+            </Text>
+          </View>
+        )}
 
-            <View style={[styles.searchArea, { flex: 1 }]}>
-              <View style={[
-                styles.searchContainer, 
-                { 
-                  backgroundColor: theme.colors.surface,
-                  borderColor: isFocused ? theme.colors.primary : theme.colors.outlineVariant,
-                  borderWidth: isFocused ? 2 : 1
-                }
-              ]}>
-                <MaterialIcons name="search" size={24} color={theme.colors.primary} style={styles.searchIcon} />
-                <PaperInput
-                  value={searchQuery}
-                  onChangeText={(text) => {
-                    setSearchQuery(text);
-                    setSelectedDestination(null);
-                  }}
-                  onFocus={() => setIsFocused(true)}
-                  onBlur={() => setIsFocused(false)}
-                  placeholder={t('dateSelectionScreen.searchPlaceholder')}
-                  style={styles.input}
-                  underlineStyle={{ display: 'none' }}
-                  textColor={theme.colors.onSurface}
-                />
-              </View>
+        <View style={[styles.searchArea, { flex: selectedDestination ? 0 : 1, zIndex: 10 }]}>
+          <View style={[
+            styles.searchContainer, 
+            { 
+              backgroundColor: theme.colors.surface,
+              borderColor: isFocused ? theme.colors.primary : theme.colors.outlineVariant,
+              borderWidth: isFocused ? 2 : 1
+            }
+          ]}>
+            <MaterialIcons name="search" size={24} color={theme.colors.primary} style={styles.searchIcon} />
+            <PaperInput
+              value={searchQuery}
+              onChangeText={(text) => {
+                setSearchQuery(text);
+                setSelectedDestination(null);
+              }}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
+              placeholder={t('dateSelectionScreen.searchPlaceholder')}
+              style={styles.input}
+              underlineStyle={{ display: 'none' }}
+              textColor={theme.colors.onSurface}
+            />
+            {searchQuery.length > 0 && (
+              <Pressable onPress={() => {
+                setSearchQuery('');
+                setSelectedDestination(null);
+              }} style={styles.clearIcon}>
+                <MaterialIcons name="close" size={20} color={theme.colors.onSurfaceVariant} />
+              </Pressable>
+            )}
+          </View>
 
-              {isFocused && (
-                <View style={[styles.dropdown, { position: 'relative', top: 0, flex: 1, marginTop: 8, backgroundColor: theme.colors.surface, borderColor: theme.colors.outlineVariant }]}>
+          {isFocused && (
+            <View style={[styles.dropdown, { position: 'absolute', top: 60, left: 0, right: 0, maxHeight: 250, backgroundColor: theme.colors.surface, borderColor: theme.colors.outlineVariant, zIndex: 100 }]}>
                   <FlatList
                     data={filteredCountries}
                     keyExtractor={(item) => item.code}
@@ -166,10 +224,10 @@ export default function DateSelectionScreen() {
                         )}
                         <View>
                           <Text variant="bodyLarge" style={{ color: theme.colors.onSurface, fontWeight: '500' }}>
-                            {item.name}
+                            {item.translatedName || item.name}
                           </Text>
                           <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
-                            {item.region}
+                            {item.translatedRegion || item.region}
                           </Text>
                         </View>
                       </Pressable>
@@ -178,21 +236,29 @@ export default function DateSelectionScreen() {
                 </View>
               )}
             </View>
-          </>
-        ) : (
-          <View style={styles.selectedContainer}>
-             <Card style={styles.card} mode="contained">
+
+        {selectedDestination && !isFocused && (
+          <View style={[styles.selectedContainer, { marginTop: 24, zIndex: 1 }]}>
+             <Card style={[styles.card, { backgroundColor: theme.colors.surfaceVariant }]} mode="contained">
                 <Card.Content>
                   <Text variant="titleLarge" style={[styles.cardTitle, { color: theme.colors.onSurface }]}>
-                    {t('dateSelectionScreen.detailsTitle', { countryName: selectedDestination.name })}
+                    {t('dateSelectionScreen.detailsTitle', { countryName: selectedDestination.translatedName })}
                   </Text>
                   <List.Item
                     title={t('dateSelectionScreen.exchangeRateTitle', { currency: selectedDestination.currencyCode, baseCurrency: exchangeRateInfo ? exchangeRateInfo.baseCurrency : 'Home Currency' })}
-                    description={exchangeRateInfo ? t('dateSelectionScreen.exchangeRateDesc', { targetCurrency: exchangeRateInfo.targetCurrency, rate: exchangeRateInfo.rate.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }), baseCurrency: exchangeRateInfo.baseCurrency, date: exchangeRateInfo.date }) : t('dateSelectionScreen.exchangeRateOffline')}
+                    description={exchangeRateInfo ? t('dateSelectionScreen.exchangeRateDesc', { 
+                      targetCurrency: exchangeRateInfo.targetCurrency, 
+                      rate: exchangeRateInfo.rate.toLocaleString('en-US', { 
+                        minimumFractionDigits: 2, 
+                        maximumFractionDigits: exchangeRateInfo.rate === 0 ? 2 : Math.max(2, Math.ceil(-Math.log10(exchangeRateInfo.rate)) + 1) 
+                      }), 
+                      baseCurrency: exchangeRateInfo.baseCurrency, 
+                      date: exchangeRateInfo.date 
+                    }) : t('dateSelectionScreen.exchangeRateOffline')}
                     left={props => <List.Icon {...props} icon="cash" />}
                   />
                   <List.Item
-                    title={selectedDestination.measurementSystem === 'metric' ? 'Metric System' : 'Imperial System'}
+                    title={selectedDestination.measurementSystem === 'metric' ? t('welcomeScreen.metricSystem') : t('welcomeScreen.imperialSystem')}
                     description={t('dateSelectionScreen.localMeasurement')}
                     left={props => <List.Icon {...props} icon="ruler" />}
                   />
@@ -200,41 +266,57 @@ export default function DateSelectionScreen() {
              </Card>
 
              <View style={styles.datesSection}>
-               <Text variant="titleMedium" style={{ marginBottom: 12 }}>{t('dateSelectionScreen.datesTitle')}</Text>
+               <Text variant="titleMedium" style={{ marginBottom: 12, fontWeight: 'bold' }}>{t('dateSelectionScreen.datesTitle')}</Text>
                
+               <View style={{ marginBottom: 8 }}>
+                 <Pressable 
+                   onPress={() => setShowPicker(true)} 
+                   disabled={notSetYet}
+                   style={({ pressed }) => [
+                     { 
+                       flexDirection: 'row', 
+                       alignItems: 'center', 
+                       justifyContent: 'center',
+                       borderColor: theme.colors.outlineVariant, 
+                       borderWidth: 1,
+                       borderRadius: 999,
+                       opacity: notSetYet ? 0.5 : 1, 
+                       height: 52,
+                       backgroundColor: pressed ? theme.colors.surfaceVariant : 'transparent'
+                     }
+                   ]}
+                 >
+                   <MaterialIcons name="date-range" size={20} color={theme.colors.primary} style={{ marginRight: 8 }} />
+                   <Text style={{ fontSize: 16, color: theme.colors.primary, fontWeight: '500' }}>
+                     {startDate && endDate 
+                       ? `${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}`
+                       : t('dateSelectionScreen.selectDateRange', 'Select Date Range')}
+                   </Text>
+                 </Pressable>
+               </View>
+
                <Pressable 
-                  style={[styles.dateButton, { borderColor: theme.colors.outlineVariant, backgroundColor: notSetYet ? theme.colors.surfaceVariant : 'transparent' }]}
+                  style={[styles.dateButton, { backgroundColor: 'transparent', borderWidth: 0, padding: 8, paddingHorizontal: 0 }]}
                   onPress={() => setNotSetYet(!notSetYet)}
                >
                  <MaterialIcons name={notSetYet ? 'check-circle' : 'radio-button-unchecked'} size={24} color={theme.colors.primary} />
                  <Text style={{ marginLeft: 8, color: theme.colors.onSurface }}>{t('dateSelectionScreen.notSetYet')}</Text>
                </Pressable>
 
-               {!notSetYet && (
-                 <View style={styles.datePickers}>
-                   <Button mode="outlined" onPress={() => setShowPicker('start')} style={{ flex: 1, marginRight: 4 }}>
-                     {startDate ? startDate.toLocaleDateString() : t('dateSelectionScreen.startDate')}
-                   </Button>
-                   <Button mode="outlined" onPress={() => setShowPicker('end')} style={{ flex: 1, marginLeft: 4 }}>
-                     {endDate ? endDate.toLocaleDateString() : t('dateSelectionScreen.endDate')}
-                   </Button>
-                 </View>
-               )}
-
-               {showPicker && (
-                 <DateTimePicker
-                    value={showPicker === 'start' ? (startDate || new Date()) : (endDate || new Date())}
-                    mode="date"
-                    display="default"
-                    onChange={(event, date) => {
-                      setShowPicker(null);
-                      if (date) {
-                        if (showPicker === 'start') setStartDate(date);
-                        else setEndDate(date);
-                      }
-                    }}
-                 />
-               )}
+               <Portal>
+                 <Modal visible={showPicker} onDismiss={() => setShowPicker(false)} contentContainerStyle={{ margin: 24, borderRadius: 16, overflow: 'hidden', backgroundColor: theme.colors.surface }}>
+                   <Calendar
+                     minDate={new Date().toISOString().split('T')[0]}
+                     markingType={'period'}
+                     markedDates={markedDates}
+                     onDayPress={handleDayPress}
+                     theme={{
+                       todayTextColor: theme.colors.primary,
+                       arrowColor: theme.colors.primary,
+                     }}
+                   />
+                 </Modal>
+               </Portal>
              </View>
           </View>
         )}
@@ -266,6 +348,7 @@ const styles = StyleSheet.create({
   searchContainer: { flexDirection: 'row', alignItems: 'center', borderRadius: 16, height: 56, paddingHorizontal: 12 },
   searchIcon: { marginRight: 8 },
   input: { flex: 1, backgroundColor: 'transparent', height: 50 },
+  clearIcon: { padding: 8 },
   dropdown: { position: 'absolute', top: 64, left: 0, right: 0, borderWidth: 1, borderRadius: 16, overflow: 'hidden' },
   resultItem: { flexDirection: 'row', alignItems: 'center', paddingVertical: 10, paddingHorizontal: 16 },
   selectedContainer: { flex: 1 },

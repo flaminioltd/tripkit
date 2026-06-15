@@ -18,7 +18,7 @@ export default function TripsScreen() {
   const router = useRouter();
   const { trips, activeTrip, loadTrips, removeTrip, updateTrip, expenses } = useTripStore();
   const { settings, loadSettings } = useAppStore();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [editingTrip, setEditingTrip] = useState<any>(null);
   const [editStartDate, setEditStartDate] = useState<Date | null>(null);
@@ -103,9 +103,11 @@ export default function TripsScreen() {
   };
 
   const handleDelete = (id: string, destination: string) => {
+    const destCode = COUNTRIES.find(c => c.name === destination)?.code;
+    const translatedDest = destCode ? t(`countries.${destCode}`, destination) : destination;
     Alert.alert(
       t('tripsScreen.deleteTripAlertTitle', 'Delete Trip'),
-      t('tripsScreen.deleteTripAlertMessage', { country: destination, defaultValue: `Are you sure you want to delete your trip to ${destination}?` }),
+      t('tripsScreen.deleteTripAlertMessage', { country: translatedDest, defaultValue: `Are you sure you want to delete your trip to ${translatedDest}?` }),
       [
         { text: t('tripsScreen.editTripCancel', 'Cancel'), style: "cancel" },
         { 
@@ -121,7 +123,8 @@ export default function TripsScreen() {
     if (!start || !end) return t('tripsScreen.datesPending', 'Dates pending');
     const s = new Date(start);
     const e = new Date(end);
-    return `${s.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} — ${e.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+    const locale = i18n.language || 'en-US';
+    return `${s.toLocaleDateString(locale, { month: 'short', day: 'numeric' })} — ${e.toLocaleDateString(locale, { month: 'short', day: 'numeric', year: 'numeric' })}`;
   };
 
   // Basic separation logic
@@ -261,7 +264,10 @@ export default function TripsScreen() {
                   <Text style={[styles.badgeText, { color: theme.colors.onPrimary }]}>{statusInfo.title.toUpperCase()}</Text>
                 </View>
                 <Text variant="headlineMedium" style={{ color: '#fff', fontWeight: 'bold' }}>
-                  {activeTrip.destinationCountry}
+                  {(() => {
+                    const code = COUNTRIES.find(c => c.name === activeTrip.destinationCountry)?.code;
+                    return code ? t(`countries.${code}`, activeTrip.destinationCountry) : activeTrip.destinationCountry;
+                  })()}
                 </Text>
                 <Text variant="bodyLarge" style={{ color: 'rgba(255,255,255,0.8)' }}>
                   {formatDateRange(activeTrip.startDate, activeTrip.endDate)}
@@ -292,14 +298,15 @@ export default function TripsScreen() {
 
                 {/* Row 2 */}
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                  <Pressable 
+                  <Button 
+                    variant="alternative"
+                    compact
                     onPress={() => router.push('/modules/budget-tracker')}
-                    style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: theme.colors.primary, paddingHorizontal: 8, paddingVertical: 4, borderRadius: 12 }}
+                    contentStyle={{ height: 26 }}
+                    labelStyle={{ fontSize: 11, marginHorizontal: 8, marginVertical: 4 }}
                   >
-                    <Text variant="labelSmall" style={{ color: theme.colors.onPrimary }}>
-                      {(!activeTrip.budget || activeTrip.budget <= 0) ? t('tripsScreen.budgetSet') : t('tripsScreen.budgetAdjust')}
-                    </Text>
-                  </Pressable>
+                    {(!activeTrip.budget || activeTrip.budget <= 0) ? t('tripsScreen.budgetSet') : t('tripsScreen.budgetAdjust')}
+                  </Button>
                     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
                       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <Text style={{ fontSize: 12, marginRight: 8, color: budgetViewMode === 'daily' ? theme.colors.onSurface : theme.colors.onSurfaceVariant, fontWeight: budgetViewMode === 'daily' ? 'bold' : 'normal' }}>{t('tripsScreen.budgetDaily')}</Text>
@@ -367,7 +374,7 @@ export default function TripsScreen() {
                   >
                     <View style={styles.tripCardOverlay}>
                       <Text variant="titleLarge" style={{ fontWeight: 'bold', color: '#fff' }}>
-                        {trip.destinationCountry}
+                        {countryCode ? t(`countries.${countryCode}`, trip.destinationCountry) : trip.destinationCountry}
                       </Text>
                     </View>
                   </ImageBackground>
@@ -376,14 +383,14 @@ export default function TripsScreen() {
                     <View style={styles.tripCardOverlay}>
                       <MaterialIcons name="image" size={32} color={theme.colors.onSurfaceVariant} style={{ position: 'absolute', alignSelf: 'center', top: '40%' }} />
                       <Text variant="titleLarge" style={{ fontWeight: 'bold', color: theme.colors.onSurfaceVariant }}>
-                        {trip.destinationCountry}
+                        {countryCode ? t(`countries.${countryCode}`, trip.destinationCountry) : trip.destinationCountry}
                       </Text>
                     </View>
                   </View>
                 )}
                 <View style={styles.tripCardContent}>
                   <Text variant="labelMedium" style={{ color: theme.colors.primary, fontWeight: 'bold', marginBottom: 12 }}>
-                    {trip.startDate && trip.endDate ? formatDateRange(trip.startDate, trip.endDate) : 'TBD'}
+                    {trip.startDate && trip.endDate ? formatDateRange(trip.startDate, trip.endDate) : t('tripsScreen.tbd', 'TBD')}
                   </Text>
                   
                   <View style={{ marginTop: 'auto', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -440,7 +447,10 @@ export default function TripsScreen() {
               ]}>
                 <View style={styles.listItemContent}>
                   <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>
-                    {trip.destinationCountry}
+                    {(() => {
+                      const pastCode = COUNTRIES.find(c => c.name === trip.destinationCountry)?.code;
+                      return pastCode ? t(`countries.${pastCode}`, trip.destinationCountry) : trip.destinationCountry;
+                    })()}
                   </Text>
                   <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
                     {formatDateRange(trip.startDate, trip.endDate)}
@@ -466,7 +476,10 @@ export default function TripsScreen() {
       <Modal visible={!!editingTrip} onDismiss={() => setEditingTrip(null)} contentContainerStyle={{ backgroundColor: theme.colors.surface, margin: 24, padding: 24, borderRadius: 16 }}>
         {editingTrip && (
           <View>
-            <Text variant="titleLarge" style={{ fontWeight: 'bold', marginBottom: 16 }}>{t('tripsScreen.editTripModalTitle', { country: editingTrip.destinationCountry })}</Text>
+            <Text variant="titleLarge" style={{ fontWeight: 'bold', marginBottom: 16 }}>{t('tripsScreen.editTripModalTitle', { country: (() => {
+              const editCode = COUNTRIES.find(c => c.name === editingTrip.destinationCountry)?.code;
+              return editCode ? t(`countries.${editCode}`, editingTrip.destinationCountry) : editingTrip.destinationCountry;
+            })() })}</Text>
             
             <View style={{ marginBottom: 24 }}>
               <View style={{ marginBottom: 8 }}>
@@ -519,6 +532,7 @@ export default function TripsScreen() {
             <Portal>
               <Modal visible={showPicker} onDismiss={() => setShowPicker(false)} contentContainerStyle={{ margin: 24, borderRadius: 16, overflow: 'hidden', backgroundColor: theme.colors.surface }}>
                 <Calendar
+                  minDate={new Date().toISOString().split('T')[0]}
                   markingType={'period'}
                   markedDates={editMarkedDates}
                   onDayPress={handleEditDayPress}

@@ -28,7 +28,7 @@ export default function BasicPhrasesScreen() {
 
   const speakPhrase = (text: string) => {
     // Remove text in parentheses like "(Konnichiwa)" so the TTS engine doesn't read it twice
-    const cleanText = text.replace(/\s*\(.*?\)\s*/g, '').trim();
+    const cleanText = text.replace(/\s*[\[\(].*?[\]\)]\s*/g, '').trim();
     
     Speech.speak(cleanText, {
       language: speechLanguageCode,

@@ -9,17 +9,19 @@ import { useAppStore } from '../../src/stores/app-store';
 import { FLAG_IMAGES } from '../../src/lib/assets';
 import AddTripModal from '../../src/components/AddTripModal';
 import { useTranslation } from 'react-i18next';
+import i18n from '../../src/i18n';
 
 import { LinearGradient } from 'expo-linear-gradient';
 import { FINANCE_MODULES, ESSENTIALS_MODULES, RedesignModuleProps } from '../../src/lib/modules';
 
 import { COUNTRIES } from '../../src/lib/countries';
 
-const formatDateRange = (start: Date | null | undefined, end: Date | null | undefined) => {
-  if (!start || !end) return 'TBD';
+const formatDateRange = (start: Date | null | undefined, end: Date | null | undefined, tbdStr: string = 'TBD') => {
+  if (!start || !end) return tbdStr;
   const s = new Date(start);
   const e = new Date(end);
-  return `${s.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} — ${e.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+  const locale = i18n.language || 'en-US';
+  return `${s.toLocaleDateString(locale, { month: 'short', day: 'numeric' })} — ${e.toLocaleDateString(locale, { month: 'short', day: 'numeric', year: 'numeric' })}`;
 };
 
 export default function HomeScreen() {
@@ -175,7 +177,10 @@ export default function HomeScreen() {
                   <Image source={FLAG_IMAGES[activeCountryCode]} style={{ width: 20, height: 20, borderRadius: 10 }} />
                 )}
                 <Text style={{ fontSize: 14, fontWeight: '500', color: theme.colors.onSurface }}>
-                  {activeTrip ? activeTrip.destinationCountry : 'No active trip'}
+                  {activeTrip ? (() => {
+                    const activeCode = COUNTRIES.find(c => c.name === activeTrip.destinationCountry)?.code;
+                    return activeCode ? t(`countries.${activeCode}`, activeTrip.destinationCountry) : activeTrip.destinationCountry;
+                  })() : 'No active trip'}
                 </Text>
                 <MaterialCommunityIcons name="chevron-down" size={16} color={theme.colors.onSurfaceVariant} />
               </Pressable>
@@ -206,10 +211,13 @@ export default function HomeScreen() {
                   </View>
                   <View style={{ flex: 1, justifyContent: 'center', paddingRight: 8 }}>
                     <Text variant="bodyLarge" style={{ fontWeight: trip.id === activeTrip?.id ? 'bold' : 'normal' }}>
-                      {trip.destinationCountry || 'Unknown Trip'}
+                      {(() => {
+                        const code = COUNTRIES.find(c => c.name === trip.destinationCountry)?.code;
+                        return code ? t(`countries.${code}`, trip.destinationCountry) : (trip.destinationCountry || 'Unknown Trip');
+                      })()}
                     </Text>
                     <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>
-                      {formatDateRange(trip.startDate, trip.endDate)}
+                      {formatDateRange(trip.startDate, trip.endDate, t('tripsScreen.tbd', 'TBD'))}
                     </Text>
                   </View>
                   {trip.id === activeTrip?.id && (
@@ -231,7 +239,7 @@ export default function HomeScreen() {
         </View>
 
         {/* Modules Grid */}
-        <View style={{ marginBottom: 28 }}>
+        <View style={{ marginBottom: 0 }}>
           <View style={styles.grid}>
             {[...FINANCE_MODULES, ...ESSENTIALS_MODULES].map((mod, idx) => renderModuleCard(mod, idx))}
           </View>
@@ -253,7 +261,7 @@ const styles = StyleSheet.create({
   },
   content: {
     paddingTop: 0,
-    paddingBottom: 40,
+    paddingBottom: 0,
     paddingHorizontal: 1,
   },
   tripStripContainer: {

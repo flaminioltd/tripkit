@@ -1,9 +1,10 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Button from '../../src/components/ui/Button';
 import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { useTripStore } from '../../src/stores/trip-store';
-import { View, StyleSheet, SafeAreaView, ScrollView, Linking, Pressable } from 'react-native';
+import { View, StyleSheet, ScrollView, Linking, Pressable } from 'react-native';;
 import { Text, Card, useTheme, SegmentedButtons, IconButton, Divider, Menu } from 'react-native-paper';
 import { db } from '../../src/db/client';
 import { settings as dbSettings, countries } from '../../src/db/schema';
@@ -15,7 +16,7 @@ import { PlugIcon } from '../../src/components/PlugIcons';
 
 export default function LocalInfoScreen() {
   const theme = useTheme();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { activeTrip } = useTripStore();
   
   const [activeTab, setActiveTab] = useState('emergency');
@@ -57,6 +58,9 @@ export default function LocalInfoScreen() {
   const needsAdapter = !homePlugs.types.some((t: string) => destPlugs.types.includes(t));
   const needsConverter = homePlugs.voltage !== destPlugs.voltage;
 
+  const translatedHomeCountryName = t(`countries.${homeCountry.code}`, homeCountry.name);
+  const translatedDestCountryName = t(`countries.${destCountry.code}`, destCountry.name);
+
   const handleCall = (number: string) => {
     Linking.openURL(`tel:${number}`).catch(err => console.error('Error opening dialer', err));
   };
@@ -67,7 +71,7 @@ export default function LocalInfoScreen() {
   };
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
+    <SafeAreaView edges={['bottom', 'left', 'right']} style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <ModuleHeader title={t("modules.localInfo.headerTitle", "Local Info")} />
 
       <View style={{ width: '100%', position: 'relative', marginTop: 24 }}>
@@ -123,7 +127,7 @@ export default function LocalInfoScreen() {
         {activeTab === 'emergency' && (
           <View>
             <Text variant="titleMedium" style={{ marginBottom: 16, color: theme.colors.onBackground, fontWeight: 'bold' }}>
-              {t("modules.localInfo.emergencyNumbersIn", "Emergency Numbers in {{country}}", { country: activeTrip?.destinationCountry || destinationCode })}
+              {t("modules.localInfo.emergencyNumbersIn", "Emergency Numbers in {{country}}", { country: translatedDestCountryName })}
             </Text>
             {emergencyData ? (
               <Card style={styles.card} mode="contained">
@@ -188,7 +192,7 @@ export default function LocalInfoScreen() {
           <View>
             <View style={{ flexDirection: 'column', alignItems: 'flex-start', marginBottom: 16, gap: 12 }}>
               <Text variant="titleMedium" style={{ color: theme.colors.onBackground, fontWeight: 'bold' }}>
-                {t("modules.localInfo.holidaysIn", "Public Holidays in {{country}}", { country: activeTrip?.destinationCountry || destinationCode })}
+                {t("modules.localInfo.holidaysIn", "Public Holidays in {{country}}", { country: translatedDestCountryName })}
               </Text>
               <Menu
                 visible={yearMenuVisible}
@@ -260,7 +264,7 @@ export default function LocalInfoScreen() {
                         <View style={[styles.holidayDate, isDuringTrip && { backgroundColor: theme.colors.primary }]}>
                           <Text variant="titleMedium" style={{ fontWeight: 'bold', color: isDuringTrip ? theme.colors.onPrimary : theme.colors.primary }}>{dateObj.getDate()}</Text>
                           <Text variant="labelSmall" style={{ color: isDuringTrip ? theme.colors.onPrimary : theme.colors.onSurfaceVariant, textTransform: 'uppercase' }}>
-                            {dateObj.toLocaleString('default', { month: 'short' })}
+                            {dateObj.toLocaleString(i18n.language || 'en-US', { month: 'short' })}
                           </Text>
                         </View>
                         <View style={styles.holidayInfo}>
@@ -268,7 +272,7 @@ export default function LocalInfoScreen() {
                             <Text variant="bodyLarge" style={{ color: isDuringTrip ? theme.colors.onSecondaryContainer : theme.colors.onSurface }}>{h.name}</Text>
                           </View>
                           <Text variant="bodySmall" style={{ color: isDuringTrip ? theme.colors.onSecondaryContainer : theme.colors.onSurfaceVariant, opacity: isDuringTrip ? 0.8 : 1 }}>
-                            {dateObj.toLocaleString('default', { weekday: 'long' })}
+                            {dateObj.toLocaleString(i18n.language || 'en-US', { weekday: 'long' })}
                           </Text>
                         </View>
                         {isDuringTrip && (
@@ -290,10 +294,10 @@ export default function LocalInfoScreen() {
         {activeTab === 'embassy' && (
           <View>
             <Text variant="titleMedium" style={{ marginBottom: 16, color: theme.colors.onBackground, fontWeight: 'bold' }}>
-              Embassy Info
+              {t("modules.localInfo.embassyTitle", "Embassy Info")}
             </Text>
             <Text variant="bodyMedium" style={{ marginBottom: 16, color: theme.colors.onSurfaceVariant }}>
-              {t("modules.localInfo.embassyDesc", "Your home country is set to {{homeCountry}}. Showing embassy details in {{destCountry}}.", { homeCountry: homeCountryCode, destCountry: activeTrip?.destinationCountry || destinationCode })}
+              {t("modules.localInfo.embassyDesc", "Your home country is set to {{homeCountry}}. Showing embassy details in {{destCountry}}.", { homeCountry: translatedHomeCountryName, destCountry: translatedDestCountryName })}
             </Text>
 
             {embassyData ? (
@@ -338,7 +342,7 @@ export default function LocalInfoScreen() {
               <Card style={styles.card} mode="contained">
                 <Card.Content>
                   <Text variant="bodyLarge" style={{ textAlign: 'center', color: theme.colors.onSurfaceVariant, marginVertical: 24 }}>
-                    {t("modules.localInfo.embassyUnavailable", "Embassy information for {{homeCountry}} in {{destCountry}} is currently unavailable.", { homeCountry: homeCountryCode, destCountry: destinationCode })}
+                    {t("modules.localInfo.embassyUnavailable", "Embassy information for {{homeCountry}} in {{destCountry}} is currently unavailable.", { homeCountry: translatedHomeCountryName, destCountry: translatedDestCountryName })}
                   </Text>
                 </Card.Content>
               </Card>
@@ -360,7 +364,7 @@ export default function LocalInfoScreen() {
                   {needsAdapter ? t('modules.plugVoltage.incompatibleTitle', 'Adapter Required') : t('modules.plugVoltage.compatibleTitle', 'No Adapter Needed')}
                 </Text>
                 <Text variant="bodyMedium" style={{ color: needsAdapter ? theme.colors.onErrorContainer : theme.colors.onPrimaryContainer, textAlign: 'center', marginTop: 8 }}>
-                  {needsAdapter ? t('modules.plugVoltage.incompatibleDesc', `You will need an adapter to plug your ${homeCountry.code} devices into ${destCountry.code} sockets.`, { home: homeCountry.code, dest: destCountry.code }) : t('modules.plugVoltage.compatibleDesc', `Your ${homeCountry.code} devices will plug directly into ${destCountry.code} sockets.`, { home: homeCountry.code, dest: destCountry.code })}
+                  {needsAdapter ? t('modules.plugVoltage.incompatibleDesc', 'You will need a travel adapter for {{country}}.', { country: translatedDestCountryName }) : t('modules.plugVoltage.compatibleDesc', 'Your plugs will fit in {{country}}.', { country: translatedDestCountryName })}
                 </Text>
               </Card.Content>
             </Card>
@@ -371,13 +375,13 @@ export default function LocalInfoScreen() {
                 <View style={{ flex: 1, marginLeft: 12 }}>
                   <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onTertiaryContainer }}>{t("modules.plugVoltage.voltageMismatchTitle", "Voltage Difference")}</Text>
                   <Text variant="bodySmall" style={{ color: theme.colors.onTertiaryContainer, marginTop: 4 }}>
-                    {t("modules.plugVoltage.voltageMismatchDesc", '{{home}} uses {{homeVolts}}, but {{dest}} uses {{destVolts}}. Check if your devices say "100-240V". If not, you need a voltage converter, not just an adapter.', { home: homeCountry.name, homeVolts: homePlugs.voltage, dest: destCountry.name, destVolts: destPlugs.voltage })}
+                    {t("modules.plugVoltage.voltageMismatchDesc", '{{home}} uses {{homeVolts}}, but {{dest}} uses {{destVolts}}. Check if your devices say "100-240V". If not, you need a voltage converter, not just an adapter.', { home: translatedHomeCountryName, homeVolts: homePlugs.voltage, dest: translatedDestCountryName, destVolts: destPlugs.voltage })}
                   </Text>
                 </View>
               </View>
             )}
 
-            <Text variant="titleMedium" style={{ fontWeight: 'bold', marginBottom: 16, marginTop: 8, textAlign: 'center' }}>{t("modules.plugVoltage.plugTypesTitle", "{{country}} Socket Types", { country: destCountry.name })}</Text>
+            <Text variant="titleMedium" style={{ fontWeight: 'bold', marginBottom: 16, marginTop: 8, textAlign: 'center' }}>{t("modules.plugVoltage.plugTypesTitle", "{{country}} Socket Types", { country: translatedDestCountryName })}</Text>
             
             <View style={styles.iconsGrid}>
               {destPlugs.types.map((type: string) => (
@@ -392,7 +396,7 @@ export default function LocalInfoScreen() {
 
             <View style={styles.detailsRow}>
               <View style={styles.detailBox}>
-                <Text variant="labelMedium" style={{ color: theme.colors.onSurfaceVariant, fontWeight: '600' }}>{t("modules.plugVoltage.homeCountryCode", "HOME ({{code}})", { code: homeCountry.code })}</Text>
+                <Text variant="labelMedium" style={{ color: theme.colors.onSurfaceVariant, fontWeight: '600' }}>{`${t("modules.localInfo.origin", "Origin").toUpperCase()} (${homeCountry.code})`}</Text>
                 <Text variant="titleLarge" style={{ fontWeight: 'bold', marginTop: 4 }}>{homePlugs.voltage}</Text>
                 <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{homePlugs.frequency}</Text>
                 <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant, marginTop: 4 }}>{t("modules.plugVoltage.typesList", "Type {{types}}", { types: homePlugs.types.join(', ') })}</Text>

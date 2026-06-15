@@ -8,14 +8,16 @@
   },
   "welcomeScreen": {
     "title": "TripKit",
-    "heroTitle": "Where is home?",
-    "heroSubtitle": "TripKit sets helpful defaults based on your home country.",
+    "heroTitle": "What is your country of origin?",
+    "heroSubtitle": "TripKit sets helpful defaults based on your country of origin.",
     "searchPlaceholder": "Enter a country...",
     "settingsTitle": "{{countryName}} Settings",
     "baseCurrency": "Base Currency",
     "measurementSystem": "Measurement System",
     "buttonContinue": "Continue",
-    "buttonSet": "Set"
+    "buttonSet": "Set",
+    "metricSystem": "Metric System",
+    "imperialSystem": "Imperial System"
   },
   "dateSelectionScreen": {
     "headerTitle": "Plan Trip",
@@ -24,9 +26,9 @@
     "searchPlaceholder": "Enter a destination...",
     "detailsTitle": "{{countryName}} Details",
     "exchangeRateTitle": "{{currency}} to {{baseCurrency}}",
-    "exchangeRateDesc": "1 {{targetCurrency}} = {{rate}} {{baseCurrency}} (as of {{date}})",
+    "exchangeRateDesc": "1 {{baseCurrency}} = {{rate}} {{targetCurrency}} (as of {{date}})",
     "exchangeRateOffline": "Offline exchange rate",
-    "localMeasurement": "Local Measurement",
+    "localMeasurement": "Destination Measurement",
     "datesTitle": "When are you traveling?",
     "notSetYet": "Not set yet",
     "startDate": "Start Date",
@@ -38,7 +40,7 @@
   "confirmationScreen": {
     "headerTitle": "Setup Complete",
     "cardTitle": "Inferred Defaults",
-    "homeCountry": "Home Country",
+    "homeCountry": "Country of Origin",
     "inferredCurrency": "Inferred Currency",
     "inferredSizeFormat": "Inferred Size Format",
     "note": "You can add more trip details later.",
@@ -73,7 +75,7 @@
       },
       "emergencyNumbers": {
         "title": "Emergency Numbers",
-        "description": "Local 911 equivalents"
+        "description": "Destination 911 equivalents"
       },
       "budgetTracker": {
         "title": "Budget Tracker",
@@ -89,7 +91,7 @@
       },
       "tipCalculator": {
         "title": "Tip Calculator",
-        "description": "Local tipping customs and math"
+        "description": "Destination tipping customs and math"
       },
       "sizeConverter": {
         "title": "Size Converter",
@@ -97,9 +99,10 @@
       },
       "timezoneHelper": {
         "title": "Timezone Helper",
-        "description": "Coordinate with home"
+        "description": "Coordinate with origin"
       }
-    }
+    },
+    "headerSubtitle": "Your travel companion."
   },
   "tripsScreen": {
     "headerTitle": "My Trips",
@@ -113,7 +116,7 @@
     "addTripButton": "Add New Trip",
     "activeTripLabel": "ACTIVE TRIP",
     "changeCountryButton": "Change Country",
-    "deleteTripButton": "Delete Trip",
+    "deleteTripButton": "Delete",
     "finishTripButton": "Finish Trip",
     "tripSummaryButton": "Trip Summary",
     "resumeTripButton": "Resume Trip",
@@ -122,18 +125,60 @@
     "setDatesButton": "Set Dates",
     "deleteTripAlertTitle": "Delete",
     "editTripCancel": "Cancel",
-    "datesPending": "Dates pending"
+    "datesPending": "Dates pending",
+    "headerSubtitle": "Manage your adventures.",
+    "planNewTripTitle": "Plan a New Trip",
+    "planNewTripSubtitle": "Where are you heading next?",
+    "activeTripTitle": "Active Trip",
+    "tripStatusLabel": "Trip Status",
+    "tripBudgetUsed": "Trip Budget Used",
+    "dailyBudgetUsed": "Daily Budget Used",
+    "budgetSet": "Set",
+    "budgetAdjust": "Adjust",
+    "budgetDaily": "DAILY",
+    "budgetTrip": "TRIP",
+    "editTripButton": "Edit",
+    "upcomingTripsTitle": "Upcoming Trips",
+    "editButton": "Edit",
+    "deleteButton": "Delete",
+    "setActiveButton": "Set Active",
+    "pastTripsTitle": "Past Trips",
+    "editTripModalTitle": "Edit {{country}}",
+    "selectDateRange": "Select Date Range",
+    "datesNotSetYet": "Dates not set yet",
+    "editTripSave": "Save Changes",
+    "tripStatus": {
+      "pending": "Pending",
+      "pendingSubtitle": "No dates set yet",
+      "upcoming": "Upcoming",
+      "upcomingSubtitle": "In {{days}} days",
+      "ongoing": "Ongoing",
+      "ongoingSubtitle": "Day {{current}} of {{total}}",
+      "completed": "Completed",
+      "completedSubtitle": "Trip finished"
+    },
+    "tbd": "TBD"
   },
   "settingsScreen": {
     "headerTitle": "Settings",
     "sectionPreferences": "PREFERENCES",
     "systemLanguage": "System Language",
-    "homeCountry": "Home Country",
-    "homeCurrency": "Home Currency",
+    "homeCountry": "Country of Origin",
+    "homeCurrency": "Origin Currency",
     "sectionData": "DATA & STORAGE",
     "exportData": "Export All Data",
     "clearData": "Clear All Data",
-    "version": "Version"
+    "version": "Version",
+    "headerSubtitle": "Manage your preferences.",
+    "notSet": "Not Set",
+    "changeHomeCountryTitle": "Change Country of Origin",
+    "changeSystemLanguageTitle": "System Language",
+    "systemLanguages": {
+      "en": "English",
+      "es": "Spanish",
+      "de": "German"
+    },
+    "forceSyncButton": "Sync Online Data"
   },
   "access": {
     "upgrade": {
@@ -155,7 +200,7 @@
       "exchangeTipsTitle": "Exchange tips for {{country}}",
       "withdrawalAmount": "Withdrawal Amount",
       "exchangeRateMarkup": "Exchange Rate Markup",
-      "atmFee": "Local ATM Fee",
+      "atmFee": "Destination ATM Fee",
       "setLabel": "Set",
       "adjustLabel": "Adjust",
       "actualCost": "Actual Cost",
@@ -166,14 +211,14 @@
       "syncToBudgetButton": "Sync to Budget",
       "resetButton": "Reset",
       "addedToExpenses": "Added to Expenses",
-      "description": "Compare ATM withdrawals against local Exchange Bureaus.",
+      "description": "Compare ATM withdrawals against destination Exchange Bureaus.",
       "targetAmount": "Target Amount",
-      "home": "Home",
-      "local": "Local",
+      "home": "Origin",
+      "local": "Destination",
       "amount": "Amount",
       "marketRate": "Market Rate",
       "optionA": "Option A: ATM Withdrawal",
-      "localFee": "Local Fee",
+      "localFee": "Destination Fee",
       "in": "in",
       "bankFlatFee": "Bank Flat Fee",
       "bankFxFee": "Bank FX %",
@@ -188,7 +233,10 @@
       "recommendationEqual": "Equal",
       "savesYou": "Saves you ",
       "givesYou": "Gives you ",
-      "more": " more"
+      "more": " more",
+      "resetValues": "Reset Values",
+      "recommendationAtm": "ATM",
+      "recommendationBureau": "Bureau"
     },
     "basicPhrases": {
       "headerTitle": "Basic Phrases",
@@ -196,7 +244,7 @@
       "essentialsTab": "Essentials",
       "numbersTab": "Numbers",
       "languageContext": "Language Context",
-      "noTranslationNeeded": "No translation needed...",
+      "noTranslationNeeded": "No translation needed",
       "noTranslationDesc": "The primary language in {{country}} matches your system language.",
       "phrasesInCountry": "Phrases in {{language}} for {{country}}",
       "noPhrasesAvailable": "No phrases available for this category."
@@ -208,8 +256,8 @@
       "setBudgetButton": "Set Budget",
       "budgetLimit": "Budget Amount",
       "trackIn": "Track Expenses In",
-      "localCurrency": "Local",
-      "homeCurrency": "Home",
+      "localCurrency": "Destination",
+      "homeCurrency": "Origin",
       "budgetType": "Budget Scope",
       "dailyBudget": "Daily",
       "totalTripBudget": "Trip",
@@ -229,14 +277,24 @@
       "daysLabel": "days",
       "overBudget": "Over Budget",
       "expensesTitle": "Recent Expenses",
-      "addExpenseButton": "+ Add New",
+      "addExpenseButton": "Add New",
       "noExpensesLabel": "No expenses added yet.",
       "expenseModalTitleAdd": "Add Expense",
       "expenseModalTitleEdit": "Edit Expense",
       "categoryLabel": "Category",
       "detailsOptional": "Description (Optional)",
       "amountLocal": "Amount ({{currency}})",
-      "saveExpenseButton": "Save"
+      "saveExpenseButton": "Save",
+      "resetBudgetButton": "Reset Budget & Clear Expenses",
+      "tags": {
+        "food": "Food",
+        "transport": "Transport",
+        "accommodation": "Hotel",
+        "flights": "Flights",
+        "entertainment": "Fun",
+        "shopping": "Shopping",
+        "other": "Other"
+      }
     },
     "emergencyEssentials": {
       "headerTitle": "Emergency Numbers",
@@ -247,16 +305,16 @@
       "fire": "Fire Department",
       "medicalAmbulance": "Medical Emergency / Ambulance (SAMU)",
       "tapToDial": "Tap to dial",
-      "localSafetyAdvice": "Local Safety Advice",
+      "localSafetyAdvice": "Destination Safety Advice",
       "embassyConsulate": "Embassy or Consulate",
-      "embassyDesc": "If you lose your passport or need legal assistance, contact your home country's embassy.",
+      "embassyDesc": "If you lose your passport or need legal assistance, contact your origin country's embassy.",
       "offlineReady": "Offline Ready",
       "specificServices": "Specific Services",
-      "pharmacyNoteTitle": "Local Pharmacy Note",
+      "pharmacyNoteTitle": "Destination Pharmacy Note",
       "pharmacyNoteDesc": "Look for a flashing green cross. In France, pharmacists can provide medical advice for minor ailments. For after-hours pharmacies ("
     },
     "localInfo": {
-      "headerTitle": "Local Info",
+      "headerTitle": "Destination Info",
       "overviewTab": "Overview",
       "cultureTab": "Culture",
       "transportTab": "Transport",
@@ -280,10 +338,12 @@
       "holidaysIn": "Public Holidays in {{country}}",
       "duringTrip": "DURING TRIP",
       "noHolidayData": "No holiday data available for {{year}}.",
-      "embassyDesc": "Your home country is set to {{homeCountry}}. Showing embassy details in {{destCountry}}.",
+      "embassyDesc": "Your country of origin is set to {{homeCountry}}. Showing embassy details in {{destCountry}}.",
       "embassyConsulate": "Embassy / Consulate",
       "visitButton": "Visit",
-      "embassyUnavailable": "Embassy information for {{homeCountry}} in {{destCountry}} is currently unavailable."
+      "embassyUnavailable": "Embassy information for {{homeCountry}} in {{destCountry}} is currently unavailable.",
+      "embassyTitle": "Embassy",
+      "origin": "Origin"
     },
     "plugVoltage": {
       "headerTitle": "Plug & Voltage",
@@ -295,13 +355,13 @@
       "voltageMatchDesc": "Your electronics are safe to plug in directly.",
       "voltageMismatchTitle": "Voltage Difference",
       "voltageMismatchDesc": "{{home}} uses {{homeVolts}}, but {{dest}} uses {{destVolts}}. Check if your devices say ",
-      "homeCountry": "Home Country",
+      "homeCountry": "Country of Origin",
       "destinationCountry": "Destination Country",
       "plugTypesTitle": "{{country}} Socket Types",
       "typeN": "Type {{type}}",
-      "homeCountryCode": "HOME ({{code}})",
+      "homeCountryCode": "ORIGIN ({{code}})",
       "typesList": "Type {{types}}",
-      "destCountryCode": "LOCAL ({{code}})"
+      "destCountryCode": "DESTINATION ({{code}})"
     },
     "sizeConverter": {
       "headerTitle": "Sizes & Units",
@@ -322,19 +382,24 @@
       "temperature": "Temperature",
       "weight": "Weight (Luggage)",
       "volume": "Volume (Liquids/Gas)",
-      "speed": "Speed"
+      "speed": "Speed",
+      "matchSubtitle": "No need to convert anything here.",
+      "matchTitleShoes": "Shoe sizes match!",
+      "matchTitleClothes": "Clothing sizes match!",
+      "matchTitleUnits": "Units match!"
     },
     "timezoneHelper": {
       "headerTitle": "Time Zones",
-      "homeLabel": "HOME ({{code}})",
-      "localLabel": "LOCAL ({{code}})",
+      "homeLabel": "ORIGIN ({{code}})",
+      "localLabel": "DESTINATION ({{code}})",
       "timeSetting": "Time Setting",
       "plus1Day": "+1 Day",
       "minus1Day": "-1 Day",
       "sameDay": "Same Day",
       "ampm": "AM/PM",
       "h24": "24h",
-      "resetCurrentTime": "Reset to Current Time"
+      "resetCurrentTime": "Reset to Current Time",
+      "origin": "Origin"
     },
     "tipCalculator": {
       "headerTitle": "Tip Calculator",
@@ -347,7 +412,7 @@
       "tipPercentage": "Tip Percentage",
       "noTip": "No Tip",
       "roundUpTip": "Round Up",
-      "customTip": "Custom",
+      "customTip": "Other",
       "splitBetween": "Split Between (people)",
       "suggestedTip": "Suggested Tip Amount",
       "totalBill": "Total Bill",
@@ -369,7 +434,7 @@
       "adjustButton": "Adjust",
       "adminFee": "Estimated Admin Fee",
       "purchases": "Purchases",
-      "addNew": "+ Add New",
+      "addNew": "Add New",
       "noPurchases": "No purchases added yet.",
       "grandTotal": "Grand Total",
       "estimatedRefund": "Estimated Refund",
@@ -404,7 +469,7 @@
       "createTripButton": "Create Trip"
     },
     "changeHomeCountry": {
-      "title": "Change Home Country",
+      "title": "Change country of origin",
       "searchPlaceholder": "Search countries..."
     },
     "changeLanguage": {
@@ -429,7 +494,9 @@
     "accommodation": "Accommodation",
     "activities": "Activities & Tours",
     "shopping": "Shopping",
-    "other": "Other"
+    "other": "Other",
+    "Essentials": "Essentials",
+    "Finance": "Finance"
   },
   "countries": {
     "US": "United States",
@@ -469,7 +536,29 @@
   "languages": {
     "en": "English",
     "es": "Spanish",
-    "de": "German"
+    "de": "German",
+    "EN": "English",
+    "FR": "French",
+    "ES": "Spanish",
+    "IT": "Italian",
+    "TR": "Turkish",
+    "DE": "German",
+    "EL": "Greek",
+    "PT": "Portuguese",
+    "NL": "Dutch",
+    "PL": "Polish",
+    "HR": "Croatian",
+    "CS": "Czech",
+    "DA": "Danish",
+    "HU": "Hungarian",
+    "SV": "Swedish",
+    "NO": "Norwegian",
+    "ZH": "Chinese",
+    "JA": "Japanese",
+    "TH": "Thai",
+    "VI": "Vietnamese",
+    "KO": "Korean",
+    "HI": "Hindi"
   },
   "calendar": {
     "months": {
@@ -522,10 +611,61 @@
   "phrases": {
     "categories": {
       "Basics": "Basics",
-      "GettingAround": "Getting Around",
-      "Dining": "Dining",
       "Shopping": "Shopping",
-      "Emergency": "Emergency"
+      "Hotel & Dining": "Hotel & Dining",
+      "Emergencies": "Emergencies"
+    },
+    "items": {
+      "hello": "Hello",
+      "goodbye": "Goodbye",
+      "please": "Please",
+      "thank_you": "Thank you",
+      "yes": "Yes",
+      "no": "No",
+      "excuse_me": "Excuse me",
+      "do_you_speak_english": "Do you speak English?",
+      "how_much": "How much does this cost?",
+      "credit_cards": "Do you take credit cards?",
+      "buy_this": "I would like to buy this",
+      "too_expensive": "Too expensive",
+      "can_you_help": "Can you help me?",
+      "fitting_room": "Where is the fitting room?",
+      "just_looking": "Just looking, thanks",
+      "menu": "Can I see the menu?",
+      "table_for_two": "A table for two, please",
+      "bill": "The bill, please",
+      "water": "Water, please",
+      "reservation": "I have a reservation",
+      "delicious": "Delicious",
+      "bathroom": "Where is the bathroom?",
+      "help": "Help!",
+      "need_doctor": "I need a doctor",
+      "call_police": "Call the police",
+      "hospital": "Where is the hospital?",
+      "lost_passport": "I lost my passport",
+      "emergency": "It's an emergency",
+      "embassy": "Where is the embassy?"
     }
+  },
+  "components": {
+    "pastTripSummary": {
+      "title": "{{country}} Summary",
+      "configuredBudget": "CONFIGURED BUDGET",
+      "perDayForDays": "{{amount}} {{currency}} / day for {{days}} days",
+      "usedBudget": "USED BUDGET",
+      "underBudget": "Under budget!",
+      "overBudget": "Over budget",
+      "noBudgetLimit": "No budget limit set",
+      "expensesCount": "Expenses ({{count}})",
+      "noExpenses": "No expenses recorded for this trip."
+    }
+  },
+  "regions": {
+    "Latin America": "Latin America",
+    "Oceania": "Oceania",
+    "North America": "North America",
+    "Europe/Asia": "Europe/Asia",
+    "Europe": "Europe",
+    "Asia": "Asia"
   }
 }

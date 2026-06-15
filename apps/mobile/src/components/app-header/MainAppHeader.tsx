@@ -4,6 +4,7 @@ import { Text, useTheme } from 'react-native-paper';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { usePathname, useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 const NavItem = ({ active, title, icon, onPress, theme }: { active: boolean, title: string, icon: keyof typeof MaterialIcons.glyphMap, onPress: () => void, theme: any }) => {
   const anim = useRef(new Animated.Value(active ? 1 : 0)).current;
@@ -63,6 +64,7 @@ export default function MainAppHeader() {
   const insets = useSafeAreaInsets();
   const router = useRouter();
   const pathname = usePathname();
+  const { t } = useTranslation();
 
   const [localActive, setLocalActive] = useState<string>(pathname);
 
@@ -73,10 +75,7 @@ export default function MainAppHeader() {
   const handleNav = (route: string) => {
     if (localActive === route) return;
     setLocalActive(route);
-    
-    setTimeout(() => {
-      router.navigate(route as any);
-    }, 0);
+    router.navigate(route as any);
   };
 
   const isHome = localActive === '/(main)' || localActive === '/';
@@ -98,9 +97,9 @@ export default function MainAppHeader() {
         </Text>
 
         <View style={styles.nav}>
-          <NavItem active={isHome} title="Home" icon="home" onPress={() => handleNav('/(main)')} theme={theme} />
-          <NavItem active={isTrips} title="Trips" icon="flight" onPress={() => handleNav('/(main)/trips')} theme={theme} />
-          <NavItem active={isSettings} title="Settings" icon="settings" onPress={() => handleNav('/(main)/settings')} theme={theme} />
+          <NavItem active={isHome} title={t('navigation.tabs.home', 'Home')} icon="home" onPress={() => handleNav('/(main)')} theme={theme} />
+          <NavItem active={isTrips} title={t('navigation.tabs.myTrips', 'Trips')} icon="flight" onPress={() => handleNav('/(main)/trips')} theme={theme} />
+          <NavItem active={isSettings} title={t('navigation.tabs.settings', 'Settings')} icon="settings" onPress={() => handleNav('/(main)/settings')} theme={theme} />
         </View>
       </View>
     </View>

@@ -8,8 +8,10 @@ import { FLAG_IMAGES } from '../../src/lib/assets';
 import ChangeHomeCountryModal from '../../src/components/ChangeHomeCountryModal';
 import ChangeLanguageModal from '../../src/components/ChangeLanguageModal';
 import { useTranslation } from 'react-i18next';
+import { useRouter } from 'expo-router';
 
 export default function SettingsScreen() {
+  const router = useRouter();
   const theme = useTheme();
   const { settings } = useAppStore();
   const [countryModalVisible, setCountryModalVisible] = useState(false);
@@ -18,7 +20,7 @@ export default function SettingsScreen() {
 
   const homeCountry = COUNTRIES.find(c => c.code === settings?.homeCountry);
   const currentLanguageCode = settings?.systemLanguage || i18n.language.split('-')[0] || 'en';
-  const LANGUAGES: Record<string, string> = { en: 'English', es: 'Spanish', de: 'German' };
+  const LANGUAGES: Record<string, string> = { en: 'English', es: 'Español', de: 'Deutsch', fr: 'Français', it: 'Italiano', pt: 'Português' };
   const currentLanguageName = LANGUAGES[currentLanguageCode] || 'English';
 
   const handleSync = async () => {
@@ -38,7 +40,7 @@ export default function SettingsScreen() {
       <View style={[styles.section, { backgroundColor: theme.colors.surfaceVariant, borderRadius: 16 }]}>
         <List.Item
           title={t('settingsScreen.homeCountry')}
-          description={homeCountry ? homeCountry.name : t('settingsScreen.notSet')}
+          description={homeCountry ? t(`countries.${homeCountry.code}`, homeCountry.name) : t('settingsScreen.notSet')}
           left={props => (
             homeCountry && FLAG_IMAGES[homeCountry.code] ? 
               <Image source={FLAG_IMAGES[homeCountry.code]} style={{ width: 32, height: 32, borderRadius: 16, margin: 8 }} />
@@ -57,8 +59,11 @@ export default function SettingsScreen() {
       </View>
 
       <View style={{ marginTop: 'auto', width: '100%', alignItems: 'center' }}>
+        <Button mode="outlined" onPress={() => router.push('/onboarding/welcome')} style={{ marginBottom: 16 }}>
+          Onboarding
+        </Button>
         <Button mode="contained" onPress={handleSync} icon="sync">
-          {t('settingsScreen.forceSyncButton')}
+          {t('settingsScreen.forceSyncButton', 'Sync Online Data')}
         </Button>
       </View>
 

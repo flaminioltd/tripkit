@@ -1,10 +1,11 @@
+import { SafeAreaView } from 'react-native-safe-area-context';
 import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { FLAG_IMAGES } from '../../src/lib/assets';
 import { useTripStore } from '../../src/stores/trip-store';
 import { useAppStore } from '../../src/stores/app-store';
-import { View, Image, StyleSheet, SafeAreaView, FlatList, Pressable, ScrollView, Alert } from 'react-native';
+import { View, Image, StyleSheet, FlatList, Pressable, ScrollView, Alert } from 'react-native';
 import { Text, Card, useTheme, IconButton, FAB, Avatar, Portal, Dialog, TextInput, SegmentedButtons, ProgressBar, Switch } from 'react-native-paper';
 import Button from '../../src/components/ui/Button';
 import { useRouter, useFocusEffect } from 'expo-router';
@@ -12,6 +13,7 @@ import { useTranslation } from 'react-i18next';
 import { db } from '../../src/db/client';
 import { exchangeRates, countries, settings as dbSettings } from '../../src/db/schema';
 import { eq } from 'drizzle-orm';
+import { MaterialIcons } from '@expo/vector-icons';
 
 const CATEGORIES = [
   { value: 'food', icon: 'silverware-fork-knife', label: 'Food' },
@@ -33,7 +35,7 @@ const CURRENCY_SYMBOLS: Record<string, string> = {
 
 export default function BudgetTrackerScreen() {
   const theme = useTheme();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const router = useRouter();
   const { activeTrip, expenses, updateTrip, addExpense, updateExpense, removeExpense } = useTripStore();
   
@@ -54,6 +56,20 @@ export default function BudgetTrackerScreen() {
   const tripDays = activeTrip?.startDate && activeTrip?.endDate ? 
     Math.max(1, Math.ceil((new Date(activeTrip.endDate).getTime() - new Date(activeTrip.startDate).getTime()) / (1000 * 60 * 60 * 24))) 
     : 1;
+
+
+  const handleTrackCurrencyChange = (newCurrency: string) => {
+    if (newCurrency === trackCurrency) return;
+    
+    const numAmount = parseFloat(budgetAmount) || 0;
+    if (numAmount > 0) {
+      const fromCurrencyCode = trackCurrency === 'home' ? homeCurrencyState : localCurrency;
+      const toCurrencyCode = newCurrency === 'home' ? homeCurrencyState : localCurrency;
+      const convertedAmount = getConvertedAmount(numAmount, fromCurrencyCode, toCurrencyCode);
+      setBudgetAmount(convertedAmount > 0 ? convertedAmount.toFixed(2).replace(/\.00$/, '') : '');
+    }
+    setTrackCurrency(newCurrency);
+  };
 
   const handleBudgetTypeChange = (newType: string) => {
     if (newType === budgetType) return;
@@ -246,7 +262,7 @@ export default function BudgetTrackerScreen() {
   };
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: theme.colors.background }]}>
+    <SafeAreaView edges={['bottom', 'left', 'right']} style={[styles.container, { backgroundColor: theme.colors.background }]}>
       <ModuleHeader title={t("modules.budgetTracker.headerTitle", "Budget Tracker")} />
 
       <FlatList
@@ -261,10 +277,10 @@ export default function BudgetTrackerScreen() {
                   <Text variant="labelMedium" style={{ marginBottom: 4 }}>{t("modules.budgetTracker.trackIn", "Track Expenses In")}</Text>
                   <SegmentedButtons
                     value={trackCurrency}
-                    onValueChange={setTrackCurrency}
+                    onValueChange={handleTrackCurrencyChange}
                     buttons={[
-                      { value: 'home', label: `${t('modules.budgetTracker.homeCurrency', 'Home')} (${homeCurrencyState})` },
-                      { value: 'local', label: `${t('modules.budgetTracker.localCurrency', 'Local')} (${localCurrency})` },
+                      { value: 'home', label: `${t('modules.budgetTracker.homeCurrency', 'Origin')} (${CURRENCY_SYMBOLS[homeCurrencyState] || homeCurrencyState})` },
+                      { value: 'local', label: `${t('modules.budgetTracker.localCurrency', 'Local')} (${CURRENCY_SYMBOLS[localCurrency] || localCurrency})` },
                     ]}
                   />
                 </View>
@@ -338,8 +354,29 @@ export default function BudgetTrackerScreen() {
 
             <View style={styles.sectionHeader}>
               <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{t('modules.budgetTracker.expensesTitle', 'Recent Expenses')}</Text>
-              <Button mode="text" onPress={openAddModal} compact>{t('modules.budgetTracker.addExpenseButton', '+ Add New')}</Button>
             </View>
+
+            <Pressable 
+              onPress={openAddModal}
+              style={({pressed}) => [
+                { 
+                  flexDirection: 'row', 
+                  alignItems: 'center', 
+                  padding: 16, 
+                  borderRadius: 16, 
+                  backgroundColor: pressed ? theme.colors.surfaceVariant : theme.colors.primaryContainer,
+                  marginBottom: 16
+                }
+              ]}
+            >
+              <View style={{ width: 40, height: 40, borderRadius: 20, backgroundColor: theme.colors.surfaceVariant, alignItems: 'center', justifyContent: 'center', marginRight: 16 }}>
+                <MaterialIcons name="add" size={24} color={theme.colors.primary} />
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{t('modules.budgetTracker.addExpenseButton', 'Add New Expense')}</Text>
+                <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{t('modules.budgetTracker.addExpenseDesc', 'Track a new transaction')}</Text>
+              </View>
+            </Pressable>
             {expenses.length === 0 && (
               <View style={styles.emptyState}>
                 <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{t('modules.budgetTracker.noExpensesLabel', 'No expenses added yet.')}</Text>
@@ -354,18 +391,26 @@ export default function BudgetTrackerScreen() {
           const secondarySymbol = trackCurrency === 'home' ? CURRENCY_SYMBOLS[localCurrency] : CURRENCY_SYMBOLS[homeCurrencyState];
 
           return (
-            <Card style={styles.entryCard} mode="contained" onPress={() => openEditModal(item)}>
-              <Card.Title 
-                title={item.title} 
-                subtitle={new Date(item.date).toLocaleDateString([], { month: 'short', day: 'numeric', hour: '2-digit', minute:'2-digit' })} 
-                left={(props) => <Avatar.Icon {...props} icon={categoryObj.icon} size={40} style={{ backgroundColor: theme.colors.surfaceVariant }} />}
-                right={(props) => (
-                  <View style={styles.amountContainer}>
-                    <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>{displaySymbol}{displayAmt.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
-                    <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{secondarySymbol || ''}{secondaryAmt.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
-                  </View>
-                )}
-              />
+            <Card style={styles.entryCard} mode="elevated">
+              <View style={{ flexDirection: 'row', alignItems: 'center', padding: 8, paddingRight: 0 }}>
+                <View style={{ width: 48, height: 48, borderRadius: 24, alignItems: 'center', justifyContent: 'center', marginRight: 12, backgroundColor: theme.colors.surfaceVariant }}>
+                  <IconButton icon={categoryObj.icon} size={24} iconColor={theme.colors.onSurfaceVariant} style={{ margin: 0 }} />
+                </View>
+                <View style={{ flex: 1 }}>
+                  <Text variant="titleMedium">{item.title}</Text>
+                  <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{new Date(item.date).toLocaleDateString(i18n.language || 'en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute:'2-digit' })}</Text>
+                </View>
+                <View style={{ marginRight: 8, alignItems: 'flex-end' }}>
+                  <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>{displaySymbol}{displayAmt.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
+                  <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{secondarySymbol || ''}{secondaryAmt.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
+                </View>
+                <View style={{ flexDirection: 'row' }}>
+                  <IconButton icon="pencil" size={20} onPress={() => openEditModal(item)} style={{ margin: 0 }} />
+                  <IconButton icon="delete" size={20} iconColor={theme.colors.error} onPress={async () => {
+                    await removeExpense(item.id);
+                  }} style={{ margin: 0 }} />
+                </View>
+              </View>
             </Card>
           );
         }}
@@ -389,19 +434,7 @@ export default function BudgetTrackerScreen() {
             <Text variant="headlineSmall" style={{ color: theme.colors.onSurface }}>
               {editingExpenseId ? t('modules.budgetTracker.expenseModalTitleEdit', 'Edit Expense') : t('modules.budgetTracker.expenseModalTitleAdd', 'Add Expense')}
             </Text>
-            {editingExpenseId && (
-              <IconButton 
-                icon="delete-outline" 
-                iconColor={theme.colors.error} 
-                size={24} 
-                onPress={async () => {
-                  await removeExpense(editingExpenseId);
-                  setIsModalVisible(false);
-                }}
-                style={{ margin: 0 }}
-              />
-            )}
-          </View>
+            </View>
           <Dialog.Content>
             <Text variant="labelMedium" style={{ marginBottom: 8 }}>{t("modules.budgetTracker.categoryLabel", "Category")}</Text>
             <View style={styles.categoryGrid}>

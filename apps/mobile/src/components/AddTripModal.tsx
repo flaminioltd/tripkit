@@ -8,6 +8,8 @@ import { useTripStore } from '../stores/trip-store';
 import { db } from '../db/client';
 import { countries } from '../db/schema';
 
+import { useTranslation } from 'react-i18next';
+
 interface AddTripModalProps {
   visible: boolean;
   onDismiss: () => void;
@@ -16,6 +18,7 @@ interface AddTripModalProps {
 export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) {
   const theme = useTheme();
   const { createTrip } = useTripStore();
+  const { t, i18n } = useTranslation();
   
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCountry, setSelectedCountry] = useState<any | null>(null);
@@ -91,9 +94,16 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
 
   const filteredCountries = useMemo(() => {
     const list = searchQuery 
-      ? allCountries.filter(c => c.name.toLowerCase().includes(searchQuery.toLowerCase()))
+      ? allCountries.filter(c => {
+          const translatedName = t(`countries.${c.code}`, c.name);
+          return translatedName.toLowerCase().includes(searchQuery.toLowerCase());
+        })
       : allCountries;
-    return list.slice().sort((a, b) => a.name.localeCompare(b.name));
+    return list.slice().sort((a, b) => {
+      const aName = t(`countries.${a.code}`, a.name);
+      const bName = t(`countries.${b.code}`, b.name);
+      return aName.localeCompare(bName);
+    });
   }, [searchQuery, allCountries]);
 
   const handleCreate = async () => {
@@ -111,7 +121,7 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
 
   const handleSelectCountry = (country: any) => {
     setSelectedCountry(country);
-    setSearchQuery(country.name);
+    setSearchQuery(t(`countries.${country.code}`, country.name));
     setIsFocused(false);
     Keyboard.dismiss();
   };
@@ -128,7 +138,7 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         >
           <View style={styles.header}>
-            <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>Plan New Trip</Text>
+            <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{t('modals.addTrip.title', 'Plan New Trip')}</Text>
             <Pressable onPress={onDismiss} style={styles.closeButton}>
               <MaterialIcons name="close" size={24} color={theme.colors.onSurfaceVariant} />
             </Pressable>
@@ -153,7 +163,7 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
                   }}
                   onFocus={() => setIsFocused(true)}
                   onBlur={() => setIsFocused(false)}
-                  placeholder="Enter a country..."
+                  placeholder={t('modals.addTrip.searchPlaceholder', 'Enter a country...')}
                   style={styles.input}
                   underlineStyle={{ display: 'none' }}
                   textColor={theme.colors.onSurface}
@@ -194,10 +204,10 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
                       )}
                       <View style={{ flex: 1 }}>
                         <Text variant="bodyLarge" style={{ color: theme.colors.onSurface, fontWeight: '500' }}>
-                          {item.name}
+                          {t(`countries.${item.code}`, item.name)}
                         </Text>
                         <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
-                          {item.region}
+                          {t(`regions.${item.region}`, item.region)}
                         </Text>
                       </View>
                     </Pressable>
@@ -207,7 +217,7 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
             )}
 
             <View style={styles.datesSection}>
-              <Text variant="titleMedium" style={{ marginBottom: 12, fontWeight: 'bold' }}>Trip Dates</Text>
+              <Text variant="titleMedium" style={{ marginBottom: 12, fontWeight: 'bold' }}>{t('modals.addTrip.tripDates', 'Trip Dates')}</Text>
               
               <View style={{ marginBottom: 8 }}>
                 <Pressable 
@@ -230,8 +240,8 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
                   <MaterialIcons name="date-range" size={20} color={theme.colors.primary} style={{ marginRight: 8 }} />
                   <Text style={{ fontSize: 16, color: theme.colors.primary, fontWeight: '500' }}>
                     {startDate && endDate 
-                      ? `${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}`
-                      : 'Select Date Range'}
+                      ? `${startDate.toLocaleDateString(i18n.language || 'en-US')} - ${endDate.toLocaleDateString(i18n.language || 'en-US')}`
+                      : t('modals.addTrip.selectDateRange', 'Select Date Range')}
                   </Text>
                 </Pressable>
               </View>
@@ -241,12 +251,13 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
                  onPress={() => setNotSetYet(!notSetYet)}
               >
                 <MaterialIcons name={notSetYet ? 'check-circle' : 'radio-button-unchecked'} size={24} color={theme.colors.primary} />
-                <Text style={{ marginLeft: 8, color: theme.colors.onSurface }}>Not Set Yet</Text>
+                <Text style={{ marginLeft: 8, color: theme.colors.onSurface }}>{t('modals.addTrip.notSetYet', 'Not Set Yet')}</Text>
               </Pressable>
 
                 <Portal>
                   <Modal visible={showPicker} onDismiss={() => setShowPicker(false)} contentContainerStyle={{ margin: 24, borderRadius: 16, overflow: 'hidden', backgroundColor: theme.colors.surface }}>
                     <Calendar
+                      minDate={new Date().toISOString().split('T')[0]}
                       markingType={'period'}
                       markedDates={markedDates}
                       onDayPress={handleDayPress}
@@ -269,7 +280,7 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
               contentStyle={{ height: 56 }}
               labelStyle={{ fontSize: 16, fontWeight: 'bold' }}
             >
-              Create Trip
+              {t('modals.addTrip.createTripButton', 'Create Trip')}
             </Button>
           </View>
         </KeyboardAvoidingView>
