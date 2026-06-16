@@ -95,7 +95,6 @@ export default function HomeScreen() {
               padding: 16,
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between',
             }
           ]}
         >
@@ -105,31 +104,39 @@ export default function HomeScreen() {
             color: 'rgba(0,0,0,0.4)', 
             textTransform: 'uppercase', 
             letterSpacing: 0.5,
-            alignSelf: 'flex-start'
+            alignSelf: 'flex-start',
+            marginBottom: 8
           }}>
             {t(`categories.${mod.category}`, mod.category)}
           </Text>
 
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            {mod.CustomIcon ? (
-              <mod.CustomIcon size={48} color={mod.color} />
-            ) : (
-              <MaterialIcons name={mod.fallbackIcon} size={48} color={mod.color} />
-            )}
+          <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+            <Text 
+              numberOfLines={2}
+              adjustsFontSizeToFit
+              minimumFontScale={0.5}
+              textBreakStrategy="simple"
+              style={{ 
+                flex: 1,
+                fontSize: 14,
+                fontWeight: '700', 
+                color: '#1A1A1A', 
+                textAlign: 'left',
+                marginRight: 8,
+                lineHeight: 18
+              }}
+            >
+              {t(`homeScreen.modules.${mod.id}.title`, mod.title)}
+            </Text>
+            
+            <View style={{ justifyContent: 'center', alignItems: 'flex-end' }}>
+              {mod.CustomIcon ? (
+                <mod.CustomIcon size={48} color={mod.color} />
+              ) : (
+                <MaterialIcons name={mod.fallbackIcon} size={48} color={mod.color} />
+              )}
+            </View>
           </View>
-          
-          <Text 
-            numberOfLines={1}
-            adjustsFontSizeToFit
-            style={{ 
-              fontSize: 16,
-              fontWeight: '700', 
-              color: '#1A1A1A', 
-              textAlign: 'center',
-            }}
-          >
-            {t(`homeScreen.modules.${mod.id}.title`, mod.title)}
-          </Text>
         </View>
       </Pressable>
     );

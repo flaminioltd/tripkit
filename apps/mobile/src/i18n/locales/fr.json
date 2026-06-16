@@ -62,11 +62,11 @@
     "modulesTitle": "Modules",
     "modules": {
       "localInfo": {
-        "title": "Info Locale",
+        "title": "Infos Locales",
         "description": "Détails essentiels, coutumes et culture"
       },
       "basicPhrases": {
-        "title": "Phrases",
+        "title": "Phrases Simples",
         "description": "Salutations et essentiels"
       },
       "plugVoltage": {
@@ -78,7 +78,7 @@
         "description": "Équivalents du 112"
       },
       "budgetTracker": {
-        "title": "Budget",
+        "title": "Suivi Budget",
         "description": "Suivez vos dépenses"
       },
       "atmExchange": {
@@ -86,19 +86,19 @@
         "description": "Taux, frais et convertisseur"
       },
       "vatRefund": {
-        "title": "Détaxe",
+        "title": "Remboursement TVA",
         "description": "Estimations de détaxe"
       },
       "tipCalculator": {
-        "title": "Pourboires",
+        "title": "Calculateur Pourboire",
         "description": "Coutumes et calculs"
       },
       "sizeConverter": {
-        "title": "Tailles",
+        "title": "Tailles & Unités",
         "description": "Chaussures, vêtements et mesures"
       },
       "timezoneHelper": {
-        "title": "Fuseaux",
+        "title": "Fuseaux Horaires",
         "description": "Coordonner avec l'origine"
       }
     },
@@ -242,7 +242,7 @@
       "recommendationBureau": "Bureau"
     },
     "basicPhrases": {
-      "headerTitle": "Phrases Básicas",
+      "headerTitle": "Phrases Simples",
       "greetingTab": "Salutations",
       "essentialsTab": "Essentiels",
       "numbersTab": "Nombres",
@@ -253,7 +253,7 @@
       "noPhrasesAvailable": "Aucune phrase disponible pour cette catégorie."
     },
     "budgetTracker": {
-      "headerTitle": "Budget",
+      "headerTitle": "Suivi Budget",
       "noBudgetTitle": "Aucun budget défini",
       "noBudgetDesc": "Définissez un budget pour suivre vos dépenses.",
       "setBudgetButton": "Définir le budget",
@@ -367,7 +367,7 @@
       "destCountryCode": "DESTINATION ({{code}})"
     },
     "sizeConverter": {
-      "headerTitle": "Tailles",
+      "headerTitle": "Tailles & Unités",
       "tabShoes": "Chaussures",
       "tabClothes": "Vêtements",
       "tabUnits": "Unités",
@@ -392,7 +392,7 @@
       "matchTitleUnits": "Les unités sont identiques !"
     },
     "timezoneHelper": {
-      "headerTitle": "Fuseaux",
+      "headerTitle": "Fuseaux Horaires",
       "homeLabel": "ORIGINE ({{code}})",
       "localLabel": "DESTINATION ({{code}})",
       "timeSetting": "Réglage de l'heure",
@@ -405,7 +405,7 @@
       "origin": "Origine"
     },
     "tipCalculator": {
-      "headerTitle": "Pourboires",
+      "headerTitle": "Calculateur Pourboire",
       "expenseTitle": "Addition (pourboire inclus)",
       "defaultTippingText": "Le pourboire standard est d'environ 15-20%.",
       "noTippingText": "Les pourboires en {{country}} ne sont pas requis.",
@@ -430,7 +430,7 @@
       "amountLabel": "Montant ({{symbol}})"
     },
     "vatRefund": {
-      "headerTitle": "Détaxe",
+      "headerTitle": "Remboursement TVA",
       "estimateDesc": "Estimez votre remboursement pour {{country}}.",
       "standardVat": "Taux de TVA standard",
       "setButton": "Définir",
@@ -459,7 +459,10 @@
       "catOther": "Autre"
     },
     "atm": {
-      "headerTitle": "DAB"
+      "headerTitle": "DAB & Change"
+    },
+    "destinationInfo": {
+      "headerTitle": "Infos Locales"
     }
   },
   "modals": {

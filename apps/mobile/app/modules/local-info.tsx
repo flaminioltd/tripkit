@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { useTripStore } from '../../src/stores/trip-store';
 import { View, StyleSheet, ScrollView, Linking, Pressable } from 'react-native';;
-import { Text, Card, useTheme, SegmentedButtons, IconButton, Divider, Menu } from 'react-native-paper';
+import { Text, Card, useTheme, IconButton, Divider, Menu } from 'react-native-paper';
 import { db } from '../../src/db/client';
 import { settings as dbSettings, countries } from '../../src/db/schema';
 import { eq } from 'drizzle-orm';
@@ -13,6 +13,7 @@ import { EMERGENCY_NUMBERS, PUBLIC_HOLIDAYS, EMBASSIES } from '../../src/lib/loc
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { PlugIcon } from '../../src/components/PlugIcons';
+import CustomSegmentedControl from '../../src/components/ui/CustomSegmentedControl';
 
 export default function LocalInfoScreen() {
   const theme = useTheme();

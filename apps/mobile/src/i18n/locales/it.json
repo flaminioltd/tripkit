@@ -78,11 +78,11 @@
         "description": "I numeri di destinazionei per le emergenze"
       },
       "budgetTracker": {
-        "title": "Budget",
+        "title": "Gestione Budget",
         "description": "Tieni traccia delle spese"
       },
       "atmExchange": {
-        "title": "Bancomat e Cambi",
+        "title": "Bancomat & Cambio",
         "description": "Tassi, commissioni e cambi"
       },
       "vatRefund": {
@@ -90,11 +90,11 @@
         "description": "Stima rimborsi tax-free"
       },
       "tipCalculator": {
-        "title": "Mance",
+        "title": "Calcolatore Mance",
         "description": "Costi e usanze di destinazionei"
       },
       "sizeConverter": {
-        "title": "Taglie e Misure",
+        "title": "Taglie & Unità",
         "description": "Scarpe, vestiti e misure"
       },
       "timezoneHelper": {
@@ -193,7 +193,7 @@
   },
   "modules": {
     "atmExchange": {
-      "headerTitle": "Bancomat e Cambi",
+      "headerTitle": "Bancomat & Cambio",
       "tabExchange": "Cambio",
       "tabFees": "Commissioni",
       "amountToConvert": "Importo da convertire",
@@ -253,7 +253,7 @@
       "noPhrasesAvailable": "Nessuna frase disponibile per questa categoria."
     },
     "budgetTracker": {
-      "headerTitle": "Budget",
+      "headerTitle": "Gestione Budget",
       "noBudgetTitle": "Nessun budget impostato",
       "noBudgetDesc": "Imposta un budget per tracciare le spese.",
       "setBudgetButton": "Imposta Budget",
@@ -317,7 +317,7 @@
       "pharmacyNoteDesc": "Cerca una croce verde lampeggiante. Spesso i farmacisti possono fornire consigli medici per piccoli malanni."
     },
     "localInfo": {
-      "headerTitle": "Info di Destinazione",
+      "headerTitle": "Info Locali",
       "overviewTab": "Panoramica",
       "cultureTab": "Cultura",
       "transportTab": "Trasporto",
@@ -367,7 +367,7 @@
       "destCountryCode": "DESTINAZIONE ({{code}})"
     },
     "sizeConverter": {
-      "headerTitle": "Taglie e Misure",
+      "headerTitle": "Taglie & Unità",
       "tabShoes": "Scarpe",
       "tabClothes": "Vestiti",
       "tabUnits": "Unità",
@@ -459,7 +459,10 @@
       "catOther": "Altro"
     },
     "atm": {
-      "headerTitle": "Bancomat"
+      "headerTitle": "Bancomat & Cambio"
+    },
+    "destinationInfo": {
+      "headerTitle": "Info Locali"
     }
   },
   "modals": {

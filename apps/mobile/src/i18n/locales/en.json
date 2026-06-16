@@ -86,7 +86,7 @@
         "description": "Rates, fees, and currency converter"
       },
       "vatRefund": {
-        "title": "VAT Refund Calculator",
+        "title": "VAT Refund",
         "description": "Tax-free shopping refund estimates"
       },
       "tipCalculator": {
@@ -94,11 +94,11 @@
         "description": "Destination tipping customs and math"
       },
       "sizeConverter": {
-        "title": "Size Converter",
+        "title": "Sizes & Units",
         "description": "Shoes, clothing, and measurements"
       },
       "timezoneHelper": {
-        "title": "Timezone Helper",
+        "title": "Time Zones",
         "description": "Coordinate with origin"
       }
     },
@@ -314,7 +314,7 @@
       "pharmacyNoteDesc": "Look for a flashing green cross. In France, pharmacists can provide medical advice for minor ailments. For after-hours pharmacies ("
     },
     "localInfo": {
-      "headerTitle": "Destination Info",
+      "headerTitle": "Local Info",
       "overviewTab": "Overview",
       "cultureTab": "Culture",
       "transportTab": "Transport",
@@ -409,7 +409,7 @@
       "roundUpTippingText": "Standard tipping policy in {{country}} is to round up the bill.",
       "standardTippingText": "Standard tipping in {{country}} is {{standard}}.",
       "billAmountLabel": "Bill Amount ({{symbol}})",
-      "tipPercentage": "Tip Percentage",
+      "tipPercentage": "Tip Amount",
       "noTip": "No Tip",
       "roundUpTip": "Round Up",
       "customTip": "Other",
@@ -456,7 +456,10 @@
       "catOther": "Other"
     },
     "atm": {
-      "headerTitle": "ATM Exchange"
+      "headerTitle": "ATM & Exchange"
+    },
+    "destinationInfo": {
+      "headerTitle": "Local Info"
     }
   },
   "modals": {

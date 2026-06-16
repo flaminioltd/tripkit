@@ -5,11 +5,12 @@ import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { useTripStore } from '../../src/stores/trip-store';
 import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';;
-import { Text, useTheme, Card, SegmentedButtons, Menu, IconButton, Switch } from 'react-native-paper';
+import { Text, useTheme, Card, Menu, IconButton, Switch, ThemeProvider } from 'react-native-paper';
 import { TimePicker, en, registerTranslation } from 'react-native-paper-dates';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { settingsRepo } from '../../src/repositories/settings-repository';
 import { useTranslation } from 'react-i18next';
+import CustomSegmentedControl from '../../src/components/ui/CustomSegmentedControl';
 
 registerTranslation('en', en);
 
@@ -276,18 +277,20 @@ export default function TimezoneHelperScreen() {
         </View>
         
         <View style={{ alignSelf: 'center', marginVertical: 8, paddingVertical: 4 }}>
-          <TimePicker 
-            hours={sliderHours}
-            minutes={sliderMinutes}
-            focused={clockFocused}
-            inputType="picker"
-            onFocusInput={(type) => setClockFocused(type)}
-            onChange={({ hours, minutes }) => {
-              setSliderHours(hours);
-              setSliderMinutes(minutes);
-            }}
-            use24HourClock={is24hMode}
-          />
+          <ThemeProvider theme={{ ...theme, colors: { ...theme.colors, surfaceVariant: '#EFE7DC' } }}>
+            <TimePicker 
+              hours={sliderHours}
+              minutes={sliderMinutes}
+              focused={clockFocused}
+              inputType="picker"
+              onFocusInput={(type) => setClockFocused(type)}
+              onChange={({ hours, minutes }) => {
+                setSliderHours(hours);
+                setSliderMinutes(minutes);
+              }}
+              use24HourClock={is24hMode}
+            />
+          </ThemeProvider>
         </View>
 
         <Button mode="outlined" onPress={() => {

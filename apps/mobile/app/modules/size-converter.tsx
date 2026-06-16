@@ -1,7 +1,7 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, ScrollView, TextInput, Pressable } from 'react-native';;
-import { Text, useTheme, Card, ActivityIndicator, SegmentedButtons } from 'react-native-paper';
+import { Text, useTheme, Card, ActivityIndicator } from 'react-native-paper';
 import { tokens } from '../../src/theme/tokens';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
@@ -13,6 +13,7 @@ import { sizeGuideService, SizeGuidePackage } from '../../src/services/sizeGuide
 import { getCountryCodeByName, getSizeRegion, getMeasurementSystem, usesLetterSizes } from '../../src/lib/countryMappers';
 import { kmToMiles, milesToKm, kgToLbs, lbsToKg, celsiusToFahrenheit, fahrenheitToCelsius, litersToGallons, gallonsToLiters, kmhToMph, mphToKmh } from '../../src/lib/conversions';
 import { COUNTRIES } from '../../src/lib/countries';
+import CustomSegmentedControl from '../../src/components/ui/CustomSegmentedControl';
 
 type TabType = 'shoes' | 'clothes' | 'units';
 
@@ -333,7 +334,7 @@ export default function SizeConverterScreen() {
 
     return (
       <View>
-        <SegmentedButtons
+        <CustomSegmentedControl
           value={personType}
           onValueChange={(val) => setPersonType(val as any)}
           buttons={[
@@ -397,7 +398,7 @@ export default function SizeConverterScreen() {
 
     return (
       <View>
-        <SegmentedButtons
+        <CustomSegmentedControl
           value={personType}
           onValueChange={(val) => setPersonType(val as any)}
           buttons={[
@@ -557,7 +558,7 @@ export default function SizeConverterScreen() {
                     borderRightWidth: 1,
                     borderBottomWidth: 1,
                     borderColor: tokens.colors.ui.warmBorder,
-                    backgroundColor: tokens.colors.ui.warmSand,
+                    backgroundColor: '#F0F0F0',
                     zIndex: 1
                   },
                   isSelected && { 

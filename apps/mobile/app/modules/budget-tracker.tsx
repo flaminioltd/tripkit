@@ -6,7 +6,7 @@ import { FLAG_IMAGES } from '../../src/lib/assets';
 import { useTripStore } from '../../src/stores/trip-store';
 import { useAppStore } from '../../src/stores/app-store';
 import { View, Image, StyleSheet, FlatList, Pressable, ScrollView, Alert } from 'react-native';
-import { Text, Card, useTheme, IconButton, FAB, Avatar, Portal, Dialog, TextInput, SegmentedButtons, ProgressBar, Switch } from 'react-native-paper';
+import { Text, Card, useTheme, IconButton, FAB, Avatar, Portal, Dialog, TextInput, ProgressBar, Switch } from 'react-native-paper';
 import Button from '../../src/components/ui/Button';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { useTranslation } from 'react-i18next';
@@ -14,6 +14,7 @@ import { db } from '../../src/db/client';
 import { exchangeRates, countries, settings as dbSettings } from '../../src/db/schema';
 import { eq } from 'drizzle-orm';
 import { MaterialIcons } from '@expo/vector-icons';
+import CustomSegmentedControl from '../../src/components/ui/CustomSegmentedControl';
 
 const CATEGORIES = [
   { value: 'food', icon: 'silverware-fork-knife', label: 'Food' },
@@ -275,7 +276,7 @@ export default function BudgetTrackerScreen() {
               <Card.Content>
                 <View style={{ marginBottom: 12 }}>
                   <Text variant="labelMedium" style={{ marginBottom: 4 }}>{t("modules.budgetTracker.trackIn", "Track Expenses In")}</Text>
-                  <SegmentedButtons
+                  <CustomSegmentedControl
                     value={trackCurrency}
                     onValueChange={handleTrackCurrencyChange}
                     buttons={[
@@ -299,7 +300,7 @@ export default function BudgetTrackerScreen() {
                   </View>
                   <View style={{ flex: 1.15, paddingLeft: 8 }}>
                     <Text variant="labelMedium" style={{ marginBottom: 4 }}>{t("modules.budgetTracker.budgetType", "Budget Scope")}</Text>
-                    <SegmentedButtons
+                    <CustomSegmentedControl
                       value={budgetType}
                       onValueChange={handleBudgetTypeChange}
                       buttons={[

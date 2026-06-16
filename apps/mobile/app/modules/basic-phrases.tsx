@@ -75,7 +75,7 @@ export default function BasicPhrasesScreen() {
                         borderRightWidth: 1,
                         borderBottomWidth: 1,
                         borderColor: tokens.colors.ui.warmBorder,
-                        backgroundColor: tokens.colors.ui.warmSand,
+                        backgroundColor: '#F0F0F0',
                         zIndex: 1
                       },
                       isSelected && { 

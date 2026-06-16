@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { FLAG_IMAGES } from '../../src/lib/assets';
 import { View, Image, StyleSheet, ScrollView, Pressable } from 'react-native';;
-import { Text, TextInput, Card, useTheme, IconButton, Portal, Dialog, SegmentedButtons } from 'react-native-paper';
+import { Text, TextInput, Card, useTheme, IconButton, Portal, Dialog } from 'react-native-paper';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { useTripStore } from '../../src/stores/trip-store';
 import { db } from '../../src/db/client';
@@ -14,6 +14,7 @@ import { eq } from 'drizzle-orm';
 import * as Crypto from 'expo-crypto';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
+import CustomSegmentedControl from '../../src/components/ui/CustomSegmentedControl';
 
 const CURRENCY_SYMBOLS: Record<string, string> = {
   'USD': '$', 'EUR': '€', 'GBP': '£', 'JPY': '¥', 'AUD': 'A$', 'CAD': 'C$',
@@ -382,8 +383,8 @@ export default function VatRefundScreen() {
                   key={cat.value}
                   onPress={() => setModalCategory(cat.value)}
                   style={{
-                    paddingHorizontal: 12,
-                    paddingVertical: 8,
+                    paddingHorizontal: 8,
+                    paddingVertical: 6,
                     borderRadius: 16,
                     borderWidth: 1,
                     borderColor: modalCategory === cat.value ? theme.colors.primary : theme.colors.outline,
@@ -394,7 +395,7 @@ export default function VatRefundScreen() {
                   }}
                 >
                   <IconButton icon={cat.icon} size={16} style={{ margin: 0, padding: 0, width: 16, height: 16 }} />
-                  <Text style={{ color: modalCategory === cat.value ? theme.colors.onPrimaryContainer : theme.colors.onSurface }}>
+                  <Text style={{ color: modalCategory === cat.value ? theme.colors.onPrimaryContainer : theme.colors.onSurface, fontSize: 12 }}>
                     {t(`modules.vatRefund.cat${cat.label}`, cat.label)}
                   </Text>
                 </Pressable>

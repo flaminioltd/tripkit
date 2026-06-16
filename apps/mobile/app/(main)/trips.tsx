@@ -531,16 +531,18 @@ export default function TripsScreen() {
 
             <Portal>
               <Modal visible={showPicker} onDismiss={() => setShowPicker(false)} contentContainerStyle={{ margin: 24, borderRadius: 16, overflow: 'hidden', backgroundColor: theme.colors.surface }}>
-                <Calendar
-                  minDate={new Date().toISOString().split('T')[0]}
-                  markingType={'period'}
-                  markedDates={editMarkedDates}
-                  onDayPress={handleEditDayPress}
-                  theme={{
-                    todayTextColor: theme.colors.primary,
-                    arrowColor: theme.colors.primary,
-                  }}
-                />
+                {showPicker && (
+                  <Calendar
+                    minDate={new Date().toISOString().split('T')[0]}
+                    markingType={'period'}
+                    markedDates={editMarkedDates}
+                    onDayPress={handleEditDayPress}
+                    theme={{
+                      todayTextColor: theme.colors.primary,
+                      arrowColor: theme.colors.primary,
+                    }}
+                  />
+                )}
               </Modal>
             </Portal>
           </View>

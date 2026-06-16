@@ -26,7 +26,7 @@ export const theme = {
     ...MD3LightTheme.colors,
     background: tokens.colors.ui.appBackground,
     surface: tokens.colors.ui.screenSurface,
-    surfaceVariant: tokens.colors.ui.warmSand,
+    surfaceVariant: '#F0F0F0',
     primary: tokens.colors.ui.primaryPurple,
     primaryContainer: tokens.colors.ui.primaryPurpleSoft,
     secondary: tokens.colors.ui.warmSand,

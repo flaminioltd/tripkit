@@ -66,7 +66,7 @@
         "description": "Detalhes essenciais e costumes"
       },
       "basicPhrases": {
-        "title": "Frases Úteis",
+        "title": "Frases Básicas",
         "description": "Saudações e essenciais"
       },
       "plugVoltage": {
@@ -78,11 +78,11 @@
         "description": "Números de emergência locais"
       },
       "budgetTracker": {
-        "title": "Orçamento",
+        "title": "Controle Orçamento",
         "description": "Acompanhe seus gastos"
       },
       "atmExchange": {
-        "title": "Câmbio e ATM",
+        "title": "Caixas & Câmbio",
         "description": "Taxas e conversor"
       },
       "vatRefund": {
@@ -90,15 +90,15 @@
         "description": "Estimativas de compras isentas de impostos"
       },
       "tipCalculator": {
-        "title": "Gorjetas",
+        "title": "Calculadora Gorjeta",
         "description": "Costumes e cálculos"
       },
       "sizeConverter": {
-        "title": "Tamanhos",
+        "title": "Tamanhos & Medidas",
         "description": "Calçados, roupas e medidas"
       },
       "timezoneHelper": {
-        "title": "Fuso Horário",
+        "title": "Fusos Horários",
         "description": "Coordenar com a origem"
       }
     },
@@ -193,7 +193,7 @@
   },
   "modules": {
     "atmExchange": {
-      "headerTitle": "Câmbio e ATM",
+      "headerTitle": "Caixas & Câmbio",
       "tabExchange": "Câmbio",
       "tabFees": "Taxas",
       "amountToConvert": "Valor a converter",
@@ -242,7 +242,7 @@
       "recommendationBureau": "Câmbio"
     },
     "basicPhrases": {
-      "headerTitle": "Frases Úteis",
+      "headerTitle": "Frases Básicas",
       "greetingTab": "Saudações",
       "essentialsTab": "Essenciais",
       "numbersTab": "Números",
@@ -253,7 +253,7 @@
       "noPhrasesAvailable": "Nenhuma frase disponível."
     },
     "budgetTracker": {
-      "headerTitle": "Orçamento",
+      "headerTitle": "Controle Orçamento",
       "noBudgetTitle": "Sem orçamento",
       "noBudgetDesc": "Defina um orçamento para suas despesas.",
       "setBudgetButton": "Definir Orçamento",
@@ -317,7 +317,7 @@
       "pharmacyNoteDesc": "Procure uma cruz verde piscando. Farmacêuticos podem ajudar com problemas menores."
     },
     "localInfo": {
-      "headerTitle": "Info de Destino",
+      "headerTitle": "Info Local",
       "overviewTab": "Visão Geral",
       "cultureTab": "Cultura",
       "transportTab": "Transporte",
@@ -367,7 +367,7 @@
       "destCountryCode": "DESTINO ({{code}})"
     },
     "sizeConverter": {
-      "headerTitle": "Tamanhos",
+      "headerTitle": "Tamanhos & Medidas",
       "tabShoes": "Calçados",
       "tabClothes": "Roupas",
       "tabUnits": "Unidades",
@@ -392,7 +392,7 @@
       "matchTitleUnits": "As unidades combinam!"
     },
     "timezoneHelper": {
-      "headerTitle": "Fuso Horário",
+      "headerTitle": "Fusos Horários",
       "homeLabel": "ORIGEM ({{code}})",
       "localLabel": "DESTINO ({{code}})",
       "timeSetting": "Ajuste de Hora",
@@ -405,7 +405,7 @@
       "origin": "Origem"
     },
     "tipCalculator": {
-      "headerTitle": "Gorjetas",
+      "headerTitle": "Calculadora Gorjeta",
       "expenseTitle": "Conta do Restaurante (com gorjeta)",
       "defaultTippingText": "A gorjeta padrão é de 15-20%.",
       "noTippingText": "Em {{country}} não é comum dar gorjeta.",
@@ -459,7 +459,10 @@
       "catOther": "Outro"
     },
     "atm": {
-      "headerTitle": "ATM"
+      "headerTitle": "Caixas & Câmbio"
+    },
+    "destinationInfo": {
+      "headerTitle": "Info Local"
     }
   },
   "modals": {

@@ -78,23 +78,23 @@
         "description": "Equivalentes destinoes del 911"
       },
       "budgetTracker": {
-        "title": "Presupuesto",
+        "title": "Gestor Presupuesto",
         "description": "Rastrea gastos y mantente dentro del presupuesto"
       },
       "atmExchange": {
-        "title": "Cajeros",
+        "title": "Cajeros & Cambio",
         "description": "Tarifas, propinas y convertidor de moneda"
       },
       "vatRefund": {
-        "title": "Devolución IVA",
+        "title": "Reembolso IVA",
         "description": "Estimaciones de devolución de impuestos"
       },
       "tipCalculator": {
-        "title": "Propinas",
+        "title": "Calculadora Propinas",
         "description": "Costumbres destinoes de propinas y matemáticas"
       },
       "sizeConverter": {
-        "title": "Tallas",
+        "title": "Tallas & Unidades",
         "description": "Zapatos, ropa y medidas"
       },
       "timezoneHelper": {
@@ -190,7 +190,7 @@
   },
   "modules": {
     "atmExchange": {
-      "headerTitle": "Cajero y Cambio",
+      "headerTitle": "Cajeros & Cambio",
       "tabExchange": "Cambio",
       "tabFees": "Tarifas",
       "amountToConvert": "Cantidad a convertir",
@@ -250,7 +250,7 @@
       "noPhrasesAvailable": "No hay frases disponibles para esta categoría."
     },
     "budgetTracker": {
-      "headerTitle": "Rastreador de Presupuesto",
+      "headerTitle": "Gestor Presupuesto",
       "noBudgetTitle": "No se ha establecido presupuesto",
       "noBudgetDesc": "Establece un presupuesto para rastrear tus gastos.",
       "setBudgetButton": "Establecer Presupuesto",
@@ -314,7 +314,7 @@
       "pharmacyNoteDesc": "Busca una cruz verde parpadeante. En Francia, los farmacéuticos pueden brindar asesoramiento médico para dolencias menores. Para farmacias fuera de horario ("
     },
     "localInfo": {
-      "headerTitle": "Info de Destino",
+      "headerTitle": "Info Local",
       "overviewTab": "Resumen",
       "cultureTab": "Cultura",
       "transportTab": "Transporte",
@@ -364,7 +364,7 @@
       "destCountryCode": "DESTINO ({{code}})"
     },
     "sizeConverter": {
-      "headerTitle": "Tallas y Unidades",
+      "headerTitle": "Tallas & Unidades",
       "tabShoes": "Zapatos",
       "tabClothes": "Ropa",
       "tabUnits": "Unidades",
@@ -402,7 +402,7 @@
       "origin": "Origen"
     },
     "tipCalculator": {
-      "headerTitle": "Calculadora de Propinas",
+      "headerTitle": "Calculadora Propinas",
       "expenseTitle": "Cuenta de Restaurante (Propina Incluida)",
       "defaultTippingText": "La propina estándar en tu destino es de aproximadamente 15-20%.",
       "noTippingText": "Dar propina en {{country}} generalmente no es obligatorio.",
@@ -427,7 +427,7 @@
       "amountLabel": "Cantidad ({{symbol}})"
     },
     "vatRefund": {
-      "headerTitle": "Devolución de IVA",
+      "headerTitle": "Reembolso IVA",
       "estimateDesc": "Estima tu devolución por compras libres de impuestos para {{country}}.",
       "standardVat": "Tasa Estándar de IVA",
       "setButton": "Establecer",
@@ -456,7 +456,10 @@
       "catOther": "Otro"
     },
     "atm": {
-      "headerTitle": "Cajero y Cambio"
+      "headerTitle": "Cajeros & Cambio"
+    },
+    "destinationInfo": {
+      "headerTitle": "Info Local"
     }
   },
   "modals": {

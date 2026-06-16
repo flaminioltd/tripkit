@@ -6,7 +6,7 @@ import { COUNTRIES } from '../../src/lib/countries';
 import { FLAG_IMAGES } from '../../src/lib/assets';
 import { useTripStore } from '../../src/stores/trip-store';
 import { View, Image, StyleSheet, ScrollView, Pressable, TextInput as NativeTextInput } from 'react-native';;
-import { Text, TextInput, Card, useTheme, IconButton, Divider, SegmentedButtons } from 'react-native-paper';
+import { Text, TextInput, Card, useTheme, IconButton, Divider } from 'react-native-paper';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { compareAtmAndExchange } from '@tripkit/shared';
@@ -15,6 +15,7 @@ import { exchangeRates, settings as dbSettings, countries } from '../../src/db/s
 import { eq } from 'drizzle-orm';
 import { MaterialIcons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
+import CustomSegmentedControl from '../../src/components/ui/CustomSegmentedControl';
 
 const CURRENCY_SYMBOLS: Record<string, string> = {
   'USD': '$', 'EUR': '€', 'GBP': '£', 'JPY': '¥', 'AUD': 'A$', 'CAD': 'C$',
@@ -169,7 +170,7 @@ export default function AtmExchangeScreen() {
         <Card style={styles.card} mode="contained">
           <Card.Content>
             <Text variant="labelLarge" style={{ marginBottom: 8, color: theme.colors.onSurfaceVariant }}>{t("modules.atmExchange.targetAmount", "Target Amount")}</Text>
-            <SegmentedButtons
+            <CustomSegmentedControl
               value={baseCurrencyType}
               onValueChange={setBaseCurrencyType}
               buttons={[
@@ -291,28 +292,16 @@ export default function AtmExchangeScreen() {
                   mode="outlined" 
                   style={[styles.input, { height: 48, marginBottom: 8 }]} 
                 />
-                <View style={{ flexDirection: 'row', height: 32, borderRadius: 16, borderWidth: 1, borderColor: theme.colors.outline, overflow: 'hidden' }}>
-                  <Pressable 
-                    onPress={() => setExchangeBureauFeeCurrency('home')}
-                    style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: exchangeBureauFeeCurrency === 'home' ? theme.colors.secondaryContainer : 'transparent' }}
-                  >
-                    <Text numberOfLines={1} adjustsFontSizeToFit style={{ fontSize: 12, color: exchangeBureauFeeCurrency === 'home' ? theme.colors.onSecondaryContainer : theme.colors.onSurface, paddingHorizontal: 2 }}>{homeSymbol}</Text>
-                  </Pressable>
-                  <View style={{ width: 1, backgroundColor: theme.colors.outline }} />
-                  <Pressable 
-                    onPress={() => setExchangeBureauFeeCurrency('local')}
-                    style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: exchangeBureauFeeCurrency === 'local' ? theme.colors.secondaryContainer : 'transparent' }}
-                  >
-                    <Text numberOfLines={1} adjustsFontSizeToFit style={{ fontSize: 12, color: exchangeBureauFeeCurrency === 'local' ? theme.colors.onSecondaryContainer : theme.colors.onSurface, paddingHorizontal: 2 }}>{localSymbol}</Text>
-                  </Pressable>
-                  <View style={{ width: 1, backgroundColor: theme.colors.outline }} />
-                  <Pressable 
-                    onPress={() => setExchangeBureauFeeCurrency('percentage')}
-                    style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: exchangeBureauFeeCurrency === 'percentage' ? theme.colors.secondaryContainer : 'transparent' }}
-                  >
-                    <Text numberOfLines={1} adjustsFontSizeToFit style={{ fontSize: 12, color: exchangeBureauFeeCurrency === 'percentage' ? theme.colors.onSecondaryContainer : theme.colors.onSurface, paddingHorizontal: 2 }}>%</Text>
-                  </Pressable>
-                </View>
+                <CustomSegmentedControl
+                  value={exchangeBureauFeeCurrency}
+                  onValueChange={setExchangeBureauFeeCurrency}
+                  buttons={[
+                    { value: 'home', label: homeSymbol, style: { flex: 1, paddingVertical: 2 } },
+                    { value: 'local', label: localSymbol, style: { flex: 1, paddingVertical: 2 } },
+                    { value: 'percentage', label: '%', style: { flex: 1, paddingVertical: 2 } },
+                  ]}
+                  style={{ height: 30 }}
+                />
               </View>
             </View>
           </Card.Content>

@@ -74,8 +74,10 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
   };
 
   useEffect(() => {
-    db.select().from(countries).then(res => setAllCountries(res));
-  }, []);
+    if (visible && allCountries.length === 0) {
+      db.select().from(countries).then(res => setAllCountries(res));
+    }
+  }, [visible]);
 
   // Reset state when modal opens
   useEffect(() => {
@@ -256,16 +258,18 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
 
                 <Portal>
                   <Modal visible={showPicker} onDismiss={() => setShowPicker(false)} contentContainerStyle={{ margin: 24, borderRadius: 16, overflow: 'hidden', backgroundColor: theme.colors.surface }}>
-                    <Calendar
-                      minDate={new Date().toISOString().split('T')[0]}
-                      markingType={'period'}
-                      markedDates={markedDates}
-                      onDayPress={handleDayPress}
-                      theme={{
-                        todayTextColor: theme.colors.primary,
-                        arrowColor: theme.colors.primary,
-                      }}
-                    />
+                    {showPicker && (
+                      <Calendar
+                        minDate={new Date().toISOString().split('T')[0]}
+                        markingType={'period'}
+                        markedDates={markedDates}
+                        onDayPress={handleDayPress}
+                        theme={{
+                          todayTextColor: theme.colors.primary,
+                          arrowColor: theme.colors.primary,
+                        }}
+                      />
+                    )}
                   </Modal>
                 </Portal>
               </View>

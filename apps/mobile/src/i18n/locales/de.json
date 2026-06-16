@@ -62,11 +62,11 @@
     "modulesTitle": "Module",
     "modules": {
       "localInfo": {
-        "title": "Lokale Info",
+        "title": "Lokale Infos",
         "description": "Wichtige Details, Bräuche und Kultur"
       },
       "basicPhrases": {
-        "title": "Wörterbuch",
+        "title": "Basis Sätze",
         "description": "Gängige Begrüßungen und Grundlagen"
       },
       "plugVoltage": {
@@ -78,23 +78,23 @@
         "description": "Zielorte 112-Äquivalente"
       },
       "budgetTracker": {
-        "title": "Budget-Tracker",
+        "title": "Budget Planer",
         "description": "Ausgaben verfolgen und im Budget bleiben"
       },
       "atmExchange": {
-        "title": "Geldautomaten",
+        "title": "Geld & Wechsel",
         "description": "Kurse, Gebühren und Währungsrechner"
       },
       "vatRefund": {
-        "title": "MwSt.-Erstattung",
+        "title": "MwSt Erstattung",
         "description": "Schätzungen für steuerfreies Einkaufen"
       },
       "tipCalculator": {
-        "title": "Trinkgeld",
+        "title": "Trinkgeld Rechner",
         "description": "Zielorte Trinkgeldgewohnheiten und Rechnen"
       },
       "sizeConverter": {
-        "title": "Größen",
+        "title": "Größen & Einheiten",
         "description": "Schuhe, Kleidung und Maße"
       },
       "timezoneHelper": {
@@ -190,7 +190,7 @@
   },
   "modules": {
     "atmExchange": {
-      "headerTitle": "Geldautomat & Wechsel",
+      "headerTitle": "Geld & Wechsel",
       "tabExchange": "Wechseln",
       "tabFees": "Gebühren",
       "amountToConvert": "Betrag zum Umrechnen",
@@ -239,7 +239,7 @@
       "recommendationBureau": "Wechselstube"
     },
     "basicPhrases": {
-      "headerTitle": "Grundlegende Phrasen",
+      "headerTitle": "Basis Sätze",
       "greetingTab": "Begrüßungen",
       "essentialsTab": "Grundlagen",
       "numbersTab": "Zahlen",
@@ -250,7 +250,7 @@
       "noPhrasesAvailable": "Keine Phrasen für diese Kategorie verfügbar."
     },
     "budgetTracker": {
-      "headerTitle": "Budget-Tracker",
+      "headerTitle": "Budget Planer",
       "noBudgetTitle": "Kein Budget festgelegt",
       "noBudgetDesc": "Lege ein Budget fest, um deine Ausgaben zu verfolgen.",
       "setBudgetButton": "Budget Festlegen",
@@ -314,7 +314,7 @@
       "pharmacyNoteDesc": "Achten Sie auf ein blinkendes grünes Kreuz. In Frankreich können Apotheker medizinische Beratung bei leichten Beschwerden anbieten. Für Apotheken nach Geschäftsschluss ("
     },
     "localInfo": {
-      "headerTitle": "Zielort-Infos",
+      "headerTitle": "Lokale Infos",
       "overviewTab": "Übersicht",
       "cultureTab": "Kultur",
       "transportTab": "Verkehr",
@@ -402,7 +402,7 @@
       "origin": "Herkunft"
     },
     "tipCalculator": {
-      "headerTitle": "Trinkgeld-Rechner",
+      "headerTitle": "Trinkgeld Rechner",
       "expenseTitle": "Restaurantrechnung (Inkl. Trinkgeld)",
       "defaultTippingText": "Standardtrinkgeld an deinem Zielort liegt bei etwa 15-20%.",
       "noTippingText": "Trinkgeld ist in {{country}} im Allgemeinen nicht erforderlich.",
@@ -427,7 +427,7 @@
       "amountLabel": "Betrag ({{symbol}})"
     },
     "vatRefund": {
-      "headerTitle": "MwSt.-Rückerstattung",
+      "headerTitle": "MwSt Erstattung",
       "estimateDesc": "Schätze deine Rückerstattung für steuerfreies Einkaufen in {{country}}.",
       "standardVat": "Standard-MwSt.-Satz",
       "setButton": "Einstellen",
@@ -456,7 +456,10 @@
       "catOther": "Andere"
     },
     "atm": {
-      "headerTitle": "Geldautomat Austausch"
+      "headerTitle": "Geld & Wechsel"
+    },
+    "destinationInfo": {
+      "headerTitle": "Lokale Infos"
     }
   },
   "modals": {
