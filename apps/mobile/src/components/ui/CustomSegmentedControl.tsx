@@ -3,6 +3,9 @@ import { View, Pressable, StyleSheet, ViewStyle } from 'react-native';
 import { Text, useTheme } from 'react-native-paper';
 import { MaterialCommunityIcons, MaterialIcons, Ionicons } from '@expo/vector-icons';
 
+/**
+ * Configuration props for individual buttons within the segmented control.
+ */
 export interface SegmentedButtonProps {
   value: string;
   label?: string;
@@ -24,6 +27,11 @@ interface CustomSegmentedControlProps {
   disabled?: boolean;
 }
 
+/**
+ * A custom Segmented Control component used for switching between mutually exclusive options.
+ * Matches Material Design 3 segmented button aesthetics while resolving rendering bugs 
+ * found in the default react-native-paper SegmentedButtons implementation.
+ */
 export default function CustomSegmentedControl({
   value,
   onValueChange,
