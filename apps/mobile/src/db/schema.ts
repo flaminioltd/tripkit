@@ -29,6 +29,7 @@ export const settings = sqliteTable('settings', {
   setupComplete: integer('setup_complete', { mode: 'boolean' }).default(false).notNull(),
   activeTripId: text('active_trip_id'),
   systemLanguage: text('system_language'),
+  exchangeRateSyncPreference: text('exchange_rate_sync_preference').default('wifi_only'),
   updatedAt: integer('updated_at', { mode: 'timestamp' }),
 });
 

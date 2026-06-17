@@ -595,7 +595,7 @@ const styles = StyleSheet.create({
   container: { flex: 1 },
   centerContent: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 32 },
   content: { padding: 16, paddingBottom: 40 },
-  emptyTitle: { fontWeight: 'bold', marginTop: 24, marginBottom: 8, textAlign: 'center' },
+  emptyTitle: {  marginTop: 24, marginBottom: 8, textAlign: 'center' },
   emptyText: { textAlign: 'center', lineHeight: 24 },
   tabsWrapper: { marginBottom: 24, flexGrow: 0 },
   segmented: { minWidth: '100%' },
@@ -603,8 +603,8 @@ const styles = StyleSheet.create({
   ioContainer: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   ioBox: { flex: 1, alignItems: 'center' },
   ioLabel: { marginBottom: 4, opacity: 0.7 },
-  ioValue: { fontWeight: 'bold' },
-  input: { fontSize: 24, fontWeight: 'bold', textAlign: 'center', borderBottomWidth: 2, minWidth: 60, padding: 0 },
+  ioValue: { },
+  input: { fontSize: 24,  textAlign: 'center', borderBottomWidth: 2, minWidth: 60, padding: 0 },
   slider: { width: '75%', alignSelf: 'center', height: 40, marginTop: 24, transform: [{ scale: 1.3 }] },
 });
 

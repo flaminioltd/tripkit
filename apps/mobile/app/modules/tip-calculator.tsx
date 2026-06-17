@@ -201,14 +201,14 @@ export default function TipCalculatorScreen() {
           <Text style={{ fontSize: 10, color: isSelected ? theme.colors.onSecondaryContainer : theme.colors.onSurfaceVariant }}>(Custom)</Text>
           <Text style={{ 
             color: isSelected ? theme.colors.onSecondaryContainer : theme.colors.onSurface,
-            fontWeight: '500',
+            
             fontSize: 14
           }}>
             {confirmedCustomDisplay}
           </Text>
         </View>
       ) : (
-        <Text style={{ color: isSelected ? theme.colors.onSecondaryContainer : theme.colors.onSurfaceVariant, fontWeight: '500', fontSize: 14 }}>
+        <Text style={{ color: isSelected ? theme.colors.onSecondaryContainer : theme.colors.onSurfaceVariant,  fontSize: 14 }}>
           {t('modules.tipCalculator.customTip', 'Custom')}
         </Text>
       ),
@@ -348,16 +348,16 @@ export default function TipCalculatorScreen() {
           <Card.Content style={styles.resultContent}>
             <View style={styles.resultRow}>
               <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.tipCalculator.suggestedTip", "Suggested Tip Amount")}</Text>
-              <Text variant="titleLarge" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{currencySymbol}{result.tipAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
+              <Text variant="titleLarge" style={{  color: theme.colors.onSurface }}>{currencySymbol}{result.tipAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
             </View>
             <View style={styles.resultRow}>
               <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.tipCalculator.totalBill", "Total Bill")}</Text>
-              <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: theme.colors.primary }}>{currencySymbol}{result.totalAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
+              <Text variant="headlineSmall" style={{  color: theme.colors.primary }}>{currencySymbol}{result.totalAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
             </View>
             {splitCount > 1 && (
               <View style={[styles.resultRow, { marginTop: 8, paddingTop: 8, borderTopWidth: 1, borderTopColor: theme.colors.outline }]}>
                 <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.tipCalculator.perPerson", "Per Person")}</Text>
-                <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{currencySymbol}{result.perPersonAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
+                <Text variant="titleMedium" style={{  color: theme.colors.onSurface }}>{currencySymbol}{result.perPersonAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
               </View>
             )}
           </Card.Content>
@@ -375,7 +375,7 @@ export default function TipCalculatorScreen() {
         {syncSuccess && (
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 12 }}>
             <MaterialIcons name="check-circle" size={20} color={theme.colors.primary} />
-            <Text style={{ marginLeft: 6, color: theme.colors.primary, fontWeight: '500' }}>{t("modules.tipCalculator.addedToExpenses", "Added to Expenses")}</Text>
+            <Text style={{ marginLeft: 6, color: theme.colors.primary, }}>{t("modules.tipCalculator.addedToExpenses", "Added to Expenses")}</Text>
           </View>
         )}
       </ScrollView>
@@ -420,7 +420,7 @@ const styles = StyleSheet.create({
   input: { backgroundColor: '#ffffff', marginBottom: 12 },
   segmented: { marginBottom: 12 },
   counterContainer: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', borderRadius: 16, padding: 8, marginBottom: 8 },
-  counterText: { marginHorizontal: 24, fontWeight: 'bold' },
+  counterText: { marginHorizontal: 24, },
   resultCard: { elevation: 0 },
   resultContent: { gap: 12 },
   resultRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }

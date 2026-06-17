@@ -214,14 +214,14 @@ export default function TripsScreen() {
   };
 
   const miniButtonContentStyle = { height: 24 };
-  const miniButtonLabelStyle = { fontSize: 10, fontWeight: 'bold' as const, marginHorizontal: 12, marginVertical: 2 };
+  const miniButtonLabelStyle = { fontSize: 10, marginHorizontal: 12, marginVertical: 2 };
 
   return (
     <>
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       {/* Header */}
       <View style={styles.header}>
-        <Text variant="headlineLarge" style={{ color: theme.colors.onSurface, fontWeight: 'bold' }}>{t('tripsScreen.headerTitle')}</Text>
+        <Text variant="headlineLarge" style={{ color: theme.colors.onSurface, }}>{t('tripsScreen.headerTitle')}</Text>
         <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant, marginTop: 4 }}>
           {t('tripsScreen.headerSubtitle')}
         </Text>
@@ -240,7 +240,7 @@ export default function TripsScreen() {
           <MaterialIcons name="add" size={24} color={theme.colors.primary} />
         </View>
         <View style={{ marginLeft: 16 }}>
-          <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{t('tripsScreen.planNewTripTitle')}</Text>
+          <Text variant="titleMedium" style={{  color: theme.colors.onSurface }}>{t('tripsScreen.planNewTripTitle')}</Text>
           <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{t('tripsScreen.planNewTripSubtitle')}</Text>
         </View>
       </Pressable>
@@ -266,7 +266,7 @@ export default function TripsScreen() {
                 <View style={[styles.badge, { backgroundColor: theme.colors.primary }]}>
                   <Text style={[styles.badgeText, { color: theme.colors.onPrimary }]}>{statusInfo.title.toUpperCase()}</Text>
                 </View>
-                <Text variant="headlineMedium" style={{ color: '#fff', fontWeight: 'bold' }}>
+                <Text variant="headlineMedium" style={{ color: '#fff', }}>
                   {(() => {
                     const code = COUNTRIES.find(c => c.name === activeTrip.destinationCountry)?.code;
                     return code ? t(`countries.${code}`, activeTrip.destinationCountry) : activeTrip.destinationCountry;
@@ -286,7 +286,7 @@ export default function TripsScreen() {
                   <MaterialIcons name="calendar-today" size={20} color={theme.colors.primary} />
                 </View>
                 <View>
-                  <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{statusInfo.title}</Text>
+                  <Text variant="titleMedium" style={{  color: theme.colors.onSurface }}>{statusInfo.title}</Text>
                   <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{statusInfo.subtitle}</Text>
                 </View>
               </View>
@@ -329,7 +329,7 @@ export default function TripsScreen() {
                   <View style={[styles.progressBar, { backgroundColor: theme.colors.surfaceVariant, flex: 1, marginRight: 12 }]}>
                     <View style={[styles.progressFill, { backgroundColor: getProgressColor(currentProgress), width: `${currentProgressPercent}%` }]} />
                   </View>
-                  <Text variant="bodySmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{currentProgressPercent}%</Text>
+                  <Text variant="bodySmall" style={{  color: theme.colors.onSurface }}>{currentProgressPercent}%</Text>
                 </View>
               </View>
 
@@ -380,7 +380,7 @@ export default function TripsScreen() {
                     imageStyle={{ resizeMode: 'cover' }}
                   >
                     <View style={styles.tripCardOverlay}>
-                      <Text variant="titleLarge" style={{ fontWeight: 'bold', color: '#fff' }}>
+                      <Text variant="titleLarge" style={{  color: '#fff' }}>
                         {countryCode ? t(`countries.${countryCode}`, trip.destinationCountry) : trip.destinationCountry}
                       </Text>
                     </View>
@@ -389,14 +389,14 @@ export default function TripsScreen() {
                   <View style={[styles.tripCardImagePlaceholder, { backgroundColor: theme.colors.surfaceVariant }]}>
                     <View style={styles.tripCardOverlay}>
                       <MaterialIcons name="image" size={32} color={theme.colors.onSurfaceVariant} style={{ position: 'absolute', alignSelf: 'center', top: '40%' }} />
-                      <Text variant="titleLarge" style={{ fontWeight: 'bold', color: theme.colors.onSurfaceVariant }}>
+                      <Text variant="titleLarge" style={{  color: theme.colors.onSurfaceVariant }}>
                         {countryCode ? t(`countries.${countryCode}`, trip.destinationCountry) : trip.destinationCountry}
                       </Text>
                     </View>
                   </View>
                 )}
                 <View style={styles.tripCardContent}>
-                  <Text variant="labelMedium" style={{ color: theme.colors.primary, fontWeight: 'bold', marginBottom: 12 }}>
+                  <Text variant="labelMedium" style={{ color: theme.colors.primary,  marginBottom: 12 }}>
                     {trip.startDate && trip.endDate ? formatDateRange(trip.startDate, trip.endDate) : t('tripsScreen.tbd', 'TBD')}
                   </Text>
                   
@@ -453,7 +453,7 @@ export default function TripsScreen() {
                 idx !== pastTrips.length - 1 && { borderBottomWidth: 1, borderBottomColor: theme.colors.outlineVariant }
               ]}>
                 <View style={styles.listItemContent}>
-                  <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>
+                  <Text variant="titleMedium" style={{  color: theme.colors.onSurface }}>
                     {(() => {
                       const pastCode = COUNTRIES.find(c => c.name === trip.destinationCountry)?.code;
                       return pastCode ? t(`countries.${pastCode}`, trip.destinationCountry) : trip.destinationCountry;
@@ -483,7 +483,7 @@ export default function TripsScreen() {
       <Modal visible={!!editingTrip} onDismiss={() => setEditingTrip(null)} contentContainerStyle={{ backgroundColor: theme.colors.surface, margin: 24, padding: 24, borderRadius: 16 }}>
         {editingTrip && (
           <View>
-            <Text variant="titleLarge" style={{ fontWeight: 'bold', marginBottom: 16 }}>{t('tripsScreen.editTripModalTitle', { country: (() => {
+            <Text variant="titleLarge" style={{  marginBottom: 16 }}>{t('tripsScreen.editTripModalTitle', { country: (() => {
               const editCode = COUNTRIES.find(c => c.name === editingTrip.destinationCountry)?.code;
               return editCode ? t(`countries.${editCode}`, editingTrip.destinationCountry) : editingTrip.destinationCountry;
             })() })}</Text>
@@ -508,9 +508,9 @@ export default function TripsScreen() {
                   ]}
                 >
                   <MaterialIcons name="date-range" size={20} color={theme.colors.primary} style={{ marginRight: 8 }} />
-                  <Text style={{ fontSize: 16, color: theme.colors.primary, fontWeight: '500' }}>
+                  <Text style={{ fontSize: 16, color: theme.colors.primary, }}>
                     {editStartDate && editEndDate 
-                      ? `${editStartDate.toLocaleDateString()} - ${editEndDate.toLocaleDateString()}`
+                      ? `${editStartDate.toLocaleDateString('en-GB')} - ${editEndDate.toLocaleDateString('en-GB')}`
                       : t('tripsScreen.selectDateRange')}
                   </Text>
                 </Pressable>
@@ -592,7 +592,7 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   sectionTitle: {
-    fontWeight: 'bold',
+    
   },
   combinedCard: {
     borderRadius: 16,
@@ -624,7 +624,7 @@ const styles = StyleSheet.create({
   },
   badgeText: {
     fontSize: 10,
-    fontWeight: 'bold',
+    
   },
   statusCard: {
     borderRadius: 16,

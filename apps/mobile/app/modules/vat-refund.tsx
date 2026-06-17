@@ -278,7 +278,7 @@ export default function VatRefundScreen() {
         </Card>
 
         <View style={styles.sectionHeader}>
-          <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>{t("modules.vatRefund.purchases", "Purchases")}</Text>
+          <Text variant="titleMedium" style={{ }}>{t("modules.vatRefund.purchases", "Purchases")}</Text>
         </View>
 
         <Pressable 
@@ -298,7 +298,7 @@ export default function VatRefundScreen() {
             <MaterialIcons name="add" size={24} color={theme.colors.primary} />
           </View>
           <View style={{ flex: 1 }}>
-            <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{t("modules.vatRefund.addNew", "Add New")}</Text>
+            <Text variant="titleMedium" style={{  color: theme.colors.onSurface }}>{t("modules.vatRefund.addNew", "Add New")}</Text>
             <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.vatRefund.addNewDesc", "Add an item to estimate your refund")}</Text>
           </View>
         </Pressable>
@@ -321,7 +321,7 @@ export default function VatRefundScreen() {
                     {p.details ? <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{p.details}</Text> : null}
                   </View>
                   <View style={styles.purchaseAmount}>
-                    <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>{currencySymbol}{p.amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
+                    <Text variant="titleMedium" style={{ }}>{currencySymbol}{p.amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
                   </View>
                   <View style={styles.purchaseActions}>
                     <IconButton icon="pencil" size={20} onPress={() => openEditModal(p)} style={{ margin: 0 }} />
@@ -335,20 +335,20 @@ export default function VatRefundScreen() {
 
         <View style={styles.grandTotalRow}>
           <Text variant="titleMedium" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.vatRefund.grandTotal", "Grand Total")}</Text>
-          <Text variant="titleLarge" style={{ fontWeight: 'bold' }}>{currencySymbol}{grandTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
+          <Text variant="titleLarge" style={{ }}>{currencySymbol}{grandTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
         </View>
 
         <Card style={[styles.resultCard, { backgroundColor: theme.colors.primaryContainer }]} mode="contained">
           <Card.Content style={styles.resultContent}>
             <View style={styles.resultRow}>
               <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.vatRefund.estimatedRefund", "Estimated Refund")}</Text>
-              <Text variant="headlineMedium" style={{ fontWeight: 'bold', color: theme.colors.primary }}>
+              <Text variant="headlineMedium" style={{  color: theme.colors.primary }}>
                 {currencySymbol}{estimatedRefund > 0 ? estimatedRefund.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '0.00'}
               </Text>
             </View>
             <View style={styles.resultRow}>
               <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{t("modules.vatRefund.effectiveRefundRate", "Effective Refund Rate")}</Text>
-              <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>
+              <Text variant="titleMedium" style={{  color: theme.colors.onSurface }}>
                 {effectiveRefundRate > 0 ? effectiveRefundRate.toFixed(1) : '0.0'}%
               </Text>
             </View>
@@ -367,7 +367,7 @@ export default function VatRefundScreen() {
         {syncSuccess && (
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 12 }}>
             <MaterialIcons name="check-circle" size={20} color={theme.colors.primary} />
-            <Text style={{ marginLeft: 6, color: theme.colors.primary, fontWeight: '500' }}>{t("modules.tipCalculator.addedToExpenses", "Added to Expenses")}</Text>
+            <Text style={{ marginLeft: 6, color: theme.colors.primary, }}>{t("modules.tipCalculator.addedToExpenses", "Added to Expenses")}</Text>
           </View>
         )}
       </ScrollView>

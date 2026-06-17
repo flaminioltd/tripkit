@@ -184,7 +184,7 @@ export default function TimezoneHelperScreen() {
                 }
               ]}
             >
-              <Text style={{ fontSize: 14, fontWeight: '500', color: theme.colors.onSurface }} numberOfLines={1}>{city}</Text>
+              <Text style={{ fontSize: 14,  color: theme.colors.onSurface }} numberOfLines={1}>{city}</Text>
               {timezones && timezones.length > 1 && (
                 <MaterialCommunityIcons name="chevron-down" size={16} color={theme.colors.onSurfaceVariant} style={{ marginLeft: 4 }} />
               )}
@@ -209,7 +209,7 @@ export default function TimezoneHelperScreen() {
           ))}
         </Menu>
         
-        <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface, marginVertical: 8 }}>
+        <Text variant="headlineSmall" style={{  color: theme.colors.onSurface, marginVertical: 8 }}>
           {formatTime(time)}
         </Text>
         
@@ -263,7 +263,7 @@ export default function TimezoneHelperScreen() {
         </Card>
 
         <View style={styles.controlsRow}>
-          <Text variant="titleMedium" style={{ color: theme.colors.onSurface, fontWeight: 'bold' }}>{t("modules.timezoneHelper.timeSetting", "Time Setting")}</Text>
+          <Text variant="titleMedium" style={{ color: theme.colors.onSurface, }}>{t("modules.timezoneHelper.timeSetting", "Time Setting")}</Text>
           
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Text style={{ fontSize: 14, marginRight: 8, color: !is24hMode ? theme.colors.primary : theme.colors.onSurfaceVariant, fontWeight: !is24hMode ? 'bold' : 'normal' }}>{t("modules.timezoneHelper.ampm", "AM/PM")}</Text>

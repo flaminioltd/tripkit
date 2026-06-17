@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Image, Pressable } from 'react-native';
 import { Text, useTheme, IconButton, Menu, Divider } from 'react-native-paper';
-import { useRouter, usePathname } from 'expo-router';
+import { useRouter, usePathname, useNavigation } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useTripStore } from '../../stores/trip-store';
 import { COUNTRIES } from '../../lib/countries';
@@ -23,6 +23,7 @@ interface Props {
 export default function ModuleHeader({ title }: Props) {
   const theme = useTheme();
   const router = useRouter();
+  const navigation = useNavigation<any>();
   const { t, i18n } = useTranslation();
   const { trips, activeTrip, setActiveTrip } = useTripStore();
   
@@ -67,13 +68,14 @@ export default function ModuleHeader({ title }: Props) {
       <View style={{ height: 8, width: '100%', backgroundColor: currentModule ? currentModule.backgroundColor : theme.colors.primary }} />
       <View style={[styles.header, { borderBottomColor: theme.colors.outline, backgroundColor: theme.colors.surface }]}>
         <IconButton icon="arrow-left" onPress={() => {
-          if (router.canGoBack()) {
-            router.back();
+          const parent = navigation.getParent();
+          if (parent && parent.canGoBack()) {
+            parent.goBack();
           } else {
-            router.replace('/(main)');
+            router.navigate('/(main)');
           }
         }} />
-        <Text variant="titleLarge" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{currentModule ? t(`homeScreen.modules.${currentModule.id}.title`, title) : title}</Text>
+        <Text variant="titleLarge" style={{  color: theme.colors.onSurface }}>{currentModule ? t(`homeScreen.modules.${currentModule.id}.title`, title) : title}</Text>
       
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Menu
@@ -205,7 +207,7 @@ const styles = StyleSheet.create({
     paddingBottom: 4,
     fontSize: 12,
     color: '#888',
-    fontWeight: 'bold',
+    
     textTransform: 'uppercase'
   },
   flagPlaceholder: {

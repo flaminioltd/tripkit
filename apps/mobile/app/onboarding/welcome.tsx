@@ -192,7 +192,7 @@ export default function WelcomeScreen() {
             {selectedCountry && (
               <Card style={{ marginTop: 24, backgroundColor: theme.colors.surfaceVariant }} mode="contained">
                 <Card.Content>
-                  <Text variant="titleLarge" style={[{ fontWeight: 'bold', marginBottom: 8 }, { color: theme.colors.onSurface }]}>
+                  <Text variant="titleLarge" style={[{  marginBottom: 8 }, { color: theme.colors.onSurface }]}>
                     {t('welcomeScreen.settingsTitle', { countryName: selectedCountry.translatedName || selectedCountry.name })}
                   </Text>
                   <List.Item
@@ -233,7 +233,7 @@ export default function WelcomeScreen() {
                         </View>
                       )}
                       <View>
-                        <Text variant="bodyLarge" style={{ color: theme.colors.onSurface, fontWeight: '500' }}>
+                        <Text variant="bodyLarge" style={{ color: theme.colors.onSurface, }}>
                           {item.translatedName || item.name}
                         </Text>
                         <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
@@ -256,7 +256,7 @@ export default function WelcomeScreen() {
           disabled={step === 1 && !selectedCountry}
           style={styles.button}
           contentStyle={{ height: 56 }}
-          labelStyle={{ fontSize: 16, fontWeight: 'bold' }}
+          labelStyle={{ fontSize: 16, }}
         >
           {step === 0 ? 'Continue' : t('welcomeScreen.buttonContinue')}
         </Button>
@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   headerTitle: {
-    fontWeight: 'bold',
+    
   },
   content: {
     flex: 1,
@@ -285,7 +285,7 @@ const styles = StyleSheet.create({
     marginBottom: 32,
   },
   title: {
-    fontWeight: 'bold',
+    
     marginBottom: 8,
   },
   subtitle: {

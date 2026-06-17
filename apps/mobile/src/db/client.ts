@@ -38,6 +38,7 @@ sqliteClient.execSync(`
     setup_complete INTEGER NOT NULL DEFAULT 0,
     active_trip_id TEXT,
     system_language TEXT,
+    exchange_rate_sync_preference TEXT DEFAULT 'wifi_only',
     updated_at INTEGER
   );
 
@@ -115,6 +116,9 @@ try {
 } catch (e) {}
 try {
   sqliteClient.execSync('ALTER TABLE settings ADD COLUMN system_language TEXT;');
+} catch (e) {}
+try {
+  sqliteClient.execSync("ALTER TABLE settings ADD COLUMN exchange_rate_sync_preference TEXT DEFAULT 'wifi_only';");
 } catch (e) {}
 
 export const db = drizzle(sqliteClient, { schema });

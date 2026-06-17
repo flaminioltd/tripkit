@@ -181,7 +181,18 @@
     "forceSyncButton": "Sync Online Data",
     "customizeCurrencyUnitsTitle": "Customize Currency & Units",
     "measurementSystem": "Measurement System",
-    "searchCurrencyPlaceholder": "Enter a currency..."
+    "searchCurrencyPlaceholder": "Enter a currency...",
+    "exchangeRateSyncTitle": "Exchange Rate Sync",
+    "exchangeRateSyncSubtitle": "The app runs daily exchange rate updates by default, which will be overridden by your choice of connection availability.",
+    "syncWifiOnly": "Sync only when WiFi connected",
+    "syncCellular": "Sync with mobile data",
+    "syncManual": "Sync only on manual trigger",
+    "forceSyncRatesButton": "Sync Exchange Rates",
+    "lastUpdated": "Last updated:",
+    "neverSynced": "Never synced",
+    "error": "Error",
+    "noConnection": "No internet connection available.",
+    "syncFailed": "Failed to fetch the latest exchange rates."
   },
   "access": {
     "upgrade": {
@@ -470,11 +481,15 @@
   "modals": {
     "addTrip": {
       "title": "Plan New Trip",
-      "searchPlaceholder": "Enter a country...",
       "tripDates": "Trip Dates",
-      "selectDateRange": "Select Date Range",
-      "notSetYet": "Not Set Yet",
-      "createTripButton": "Create Trip"
+      "noDatesYet": "Dates not set yet",
+      "countryOfDestination": "Country of Destination",
+      "selectCountry": "Select Country",
+      "saveTrip": "Save Trip"
+    },
+    "noTrip": {
+      "title": "No Active Trip",
+      "message": "Please set an active trip or add a new trip to access the modules."
     },
     "changeHomeCountry": {
       "title": "Change country of origin",

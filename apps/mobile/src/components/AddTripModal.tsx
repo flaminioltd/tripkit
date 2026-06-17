@@ -140,7 +140,7 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         >
           <View style={styles.header}>
-            <Text variant="headlineSmall" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{t('modals.addTrip.title', 'Plan New Trip')}</Text>
+            <Text variant="headlineSmall" style={{  color: theme.colors.onSurface }}>{t('modals.addTrip.title', 'Plan New Trip')}</Text>
             <Pressable onPress={onDismiss} style={styles.closeButton}>
               <MaterialIcons name="close" size={24} color={theme.colors.onSurfaceVariant} />
             </Pressable>
@@ -205,7 +205,7 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
                         </View>
                       )}
                       <View style={{ flex: 1 }}>
-                        <Text variant="bodyLarge" style={{ color: theme.colors.onSurface, fontWeight: '500' }}>
+                        <Text variant="bodyLarge" style={{ color: theme.colors.onSurface, }}>
                           {t(`countries.${item.code}`, item.name)}
                         </Text>
                         <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
@@ -219,7 +219,7 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
             )}
 
             <View style={styles.datesSection}>
-              <Text variant="titleMedium" style={{ marginBottom: 12, fontWeight: 'bold' }}>{t('modals.addTrip.tripDates', 'Trip Dates')}</Text>
+              <Text variant="titleMedium" style={{ marginBottom: 12, }}>{t('modals.addTrip.tripDates', 'Trip Dates')}</Text>
               
               <View style={{ marginBottom: 8 }}>
                 <Pressable 
@@ -240,9 +240,9 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
                   ]}
                 >
                   <MaterialIcons name="date-range" size={20} color={theme.colors.primary} style={{ marginRight: 8 }} />
-                  <Text style={{ fontSize: 16, color: theme.colors.primary, fontWeight: '500' }}>
+                  <Text style={{ fontSize: 16, color: theme.colors.primary, }}>
                     {startDate && endDate 
-                      ? `${startDate.toLocaleDateString(i18n.language || 'en-US')} - ${endDate.toLocaleDateString(i18n.language || 'en-US')}`
+                      ? `${startDate.toLocaleDateString('en-GB')} - ${endDate.toLocaleDateString('en-GB')}`
                       : t('modals.addTrip.selectDateRange', 'Select Date Range')}
                   </Text>
                 </Pressable>
@@ -282,7 +282,7 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
               disabled={!selectedCountry || (!notSetYet && (!startDate || !endDate))}
               style={styles.button}
               contentStyle={{ height: 56 }}
-              labelStyle={{ fontSize: 16, fontWeight: 'bold' }}
+              labelStyle={{ fontSize: 16, }}
             >
               {t('modals.addTrip.createTripButton', 'Create Trip')}
             </Button>

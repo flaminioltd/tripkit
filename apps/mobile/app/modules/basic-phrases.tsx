@@ -46,7 +46,7 @@ export default function BasicPhrasesScreen() {
       {isSameLanguage ? (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 }}>
           <MaterialCommunityIcons name="translate" size={64} color={theme.colors.outline} style={{ marginBottom: 16 }} opacity={0.5} />
-          <Text variant="titleLarge" style={{ textAlign: 'center', color: theme.colors.onSurface, fontWeight: 'bold', marginBottom: 8 }}>
+          <Text variant="titleLarge" style={{ textAlign: 'center', color: theme.colors.onSurface,  marginBottom: 8 }}>
             No Translation Needed
           </Text>
           <Text variant="bodyLarge" style={{ textAlign: 'center', color: theme.colors.onSurfaceVariant }}>
@@ -100,7 +100,7 @@ export default function BasicPhrasesScreen() {
 
           <ScrollView contentContainerStyle={styles.content}>
             <View style={{ marginBottom: 16 }}>
-              <Text variant="titleMedium" style={{ color: theme.colors.onBackground, fontWeight: 'bold' }}>
+              <Text variant="titleMedium" style={{ color: theme.colors.onBackground, }}>
                 {t("modules.basicPhrases.phrasesInCountry", "Phrases in {{language}} for {{country}}", { language: t(`languages.${languageKey}`, languageKey), country: activeTrip?.destinationCountry || destinationCode })}
               </Text>
             </View>
@@ -109,7 +109,7 @@ export default function BasicPhrasesScreen() {
               <Card key={index} style={styles.card} mode="outlined">
                 <Card.Content style={styles.cardContent}>
                   <View style={styles.textContainer}>
-                    <Text variant="titleMedium" style={{ fontWeight: 'bold', color: tokens.colors.ui.primaryPurple, marginBottom: 4 }}>
+                    <Text variant="titleMedium" style={{  color: tokens.colors.ui.primaryPurple, marginBottom: 4 }}>
                       {t(`phrases.items.${phrase.id}`)}
                     </Text>
                     <Text variant="bodyLarge" style={{ color: tokens.colors.ui.textPrimary, marginBottom: 4, fontStyle: 'italic' }}>

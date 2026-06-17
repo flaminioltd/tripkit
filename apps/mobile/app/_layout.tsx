@@ -10,6 +10,7 @@ registerTranslation('en', en);
 import { seedDatabase } from '../src/db/seed';
 import { updateExchangeRates, shouldUpdateRates } from '../src/services/exchangeRates';
 import { useFonts, DMSans_900Black, DMSans_700Bold, DMSans_400Regular } from '@expo-google-fonts/dm-sans';
+import { useAppStore } from '../src/stores/app-store';
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -23,6 +24,12 @@ export default function RootLayout() {
     
     // Subscribe to network state changes to refresh exchange rates
     const unsubscribeNetInfo = NetInfo.addEventListener(state => {
+      const settings = useAppStore.getState().settings;
+      const pref = settings?.exchangeRateSyncPreference || 'wifi_only';
+      
+      if (pref === 'manual') return;
+      if (pref === 'wifi_only' && state.type !== 'wifi') return;
+
       if (state.isConnected) {
         shouldUpdateRates().then(shouldUpdate => {
           if (shouldUpdate) {

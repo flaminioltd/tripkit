@@ -181,7 +181,18 @@
     "forceSyncButton": "Sincronizar Datos",
     "customizeCurrencyUnitsTitle": "Personalizar Moneda y Unidades",
     "measurementSystem": "Sistema de Medición",
-    "searchCurrencyPlaceholder": "Ingresa una moneda..."
+    "searchCurrencyPlaceholder": "Ingresa una moneda...",
+    "exchangeRateSyncTitle": "Sincronización de tipo de cambio",
+    "exchangeRateSyncSubtitle": "La aplicación ejecuta actualizaciones diarias del tipo de cambio por defecto, lo cual será anulado por su elección de disponibilidad de conexión.",
+    "syncWifiOnly": "Sincronizar solo cuando haya conexión WiFi",
+    "syncCellular": "Sincronizar con datos móviles",
+    "syncManual": "Sincronizar solo manualmente",
+    "forceSyncRatesButton": "Sincronizar tipos de cambio",
+    "lastUpdated": "Última actualización:",
+    "neverSynced": "Nunca sincronizado",
+    "error": "Error",
+    "noConnection": "No hay conexión a internet disponible.",
+    "syncFailed": "Error al obtener los últimos tipos de cambio."
   },
   "access": {
     "upgrade": {

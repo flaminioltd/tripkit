@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, ScrollView, Pressable, Image, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Text, useTheme, Menu } from 'react-native-paper';
+import { Text, useTheme, Menu, Portal, Dialog, Button } from 'react-native-paper';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useTripStore } from '../../src/stores/trip-store';
@@ -33,6 +33,7 @@ export default function HomeScreen() {
   const [menuVisible, setMenuVisible] = useState(false);
   const [activeCountryCode, setActiveCountryCode] = useState<string | null>(null);
   const [isAddTripVisible, setAddTripVisible] = useState(false);
+  const [isNoTripModalVisible, setNoTripModalVisible] = useState(false);
 
   useEffect(() => {
     loadTrips();
@@ -80,7 +81,13 @@ export default function HomeScreen() {
     return (
       <Pressable
         key={idx}
-        onPress={() => router.push(mod.route as any)}
+        onPress={() => {
+          if (!activeTrip) {
+            setNoTripModalVisible(true);
+          } else {
+            router.push(mod.route as any);
+          }
+        }}
         style={({ pressed }) => [
           { width: isFullWidth ? '100%' : '50%', paddingHorizontal: 1, marginBottom: 2 },
           pressed && styles.cardPressed
@@ -102,7 +109,7 @@ export default function HomeScreen() {
             <Text style={{ 
               fontSize: 11, 
               fontFamily: 'DMSans_400Regular',
-              fontWeight: 'normal', 
+               
               color: 'rgba(0,0,0,0.4)', 
               textTransform: 'capitalize', 
               letterSpacing: 0.5,
@@ -130,7 +137,7 @@ export default function HomeScreen() {
               style={{ 
                 fontSize: 18,
                 fontFamily: 'DMSans_400Regular',
-                fontWeight: 'normal', 
+                 
                 color: 'rgba(0,0,0,0.7)', 
                 textAlign: 'left',
                 lineHeight: 22
@@ -150,7 +157,7 @@ export default function HomeScreen() {
         
         {/* Active Trip Strip */}
         <View style={[styles.tripStripContainer, { flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', paddingHorizontal: 14, marginTop: 12, gap: 12 }]}>
-          <Text style={{ fontSize: 13, fontFamily: 'DMSans_400Regular', fontWeight: 'normal', color: theme.colors.onSurfaceVariant, textTransform: 'capitalize', letterSpacing: 0.5 }}>
+          <Text style={{ fontSize: 13, fontFamily: 'DMSans_400Regular',  color: theme.colors.onSurfaceVariant, textTransform: 'capitalize', letterSpacing: 0.5 }}>
             {t('tripsScreen.activeTripLabel', 'Active Trip').toLowerCase()}:
           </Text>
           <Menu
@@ -187,7 +194,7 @@ export default function HomeScreen() {
                 {activeCountryCode && FLAG_IMAGES[activeCountryCode] && (
                   <Image source={FLAG_IMAGES[activeCountryCode]} style={{ width: 20, height: 20, borderRadius: 10 }} />
                 )}
-                <Text style={{ fontSize: 14, fontWeight: '500', color: theme.colors.onSurface }}>
+                <Text style={{ fontSize: 14,  color: theme.colors.onSurface }}>
                   {activeTrip ? (() => {
                     const activeCode = COUNTRIES.find(c => c.name === activeTrip.destinationCountry)?.code;
                     return activeCode ? t(`countries.${activeCode}`, activeTrip.destinationCountry) : activeTrip.destinationCountry;
@@ -258,6 +265,34 @@ export default function HomeScreen() {
 
       </ScrollView>
 
+      <Portal>
+        <Dialog visible={isNoTripModalVisible} onDismiss={() => setNoTripModalVisible(false)} style={{ backgroundColor: theme.colors.surface }}>
+          <Dialog.Title>{t('modals.noTrip.title', 'No Active Trip')}</Dialog.Title>
+          <Dialog.Content>
+            <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
+              {t('modals.noTrip.message', 'Please set an active trip or add a new trip to access the modules.')}
+            </Text>
+          </Dialog.Content>
+          <Dialog.Actions>
+            <Button onPress={() => setNoTripModalVisible(false)} textColor={theme.colors.primary}>
+              {t('common.close', 'Close')}
+            </Button>
+            {trips.length === 0 && (
+              <Button 
+                mode="contained" 
+                onPress={() => {
+                  setNoTripModalVisible(false);
+                  setAddTripVisible(true);
+                }} 
+                buttonColor={theme.colors.primary}
+              >
+                {t('modals.addTrip.title', 'Plan New Trip')}
+              </Button>
+            )}
+          </Dialog.Actions>
+        </Dialog>
+      </Portal>
+
       <AddTripModal 
         visible={isAddTripVisible} 
         onDismiss={() => setAddTripVisible(false)} 
@@ -301,7 +336,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   tripText: {
-    fontWeight: '600',
+    
   },
   grid: {
     flexDirection: 'row',

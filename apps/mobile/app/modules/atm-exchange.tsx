@@ -207,7 +207,7 @@ export default function AtmExchangeScreen() {
         {/* Option A: ATM */}
         <Card style={styles.card} mode="contained">
           <Card.Content>
-            <Text variant="titleMedium" style={{ marginBottom: 12, fontWeight: 'bold' }}>{t('modules.atmExchange.optionA', 'Option A: ATM Withdrawal')}</Text>
+            <Text variant="titleMedium" style={{ marginBottom: 12, }}>{t('modules.atmExchange.optionA', 'Option A: ATM Withdrawal')}</Text>
             <View style={{ flexDirection: 'row', gap: 8 }}>
               <View style={{ flex: 1, justifyContent: 'flex-end' }}>
                 <View style={{ flex: 1 }}>
@@ -255,7 +255,7 @@ export default function AtmExchangeScreen() {
         {/* Option B: Exchange Bureau */}
         <Card style={styles.card} mode="contained">
           <Card.Content>
-            <Text variant="titleMedium" style={{ marginBottom: 12, fontWeight: 'bold' }}>{t('modules.atmExchange.optionB', 'Option B: Cash Exchange')}</Text>
+            <Text variant="titleMedium" style={{ marginBottom: 12, }}>{t('modules.atmExchange.optionB', 'Option B: Cash Exchange')}</Text>
             <View style={{ flexDirection: 'row', gap: 8, alignItems: 'flex-start' }}>
               <View style={{ flex: 1.2 }}>
                 <Text style={{ fontSize: 12, color: theme.colors.onSurfaceVariant, marginBottom: 4, marginLeft: 4 }}>{t('modules.atmExchange.bureauRate', 'Bureau Rate')}</Text>
@@ -314,41 +314,41 @@ export default function AtmExchangeScreen() {
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', gap: 16 }}>
               {/* ATM Column */}
               <View style={{ flex: 1 }}>
-                <Text variant="titleSmall" style={{ color: theme.colors.onSurfaceVariant, marginBottom: 8, fontWeight: 'bold' }}>{t('modules.atmExchange.atm', 'ATM')}</Text>
+                <Text variant="titleSmall" style={{ color: theme.colors.onSurfaceVariant, marginBottom: 8, }}>{t('modules.atmExchange.atm', 'ATM')}</Text>
                 
                 <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{t('modules.atmExchange.cost', 'Cost')}</Text>
-                <Text variant="bodyMedium" style={{ fontWeight: 'bold', marginBottom: 2 }}>{homeSymbol}{result.atmHomeCost.toFixed(2)}</Text>
+                <Text variant="bodyMedium" style={{  marginBottom: 2 }}>{homeSymbol}{result.atmHomeCost.toFixed(2)}</Text>
                 
                 <Text variant="labelSmall" style={{ color: theme.colors.onSurfaceVariant, opacity: 0.6, marginBottom: 8 }}>
                   {t('modules.atmExchange.effectiveRate', 'Effective Rate:')} {result.atmEffectiveRate.toFixed(4)}
                 </Text>
                 
                 <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{t('modules.atmExchange.receive', 'Receive')}</Text>
-                <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.primary }}>{localSymbol}{result.atmLocalReceived.toFixed(2)}</Text>
+                <Text variant="titleMedium" style={{  color: theme.colors.primary }}>{localSymbol}{result.atmLocalReceived.toFixed(2)}</Text>
               </View>
 
               <View style={{ width: 1, backgroundColor: theme.colors.outlineVariant || theme.colors.outline }} />
 
               {/* Bureau Column */}
               <View style={{ flex: 1 }}>
-                <Text variant="titleSmall" style={{ color: theme.colors.onSurfaceVariant, marginBottom: 8, fontWeight: 'bold' }}>{t('modules.atmExchange.exchangeBureau', 'Exchange Bureau')}</Text>
+                <Text variant="titleSmall" style={{ color: theme.colors.onSurfaceVariant, marginBottom: 8, }}>{t('modules.atmExchange.exchangeBureau', 'Exchange Bureau')}</Text>
                 
                 <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{t('modules.atmExchange.cost', 'Cost')}</Text>
-                <Text variant="bodyMedium" style={{ fontWeight: 'bold', marginBottom: 2 }}>{homeSymbol}{result.bureauHomeCost.toFixed(2)}</Text>
+                <Text variant="bodyMedium" style={{  marginBottom: 2 }}>{homeSymbol}{result.bureauHomeCost.toFixed(2)}</Text>
                 
                 <Text variant="labelSmall" style={{ color: theme.colors.onSurfaceVariant, opacity: 0.6, marginBottom: 8 }}>
                   {t('modules.atmExchange.effectiveRate', 'Effective Rate:')} {result.bureauEffectiveRate.toFixed(4)}
                 </Text>
                 
                 <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{t('modules.atmExchange.receive', 'Receive')}</Text>
-                <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.primary }}>{localSymbol}{result.bureauLocalReceived.toFixed(2)}</Text>
+                <Text variant="titleMedium" style={{  color: theme.colors.primary }}>{localSymbol}{result.bureauLocalReceived.toFixed(2)}</Text>
               </View>
             </View>
 
             <Divider style={styles.divider} />
             
             <View style={styles.recommendationContainer}>
-              <Text variant="titleMedium" style={{ color: theme.colors.primary, textAlign: 'center', fontWeight: 'bold' }}>
+              <Text variant="titleMedium" style={{ color: theme.colors.primary, textAlign: 'center', }}>
                 {t('modules.atmExchange.recommendation', 'Recommendation:')} {t(`modules.atmExchange.recommendation${result.recommendation}`, result.recommendation)}
               </Text>
               {result.recommendation !== t('modules.atmExchange.recommendationEqual', 'Equal') && (

@@ -318,7 +318,7 @@ export default function BudgetTrackerScreen() {
               <Card.Content>
                 <View>
                   <View style={styles.progressHeader}>
-                    <Text variant="titleMedium" style={{ color: theme.colors.onPrimaryContainer, fontWeight: 'bold' }}>
+                    <Text variant="titleMedium" style={{ color: theme.colors.onPrimaryContainer, }}>
                       {viewMode === 'total' ? t('modules.budgetTracker.totalSpent', 'Total Spent') : t('modules.budgetTracker.spentToday', 'Spent Today')}
                     </Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -332,7 +332,7 @@ export default function BudgetTrackerScreen() {
                     </View>
                   </View>
                   <View style={{ alignItems: 'flex-end', marginBottom: 8 }}>
-                    <Text variant="titleMedium" style={{ color: theme.colors.primary, fontWeight: 'bold' }}>
+                    <Text variant="titleMedium" style={{ color: theme.colors.primary, }}>
                       {displaySymbol}{(viewMode === 'total' ? totalSpentDisplay : spentTodayDisplay).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} 
                       {budgetNum > 0 && (
                         <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>
@@ -354,7 +354,7 @@ export default function BudgetTrackerScreen() {
             </Card>
 
             <View style={styles.sectionHeader}>
-              <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{t('modules.budgetTracker.expensesTitle', 'Recent Expenses')}</Text>
+              <Text variant="titleMedium" style={{  color: theme.colors.onSurface }}>{t('modules.budgetTracker.expensesTitle', 'Recent Expenses')}</Text>
             </View>
 
             <Pressable 
@@ -374,7 +374,7 @@ export default function BudgetTrackerScreen() {
                 <MaterialIcons name="add" size={24} color={theme.colors.primary} />
               </View>
               <View style={{ flex: 1 }}>
-                <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurface }}>{t('modules.budgetTracker.addExpenseButton', 'Add New Expense')}</Text>
+                <Text variant="titleMedium" style={{  color: theme.colors.onSurface }}>{t('modules.budgetTracker.addExpenseButton', 'Add New Expense')}</Text>
                 <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{t('modules.budgetTracker.addExpenseDesc', 'Track a new transaction')}</Text>
               </View>
             </Pressable>
@@ -402,7 +402,7 @@ export default function BudgetTrackerScreen() {
                   <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{new Date(item.date).toLocaleDateString(i18n.language || 'en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute:'2-digit' })}</Text>
                 </View>
                 <View style={{ marginRight: 8, alignItems: 'flex-end' }}>
-                  <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>{displaySymbol}{displayAmt.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
+                  <Text variant="titleMedium" style={{ }}>{displaySymbol}{displayAmt.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
                   <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>{secondarySymbol || ''}{secondaryAmt.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</Text>
                 </View>
                 <View style={{ flexDirection: 'row' }}>

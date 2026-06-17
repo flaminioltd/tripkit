@@ -184,7 +184,18 @@
     "forceSyncButton": "Sincronizza Dati",
     "customizeCurrencyUnitsTitle": "Personalizza valuta e unità",
     "measurementSystem": "Sistema di misurazione",
-    "searchCurrencyPlaceholder": "Inserisci una valuta..."
+    "searchCurrencyPlaceholder": "Inserisci una valuta...",
+    "exchangeRateSyncTitle": "Sincronizzazione tassi di cambio",
+    "exchangeRateSyncSubtitle": "L'app esegue aggiornamenti quotidiani dei tassi di cambio per impostazione predefinita. Ciò verrà ignorato dalla tua scelta sulla disponibilità della connessione.",
+    "syncWifiOnly": "Sincronizza solo con connessione WiFi",
+    "syncCellular": "Sincronizza con dati mobili",
+    "syncManual": "Sincronizza solo manualmente",
+    "forceSyncRatesButton": "Sincronizza tassi di cambio",
+    "lastUpdated": "Ultimo aggiornamento:",
+    "neverSynced": "Mai sincronizzato",
+    "error": "Errore",
+    "noConnection": "Nessuna connessione internet disponibile.",
+    "syncFailed": "Impossibile recuperare gli ultimi tassi di cambio."
   },
   "access": {
     "upgrade": {

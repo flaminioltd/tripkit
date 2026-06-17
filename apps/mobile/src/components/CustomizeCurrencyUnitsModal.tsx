@@ -59,7 +59,7 @@ export default function CustomizeCurrencyUnitsModal({ visible, onDismiss }: Cust
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         >
           <View style={styles.header}>
-            <Text variant="headlineSmall" style={{ flex: 1, fontWeight: 'bold', color: theme.colors.onSurface }}>
+            <Text variant="headlineSmall" style={{ flex: 1,  color: theme.colors.onSurface }}>
               {t("settingsScreen.customizeCurrencyUnitsTitle", "Customize Currency & Units")}
             </Text>
             <Pressable onPress={onDismiss} style={styles.closeButton}>
@@ -69,7 +69,7 @@ export default function CustomizeCurrencyUnitsModal({ visible, onDismiss }: Cust
 
           <View style={styles.content}>
             <View style={styles.formatSection}>
-              <Text variant="bodyLarge" style={{ color: theme.colors.onSurface, fontWeight: '500', marginBottom: 12 }}>
+              <Text variant="bodyLarge" style={{ color: theme.colors.onSurface,  marginBottom: 12 }}>
                 {t("settingsScreen.measurementSystem", "Measurement System")}
               </Text>
               <CustomSegmentedControl
@@ -83,7 +83,7 @@ export default function CustomizeCurrencyUnitsModal({ visible, onDismiss }: Cust
             </View>
 
             <View style={styles.searchArea}>
-              <Text variant="bodyLarge" style={{ color: theme.colors.onSurface, fontWeight: '500', marginBottom: 12 }}>
+              <Text variant="bodyLarge" style={{ color: theme.colors.onSurface,  marginBottom: 12 }}>
                 {t("settingsScreen.homeCurrency", "Origin Currency")}
               </Text>
               <View style={[
@@ -128,12 +128,12 @@ export default function CustomizeCurrencyUnitsModal({ visible, onDismiss }: Cust
                         onPress={() => handleSelectCurrency(item)}
                       >
                         <View style={[styles.resultIcon, { backgroundColor: theme.colors.surfaceVariant }]}>
-                          <Text variant="titleMedium" style={{ color: isSelected ? theme.colors.onSecondaryContainer : theme.colors.onSurfaceVariant, fontWeight: 'bold' }}>
+                          <Text variant="titleMedium" style={{ color: isSelected ? theme.colors.onSecondaryContainer : theme.colors.onSurfaceVariant, }}>
                             {getCurrencySymbol(item)}
                           </Text>
                         </View>
                         <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                          <Text variant="bodyLarge" style={{ color: isSelected ? theme.colors.onSecondaryContainer : theme.colors.onSurface, fontWeight: '500' }}>
+                          <Text variant="bodyLarge" style={{ color: isSelected ? theme.colors.onSecondaryContainer : theme.colors.onSurface, }}>
                             {item}
                           </Text>
                           {isSelected && (

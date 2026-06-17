@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   title: {
-    fontWeight: 'bold',
+    
   },
   nav: {
     flexDirection: 'row',
@@ -131,6 +131,6 @@ const styles = StyleSheet.create({
     borderRadius: 24,
   },
   pillText: {
-    fontWeight: 'bold',
+    
   }
 });

@@ -181,7 +181,18 @@
     "forceSyncButton": "Daten Synchronisieren",
     "customizeCurrencyUnitsTitle": "Währung & Einheiten anpassen",
     "measurementSystem": "Maßsystem",
-    "searchCurrencyPlaceholder": "Währung eingeben..."
+    "searchCurrencyPlaceholder": "Währung eingeben...",
+    "exchangeRateSyncTitle": "Wechselkurs-Synchronisation",
+    "exchangeRateSyncSubtitle": "Die App führt standardmäßig tägliche Wechselkurs-Updates durch. Dies wird durch Ihre Wahl der Verbindungsverfügbarkeit überschrieben.",
+    "syncWifiOnly": "Nur synchronisieren, wenn WLAN verfügbar ist",
+    "syncCellular": "Mit mobilen Daten synchronisieren",
+    "syncManual": "Nur bei manueller Auslösung synchronisieren",
+    "forceSyncRatesButton": "Wechselkurse synchronisieren",
+    "lastUpdated": "Zuletzt aktualisiert:",
+    "neverSynced": "Nie synchronisiert",
+    "error": "Fehler",
+    "noConnection": "Keine Internetverbindung verfügbar.",
+    "syncFailed": "Fehler beim Abrufen der neuesten Wechselkurse."
   },
   "access": {
     "upgrade": {
