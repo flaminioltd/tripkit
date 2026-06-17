@@ -181,7 +181,10 @@
       "it": "Italiano",
       "pt": "Português"
     },
-    "forceSyncButton": "Sincronizza Dati"
+    "forceSyncButton": "Sincronizza Dati",
+    "customizeCurrencyUnitsTitle": "Personalizza valuta e unità",
+    "measurementSystem": "Sistema di misurazione",
+    "searchCurrencyPlaceholder": "Inserisci una valuta..."
   },
   "access": {
     "upgrade": {
@@ -346,7 +349,9 @@
       "visitButton": "Visita",
       "embassyUnavailable": "Informazioni sull'ambasciata non disponibili.",
       "embassyTitle": "Ambasciata",
-      "origin": "Origine"
+      "origin": "Origine",
+      "address": "Indirizzo",
+      "showOnMap": "Mostra sulla mappa"
     },
     "plugVoltage": {
       "headerTitle": "Prese e Voltaggio",

@@ -307,35 +307,45 @@ export default function LocalInfoScreen() {
                   <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
                     <IconButton icon="bank" size={32} iconColor={theme.colors.primary} style={{ margin: 0, backgroundColor: theme.colors.primaryContainer }} />
                     <View style={{ flex: 1 }}>
-                      <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>{embassyData.name || t('modules.localInfo.embassyConsulate', 'Embassy / Consulate')}</Text>
+                      <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>{t('modules.localInfo.address', 'Address')}</Text>
                       <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{embassyData.address}</Text>
+                      <View style={{ alignItems: 'flex-start', marginTop: 8 }}>
+                        <Button 
+                          mode="outlined" 
+                          icon="map-marker"
+                          disabled={!embassyData.address || embassyData.address === 'Address not available' || embassyData.address === 'N/A'}
+                          onPress={() => Linking.openURL(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(embassyData.address)}`)}
+                        >
+                          {t('modules.localInfo.showOnMap', 'Show on map')}
+                        </Button>
+                      </View>
                     </View>
                   </View>
 
                   <Divider />
 
-                  <View style={styles.row}>
-                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                      <IconButton icon="phone" size={20} iconColor={theme.colors.primary} />
-                      <Text variant="bodyLarge">{embassyData.phone}</Text>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+                    <IconButton icon="phone" size={32} iconColor={theme.colors.primary} style={{ margin: 0, backgroundColor: theme.colors.primaryContainer }} />
+                    <View style={{ flex: 1 }}>
+                      <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>{t('modules.localInfo.phone', 'Phone')}</Text>
+                      <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{embassyData.phone}</Text>
+                      <View style={{ alignItems: 'flex-start', marginTop: 8 }}>
+                        <Button mode="outlined" icon="phone" disabled={!embassyData.phone || embassyData.phone === 'Phone not available' || embassyData.phone === 'N/A'} onPress={() => handleCall(embassyData.phone)}>{t("modules.localInfo.callButton", "Call")}</Button>
+                      </View>
                     </View>
-                    <Button mode="outlined" onPress={() => handleCall(embassyData.phone)}>{t("modules.localInfo.callButton", "Call")}</Button>
                   </View>
 
-                  {embassyData.website && (
-                    <>
-                      <Divider />
-                      <View style={{ flexDirection: 'column', gap: 8 }}>
-                        <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
-                          <IconButton icon="web" size={20} iconColor={theme.colors.primary} />
-                          <Text variant="bodyLarge" style={{ flex: 1 }}>{embassyData.website}</Text>
-                        </View>
-                        <View style={{ alignItems: 'flex-start', paddingLeft: 56 }}>
-                          <Button mode="outlined" onPress={() => handleOpenUrl(embassyData.website!)}>{t("modules.localInfo.visitButton", "Visit")}</Button>
-                        </View>
+                  <Divider />
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+                    <IconButton icon="web" size={32} iconColor={theme.colors.primary} style={{ margin: 0, backgroundColor: theme.colors.primaryContainer }} />
+                    <View style={{ flex: 1 }}>
+                      <Text variant="titleMedium" style={{ fontWeight: 'bold' }}>{t('modules.localInfo.website', 'Website')}</Text>
+                      <Text variant="bodyMedium" style={{ color: theme.colors.onSurfaceVariant }}>{embassyData.website || t('modules.localInfo.notAvailable', 'Not available')}</Text>
+                      <View style={{ alignItems: 'flex-start', marginTop: 8 }}>
+                        <Button mode="outlined" icon="open-in-new" disabled={!embassyData.website || embassyData.website === 'N/A'} onPress={() => handleOpenUrl(embassyData.website!)}>{t("modules.localInfo.visitButton", "Visit")}</Button>
                       </View>
-                    </>
-                  )}
+                    </View>
+                  </View>
 
                 </Card.Content>
               </Card>

@@ -9,8 +9,15 @@ import '../src/i18n';
 registerTranslation('en', en);
 import { seedDatabase } from '../src/db/seed';
 import { updateExchangeRates, shouldUpdateRates } from '../src/services/exchangeRates';
+import { useFonts, DMSans_900Black, DMSans_700Bold, DMSans_400Regular } from '@expo-google-fonts/dm-sans';
 
 export default function RootLayout() {
+  const [fontsLoaded] = useFonts({
+    DMSans_900Black,
+    DMSans_700Bold,
+    DMSans_400Regular,
+  });
+
   useEffect(() => {
     seedDatabase().catch(console.error);
     
@@ -29,6 +36,10 @@ export default function RootLayout() {
       unsubscribeNetInfo();
     };
   }, []);
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <PaperProvider theme={theme}>

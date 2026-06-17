@@ -7,6 +7,7 @@ import { COUNTRIES } from '../../src/lib/countries';
 import { FLAG_IMAGES } from '../../src/lib/assets';
 import ChangeHomeCountryModal from '../../src/components/ChangeHomeCountryModal';
 import ChangeLanguageModal from '../../src/components/ChangeLanguageModal';
+import CustomizeCurrencyUnitsModal from '../../src/components/CustomizeCurrencyUnitsModal';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'expo-router';
 
@@ -16,6 +17,7 @@ export default function SettingsScreen() {
   const { settings } = useAppStore();
   const [countryModalVisible, setCountryModalVisible] = useState(false);
   const [languageModalVisible, setLanguageModalVisible] = useState(false);
+  const [customizeModalVisible, setCustomizeModalVisible] = useState(false);
   const { t, i18n } = useTranslation();
 
   const homeCountry = COUNTRIES.find(c => c.code === settings?.homeCountry);
@@ -37,7 +39,7 @@ export default function SettingsScreen() {
         {t('settingsScreen.headerSubtitle')}
       </Text>
 
-      <View style={[styles.section, { backgroundColor: theme.colors.surfaceVariant, borderRadius: 16 }]}>
+      <View style={[styles.section, { backgroundColor: '#EFE7DC', borderRadius: 16 }]}>
         <List.Item
           title={t('settingsScreen.homeCountry')}
           description={homeCountry ? t(`countries.${homeCountry.code}`, homeCountry.name) : t('settingsScreen.notSet')}
@@ -48,6 +50,13 @@ export default function SettingsScreen() {
           )}
           right={props => <List.Icon {...props} icon="chevron-right" />}
           onPress={() => setCountryModalVisible(true)}
+        />
+        <List.Item
+          title={t('settingsScreen.customizeCurrencyUnitsTitle', 'Customize Currency & Units')}
+          description={`${settings?.homeCurrency || 'USD'} • ${settings?.sizeFormat === 'imperial' ? t('welcomeScreen.imperialSystem', 'Imperial') : t('welcomeScreen.metricSystem', 'Metric')}`}
+          left={props => <List.Icon {...props} icon="tune" />}
+          right={props => <List.Icon {...props} icon="chevron-right" />}
+          onPress={() => setCustomizeModalVisible(true)}
         />
         <List.Item
           title={t('settingsScreen.systemLanguage')}
@@ -62,7 +71,7 @@ export default function SettingsScreen() {
         <Button mode="outlined" onPress={() => router.push('/onboarding/welcome')} style={{ marginBottom: 16 }}>
           Onboarding
         </Button>
-        <Button mode="contained" onPress={handleSync} icon="sync">
+        <Button variant="alternative" onPress={handleSync} icon="sync">
           {t('settingsScreen.forceSyncButton', 'Sync Online Data')}
         </Button>
       </View>
@@ -75,6 +84,11 @@ export default function SettingsScreen() {
       <ChangeLanguageModal
         visible={languageModalVisible}
         onDismiss={() => setLanguageModalVisible(false)}
+      />
+      
+      <CustomizeCurrencyUnitsModal
+        visible={customizeModalVisible}
+        onDismiss={() => setCustomizeModalVisible(false)}
       />
     </View>
   );

@@ -23,6 +23,7 @@ export const tokens = {
       // Brand / hierarchy
       primaryPurple: '#5B3FA3',
       primaryPurpleSoft: '#EEE9FA',
+      primaryPurpleFaded: 'rgba(91, 63, 163, 0.08)',
       
       // Warm surfaces
       warmSand: '#EFE7DC',

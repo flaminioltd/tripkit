@@ -181,7 +181,10 @@
       "it": "Italiano",
       "pt": "Português"
     },
-    "forceSyncButton": "Synchroniser"
+    "forceSyncButton": "Synchroniser",
+    "customizeCurrencyUnitsTitle": "Personnaliser la devise et les unités",
+    "measurementSystem": "Système de mesure",
+    "searchCurrencyPlaceholder": "Entrez une devise..."
   },
   "access": {
     "upgrade": {
@@ -346,7 +349,9 @@
       "visitButton": "Visiter",
       "embassyUnavailable": "Informations sur l'ambassade indisponibles.",
       "embassyTitle": "Ambassade",
-      "origin": "Origine"
+      "origin": "Origine",
+      "address": "Adresse",
+      "showOnMap": "Afficher sur la carte"
     },
     "plugVoltage": {
       "headerTitle": "Prises",

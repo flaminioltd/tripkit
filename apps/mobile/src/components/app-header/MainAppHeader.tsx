@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, StyleSheet, Pressable, Animated, Platform, UIManager } from 'react-native';
+import { View, StyleSheet, Pressable, Animated, Platform, UIManager, Image } from 'react-native';
 import { Text, useTheme } from 'react-native-paper';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { usePathname, useRouter } from 'expo-router';
@@ -92,9 +92,7 @@ export default function MainAppHeader() {
       }
     ]}>
       <View style={styles.content}>
-        <Text variant="titleLarge" style={[styles.title, { color: theme.colors.primary }]}>
-          TripKit
-        </Text>
+        <Image source={require('../../../assets/images/Logo.png')} style={{ height: 28, width: 100, resizeMode: 'contain', marginLeft: 8 }} />
 
         <View style={styles.nav}>
           <NavItem active={isHome} title={t('navigation.tabs.home', 'Home')} icon="home" onPress={() => handleNav('/(main)')} theme={theme} />

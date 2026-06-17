@@ -98,44 +98,46 @@ export default function HomeScreen() {
             }
           ]}
         >
-          <Text style={{ 
-            fontSize: 11, 
-            fontWeight: '600', 
-            color: 'rgba(0,0,0,0.4)', 
-            textTransform: 'uppercase', 
-            letterSpacing: 0.5,
-            alignSelf: 'flex-start',
-            marginBottom: 8
-          }}>
-            {t(`categories.${mod.category}`, mod.category)}
-          </Text>
-
-          <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-            <Text 
-              numberOfLines={2}
-              adjustsFontSizeToFit
-              minimumFontScale={0.5}
-              textBreakStrategy="simple"
-              style={{ 
-                flex: 1,
-                fontSize: 14,
-                fontWeight: '700', 
-                color: '#1A1A1A', 
-                textAlign: 'left',
-                marginRight: 8,
-                lineHeight: 18
-              }}
-            >
-              {t(`homeScreen.modules.${mod.id}.title`, mod.title)}
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+            <Text style={{ 
+              fontSize: 11, 
+              fontFamily: 'DMSans_400Regular',
+              fontWeight: 'normal', 
+              color: 'rgba(0,0,0,0.4)', 
+              textTransform: 'capitalize', 
+              letterSpacing: 0.5,
+              flex: 1,
+              paddingRight: 8,
+              paddingTop: 4
+            }}>
+              {t(`categories.${mod.category}`, mod.category)}
             </Text>
             
-            <View style={{ justifyContent: 'center', alignItems: 'flex-end' }}>
+            <View style={{ marginRight: -4, marginTop: -4 }}>
               {mod.CustomIcon ? (
                 <mod.CustomIcon size={48} color={mod.color} />
               ) : (
                 <MaterialIcons name={mod.fallbackIcon} size={48} color={mod.color} />
               )}
             </View>
+          </View>
+
+          <View style={{ flex: 1, justifyContent: 'flex-end', paddingLeft: 8, paddingBottom: 8 }}>
+            <Text 
+              numberOfLines={2}
+              adjustsFontSizeToFit
+              minimumFontScale={0.5}
+              style={{ 
+                fontSize: 18,
+                fontFamily: 'DMSans_400Regular',
+                fontWeight: 'normal', 
+                color: 'rgba(0,0,0,0.7)', 
+                textAlign: 'left',
+                lineHeight: 22
+              }}
+            >
+              {t(`homeScreen.modules.${mod.id}.title`, mod.title).replace(' ', '\n')}
+            </Text>
           </View>
         </View>
       </Pressable>
@@ -148,7 +150,9 @@ export default function HomeScreen() {
         
         {/* Active Trip Strip */}
         <View style={[styles.tripStripContainer, { flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', paddingHorizontal: 14, marginTop: 12, gap: 12 }]}>
-          <Text style={{ fontSize: 13, fontWeight: 'bold', color: theme.colors.onSurfaceVariant, textTransform: 'uppercase', letterSpacing: 0.5 }}>{t('tripsScreen.activeTripLabel', 'Active Trip:')}</Text>
+          <Text style={{ fontSize: 13, fontFamily: 'DMSans_400Regular', fontWeight: 'normal', color: theme.colors.onSurfaceVariant, textTransform: 'capitalize', letterSpacing: 0.5 }}>
+            {t('tripsScreen.activeTripLabel', 'Active Trip').toLowerCase()}:
+          </Text>
           <Menu
             visible={menuVisible}
             onDismiss={() => setMenuVisible(false)}

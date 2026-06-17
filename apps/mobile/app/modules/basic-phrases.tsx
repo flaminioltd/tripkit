@@ -101,7 +101,7 @@ export default function BasicPhrasesScreen() {
           <ScrollView contentContainerStyle={styles.content}>
             <View style={{ marginBottom: 16 }}>
               <Text variant="titleMedium" style={{ color: theme.colors.onBackground, fontWeight: 'bold' }}>
-                {t("modules.basicPhrases.phrasesInCountry", "Phrases in {{language}} for {{country}}", { language: languageKey, country: activeTrip?.destinationCountry || destinationCode })}
+                {t("modules.basicPhrases.phrasesInCountry", "Phrases in {{language}} for {{country}}", { language: t(`languages.${languageKey}`, languageKey), country: activeTrip?.destinationCountry || destinationCode })}
               </Text>
             </View>
 

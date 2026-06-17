@@ -4274,1519 +4274,2336 @@ export const EMBASSIES: Record<string, Record<string, EmbassyInfo>> = {
   "AU": {
     "AR": {
       "name": "Embassy",
-      "address": "11 National Circuit, 2600",
-      "phone": "+61 2 6273 9111",
-      "website": "https://eaust.cancilleria.gob.ar/en"
+      "address": "7 National Circuit, 2600 South Canberra",
+      "phone": "Phone not available",
+      "website": "https://eaust.cancilleria.gob.ar"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "12 Talbot Street, 2603 South Canberra",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-canberra/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "19 Arkana Street, 2600 Canberra",
+      "phone": "+61-493-137-141",
+      "website": "https://australia.diplomatie.belgium.be"
     },
     "BR": {
       "name": "Embassy",
-      "address": "19 Forster Crescent, 2600",
-      "phone": "+61 2 6273 2372",
-      "website": "https://www.gov.br/mre/pt-br/embaixada-camberra"
+      "address": "19 Forster Crescent, 2600 Canberra",
+      "phone": "Phone not available",
+      "website": "http://camberra.itamaraty.gov.br"
     },
     "CA": {
       "name": "Embassy",
-      "address": "150 Commonwealth Avenue",
-      "phone": "+61 2 6270 4000",
-      "website": "https://www.international.gc.ca/country-pays/australia-australie/canberra.aspx?lang=eng"
-    },
-    "EG": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "150 Commonwealth Avenue, 2600 Canberra",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.canadainternational.gc.ca/australia-australie/index.aspx"
+    },
+    "HR": {
+      "name": "Embassy",
+      "address": "14 Jindalee Crescent, 2606 Woden",
+      "phone": "Phone not available",
+      "website": "http://au.mvep.hr"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "8 Culgoa Circuit, 2606 Woden",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/canberra"
     },
     "FR": {
       "name": "Embassy",
-      "address": "6 Perth Avenue",
-      "phone": "+61 2 6216 0100",
-      "website": "https://au.ambafrance.org"
+      "address": "Brett Avenue, 2041 Sydney",
+      "phone": "Phone not available",
+      "website": "http://www.ambafrance-au.org/-Consulat-general-a-Sydney-"
     },
     "DE": {
       "name": "Embassy",
-      "address": "119 Empire Circuit",
-      "phone": "+61 2 6270 1911",
-      "website": "https://australien.diplo.de/au-en"
+      "address": "22 Stirling Highway, 6009 Perth",
+      "phone": "+61 8 6319 2870",
+      "website": "https://australien.diplo.de/au-en/service/consulate-finder"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "9 Turrana Street, 2600 Canberra",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/australia/"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "17 Beale Crescent, 2600 Canberra",
+      "phone": "Phone not available",
+      "website": "https://canberra.mfa.gov.hu"
     },
     "IN": {
-      "name": "Consulate",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "IL": {
       "name": "Embassy",
-      "address": "6 Turrana Street",
-      "phone": "+61 2 6215 4500",
-      "website": "https://embassies.gov.il/canberra"
+      "address": "3-5 Moonah Place, 2600 Canberra",
+      "phone": "+61-2-9223-9500",
+      "website": "http://www.cgisydney.gov.in"
+    },
+    "IE": {
+      "name": "Embassy",
+      "address": "Arkana Street, 2600 Canberra",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/australia"
     },
     "IT": {
       "name": "Embassy",
-      "address": "12 Grey Street",
-      "phone": "+61 2 6185 8111",
+      "address": "12 Grey Street, 2600 Canberra",
+      "phone": "Phone not available",
       "website": "https://ambcanberra.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.brisbane.au.emb-japan.go.jp/"
+      "address": "1 O'Connell Street, 2000 Sydney",
+      "phone": "Phone not available"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "43 Culgoa Circuit",
-      "phone": "+61 2 6247 4788",
-      "website": "https://www.kenya.asn.au/"
+      "address": "17 Hunter Street, 2600 Canberra",
+      "phone": "Phone not available",
+      "website": "https://australien.um.dk"
     },
     "NL": {
       "name": "Embassy",
-      "address": "120 Empire Circuit, 2600",
-      "phone": "+61 2 6220 9400",
-      "website": "https://www.netherlandsworldwide.nl/contact/embassies-consulates-general/australia/embassy-canberra"
+      "address": "120 Empire Circuit, 2600 Canberra",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "14 Perth Avenue",
-      "phone": "+61 2 6273 3947",
-      "website": "https://embamex.sre.gob.mx/australia"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "14 Perth Avenue, 2600 Canberra",
       "phone": "Phone not available",
-      "website": "http://www.moroccoembassy.org.au/"
+      "website": "https://embamex.sre.gob.mx/australia/"
     },
     "NZ": {
       "name": "Embassy",
-      "address": "140 Commonwealth Avenue",
-      "phone": "+61 2 6270 4211",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/australia-and-pacific/australia/new-zealand-high-commission-to-australia/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://nigeria-can.org.au/"
+      "address": "140 Commonwealth Avenue, 2600 Canberra",
+      "phone": "+61-2-6270-4211",
+      "website": "https://www.mfat.govt.nz/en/countries-and-regions/australia/new-zealand-high-commission/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "17 Hunter Street",
-      "phone": "+61 2 6270 5700",
+      "address": "17 Hunter Street, 2600 Canberra",
+      "phone": "+61-2-6270-5700",
       "website": "https://www.norway.no/en/australia/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "78 Canberra Avenue",
-      "phone": "+61 2 6295 9033;+61 2 6295 9474",
-      "website": "https://australia.mid.ru/"
-    },
-    "SA": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "39 Dunblane Street, 2050 Sydney",
       "phone": "Phone not available",
-      "website": "https://embassies.mofa.gov.sa/sites/Australia/AR/Pages/default.aspx"
+      "website": "http://sydney.china-consulate.gov.cn/chn/"
     },
-    "SG": {
+    "PL": {
       "name": "Embassy",
-      "address": "17 Forster Crescent",
-      "phone": "+61 2 6271 2000",
-      "website": "https://www.mfa.gov.sg/canberra"
+      "address": "10 Trelawney Street, 2025 Sydney",
+      "phone": "Phone not available",
+      "website": "http://www.sydney.msz.gov.pl"
     },
-    "ZA": {
+    "PT": {
       "name": "Embassy",
-      "address": "State Circle",
-      "phone": "+61 2 6272 7300",
-      "website": "https://www.sahc.org.au/"
+      "address": "Russell Street, 6160 Fremantle",
+      "phone": "Phone not available",
+      "website": "https://portugalperth.com/"
     },
     "KR": {
       "name": "Embassy",
-      "address": "113 Empire Circuit",
-      "phone": "+61 2 6270 4100",
-      "website": "https://overseas.mofa.go.kr/au-en/index.do"
+      "address": "44 Market Street, 2000 Sydney",
+      "phone": "Phone not available",
+      "website": "https://overseas.mofa.go.kr/au-sydney-ko/index.do"
     },
     "ES": {
       "name": "Embassy",
-      "address": "15 Arkana Street, 2600",
-      "phone": "+61 2 6273 3555",
-      "website": "https://www.exteriores.gob.es/Embajadas/canberra/en/Paginas/index.aspx"
+      "address": "15 Arkana Street, 2600 Canberra",
+      "phone": "Phone not available",
+      "website": "http://www.exteriores.gob.es/Embajadas/Canberra/es/Paginas/inicio.aspx"
     },
     "SE": {
       "name": "Embassy",
-      "address": "5 Turrana Street",
-      "phone": "+61 2 6270 2700",
-      "website": "https://www.swedenabroad.se/en/embassies/australia-canberra"
+      "address": "Turrana Street, 2600 Canberra",
+      "phone": "Phone not available",
+      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/australien-canberra/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "7 Melbourne Avenue, 2603 Canberra",
       "phone": "Phone not available",
       "website": "https://www.eda.admin.ch/canberra"
     },
     "TH": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "111 Empire Circuit, 2600 Canberra",
       "phone": "Phone not available",
       "website": "https://canberra.thaiembassy.org"
     },
     "TR": {
       "name": "Embassy",
-      "address": "6 Moonah Place",
-      "phone": "+61 2 6234 0000",
-      "website": "https://kanberra-be.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "40 Blackall Street, 2600",
-      "phone": "+61 2 6286 8802",
-      "website": "https://www.mofa.gov.ae/en/missions/canberra"
+      "address": "6 Moonah Place, 2600 Canberra",
+      "phone": "Phone not available",
+      "website": "http://kanberra.be.mfa.gov.tr"
     },
     "GB": {
-      "name": "Consulate",
-      "address": "100 Eagle Street, 4000",
-      "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-consulate-general-brisbane"
+      "name": "Embassy",
+      "address": "130 Commonwealth Avenue, 2600 Canberra",
+      "phone": "Phone not available"
     },
     "US": {
       "name": "Embassy",
-      "address": "21 Moonah Place",
-      "phone": "+61 2 6214 5600;+61 2 9373 9200",
-      "website": "https://au.usembassy.gov/"
+      "address": "Moonah Place, 2600 Canberra",
+      "phone": "Phone not available",
+      "website": "https://au.usembassy.gov"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "6 Timbarra Crescent, 2606 Woden",
+      "phone": "Phone not available",
+      "website": "https://vietnamembassy.org.au/"
+    }
+  },
+  "AT": {
+    "AR": {
+      "name": "Embassy",
+      "address": "8 Rotenturmstraße, 1010 Wien",
+      "phone": "Phone not available",
+      "website": "https://etria.cancilleria.gob.ar/"
+    },
+    "AU": {
+      "name": "Embassy",
+      "address": "9 Karlsplatz, 1040 Wien",
+      "phone": "Phone not available",
+      "website": "http://austria.embassy.gov.au/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "10 Schönburgstraße, 1040 Wien",
+      "phone": "+43 1 502 070",
+      "website": "https://austria.diplomatie.belgium.be"
+    },
+    "BR": {
+      "name": "Embassy",
+      "address": "4 / D1 Pestalozzigasse, 1010 Wien",
+      "phone": "Phone not available",
+      "website": "http://viena.itamaraty.gov.br"
+    },
+    "CA": {
+      "name": "Embassy",
+      "address": "2 Laurenzerberg, 1010 Wien",
+      "phone": "Phone not available"
+    },
+    "HR": {
+      "name": "Embassy",
+      "address": "3 Rennweg, 1030 Wien",
+      "phone": "Phone not available",
+      "website": "http://at.mfa.hr/"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "11-13 Penzinger Straße, 1140 Wien",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/vienna"
+    },
+    "FR": {
+      "name": "Embassy",
+      "address": "2 Technikerstraße, 1040 Wien",
+      "phone": "Phone not available",
+      "website": "https://at.ambafrance.org/"
+    },
+    "DE": {
+      "name": "Embassy",
+      "address": "3 Metternichgasse, 1030 Wien",
+      "phone": "+43-1-711540",
+      "website": "https://www.wien.diplo.de/"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "14 Argentinierstraße, 1040 Wien",
+      "phone": "Phone not available"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "4-6 Bankgasse, 1010 Wien",
+      "phone": "+43-1-53780300",
+      "website": "https://becs.mfa.gov.hu/"
+    },
+    "IN": {
+      "name": "Embassy",
+      "address": "2 Kärntner Ring, 1010 Wien",
+      "phone": "+43-1-5058666",
+      "website": "https://www.eoivienna.gov.in/"
+    },
+    "IE": {
+      "name": "Embassy",
+      "address": "16-18 Rotenturmstraße, 1010 Wien",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/austria/"
+    },
+    "IT": {
+      "name": "Embassy",
+      "address": "27 Rennweg, 1030 Wien",
+      "phone": "Phone not available",
+      "website": "http://ambvienna.esteri.it"
+    },
+    "JP": {
+      "name": "Embassy",
+      "address": "8 Schottenring, 1010 Wien",
+      "phone": "Phone not available",
+      "website": "https://www.at.emb-japan.go.jp"
+    },
+    "DK": {
+      "name": "Embassy",
+      "address": "Führichgasse, 1010 Wien",
+      "phone": "Phone not available",
+      "website": "https://oestrig.um.dk"
+    },
+    "NL": {
+      "name": "Embassy",
+      "address": "3-5 Opernring, 1010 Wien",
+      "phone": "Phone not available"
+    },
+    "MX": {
+      "name": "Embassy",
+      "address": "1 Hohenstaufengasse, 1010 Wien",
+      "phone": "Phone not available",
+      "website": "https://directorio.sre.gob.mx/index.php/embajadas-de-mexico-en-el-exterior/austria"
+    },
+    "NZ": {
+      "name": "Embassy",
+      "address": "9 Karlsplatz, 1040 Wien",
+      "phone": "+43-1-5053021",
+      "website": "https://www.mfat.govt.nz/en/countries-and-regions/europe/austria/new-zealand-embassy-and-permanent-mission/"
+    },
+    "NO": {
+      "name": "Embassy",
+      "address": "55-57 Reisnerstraße, 1030 Wien",
+      "phone": "Phone not available",
+      "website": "https://www.norway.no/de/austria/"
+    },
+    "CN": {
+      "name": "Embassy",
+      "address": "6 Metternichgasse, 1030 Wien",
+      "phone": "Phone not available",
+      "website": "http://www.chinaembassy.at"
+    },
+    "PL": {
+      "name": "Embassy",
+      "address": "42C Hietzinger Hauptstraße, 1130 Wien",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/austria"
+    },
+    "PT": {
+      "name": "Embassy",
+      "address": "3-1 Opernring, 1010 Wien",
+      "phone": "Phone not available",
+      "website": "https://viena.embaixadaportugal.mne.gov.pt"
+    },
+    "KR": {
+      "name": "Embassy",
+      "address": "25 Gregor-Mendel-Straße, 1180 Wien",
+      "phone": "Phone not available",
+      "website": "http://overseas.mofa.go.kr/at-ko/index.do"
+    },
+    "ES": {
+      "name": "Embassy",
+      "address": "Theresianumgasse, 1040 Wien",
+      "phone": "Phone not available"
+    },
+    "SE": {
+      "name": "Embassy",
+      "address": "49-51 Obere Donaustraße, 1020 Wien",
+      "phone": "Phone not available",
+      "website": "http://www.swedenabroad.com/Wien/"
+    },
+    "CH": {
+      "name": "Embassy",
+      "address": "7 Prinz-Eugen-Straße, 1030 Wien",
+      "phone": "+43-1-79505",
+      "website": "https://www.eda.admin.ch/wien"
+    },
+    "TH": {
+      "name": "Embassy",
+      "address": "48 Cottagegasse, 1180 Wien",
+      "phone": "Phone not available",
+      "website": "https://www.thaiembassy.at"
+    },
+    "TR": {
+      "name": "Embassy",
+      "address": "Prinz-Eugen-Straße, 1040 Wien",
+      "phone": "Phone not available",
+      "website": "http://www.vienna.emb.mfa.gov.tr/"
+    },
+    "GB": {
+      "name": "Embassy",
+      "address": "12 Jaurèsgasse, 1030 Wien",
+      "phone": "Phone not available",
+      "website": "https://www.gov.uk/world/austria"
+    },
+    "US": {
+      "name": "Embassy",
+      "address": "Boltzmanngasse, 1090 Wien",
+      "phone": "Phone not available",
+      "website": "https://at.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "20 Felix-Mottl-Straße, 1190 Wien",
+      "phone": "Phone not available"
+    }
+  },
+  "BE": {
+    "AR": {
+      "name": "Embassy",
+      "address": "Avenue Louise - Louizalaan, 1050 Bruxelles - Brussel",
+      "phone": "Phone not available",
+      "website": "https://ebelg.cancilleria.gob.ar/"
+    },
+    "AU": {
+      "name": "Embassy",
+      "address": "56 Avenue des Arts - Kunstlaan, 1000 Bruxelles - Brussel",
+      "phone": "Phone not available",
+      "website": "http://eu.mission.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "Avenue de Cortenbergh - Kortenberglaan, 1000 Bruxelles - Brussel",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-bruessel/"
+    },
+    "BR": {
+      "name": "Embassy",
+      "address": "352 Avenue Louise - Louizalaan, 1050 Bruxelles - Brussel",
+      "phone": "Phone not available"
+    },
+    "CA": {
+      "name": "Embassy",
+      "address": "Avenue des Arts - Kunstlaan, 1000 Bruxelles - Brussel",
+      "phone": "Phone not available",
+      "website": "https://www.canadainternational.gc.ca/belgium-belgique/"
+    },
+    "HR": {
+      "name": "Embassy",
+      "address": "Avenue Louise - Louizalaan, 1050 Bruxelles - Brussel",
+      "phone": "Phone not available"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "154 Avenue Adolphe Buyl - Adolphe Buyllaan, 1050 Ixelles - Elsene",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/brussels"
+    },
+    "FR": {
+      "name": "Embassy",
+      "address": "41 Boulevard du Régent - Regentlaan, 1000 Bruxelles - Brussel",
+      "phone": "Phone not available"
+    },
+    "DE": {
+      "name": "Embassy",
+      "address": "Rue Jacques de Lalaing - Jacques de Lalaingstraat, 1040 Bruxelles - Brussel",
+      "phone": "Phone not available"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "Rue des Petits Carmes - Karmelietenstraat, 1000 Bruxelles - Brussel",
+      "phone": "Phone not available"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "44 Avenue du Vert Chasseur - Groene Jagerslaan, 1180 Uccle - Ukkel",
+      "phone": "+32-2-348-18-00",
+      "website": "https://brusszel.mfa.gov.hu/"
+    },
+    "IN": {
+      "name": "Embassy",
+      "address": "215 Chaussée de Vleurgat - Vleurgatse Steenweg, 1050 Ixelles - Elsene",
+      "phone": "Phone not available",
+      "website": "https://www.indianembassybrussels.gov.in"
+    },
+    "IE": {
+      "name": "Embassy",
+      "address": "Rue Froissart - Froissartstraat, 1040 Etterbeek",
+      "phone": "Phone not available",
+      "website": "https://www.ireland.ie/en/belgium/brussels/"
+    },
+    "IT": {
+      "name": "Embassy",
+      "address": "Rue Émile Claus - Émile Clausstraat, 1050 Ixelles - Elsene",
+      "phone": "Phone not available",
+      "website": "https://ambbruxelles.esteri.it"
+    },
+    "JP": {
+      "name": "Embassy",
+      "address": "Rue de la Loi - Wetstraat, 1040 Bruxelles - Brussel",
+      "phone": "Phone not available",
+      "website": "https://www.be.emb-japan.go.jp"
+    },
+    "DK": {
+      "name": "Embassy",
+      "address": "Rue d'Arlon - Aarlenstraat, 1040 Bruxelles - Brussel",
+      "phone": "Phone not available",
+      "website": "https://belgien.um.dk/nl"
+    },
+    "NL": {
+      "name": "Embassy",
+      "address": "6 Avenue de Cortenbergh - Kortenberglaan, 1040 Bruxelles - Brussel",
+      "phone": "Phone not available"
+    },
+    "MX": {
+      "name": "Embassy",
+      "address": "Avenue Franklin Roosevelt - Franklin Rooseveltlaan, 1050 Bruxelles - Brussel",
+      "phone": "Phone not available",
+      "website": "https://embamex.sre.gob.mx/belgica/"
+    },
+    "NZ": {
+      "name": "Embassy",
+      "address": "Avenue des Nerviens - Nerviërslaan, 1000 Bruxelles - Brussel",
+      "phone": "+32-2-512-10-40",
+      "website": "https://www.mfat.govt.nz/en/countries-and-regions/europe/belgium/new-zealand-embassy-to-belgium/"
+    },
+    "NO": {
+      "name": "Embassy",
+      "address": "Rue Archimède - Archimedesstraat, 1000 Bruxelles - Brussel",
+      "phone": "+32-2-238-73-00",
+      "website": "https://www.norway.no/en/belgium"
+    },
+    "CN": {
+      "name": "Embassy",
+      "address": "443 Avenue de Tervueren - Tervurenlaan, 1150 Woluwe-Saint-Pierre - Sint-Pieters-Woluwe",
+      "phone": "Phone not available"
+    },
+    "PL": {
+      "name": "Embassy",
+      "address": "139 Rue Stevin - Stevinstraat, 1000 Bruxelles - Brussel",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/belgia"
+    },
+    "PT": {
+      "name": "Embassy",
+      "address": "Tunnel Belliard - Belliardtunnel, 1040 Bruxelles - Brussel",
+      "phone": "Phone not available",
+      "website": "https://www.bruxelas.embaixadaportugal.mne.pt"
+    },
+    "KR": {
+      "name": "Embassy",
+      "address": "Drève des Libellules - Libellendreef, 1170 Watermael-Boitsfort - Watermaal-Bosvoorde",
+      "phone": "Phone not available"
+    },
+    "ES": {
+      "name": "Embassy",
+      "address": "19 Rue de la Science - Wetenschapsstraat, 1040 Bruxelles - Brussel",
+      "phone": "Phone not available"
+    },
+    "SE": {
+      "name": "Embassy",
+      "address": "30 Square de Meeûs - de Meeûssquare, 1000 Bruxelles - Brussel",
+      "phone": "+32-22895800",
+      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/belgien-bryssel/"
+    },
+    "CH": {
+      "name": "Embassy",
+      "address": "Place du Luxembourg - Luxemburgplein, 1050 Ixelles - Elsene",
+      "phone": "Phone not available",
+      "website": "https://www.eda.admin.ch/bruxelles"
+    },
+    "TH": {
+      "name": "Embassy",
+      "address": "Avenue de la Clairière - Bospleinlaan, 1050 Bruxelles - Brussel",
+      "phone": "Phone not available"
+    },
+    "TR": {
+      "name": "Embassy",
+      "address": "4 Rue Montoyer - Montoyerstraat, 1000 Bruxelles - Brussel",
+      "phone": "Phone not available",
+      "website": "http://bruksel-be.mfa.gov.tr"
+    },
+    "GB": {
+      "name": "Embassy",
+      "address": "10 Avenue d'Auderghem - Oudergemselaan, 1040 Bruxelles - Brussel",
+      "phone": "Phone not available"
+    },
+    "US": {
+      "name": "Embassy",
+      "address": "27 Boulevard du Régent - Regentlaan, 1000 Bruxelles - Brussel",
+      "phone": "+32-2-811-4000",
+      "website": "https://be.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "2 Avenue Maurice - Mauricelaan, 1050 Ixelles - Elsene",
+      "phone": "Phone not available"
     }
   },
   "BR": {
     "AR": {
       "name": "Embassy",
       "address": "12 SES Quadra 803, 70200-905 Brasília",
-      "phone": "+55 61 3212 7600",
+      "phone": "Phone not available",
       "website": "https://ebras.cancilleria.gob.ar"
     },
     "AU": {
       "name": "Embassy",
       "address": "07 SES - Quadra 801, 70407-900 Brasília",
-      "phone": "+55 61 32263111",
-      "website": "https://brazil.embassy.gov.au/"
+      "phone": "Phone not available",
+      "website": "https://brazil.embassy.gov.au"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "40 SES Quadra 811, 70426-900 Brasília",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-brasilia/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "Galerias, 01311-300 São Paulo",
+      "phone": "+55-11-3145-7500",
+      "website": "https://brazil.diplomatie.belgium.be/pt-br/embaixada-e-consulados/consulado-geral-em-sao-paulo"
     },
     "CA": {
       "name": "Embassy",
       "address": "16 SES Quadra 803, 70410-900 Brasilia",
-      "phone": "+55 61 3424 5400",
-      "website": "https://www.canadainternational.gc.ca/brazil-bresil/"
+      "phone": "Phone not available",
+      "website": "https://www.international.gc.ca/world-monde/country-pays/brazil-bresil/brasilia.aspx"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "Lote 12 SEN Quadra 801, 70800-914 Brasília",
-      "phone": "+55 61 3323-8800",
-      "website": null
+      "address": "3 SHIS QI 9 Conjunto 11, 71625-160 Lago Sul",
+      "phone": "Phone not available"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "21A SES Quadra 805, 70479-900 Brasília",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/brasilia"
     },
     "FR": {
       "name": "Embassy",
-      "address": "4 SES - Quadra 801, 70404-900 Brasília",
-      "phone": "+55 61 32223999",
-      "website": "https://br.ambafrance.org"
+      "address": "Praça do Patriarca, 01002-010 São Paulo",
+      "phone": "Phone not available",
+      "website": "https://saopaulo.consulfrance.org/-Portugues-"
     },
     "DE": {
       "name": "Embassy",
       "address": "25 SES Quadra 807, 70415-900 Brasília",
-      "phone": "+55 61 3443 7330",
-      "website": "https://brasil.diplo.de/br-pt/representacoes/botschaft"
+      "phone": "Phone not available",
+      "website": "http://www.brasilia.diplo.de/"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "22 SES Quadra 805, 70480-900 Brasília",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/missionsabroad/brazil.html"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "Marginal Pinheiros (Local), 05676-120 São Paulo",
+      "phone": "Phone not available",
+      "website": "https://saopaulo.mfa.gov.hu/"
     },
     "IN": {
-      "name": "Consulate",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "IL": {
       "name": "Embassy",
-      "address": "38 SES Quadra 809, 70424-900 Brasília",
-      "phone": "+55-61-2105-0500",
-      "website": "https://embassies.gov.il/brasilia"
+      "address": "70452-901, Plano Piloto",
+      "phone": "Phone not available"
+    },
+    "IE": {
+      "name": "Embassy",
+      "address": "9 SHIS QL 12 Conjunto 5, CEP 71630-255 Brasília",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/brazil/"
     },
     "IT": {
-      "name": "Consulate",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://consbelohorizonte.esteri.it/consolato_belohorizonte/pt/"
+      "name": "Embassy",
+      "address": "58 Avenida Presidente Antônio Carlos, 20020-010 Rio de Janeiro",
+      "phone": "+55-21-3534-1315",
+      "website": "https://consriodejaneiro.esteri.it/consolato_riodejaneiro/pt/"
     },
     "JP": {
-      "name": "Consulate",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "KE": {
       "name": "Embassy",
-      "address": "8 SHIS QL 10 Conjunto 8",
-      "phone": "+55 (61) 3364–0691",
-      "website": "https://kenyaembassybrazil.com.br/"
+      "address": "Alameda Joaquim Eugênio de Lima, 01311-100 São Paulo",
+      "phone": "Phone not available",
+      "website": "http://www.sp.br.emb-japan.go.jp/itprtop_pt/"
+    },
+    "DK": {
+      "name": "Embassy",
+      "address": "70416-900, Plano Piloto",
+      "phone": "Phone not available",
+      "website": "https://brasilien.um.dk/"
     },
     "NL": {
       "name": "Embassy",
-      "address": "05 SES - Quadra 801, 70405-900 Brasília",
-      "phone": "+556139613200",
-      "website": "https://www.nederlandwereldwijd.nl/landen/brazilie/over-ons/ambassade-in-brasilia"
+      "address": "70405-900, Plano Piloto",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "18 SES Quadra 805, 70412-900 Brasília",
-      "phone": "+55 61 3204 5200",
+      "address": "70412-900, Plano Piloto",
+      "phone": "Phone not available",
       "website": "https://embamex.sre.gob.mx/brasil/"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Lote 2 SEN Quadra 801, 70800-920 Brasília",
-      "phone": "+55 (61) 3321-4487",
-      "website": null
     },
     "NZ": {
       "name": "Embassy",
       "address": "1 SHIS QI 9 Conjunto 16, 71625-160 Brasília - DF",
-      "phone": "+55 61 32489900",
+      "phone": "+55-61-3248-9900",
       "website": "https://www.mfat.govt.nz/en/countries-and-regions/latin-america/brazil/new-zealand-embassy/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "Lote 5 SEN Quadra 801, 70800-918 Brasília",
-      "phone": "+55 (61) 3208-1701",
-      "website": "https://nigerianembbrasilia.gov.ng/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "28 SES Quadra 807, 70418-900 Brasília",
-      "phone": "+55 61 3443 7151",
+      "address": "70418-900, Plano Piloto",
+      "phone": "Phone not available",
       "website": "https://www.norway.no/pt/brasil/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "A SES - Quadra 801, 70476-900 Brasília",
-      "phone": "+55 61 3223-3094",
-      "website": "https://brazil.mid.ru"
+      "address": "52 SES Quadra 813, 70443-900 Brasília",
+      "phone": "Phone not available"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "18 SHIS QI 9 Conjunto 9",
-      "phone": "+55 (61) 3248-3525",
-      "website": null
+      "address": "1824 Rua Monte Alegre, 05014-002 São Paulo",
+      "phone": "Phone not available"
     },
-    "SG": {
+    "PT": {
       "name": "Embassy",
-      "address": "11 SHIS QL 24 Conjunto 3",
-      "phone": "+55-61-2191 6565",
-      "website": "https://www.mfa.gov.sg/brasilia"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "06 SES - Quadra 801, 70406-900 Brasília",
+      "address": "70402-900, Plano Piloto",
       "phone": "Phone not available",
-      "website": "https://www.africadosul.org.br"
+      "website": "https://brasilia.embaixadaportugal.mne.gov.pt"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Lote 14 SEN Quadra 801, 70800-915 Brasília",
       "phone": "Phone not available",
-      "website": "https://overseas.mofa.go.kr/br-saopaulo-pt/index.do"
+      "website": "http://overseas.mofa.go.kr/br-pt/index.do"
     },
     "ES": {
       "name": "Embassy",
       "address": "Lote 44 SES Quadra 811, 70429-900 Brasília",
-      "phone": "Phone not available",
-      "website": "http://www.exteriores.gob.es/Embajadas/BRASILIA"
+      "phone": "Phone not available"
     },
     "SE": {
       "name": "Embassy",
-      "address": "Lote 29 SES 807, 70419-900 Brasília",
-      "phone": "+55 61 3442 52 00",
-      "website": "https://www.swedenabroad.se/pt/embaixada/brasil-bras%C3%ADlia"
+      "address": "SES 807, 70419-900 Plano Piloto",
+      "phone": "Phone not available",
+      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/brasilien-brasilia/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Lote 41 SES Quadra 811, 70448-900 Brasília",
       "phone": "Phone not available",
       "website": "https://www.eda.admin.ch/brasilia"
     },
     "TH": {
       "name": "Embassy",
       "address": "Lote 10 SEN Quadra 801, 70800-912 Brasília",
-      "phone": "+55 (61) 3224-6943",
-      "website": null
+      "phone": "Phone not available"
     },
     "TR": {
       "name": "Embassy",
-      "address": "23 SES Quadra 805, 70452-900 Brasília",
-      "phone": "+55 61 3242-1850;+55 61 3244-4840",
-      "website": "https://brezilya-be.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "54 SHIS QI 5, 71.600-580 Brasilia",
-      "phone": "+55-61-32480717",
-      "website": "https://www.mofaic.gov.ae/en/missions/uae-missions-abroad/uae-missions-abroad-details?countryId=08d6e04a-7242-42a7-97c7-7096e4201d28"
+      "address": "70452-900, Plano Piloto",
+      "phone": "Phone not available"
     },
     "GB": {
-      "name": "Consulate",
-      "address": "669/702 Rua Fernandes Tourinho, 30112-000 Belo Horizonte",
+      "name": "Embassy",
+      "address": "08 SES - Quadra 801, 70408-900 Brasília",
       "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-consulate-general-belo-horizonte"
+      "website": "https://www.gov.uk/government/world/organisations/british-consulate-general-sao-paulo/office/british-consulate-general-sao-paulo"
     },
     "US": {
       "name": "Embassy",
       "address": "3 SES - Quadra 801, 70403-900 Brasília",
-      "phone": "+55 61 3312 7000",
+      "phone": "Phone not available",
       "website": "https://br.usembassy.gov"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "1 SHIS QI 9 Conjunto 10, 71625-160 Lago Sul",
+      "phone": "Phone not available"
     }
   },
   "CA": {
     "AR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "81 Metcalfe Street, K1P 5G3 Ottawa",
       "phone": "Phone not available",
       "website": "https://ecana.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
-      "address": "50 O'Connor Street, K1P 6L2 Ottawa",
-      "phone": "+1 613 236 0841",
-      "website": "https://canada.embassy.gov.au"
+      "address": "V6E 3C9, Vancouver",
+      "phone": "Phone not available"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "443 Wilbrod Street, K1N 7W7 Ottawa",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-ottawa/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "1000 Rue Sherbrooke Ouest, H3A 3G4 Montréal",
+      "phone": "+1-514-849-73-94",
+      "website": "https://canada.diplomatie.belgium.be/en/embassy-and-consulates/consulate-general-montreal"
     },
     "BR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "http://montreal.itamaraty.gov.br/"
+      "address": "400 Wilbrod Street, K1N 7W7 Ottawa",
+      "phone": "Phone not available"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "454 Laurier Avenue East",
-      "phone": "+1 613 234 4931",
-      "website": "https://www.egyptembassy.org/location/canada/egypt-embassy-ottawa/"
+      "address": "229 Chapel Street, K1N 5Z4 Ottawa",
+      "phone": "+1-613-562-7824",
+      "website": "http://ca.mfa.hr/"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "251 Cooper Street, K2P 1P8 Ottawa",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/ottawa"
     },
     "FR": {
       "name": "Embassy",
-      "address": "42 Sussex Drive",
+      "address": "West 12th Avenue, V5Y 1V4 Vancouver",
       "phone": "Phone not available",
-      "website": "https://ca.ambafrance.org/"
+      "website": "http://www.consulfrance-vancouver.org"
     },
     "DE": {
       "name": "Embassy",
-      "address": "1 Waverley Street",
+      "address": "1 Waverley Street, K2P 1M7 Ottawa",
       "phone": "Phone not available",
-      "website": "https://canada.diplo.de/ca-en/vertretungen/embassy"
+      "website": "http://www.ottawa.diplo.de/"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "80 MacLaren Street, K2P 0H3 Ottawa",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/canada/en/the-embassy/"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "306 Metcalfe Street, K2P 0P8 Ottawa",
+      "phone": "+1-613-230-2717",
+      "website": "https://ottawa.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "10 Springfield Road, Ottawa",
-      "phone": "Phone not available",
-      "website": "https://www.hciottawa.gov.in"
+      "address": "10 Springfield Road, K1M 2C4 Ottawa",
+      "phone": "Phone not available"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "50 O'Connor Street",
-      "phone": "+1 613-750-7500",
-      "website": "https://embassies.gov.il/ottawa"
+      "address": "130 Albert Street, K1P 1B1 Ottawa",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/canada/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "275 Slater Street, K1P 5H9",
-      "phone": "Phone not available",
-      "website": null
+      "address": "128 Bank Street, K1P 5G6 Ottawa",
+      "phone": "Phone not available"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "255 Sussex Drive, K1A 0G8 Ottawa",
       "phone": "Phone not available",
-      "website": "https://www.calgary.ca.emb-japan.go.jp/itprtop_en/"
+      "website": "http://www.ca.emb-japan.go.jp/"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "415 Laurier Avenue East",
+      "address": "47 Clarence Street, K1N 5P4 Ottawa",
       "phone": "Phone not available",
-      "website": null
+      "website": "http://canada.um.dk/"
     },
     "NL": {
       "name": "Embassy",
-      "address": "350 Albert Street, K1R 1A4",
-      "phone": "+1-613-237-5031",
-      "website": "https://nederlandwereldwijd.nl/landen/canada/over-ons/ambassade-in-ottawa"
+      "address": "350 Albert Street, K1R 1A4 Ottawa",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "45 O'Connor Street, K1P 1A4",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "http://www.consulatdumaroc.ca/"
+      "address": "45 O'Connor Street, K1P 6L2 Ottawa",
+      "phone": "Phone not available"
     },
     "NZ": {
       "name": "Embassy",
-      "address": "150 Elgin Street, K2P 1L4 Ottawa",
+      "address": "Elgin Street, K1P 5J4 Ottawa",
       "phone": "+1-613-238-5991",
       "website": "https://www.mfat.govt.nz/en/countries-and-regions/north-america/canada/new-zealand-high-commission/"
     },
-    "NG": {
-      "name": "Embassy",
-      "address": "295 Metcalfe Street",
-      "phone": "+1-613-236-0521",
-      "website": "https://nigeriahcottawa.ca"
-    },
     "NO": {
       "name": "Embassy",
-      "address": "150 Metcalfe Street, K2P 1P1",
-      "phone": "+1 613 238 6571",
-      "website": "https://www.norway.no/en/canada"
-    },
-    "RU": {
-      "name": "Embassy",
-      "address": "285 Charlotte Street, K1N 8L5",
+      "address": "150 Metcalfe Street, K2P 1P1 Ottawa",
       "phone": "Phone not available",
-      "website": "https://rusembassy.ca/"
+      "website": "https://www.norway.no/en/canada/"
     },
-    "SA": {
+    "CN": {
       "name": "Embassy",
-      "address": "201 Sussex Drive",
-      "phone": "Phone not available",
-      "website": null
+      "address": "1388 West Broadway, V6H 1H2 Vancouver",
+      "phone": "Phone not available"
     },
-    "ZA": {
+    "PL": {
       "name": "Embassy",
-      "address": "15 Sussex Drive",
+      "address": "V6E 2K3, Vancouver",
       "phone": "Phone not available",
-      "website": "http://www.southafrica-canada.ca/"
+      "website": "http://www.vancouver.msz.gov.pl"
+    },
+    "PT": {
+      "name": "Embassy",
+      "address": "679 Island Park Drive, K1Y 0B8 Ottawa",
+      "phone": "Phone not available",
+      "website": "https://otava.embaixadaportugal.mne.gov.pt"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "14169203809",
-      "website": "https://overseas.mofa.go.kr/ca-toronto-en/index.do"
+      "address": "150 Boteler Street, K1N 5B3 Ottawa",
+      "phone": "Phone not available",
+      "website": "http://can-ottawa.mofa.go.kr"
     },
     "ES": {
       "name": "Embassy",
-      "address": "74 Stanley Avenue",
-      "phone": "Phone not available",
-      "website": "http://www.exteriores.gob.es/Embajadas/Ottawa"
+      "address": "74 Stanley Avenue, K1M 2B2 Ottawa",
+      "phone": "Phone not available"
     },
     "SE": {
       "name": "Embassy",
-      "address": "377 Dalhousie Street, K1N 9N8",
+      "address": "Dalhousie Street, K1N 9N8 Ottawa",
       "phone": "Phone not available",
       "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/kanada-ottawa/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "5 Marlborough Avenue, K1N 8E6",
-      "phone": "+1-613-235-1837",
+      "address": "5 Marlborough Avenue, K1N 8E6 Ottawa",
+      "phone": "Phone not available",
       "website": "https://www.eda.admin.ch/ottawa"
     },
     "TH": {
       "name": "Embassy",
-      "address": "180 Island Park Drive, K1Y 0A2 Ottawa",
-      "phone": "+1 613-722-4444",
-      "website": "https://ottawa.thaiembassy.org/"
+      "address": "K1Y 0A2, Ottawa",
+      "phone": "Phone not available",
+      "website": "https://ottawa.thaiembassy.org"
     },
     "TR": {
       "name": "Embassy",
-      "address": "197 Wurtemburg Street",
-      "phone": "+1 613-244-2470",
-      "website": "https://ottava-be.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "125 Boteler Street, K1N 0A4 Ottawa",
-      "phone": "+1-613-565-7272",
-      "website": "https://www.mofaic.gov.ae/missions/UAE-Missions-Abroad/UAE-Missions-Abroad-Details?countryId=d0b31b5e-a5bb-4fa4-bf70-69902e98aef5"
+      "address": "197 Wurtemburg Street, K1N 8Z7 Ottawa",
+      "phone": "Phone not available"
     },
     "GB": {
-      "name": "Consulate",
-      "address": "144 4 Avenue SW, T2P 3N4 Calgary",
-      "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-consulate-general-calgary"
+      "name": "Embassy",
+      "address": "80 Elgin Street, K1A 0G5 Ottawa",
+      "phone": "Phone not available"
     },
     "US": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "733 Côte d'Abraham, G1R 1H6 Québec",
+      "phone": "Phone not available"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "55 MacKay Street, K1M 2B2 Ottawa",
       "phone": "Phone not available",
-      "website": "https://ca.usembassy.gov/"
+      "website": "https://vietnamembassy.ca"
     }
   },
-  "EG": {
+  "CZ": {
     "AR": {
       "name": "Embassy",
-      "address": "8 شارع الصالح ايوب, 11568 القاهرة",
-      "phone": "+20227367765",
-      "website": "https://eegip.cancilleria.gob.ar"
+      "address": "6 Panská, 115 20 Praha",
+      "phone": "Phone not available",
+      "website": "https://eches.cancilleria.gob.ar"
     },
     "AU": {
       "name": "Embassy",
-      "address": "شارع كورنيش النيل",
-      "phone": "+202 2770 6600",
-      "website": "https://egypt.embassy.gov.au/"
+      "address": "Address not available",
+      "phone": "Phone not available"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "10 Viktora Huga, 15000 Praha",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-prag/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "6 Valdštejnská, 11800 Praha",
+      "phone": "+420-257-533-525",
+      "website": "https://czechrepublic.diplomatie.belgium.be"
     },
     "BR": {
       "name": "Embassy",
-      "address": "2005C شارع كورنيش النيل",
-      "phone": "+202 24 61 9837",
-      "website": "http://cairo.itamaraty.gov.br"
+      "address": "5 Panská, 11000 Praha",
+      "phone": "Phone not available",
+      "website": "http://praga.itamaraty.gov.br"
     },
     "CA": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "95/2 Ve Struhách, 16000 Praha",
       "phone": "Phone not available",
-      "website": "https://www.canadainternational.gc.ca/egypt-egypte"
+      "website": "https://www.canadainternational.gc.ca/czech-tcheque"
+    },
+    "HR": {
+      "name": "Embassy",
+      "address": "9 V Průhledu, 169 02 Praha",
+      "phone": "Phone not available",
+      "website": "http://cz.mvep.hr"
     },
     "FR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "2 Velkopřevorské náměstí, 11800 Praha",
       "phone": "Phone not available",
-      "website": "https://eg.ambafrance.org"
+      "website": "https://cz.ambafrance.org/"
     },
     "DE": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+20 3 487 01 00",
-      "website": null
+      "address": "Vlašská, 118 00 Praha",
+      "phone": "Phone not available",
+      "website": "https://prag.diplo.de/"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "559 Střešovice, 16200 Praha",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/missionsabroad/czech.html"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "17 Pod hradbami, 16000 Praha",
+      "phone": "Phone not available",
+      "website": "https://praga.mfa.gov.hu/"
     },
     "IN": {
-      "name": "Consulate",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "IL": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "60 Holešovice, 17000 Praha",
       "phone": "Phone not available",
-      "website": "https://embassies.gov.il/cairo"
+      "website": "https://www.eoiprague.gov.in"
+    },
+    "IE": {
+      "name": "Embassy",
+      "address": "13 Tržiště, 11800 Praha",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/czech-republic/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+20 3 484 7292",
-      "website": null
+      "address": "20 Nerudova, 11800 Praha",
+      "phone": "Phone not available"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Maltézské náměstí, 118 00 Praha",
       "phone": "Phone not available",
-      "website": "https://www.eg.emb-japan.go.jp"
+      "website": "https://www.cz.emb-japan.go.jp/itprtop_ja/"
+    },
+    "DK": {
+      "name": "Embassy",
+      "address": "475 Malá Strana, 11800 Praha",
+      "phone": "Phone not available",
+      "website": "https://tjekkiet.um.dk/"
     },
     "NL": {
       "name": "Embassy",
       "address": "Address not available",
-      "phone": "+20 227395500",
-      "website": "https://www.netherlandsandyou.nl/your-country-and-the-netherlands/egypt/about-us/embassy-in-cairo"
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "25 شارع الحدائق, 11728",
-      "phone": "+202 2358-0256",
-      "website": "https://embamex.sre.gob.mx/egipto"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "10 V Jirchářích, 11000 Praha",
       "phone": "Phone not available",
-      "website": null
-    },
-    "NZ": {
-      "name": "Embassy",
-      "address": "2005c شارع كورنيش النيل, القاهرة",
-      "phone": "+20 2 24616000",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/africa/egypt/new-zealand-embassy-cairo-egypt/contactfull"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+20 2 2735 8311",
-      "website": null
+      "website": "https://embamex.sre.gob.mx/republicacheca"
     },
     "NO": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "458/1 Hellichova, 118 00 Praha 1",
       "phone": "Phone not available",
-      "website": "https://www.norway.no/en/egypt/"
+      "website": "https://www.norway.no/cs/Czech-Republic/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "95 شارع شارل ديجول",
-      "phone": "+20(2)3748-9353; +20(2)3748-9354; +20(2)3748-9355",
-      "website": "https://egypt.mid.ru"
-    },
-    "SA": {
-      "name": "Consulate",
-      "address": "1 شارع دكتور ابراهيم عبد السيد",
-      "phone": "+20 3 497 7593",
-      "website": null
-    },
-    "SG": {
-      "name": "Embassy",
-      "address": "40 شارع بابل",
-      "phone": "+20-2-3749-0468",
-      "website": "https://www.mfa.gov.sg/Cairo"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "18 Pelléova, 16000 Praha",
       "phone": "Phone not available",
-      "website": "http://www.dirco.gov.za/cairo"
+      "website": "http://www.chinaembassy.cz"
+    },
+    "PL": {
+      "name": "Embassy",
+      "address": "8 Valdštejnská, 11800 Praha",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/czechy"
+    },
+    "PT": {
+      "name": "Embassy",
+      "address": "339 Bubeneč, 16000 Praha",
+      "phone": "Phone not available",
+      "website": "https://praga.embaixadaportugal.mne.gov.pt"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "5 Slavíčkova, 118 01 Praha",
       "phone": "Phone not available",
-      "website": null
+      "website": "http://overseas.mofa.go.kr/cz-ko/index.do"
     },
     "ES": {
       "name": "Embassy",
-      "address": "41 شارع إسماعيل محمد, 11211 القاهرة",
-      "phone": "+20 2-2735643",
-      "website": "http://www.exteriores.gob.es/embajadas/elcairo/es/Paginas/inicio.aspx"
+      "address": "4 Badeniho, 17000 Praha",
+      "phone": "Phone not available",
+      "website": "http://www.exteriores.gob.es/Embajadas/Praga"
     },
     "SE": {
       "name": "Embassy",
-      "address": "13 شارع محمد مظهر, القاهرة",
-      "phone": "+20 2 2728 9200",
-      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/egypten-kairo/"
+      "address": "156 Hradčany, 11800 Praha",
+      "phone": "Phone not available",
+      "website": "http://www.swedenabroad.com/Prag/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "10 شارع عبد الخالق ثروت, 11511 القاهرة",
-      "phone": "+20-2-25758284",
-      "website": "https://www.eda.admin.ch/cairo"
+      "address": "7 Pevnostní, 16201 Praha",
+      "phone": "Phone not available",
+      "website": "https://www.eda.admin.ch/praha"
+    },
+    "TH": {
+      "name": "Embassy",
+      "address": "3 Romaina Rollanda, 16000 Praha",
+      "phone": "Phone not available",
+      "website": "http://thaiembassy.cz"
     },
     "TR": {
       "name": "Embassy",
-      "address": "شارع الدكتور إبراهيم عبد السيد",
-      "phone": "+20 3 3990700",
-      "website": "https://iskenderiye-bk.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "4 شارع ابن سيناء, جيزه",
-      "phone": "+20-2-37766101",
-      "website": "https://sp.mofaic.gov.ae/EN/DiplomaticMissions/Embassies/Cairo/Pages/home.aspx"
+      "address": "Na Ořechovce, 169 02 Praha",
+      "phone": "Phone not available",
+      "website": "http://prag.be.mfa.gov.tr"
     },
     "GB": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Thunovská, 118 00 Praha",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.gov.uk/government/world/organisations/british-embassy-prague/"
     },
     "US": {
       "name": "Embassy",
-      "address": "5 شارع توفيق دياب, القاهرة",
-      "phone": "+20-2 2797 3300",
-      "website": "https://eg.usembassy.gov"
+      "address": "Vlašská, 118 00 Praha",
+      "phone": "Phone not available",
+      "website": "https://cz.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "2578 Smíchov, 15000 Praha",
+      "phone": "Phone not available",
+      "website": "https://vnembassy-praha.mofa.gov.vn"
     }
   },
   "FR": {
     "AR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "6 Rue Cimarosa, 75116 Paris",
       "phone": "Phone not available",
-      "website": "https://efran.cancilleria.gob.ar/fr"
+      "website": "https://efran.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Rue Georges Baudoux, 98800 Nouméa",
       "phone": "Phone not available",
-      "website": "https://france.embassy.gov.au/"
+      "website": "http://www.australianconsulatenoumea.embassy.gov.au/nmeafrench/home.html"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "Avenue de la Paix - Simone Veil, 67000 Strasbourg",
+      "phone": "Phone not available",
+      "website": "http://www.bmeia.gv.at/fr/ambassade/paris/conseils-pratiques/representations-consulaires-de-lautriche/konsulate-mit-passbefugnis/consulat-general-dautriche-a-strasbourg.html"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "112 Boulevard des Dames, 13002 Marseille",
+      "phone": "+33-4-96-11-69-55",
+      "website": "https://france.diplomatie.belgium.be/fr/ambassade-et-consulats/consulat-general-marseille"
     },
     "BR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+33 1 45 61 63 00",
-      "website": "http://paris.itamaraty.gov.br"
+      "address": "67 Avenue Franklin Delano Roosevelt, 75008 Paris",
+      "phone": "Phone not available",
+      "website": "http://caiena.itamaraty.gov.br/pt-br"
     },
     "CA": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "130 Rue du Faubourg Saint-Honoré, 75008 Paris",
       "phone": "Phone not available",
       "website": "https://www.international.gc.ca/country-pays/france/paris.aspx?lang=fra"
     },
+    "HR": {
+      "name": "Embassy",
+      "address": "173 Avenue Victor Hugo, 75116 Paris",
+      "phone": "Phone not available",
+      "website": "https://mvep.gov.hr/fr/fr"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "18 Rue Bonaparte, 75006 Paris",
+      "phone": "Phone not available"
+    },
     "DK": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Accès Parking Marceau Étoile, 75116 Paris",
       "phone": "Phone not available",
-      "website": null
-    },
-    "EG": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "website": "https://frankrig.um.dk/"
     },
     "DE": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+33 1 53 64 76 70",
-      "website": "https://allemagneenfrance.diplo.de"
+      "address": "7 Quai Mullenheim, 67000 Strasbourg",
+      "phone": "Phone not available",
+      "website": "http://www.strassburg.diplo.de"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "Rue Auguste Vacquerie, 75116 Paris",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/france/fr/"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "7 Square de l'Avenue Foch, 75116 Paris",
+      "phone": "+33-1-45-00-94-97",
+      "website": "https://parizs.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "15 Rue Alfred Dehodencq, 75016",
-      "phone": "+33140507070",
-      "website": "https://www.ambinde.fr"
-    },
-    "IL": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "264 Rue du Maréchal Leclerc, 97400 Saint-Denis",
       "phone": "Phone not available",
-      "website": "http://embassies.gov.il/paris"
+      "website": "http://www.cgireunion.com"
+    },
+    "IE": {
+      "name": "Embassy",
+      "address": "Rue Rude, 75116 Paris",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/france/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Rue de l'Abbé Grégoire, 06000 Nice",
       "phone": "Phone not available",
-      "website": "https://ambparigi.esteri.it"
+      "website": "http://www.consnizza.esteri.it/Consolato_Nizza"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+33 1 48 88 62 00",
-      "website": "https://www.fr.emb-japan.go.jp"
-    },
-    "KE": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "131 Boulevard de la Bataille de Stalingrad, 69100 Villeurbanne",
       "phone": "Phone not available",
-      "website": "https://kenyaembassyparis.fr/"
+      "website": "https://www.marseille.fr.emb-japan.go.jp/itprtop_fr/"
     },
     "NL": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+33 1 40 62 33 00",
-      "website": "https://www.paysbasmondial.nl/pays/france"
+      "address": "7 Rue Eblé, 75007 Paris",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Rue Notre-Dame-des-Victoires, 75002 Paris",
       "phone": "Phone not available",
-      "website": "https://embamex.sre.gob.mx/francia/index.php/fr/"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.consulatmaroclyon.com/"
+      "website": "http://embamex.sre.gob.mx/francia/index.php/fr/lambasssade"
     },
     "NZ": {
       "name": "Embassy",
-      "address": "103 Rue de Grenelle",
-      "phone": "+33 1 45014343",
-      "website": "https://www.mfat.govt.nz/fr/countries-and-regions/europe/france/new-zealand-embassy/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.nigeriafrance.org/"
+      "address": "Rue d'Austerlitz, 98800 Nouméa",
+      "phone": "+27-2543",
+      "website": "https://www.mfat.govt.nz/en/countries-and-regions/pacific/new-caledonia/new-zealand-consulate-general/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "28 Rue Bayard, 75008 Paris",
       "phone": "Phone not available",
       "website": "https://www.norway.no/fr/france/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "35 Rue Bautain, 67000 Strasbourg",
       "phone": "Phone not available",
-      "website": null
+      "website": "http://www.consulatchine-strasbourg.org/fra"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "27 Rue Tête d'Or, 69006 Lyon",
       "phone": "Phone not available",
-      "website": "https://embassies.mofa.gov.sa/sites/France"
+      "website": "https://www.gov.pl/web/france/consulat-general-lyon"
     },
-    "SG": {
+    "PT": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+33 1 56 79 68 00",
-      "website": "https://www.mfa.gov.sg/paris"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+33153592323",
-      "website": "https://www.afriquesud.net/"
+      "address": "18 Rue Wimpheling, 67000 Strasbourg",
+      "phone": "Phone not available",
+      "website": "http://www.secomunidades.pt/web/estrasburgo"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Rue de Grenelle, 75007 Paris",
       "phone": "Phone not available",
       "website": "https://overseas.mofa.go.kr/fr-fr"
     },
     "ES": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "1 Rue Louis Guérin, 69100 Villeurbanne",
       "phone": "Phone not available",
-      "website": "https://www.exteriores.gob.es/Embajadas/paris/es/Paginas/index.aspx"
+      "website": "http://www.exteriores.gob.es/consulados/lyon"
     },
     "SE": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.swedenabroad.com/fr-FR/Embassies/Paris/"
+      "address": "Rue Servient, 69003 Lyon",
+      "phone": "Phone not available"
     },
     "CH": {
       "name": "Embassy",
       "address": "142 Rue de Grenelle, 75007 Paris",
-      "phone": "+33 1 49 55 67 00",
+      "phone": "Phone not available",
       "website": "https://www.eda.admin.ch/countries/france/fr/home/representations/ambassade-a-paris.html"
     },
     "TH": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.thaiembassy.fr"
+      "address": "2 Place Antoine Vollon, 69002 Lyon",
+      "phone": "Phone not available"
     },
     "TR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+33 1 53 92 71 11;+33 1 53 92 71 12;+33 1 53 92 71 13",
-      "website": "https://paris-be.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "1 Rue Desgenettes, 75007 Paris",
-      "phone": "+33 1 44 34 02 00",
-      "website": null
+      "address": "10 Rue Auguste Lamey, 67000 Strasbourg",
+      "phone": "Phone not available",
+      "website": "http://strazburg.bk.mfa.gov.tr"
     },
     "GB": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-embassy-paris"
+      "address": "Rue des Docks, 13002 Marseille",
+      "phone": "Phone not available"
     },
     "US": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+33 1 4312 2222",
-      "website": "https://fr.usembassy.gov"
+      "address": "5 Quai Mullenheim, 67000 Strasbourg",
+      "phone": "Phone not available",
+      "website": "https://fr.usembassy.gov/fr/embassy-consulates-fr/strasbourg-fr/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "Rue de Miromesnil, 75008 Paris",
+      "phone": "Phone not available",
+      "website": "https://ambassade-vietnam.com/"
     }
   },
   "DE": {
     "AR": {
       "name": "Embassy",
-      "address": "2 Von-der-Heydt-Straße, 10785 Berlin",
-      "phone": "+49 30 2266890",
-      "website": "https://ealem.cancilleria.gob.ar/de/konsulat"
+      "address": "23-26 Kleiststraße, 10787 Berlin",
+      "phone": "Phone not available",
+      "website": "https://ealem.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
-      "address": "10179 Berlin",
-      "phone": "+49 30 88 00 88 0",
-      "website": "https://germany.embassy.gov.au/"
+      "address": "Wallstraße, 10179 Berlin",
+      "phone": "Phone not available",
+      "website": "https://germany.embassy.gov.au"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "12 Tiergartenstraße, 10785 Berlin",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/gk-muenchen/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "52 Jägerstraße, 10117 Berlin",
+      "phone": "+49-30-206-420",
+      "website": "https://germany.diplomatie.belgium.be/"
     },
     "BR": {
       "name": "Embassy",
       "address": "57 Wallstraße, 10179 Berlin",
-      "phone": "+49 30 72628",
-      "website": "http://berlim.itamaraty.gov.br/de/"
+      "phone": "Phone not available",
+      "website": "http://berlim.itamaraty.gov.br/"
     },
     "CA": {
       "name": "Embassy",
-      "address": "17 Leipziger Platz, 10117 Berlin",
+      "address": "13 Ebertstraße, 10117 Berlin",
       "phone": "Phone not available",
       "website": "http://www.canadainternational.gc.ca/germany-allemagne/"
     },
+    "HR": {
+      "name": "Embassy",
+      "address": "19 Ahornstraße, 12529 Schönefeld",
+      "phone": "Phone not available",
+      "website": "http://de.mfa.hr"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "44 Wilhelmstraße, 10117 Berlin",
+      "phone": "Phone not available",
+      "website": "http://www.mzv.cz/berlin/de/"
+    },
     "DK": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "1 Rauchstraße, 10787 Berlin",
       "phone": "Phone not available",
-      "website": null
-    },
-    "EG": {
-      "name": "Embassy",
-      "address": "6-7 Stauffenbergstraße, 10785 Berlin",
-      "phone": "+49 30 4775470",
-      "website": "https://egyptian-embassy.de/"
+      "website": "https://tyskland.um.dk"
     },
     "FR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "5 Pariser Platz, 10117 Berlin",
       "phone": "Phone not available",
-      "website": "https://de.ambafrance.org"
+      "website": "https://de.ambafrance.org/Consulat-general-de-France-a-Stuttgart"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "Kurfürstendamm, 10707 Berlin",
+      "phone": "Phone not available",
+      "website": "http://www.mfa.gr/germany/de/the-embassy/"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "Mauerkircherstraße, 81679 München",
+      "phone": "Phone not available",
+      "website": "https://stuttgart.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "address": "15 Widenmayerstraße, 80538 München",
+      "phone": "Phone not available"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "74-76 Auguste-Viktoria-Straße, 14193 Berlin",
+      "address": "52 Jägerstraße, 10117 Berlin",
       "phone": "Phone not available",
-      "website": "http://www.israel.de/"
+      "website": "https://www.dfa.ie/irish-embassy/germany/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "1 Hiroshimastraße, 10785 Berlin",
       "phone": "Phone not available",
       "website": "http://www.ambberlino.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "27 Breite Straße, 40213 Düsseldorf",
-      "phone": "+49 211 164820",
-      "website": "https://www.dus.emb-japan.go.jp/"
-    },
-    "KE": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "7 Karl-Scharnagl-Ring, 80539 München",
       "phone": "Phone not available",
-      "website": "http://www.kenyaembassyberlin.de/"
+      "website": "http://www.muenchen.de.emb-japan.go.jp/jp/"
     },
     "NL": {
       "name": "Embassy",
       "address": "50 Klosterstraße, 10179 Berlin",
-      "phone": "+49 30 20 95 60",
-      "website": "https://www.sieunddieniederlande.nl"
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
       "address": "3 Klingelhöferstraße, 10785 Berlin",
-      "phone": "+49 30 269 32 30",
-      "website": "https://embamex.sre.gob.mx/alemania/"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
       "phone": "Phone not available",
-      "website": null
+      "website": "http://embamex.sre.gob.mx/alemania/"
     },
     "NZ": {
       "name": "Embassy",
       "address": "60 Friedrichstraße, 10117 Berlin",
-      "phone": "+49 30 206210",
+      "phone": "+49-30-206210",
       "website": "https://www.mfat.govt.nz/en/countries-and-regions/europe/germany/berlin/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "4 Neue Jakobstraße, 10179 Berlin",
-      "phone": "Phone not available",
-      "website": "https://nigeriaembassygermany.org/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "1 Rauchstraße, 10787 Berlin",
       "phone": "Phone not available",
       "website": "https://www.norway.no/de/germany/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "66 Behrenstraße, 10117 Berlin",
-      "phone": "+49 30 22651184",
-      "website": "http://www.visatorussia.com/"
+      "address": "107 Romanstraße, 80639 München",
+      "phone": "Phone not available"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "33 - 34 Tiergartenstraße, 10785 Berlin",
-      "phone": "+49 30 889 25 00",
-      "website": "https://www.mofa.gov.sa/detail.asp?InServiceID"
+      "address": "5 Röntgenstraße, 81679 München",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/niemcy/konsulat-generalny-rp-w-monachium"
     },
-    "SG": {
+    "PT": {
       "name": "Embassy",
-      "address": "17 Voßstraße, 10117 Berlin",
-      "phone": "+49 30 226 3430",
-      "website": "https://www.mfa.gov.sg/berlin"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "18 Tiergartenstraße, 10785 Berlin",
-      "phone": "+49 30 220730",
-      "website": "https://www.suedafrika.org/"
+      "address": "65 Zimmerstraße, 10117 Berlin",
+      "phone": "Phone not available",
+      "website": "https://www.berlim.embaixadaportugal.mne.pt/"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "10 Stülerstraße, 10787 Berlin",
       "phone": "Phone not available",
-      "website": "https://overseas.mofa.go.kr/de-frankfurt-ko/index.do"
+      "website": "https://overseas.mofa.go.kr/de-ko/index.do"
     },
     "ES": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+49 30 2540070",
-      "website": "https://www.exteriores.gob.es/Embajadas/berlin/"
+      "address": "Lichtensteinallee, 10787 Berlin",
+      "phone": "Phone not available",
+      "website": "http://www.exteriores.gob.es/Embajadas/Berlin/"
     },
     "SE": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "1 Rauchstraße, 10787 Berlin",
       "phone": "Phone not available",
       "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/tyskland-berlin/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "4A Otto-von-Bismarck-Allee, 10557 Berlin",
-      "phone": "+49 30 390 40 00",
-      "website": "https://www.eda.admin.ch/berlin.html"
+      "address": "4 Otto-von-Bismarck-Allee, 10557 Berlin",
+      "phone": "Phone not available",
+      "website": "http://www.eda.admin.ch/germany_all/de/home/berlin.html"
     },
     "TH": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+4930 79481 0",
-      "website": "http://www.thaiembassy.de"
+      "address": "24 Flemmingstraße, 12163 Berlin",
+      "phone": "Phone not available",
+      "website": "http://thaiembassy.de/"
     },
     "TR": {
       "name": "Embassy",
       "address": "20 Tiergartenstraße, 10785 Berlin",
-      "phone": "+49 30 275850",
-      "website": "https://berlin-be.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "18;20 Hiroshimastraße, 10785 Berlin",
-      "phone": "+49 30 516516",
-      "website": "https://www.mofa.gov.ae/EN/DiplomaticMissions/Embassies/Berlin/Pages/home.aspx"
+      "phone": "Phone not available",
+      "website": "http://berlin.be.mfa.gov.tr"
     },
     "GB": {
-      "name": "Consulate",
-      "address": "10 Willi-Becker-Allee, 40227 Düsseldorf",
-      "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-consulate-general-dusseldorf"
+      "name": "Embassy",
+      "address": "70-71 Wilhelmstraße, 10117 Berlin",
+      "phone": "Phone not available"
     },
     "US": {
       "name": "Embassy",
-      "address": "30 Gießener Straße, 60435 Frankfurt am Main",
-      "phone": "+49 69 75350",
-      "website": "http://frankfurt.usconsulate.de/"
+      "address": "5 Königinstraße, 80539 München",
+      "phone": "Phone not available",
+      "website": "https://de.usembassy.gov/de/die-botschaft-und-die-konsulate/konsulat-munchen/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "3 Elsenstraße, 12435 Berlin",
+      "phone": "Phone not available"
+    }
+  },
+  "GR": {
+    "AR": {
+      "name": "Embassy",
+      "address": "77 Βασιλίσσης Σοφίας, 115 21 Αθήνα",
+      "phone": "Phone not available",
+      "website": "https://egrec.cancilleria.gob.ar"
+    },
+    "AU": {
+      "name": "Embassy",
+      "address": "5 Χατζηγιάννη Μέξη, 11528 Αθήνα",
+      "phone": "Phone not available",
+      "website": "https://greece.embassy.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "4 Λεωφόρος Βασιλίσσης Σοφίας, 10674 Αθήνα",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-athen/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "3 Σέκερη, 10674 Αθήνα",
+      "phone": "+30-210-338-85-40",
+      "website": "https://greece.diplomatie.belgium.be"
+    },
+    "BR": {
+      "name": "Embassy",
+      "address": "23A Βασιλίσσης Σοφίας, 10674 Αθήνα",
+      "phone": "Phone not available",
+      "website": "http://atenas.itamaraty.gov.br"
+    },
+    "CA": {
+      "name": "Embassy",
+      "address": "48 Εθνικής Αντιστάσεως, 15231 Χαλάνδρι",
+      "phone": "Phone not available",
+      "website": "https://www.international.gc.ca/country-pays/greece-grece/athens-athenes.aspx"
+    },
+    "HR": {
+      "name": "Embassy",
+      "address": "4 Τζαβέλλα, 154 51 Νέο Ψυχικό",
+      "phone": "Phone not available",
+      "website": "http://gr.mvep.hr"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "6 Γεωργίου Σεφέρη, 15452 Palaio Psychiko-Athens",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/athens"
+    },
+    "FR": {
+      "name": "Embassy",
+      "address": "7 Βασιλίσσης Σοφίας, 10671 Αθήνα",
+      "phone": "Phone not available",
+      "website": "https://gr.ambafrance.org/-Consulat-general-a-Thessalonique-"
+    },
+    "DE": {
+      "name": "Embassy",
+      "address": "3 Καραολή & Δημητρίου, 106 76 Αθήνα",
+      "phone": "Phone not available",
+      "website": "http://www.griechenland.diplo.de"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "38 Λεωφόρος Βασιλέως Κωνσταντίνου, 116 35 Αθήνα",
+      "phone": "+30-21-0725-6800",
+      "website": "https://athen.mfa.gov.hu/"
+    },
+    "IN": {
+      "name": "Embassy",
+      "address": "21 Ηρώδου Αττικού, 10674 Αθήνα",
+      "phone": "Phone not available"
+    },
+    "IE": {
+      "name": "Embassy",
+      "address": "5-7 Leoforos Vassileos Konstantinou, 10674 Athene",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/greece/"
+    },
+    "IT": {
+      "name": "Embassy",
+      "address": "2 Σέκερη, 104 71 Αθήνα",
+      "phone": "Phone not available",
+      "website": "https://ambatene.esteri.it"
+    },
+    "JP": {
+      "name": "Embassy",
+      "address": "46 Εθνικής Αντιστάσεως, 15231 Χαλάνδρι",
+      "phone": "Phone not available",
+      "website": "https://www.gr.emb-japan.go.jp/itprtop_ja/"
+    },
+    "DK": {
+      "name": "Embassy",
+      "address": "10 Μουρούζη, 10674 Αθήνα",
+      "phone": "Phone not available",
+      "website": "https://graekenland.um.dk"
+    },
+    "NL": {
+      "name": "Embassy",
+      "address": "5-7 Leoforos Vassileos Konstantinou, 10674 Athene",
+      "phone": "Phone not available"
+    },
+    "MX": {
+      "name": "Embassy",
+      "address": "14 Πλατεία Φιλικής Εταιρίας, 10673 Αθήνα",
+      "phone": "Phone not available",
+      "website": "https://embamex.sre.gob.mx/grecia"
+    },
+    "NO": {
+      "name": "Embassy",
+      "address": "5 Χατζηγιάννη Μέξη, 11528 Αθήνα",
+      "phone": "Phone not available"
+    },
+    "CN": {
+      "name": "Embassy",
+      "address": "10-12 Δημοκρατίας, 154 52 Δημοτική Ενότητα Ψυχικού",
+      "phone": "Phone not available",
+      "website": "http://gr.china-embassy.org"
+    },
+    "PL": {
+      "name": "Embassy",
+      "address": "22 Χρυσανθέμων, 15452 Ψυχικό",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/grecja/"
+    },
+    "PT": {
+      "name": "Embassy",
+      "address": "23A Βασιλίσσης Σοφίας, 10674 Αθήνα",
+      "phone": "Phone not available",
+      "website": "https://atenas.embaixadaportugal.mne.gov.pt"
+    },
+    "KR": {
+      "name": "Embassy",
+      "address": "2-4 Μεσογείων, 115 23 Αθήνα",
+      "phone": "Phone not available",
+      "website": "https://overseas.mofa.go.kr/gr-ko/index.do"
+    },
+    "ES": {
+      "name": "Embassy",
+      "address": "21 Διονυσίου Αρεοπαγίτου, 11742 Αθήνα",
+      "phone": "Phone not available",
+      "website": "http://www.exteriores.gob.es/Embajadas/ATENAS"
+    },
+    "SE": {
+      "name": "Embassy",
+      "address": "9 Βασιλέως Κωνσταντίνου, 106 74 Αθήνα",
+      "phone": "Phone not available",
+      "website": "http://www.swedenabroad.com/Athen/"
+    },
+    "CH": {
+      "name": "Embassy",
+      "address": "2 Ιασίου, 11521 Αθήνα",
+      "phone": "Phone not available",
+      "website": "https://www.eda.admin.ch/athens"
+    },
+    "TH": {
+      "name": "Embassy",
+      "address": "31 Μαραθωνοδρόμου, 15452 Ψυχικό",
+      "phone": "Phone not available",
+      "website": "https://athens.thaiembassy.org"
+    },
+    "TR": {
+      "name": "Embassy",
+      "address": "8 Βασιλέως Γεωργίου Β', 106 74 Αθήνα",
+      "phone": "Phone not available",
+      "website": "http://atina.be.mfa.gov.tr/"
+    },
+    "GB": {
+      "name": "Embassy",
+      "address": "1 Πλούταρχου, 106 75 Αθήνα",
+      "phone": "Phone not available"
+    },
+    "US": {
+      "name": "Embassy",
+      "address": "Πεζόδρομος Αριστοτέλους, 546 23 Δημοτική Ενότητα Θεσαλονίκης",
+      "phone": "Phone not available",
+      "website": "https://gr.usembassy.gov/embassy-consulate/thessaloniki/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "20 Διαμαντίδη Δημητρίου, 154 52 Δημοτική Ενότητα Ψυχικού",
+      "phone": "Phone not available"
+    }
+  },
+  "HU": {
+    "AR": {
+      "name": "Embassy",
+      "address": "12-16 Vérhalom utca, 1023 Budapest",
+      "phone": "+36 1 326 1391",
+      "website": "https://eungr.cancilleria.gob.ar"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "16 Benczúr utca, 1068 Budapest",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/hu/osztrak-nagykoevetseg-budapest/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "13 Toldy Ferenc utca, 1015 Budapest",
+      "phone": "+36 1 457 99 60",
+      "website": "http://hungary.diplomatie.belgium.be"
+    },
+    "BR": {
+      "name": "Embassy",
+      "address": "7 Szabadság tér, 1054 Budapest",
+      "phone": "Phone not available",
+      "website": "http://budapeste.itamaraty.gov.br"
+    },
+    "CA": {
+      "name": "Embassy",
+      "address": "12-14 Ganz utca, 1027 Budapest",
+      "phone": "Phone not available",
+      "website": "https://www.canadainternational.gc.ca/hungary-hongrie"
+    },
+    "HR": {
+      "name": "Embassy",
+      "address": "Munkácsy Mihály utca, 1063 Budapest",
+      "phone": "Phone not available",
+      "website": "http://hu.mvep.hr/"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "63 Rózsa utca, 1064 Budapest",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/budapest/"
+    },
+    "FR": {
+      "name": "Embassy",
+      "address": "Kossuth Lajos tér, 1055 Budapest",
+      "phone": "Phone not available",
+      "website": "https://hu.ambafrance.org/"
+    },
+    "DE": {
+      "name": "Embassy",
+      "address": "64-66 Úri utca, 1014 Budapest",
+      "phone": "Phone not available",
+      "website": "https://budapest.diplo.de/hu-de/"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "61 Rózsa utca, 1064 Budapest",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/missionsabroad/hungary.html"
+    },
+    "IN": {
+      "name": "Embassy",
+      "address": "11 Búzavirág utca, 1025 Budapest",
+      "phone": "Phone not available",
+      "website": "https://www.eoibudapest.gov.in/"
+    },
+    "IE": {
+      "name": "Embassy",
+      "address": "7 Szabadság tér, 1054 Budapest",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/hungary/"
+    },
+    "IT": {
+      "name": "Embassy",
+      "address": "95 Stefánia út, 1143 Budapest",
+      "phone": "Phone not available",
+      "website": "https://ambbudapest.esteri.it/ambasciata_budapest/hu"
+    },
+    "JP": {
+      "name": "Embassy",
+      "address": "7 Zalai út, 1125 Budapest",
+      "phone": "Phone not available",
+      "website": "https://www.hu.emb-japan.go.jp/"
+    },
+    "DK": {
+      "name": "Embassy",
+      "address": "37 Határőr út, 1122 Budapest",
+      "phone": "Phone not available",
+      "website": "https://ungarn.um.dk/"
+    },
+    "NL": {
+      "name": "Embassy",
+      "address": "6-12 Kapás utca, 1027 Budapest",
+      "phone": "Phone not available",
+      "website": "https://www.nederlandwereldwijd.nl/landen/hongarije/over-ons/ambassade-in-boedapest"
+    },
+    "MX": {
+      "name": "Embassy",
+      "address": "Rómer Flóris utca, 1024 Budapest",
+      "phone": "Phone not available",
+      "website": "https://embamex.sre.gob.mx/hungria/"
+    },
+    "NO": {
+      "name": "Embassy",
+      "address": "13 Ostrom utca, 1015 Budapest",
+      "phone": "Phone not available",
+      "website": "https://www.norway.no/hungary/"
+    },
+    "CN": {
+      "name": "Embassy",
+      "address": "Városligeti fasor, 1068 Budapest",
+      "phone": "Phone not available",
+      "website": "http://www.chinaembassy.hu/"
+    },
+    "PL": {
+      "name": "Embassy",
+      "address": "Városligeti fasor, 1071 Budapest",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/wegry"
+    },
+    "PT": {
+      "name": "Embassy",
+      "address": "Alkotás utca, 1123 Budapest",
+      "phone": "Phone not available",
+      "website": "https://budapeste.embaixadaportugal.mne.gov.pt"
+    },
+    "KR": {
+      "name": "Embassy",
+      "address": "6 Munkácsy Mihály utca, 1063 Budapest",
+      "phone": "Phone not available",
+      "website": "https://overseas.mofa.go.kr/hu-ko/index.do"
+    },
+    "ES": {
+      "name": "Embassy",
+      "address": "11/B Eötvös utca, 1067 Budapest",
+      "phone": "Phone not available",
+      "website": "http://www.exteriores.gob.es/Embajadas/BUDAPEST/es/Embajada/Paginas/inicio.aspx"
+    },
+    "SE": {
+      "name": "Embassy",
+      "address": "27 Csalogány utca, 1027 Budapest",
+      "phone": "Phone not available",
+      "website": "https://www.swedenabroad.se/hu/embassies/magyarorsz%C3%A1g-budapest/"
+    },
+    "CH": {
+      "name": "Embassy",
+      "address": "107 Stefánia út, 1143 Budapest",
+      "phone": "Phone not available",
+      "website": "https://www.eda.admin.ch/budapest"
+    },
+    "TH": {
+      "name": "Embassy",
+      "address": "79 Verecke út, 1025 Budapest",
+      "phone": "Phone not available",
+      "website": "https://budapest.thaiembassy.org"
+    },
+    "TR": {
+      "name": "Embassy",
+      "address": "123 Andrássy út, 1062 Budapest",
+      "phone": "Phone not available",
+      "website": "http://budapeste.be.mfa.gov.tr/"
+    },
+    "GB": {
+      "name": "Embassy",
+      "address": "5-7 Füge utca, 1022 Budapest",
+      "phone": "Phone not available",
+      "website": "https://www.gov.uk/government/world/organisations/british-embassy-budapest"
+    },
+    "US": {
+      "name": "Embassy",
+      "address": "12 Szabadság tér, 1054 Budapest",
+      "phone": "Phone not available",
+      "website": "https://hu.usembassy.gov/hu/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "1/b Cházár András utca, 1146 Budapest",
+      "phone": "Phone not available",
+      "website": "https://vnembassy-budapest.mofa.gov.vn/"
     }
   },
   "IN": {
     "AR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "F-3, 110057 Delhi",
       "phone": "Phone not available",
       "website": "https://eindi.cancilleria.gob.ar"
     },
     "AU": {
       "name": "Embassy",
-      "address": "1/50 G Shanti Path",
-      "phone": "+911141399900",
+      "address": "1/50 G Shanti Path, 110021 Delhi",
+      "phone": "Phone not available",
       "website": "https://india.highcommission.gov.au/"
     },
+    "AT": {
+      "name": "Embassy",
+      "address": "13 Chandragupta Marg, 110021 New Delhi",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-new-delhi/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "50-N Shanti Path, 110021 New Delhi",
+      "phone": "+91 11-424-280-00",
+      "website": "https://india.diplomatie.belgium.be"
+    },
     "BR": {
-      "name": "Consulate",
-      "address": "R N Goenka Marg, 400021 Mumbai",
-      "phone": "+91-22-22834467",
-      "website": "http://mumbai.itamaraty.gov.br/en-us"
+      "name": "Embassy",
+      "address": "100011, Delhi",
+      "phone": "Phone not available",
+      "website": "http://novadelhi.itamaraty.gov.br/"
     },
     "CA": {
       "name": "Embassy",
       "address": "7/8 Shanti Path, 110021 New Delhi",
-      "phone": "+91 11 4178 2000",
-      "website": "www.canada.ca/CanadaAndIndia"
+      "phone": "Phone not available",
+      "website": "https://www.international.gc.ca/country-pays/india-inde/new_delhi.aspx"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "1/50 M Niti Marg",
-      "phone": "+91-11-2611 4096",
-      "website": null
+      "address": "A-15 West End, 110057 Delhi",
+      "phone": "Phone not available"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "50 Nyaya Marg, 110021 New Delhi",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/newdelhi"
     },
     "FR": {
       "name": "Embassy",
-      "address": "2/50-E Shanti Path, 110021",
-      "phone": "+91 11 4319 6100",
-      "website": "https://in.ambafrance.org/"
+      "address": "Rue de la Marine, 605001 Puducherry",
+      "phone": "Phone not available",
+      "website": "https://in.ambafrance.org/-Consulate-in-Pondichery-"
     },
     "DE": {
       "name": "Embassy",
-      "address": "Corner St. Mark's Road & Residency Road, 560 025 Bangalore",
-      "phone": "+91 80 45300-100",
-      "website": "https://india.diplo.de/in-de/vertretungen/generalkonsulat1"
+      "address": "6/50-G Shanti Path, 110021 Chanakyapuri, New Delhi",
+      "phone": "Phone not available",
+      "website": "https://india.diplo.de"
     },
-    "IL": {
+    "GR": {
       "name": "Embassy",
-      "address": "3 Doctor Avul Pakir Jainulabdeen Abdul Kalam Marg, 110011",
-      "phone": "+91 11 3041 4500",
-      "website": "https://embassies.gov.il/delhi/Pages/default.aspx"
+      "address": "Jesus and Mary Marg, 110021 Delhi",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/missionsabroad/india.html"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "2/50-M Niti Marg, 110021 New Delhi",
+      "phone": "Phone not available",
+      "website": "https://newdelhi.mfa.gov.hu"
+    },
+    "IE": {
+      "name": "Embassy",
+      "address": "Rajdoot marg, 110021 Delhi",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/india"
     },
     "IT": {
       "name": "Embassy",
-      "address": "50 Chandragupta Marg, 110021 New Delhi",
-      "phone": "+91-1126114355",
-      "website": "https://ambnewdelhi.esteri.it/ambasciata_newdelhi/en/"
+      "address": "Nyaya Marg, 110021 Delhi",
+      "phone": "+91-11-2611-4355",
+      "website": "https://ambnewdelhi.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Niti Marg, 110021 Delhi",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.in.emb-japan.go.jp/"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "33B Dr. S. Radhakrishnan Marg, 110021 New Delhi",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://indien.um.dk"
     },
     "NL": {
       "name": "Embassy",
       "address": "6/50 F Shantipath, 110021 New Delhi",
-      "phone": "+911124197600",
-      "website": "https://www.nederlandwereldwijd.nl/landen/india/over-ons/ambassade-in-new-delhi"
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+91 (11) 2411-7180",
-      "website": "https://embamex.sre.gob.mx/india"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "Benito Juarez Marg, 110057 Delhi",
       "phone": "Phone not available",
-      "website": "https://in.diplomatie.ma/"
+      "website": "https://embamex.sre.gob.mx/india"
     },
     "NZ": {
       "name": "Embassy",
-      "address": "Sir Edmund Hillary Marg, 110021 New Delhi",
-      "phone": "+91 11 46883170",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/south-asia/india/new-zealand-high-commission/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "EP-4 Chandragupta Marg, 110021",
-      "phone": "+91 11 2412 2143",
-      "website": "https://www.nigerianhcdelhi.in"
+      "address": "Nyaya Marg, 110021 Delhi",
+      "phone": "+91-11-4688-3170",
+      "website": "https://www.mfat.govt.nz/countries-and-regions/asia/india/new-zealand-high-commission/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Kautilya Marg, 110004 Delhi",
       "phone": "Phone not available",
       "website": "https://www.norway.no/en/india/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "33 Santhome High Road, 600004",
-      "phone": "+91 44 2498 2320",
-      "website": "http://www.chennai.mid.ru"
-    },
-    "SA": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "Nyaya Marg, 110021 Delhi",
       "phone": "Phone not available",
-      "website": "https://embassies.mofa.gov.sa/sites/India"
+      "website": "http://in.china-embassy.gov.cn"
     },
-    "SG": {
+    "PL": {
       "name": "Embassy",
-      "address": "E-6 Chandragupta Marg, 110021",
-      "phone": "+91 11 4600 0800",
-      "website": "https://www.mfa.gov.sg/New-Delhi"
+      "address": "50-M Shanti Path, 110021 New Delhi",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/indie"
     },
-    "ZA": {
+    "PT": {
       "name": "Embassy",
-      "address": "Vasant Marg",
-      "phone": "+91 11 2 614 9411",
-      "website": null
+      "address": "Panchsheel Marg, 110021 Delhi",
+      "phone": "Phone not available",
+      "website": "https://novadeli.embaixadaportugal.mne.gov.pt"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "9 Chandragupta Marg, 110021 Delhi",
       "phone": "Phone not available",
-      "website": "https://overseas.mofa.go.kr/in-chennai-ko/index.do"
+      "website": "https://overseas.mofa.go.kr/in-ko/index.do"
     },
     "ES": {
       "name": "Embassy",
-      "address": "12 Prithviraj Road, 110011 New Delhi",
+      "address": "12 Prithviraj Road, 110011 Delhi",
       "phone": "Phone not available",
       "website": "http://www.exteriores.gob.es/Embajadas/NUEVADELHI"
     },
     "SE": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "4-5 Nyaya Marg, 110021 New Delhi",
       "phone": "Phone not available",
-      "website": "https://www.sveriges-konsulat.com/se/11232/Sverige-i-Kolkata"
+      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/indien-new-delhi/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+91 11 4995 9500",
+      "address": "André Malraux Marg, 110021 Delhi",
+      "phone": "Phone not available",
       "website": "https://www.eda.admin.ch/newdelhi"
     },
     "TH": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "50 N Nyaya Marg, 110021 Delhi",
       "phone": "Phone not available",
-      "website": "http://www.thaiembassy.org/chennai/en/"
+      "website": "https://newdelhi.thaiembassy.org"
     },
     "TR": {
       "name": "Embassy",
       "address": "50 Nyaya Marg, 110021 New Delhi",
-      "phone": "+91 11 2688 9053;+91 11 2688 9054;+91 11 2410 1921",
-      "website": "https://yenidelhi-be.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "695009 Thiruvananthapuram",
-      "phone": "+91-471-3388888",
-      "website": "https://sp.mofaic.gov.ae/EN/consulates/Kerala/Pages/home.aspx"
+      "phone": "+91-11-2688-9053",
+      "website": "http://newdelhi.emb.mfa.gov.tr/Mission/"
     },
     "GB": {
-      "name": "Consulate",
-      "address": "Ramdev Nagar, 380015 Ahmedabad",
-      "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-deputy-high-commission-ahmedabad"
+      "name": "Embassy",
+      "address": "Shanti Path, 110021 Delhi",
+      "phone": "Phone not available"
     },
     "US": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Shanti Path, 110021 Delhi",
       "phone": "Phone not available",
-      "website": "https://in.usembassy.gov/embassy-consulates/chennai/"
+      "website": "https://in.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "Dharma Marg, 110021 Delhi",
+      "phone": "Phone not available",
+      "website": "http://vietnamembassydelhi.in/"
     }
   },
-  "IL": {
+  "IE": {
     "AR": {
       "name": "Embassy",
-      "address": "85 מדינת היהודים, הרצליה",
-      "phone": "+972 073-252-0800",
-      "website": "https://eisra.cancilleria.gob.ar"
+      "address": "15 Ailesbury Drive, Dublin",
+      "phone": "Phone not available"
     },
     "AU": {
       "name": "Embassy",
-      "address": "23 יהודה הלוי, Tel Aviv",
-      "phone": "+972 3 6935000",
-      "website": "https://israel.embassy.gov.au/"
+      "address": "47-49 St. Stephen's Green, D02 DR67 Dublin",
+      "phone": "Phone not available",
+      "website": "https://ireland.embassy.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "6 Ailesbury Road, Dublin",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-dublin/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "1 Elgin Road, 4 Dublin",
+      "phone": "+353 1 660 08 80",
+      "website": "http://ireland.diplomatie.belgium.be"
     },
     "BR": {
       "name": "Embassy",
-      "address": "23 יהודה הלוי, Tel Aviv",
-      "phone": "+972 3 797-1500",
-      "website": "http://telaviv.itamaraty.gov.br/"
+      "address": "Harcourt Centre, D02 NP22 Dublin",
+      "phone": "Phone not available",
+      "website": "http://dublin.itamaraty.gov.br"
     },
     "CA": {
       "name": "Embassy",
-      "address": "3 נירים, Tel Aviv",
-      "phone": "036363300",
-      "website": "https://www.canadainternational.gc.ca/israel/index.aspx"
+      "address": "7-8 Wilton Terrace, Dublin",
+      "phone": "Phone not available",
+      "website": "https://www.international.gc.ca/country-pays/ireland-irlande/index.aspx"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "68 עפרוני, Eilat",
-      "phone": "08-6376882",
-      "website": "http://www.embassypages.com/missions/embassy8636/"
+      "address": "D08 EE6R, Dublin 8",
+      "phone": "Phone not available",
+      "website": "http://ie.mvep.hr/"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "57 Northumberland Road, D04 PF51 Dublin",
+      "phone": "Phone not available"
     },
     "FR": {
       "name": "Embassy",
-      "address": "112 הרברט סמואל",
-      "phone": "+97235208300",
-      "website": "https://il.ambafrance.org/"
+      "address": "63 Fitzwilliam Lane, D02 X658 Dublin",
+      "phone": "Phone not available",
+      "website": "http://www.ambafrance-ie.org/"
     },
     "DE": {
       "name": "Embassy",
-      "address": "3 דניאל פריש, 64731 Tel Aviv",
-      "phone": "+972 3 6931313",
-      "website": "https://tel-aviv.diplo.de/"
+      "address": "31 Trimleston Avenue, Dublin",
+      "phone": "Phone not available",
+      "website": "https://dublin.diplo.de/"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "1 Pembroke Street Upper, Dublin",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/missionsabroad/ireland.html"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "2 Fitzwilliam Place, Dublin",
+      "phone": "+353 661 2903",
+      "website": "https://dublin.mfa.gov.hu"
     },
     "IN": {
       "name": "Embassy",
-      "address": "140 HaYarkon, Tel Aviv",
-      "phone": "035291999",
-      "website": "http://www.indembassy.co.il"
+      "address": "69 Merrion Road, Dublin",
+      "phone": "Phone not available",
+      "website": "https://www.indianembassydublin.gov.in/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "25 המרד, 68125 Tel Aviv-Yafo",
-      "phone": "+97235104004",
-      "website": "www.ambtelaviv.esteri.it"
+      "address": "63-65 Northumberland Road, D04 PF51 Dublin",
+      "phone": "Phone not available",
+      "website": "https://ambdublino.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "4 ברקוביץ, Tel Aviv",
-      "phone": "036957292",
-      "website": "https://www.israel.emb-japan.go.jp"
+      "address": "Nutley Lane, Dublin",
+      "phone": "Phone not available",
+      "website": "https://www.ie.emb-japan.go.jp"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "15 אבא הלל סילבר",
-      "phone": "+972 3 5754633",
-      "website": "https://kenyaembassyisrael.com"
+      "address": "Harcourt Road, D02 FW64 Dublin",
+      "phone": "Phone not available",
+      "website": "https://irland.um.dk/"
     },
     "NL": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "160 Merrion Road, Dublin",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.nederlandwereldwijd.nl/landen/ierland/over-ons/ambassade-in-dublin"
     },
     "MX": {
       "name": "Embassy",
-      "address": "25 המרד, 68125 Tel Aviv-Yafo",
-      "phone": "+972 03-516-3938",
-      "website": "https://embamex.sre.gob.mx/israel"
+      "address": "19 Raglan Road, D04 TX89 Dublin",
+      "phone": "Phone not available",
+      "website": "https://embamex.sre.gob.mx/irlanda/"
     },
-    "NG": {
+    "NZ": {
       "name": "Embassy",
-      "address": "34 י. ל. גורדון, Tel Aviv",
-      "phone": "+972 3-5222144",
-      "website": "https://www.nigerianembassy.co.il/"
+      "address": "2-4 Merrion Row, D02 V962 Dublin",
+      "phone": "+353-1-567-7680",
+      "website": "https://www.mfat.govt.nz/en/countries-and-regions/europe/ireland/new-zealand-embassy/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "48-53 Mount Street Lower, D02 HD59 Dublin",
       "phone": "Phone not available",
-      "website": "https://www.norway.no/en/israel/"
+      "website": "https://www.norway.no/en/ireland/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "120 הירקון, תל אביב-יפו",
-      "phone": "+972 3 522 67 36;+972 3 522 67 44",
-      "website": "https://israel.mid.ru"
+      "address": "40 Ailesbury Road, Dublin",
+      "phone": "Phone not available",
+      "website": "http://ie.chineseembassy.org"
     },
-    "ZA": {
+    "PL": {
       "name": "Embassy",
-      "address": "12 אבא הלל סילבר",
-      "phone": "+972 (3) 525 2566",
-      "website": "http://www.safis.co.il"
+      "address": "5 Ailesbury Road, Dublin",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/irlandia"
+    },
+    "PT": {
+      "name": "Embassy",
+      "address": "71a Leeson Street Upper, D04 XK68 Dublin",
+      "phone": "Phone not available",
+      "website": "https://dublin.embaixadaportugal.mne.gov.pt"
     },
     "KR": {
       "name": "Embassy",
-      "address": "6 הסדנאות",
-      "phone": "+972-9-959-6800",
-      "website": "https://overseas.mofa.go.kr/il-he/index.do"
+      "address": "73 Merrion Square South, Dublin",
+      "phone": "Phone not available"
     },
     "ES": {
       "name": "Embassy",
-      "address": "3 דניאל פריש, 64731 תל אביב-יפו",
-      "phone": "+97237697900",
-      "website": "http://www.exteriores.gob.es/Embajadas/TELAVIV"
-    },
-    "SE": {
-      "name": "Embassy",
-      "address": "2 Ha-Shlosha St, Tel Aviv",
-      "phone": "+972 3 718 0000",
-      "website": "https://swedenabroad.com/sv/utlandsmyndigheter/israel-tel-aviv"
+      "address": "Ailesbury Road, Dublin",
+      "phone": "Phone not available",
+      "website": "http://www.exteriores.gob.es/Embajadas/DUBLIN"
     },
     "CH": {
       "name": "Embassy",
-      "address": "228 הירקון, Tel Aviv",
-      "phone": "+972 3 546 44 55",
-      "website": "https://www.eda.admin.ch/telaviv"
-    },
-    "TH": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://telaviv.thaiembassy.org/"
+      "address": "6 Ailesbury Road, Dublin",
+      "phone": "Phone not available"
     },
     "TR": {
       "name": "Embassy",
-      "address": "202 הירקון, 63405 Tel Aviv",
-      "phone": "+972 3-741-6900",
-      "website": "https://telaviv-be.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "2 אחוזת בית, 6525216 תל אביב-יפו",
+      "address": "8 Raglan Road, D04 TX89 Dublin",
       "phone": "Phone not available",
-      "website": "https://www.mofaic.gov.ae/en/missions/tel-aviv"
+      "website": "http://dublin.be.mfa.gov.tr"
     },
     "GB": {
       "name": "Embassy",
-      "address": "192 הירקון, 6340502 Tel Aviv",
+      "address": "29 Merrion Road, D04P272 Dublin",
       "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-embassy-tel-aviv"
+      "website": "https://www.gov.uk/government/world/organisations/british-embassy-dublin/"
+    },
+    "US": {
+      "name": "Embassy",
+      "address": "42 Elgin Road, Dublin",
+      "phone": "Phone not available",
+      "website": "https://ie.usembassy.gov/"
     }
   },
   "IT": {
     "AR": {
       "name": "Embassy",
-      "address": "00193 Roma",
-      "phone": "+39 06 686 5303",
-      "website": "https://essed.cancilleria.gob.ar/es"
+      "address": "2 Piazza dell'Esquilino, 00185 Roma",
+      "phone": "Phone not available",
+      "website": "https://eital.cancilleria.gob.ar"
     },
     "AU": {
       "name": "Embassy",
-      "address": "5 Via Antonio Bosio, Roma",
-      "phone": "+39 06 852721",
-      "website": "https://www.italy.embassy.gov.au/rome/home.html"
+      "address": "349 Corso Vittorio Emanuele II, 00186 Roma",
+      "phone": "Phone not available",
+      "website": "https://holysee.embassy.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "3 Via Giovanni Battista Pergolesi, 00198 Roma",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-rom/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "4 Via Giuseppe De Notaris, 00197 Roma",
+      "phone": "+39 06-322-47-57",
+      "website": "https://vaticancity.diplomatie.belgium.be"
     },
     "BR": {
       "name": "Embassy",
-      "address": "22 Via della Conciliazione, 00193 Roma",
-      "phone": "+39 06 687 5252",
-      "website": "http://vaticano.itamaraty.gov.br/"
+      "address": "Piazza di Pasquino, 00186 Roma",
+      "phone": "Phone not available",
+      "website": "http://roma.itamaraty.gov.br"
     },
     "CA": {
       "name": "Embassy",
-      "address": "4 Via della Conciliazione, 00193 Roma",
+      "address": "243 Via Salaria, 00199 Roma",
       "phone": "Phone not available",
-      "website": "https://www.canadainternational.gc.ca/holy_see-saint_siege/index.aspx"
+      "website": "https://www.canadainternational.gc.ca/italy-italie"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "9 Piazza della Città Leonina, 00193 Roma",
+      "address": "74/76 Via Luigi Bodio, 00191 Roma",
       "phone": "Phone not available",
-      "website": "https://www.mfa.gov.eg/VaticanState_Emb"
+      "website": "http://www.mvep.hr/it/"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "322 Via dei Gracchi, 00192 Roma",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/rome/"
     },
     "FR": {
       "name": "Embassy",
-      "address": "67 Piazza Farnese, 00186 Roma",
-      "phone": "+39 06 68 60 11",
-      "website": "https://it.ambafrance.org/"
+      "address": "266 Via Roma, 10121 Torino",
+      "phone": "Phone not available",
+      "website": "http://www.ambafrance-it.org/spip.php?rubrique353"
     },
     "DE": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "4 Via San Martino della Battaglia, 00185 Roma",
       "phone": "Phone not available",
-      "website": null
+      "website": "http://www.italien.diplo.de/"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "4 Via Giacomo Carissimi, 00197 Roma",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/italy"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "12/16 Via dei Villini, 00161 Roma",
+      "phone": "Phone not available",
+      "website": "https://roma.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "address": "5 Via Venti Settembre, 00187 Roma",
+      "phone": "Phone not available"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "12 Via Michele Mercati, 00197 Roma",
-      "phone": "+39 06 3619 8690",
-      "website": null
+      "address": "1 Via Giacomo Medici, 00153 Roma",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/italy/"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "60 Via Quintino Sella, 00187 Roma",
       "phone": "Phone not available",
-      "website": "http://www.va.emb-japan.go.jp"
+      "website": "https://www.it.emb-japan.go.jp"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "205 Viale Luca Gaurico, 00143 Roma",
+      "address": "3 Piazza Rio De Janeiro, 00161 Roma",
       "phone": "Phone not available",
-      "website": "http://www.embassyofkenya.it/"
+      "website": "https://italien.um.dk"
     },
     "NL": {
       "name": "Embassy",
-      "address": "6 Via Michele Mercati, 00197 Roma",
-      "phone": "+390632286206",
-      "website": "https://www.netherlandsworldwide.nl/countries/vatican-city/about-us/netherlands-embassy-to-the-holy-see"
+      "address": "8 Via Michele Mercati, 00197 Roma",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "16 Via Lazzaro Spallanzani",
+      "address": "Via degli Scipioni, 00192 Roma",
       "phone": "Phone not available",
-      "website": "https://embamex.sre.gob.mx/italia/"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "website": "https://embamex.sre.gob.mx/vaticano/"
     },
     "NZ": {
       "name": "Embassy",
       "address": "44 Via Clitunno, 00198 Roma",
-      "phone": "+39 06 8537501",
+      "phone": "+39-06-853-7501",
       "website": "https://www.mfat.govt.nz/en/countries-and-regions/europe/italy/new-zealand-embassy/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "14/18 Via Orazio, 00193 Roma",
-      "phone": "Phone not available",
-      "website": "https://nigerianrome.org/"
     },
     "NO": {
       "name": "Embassy",
@@ -5794,35 +6611,34 @@ export const EMBASSIES: Record<string, Record<string, EmbassyInfo>> = {
       "phone": "Phone not available",
       "website": "https://www.norway.no/it/italy/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "5 Via Gaeta, 00185 Roma",
-      "phone": "+39 06 4941680",
-      "website": "http://www.roma.mid.ru"
-    },
-    "SA": {
-      "name": "Embassy",
-      "address": "9 Via Giovanni Battista Pergolesi, 00198 Roma",
-      "phone": "+39 06 844851",
-      "website": "http://www.arabia-saudita.it/"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "14 Via Tanaro, 00198 Roma",
+      "address": "56 Via Bruxelles, 00198 Roma",
       "phone": "Phone not available",
-      "website": "http://lnx.sudafrica.it"
+      "website": "http://it.china-embassy.org"
+    },
+    "PL": {
+      "name": "Embassy",
+      "address": "Via dei Delfini, 00186 Roma",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/watykan"
+    },
+    "PT": {
+      "name": "Embassy",
+      "address": "5 Via Guido D'Arezzo, 00198 Roma",
+      "phone": "Phone not available",
+      "website": "https://roma.embaixadaportugal.mne.gov.pt"
     },
     "KR": {
       "name": "Embassy",
-      "address": "30 Via Barnaba Oriani, 00197 Roma",
+      "address": "Via Misurina, 00135 Roma",
       "phone": "Phone not available",
-      "website": "http://overseas.mofa.go.kr/it-ko/index.do"
+      "website": "http://overseas.mofa.go.kr/va-it/index.do"
     },
     "ES": {
       "name": "Embassy",
-      "address": "19 Largo della Fontanella di Borghese, 00186 Roma",
-      "phone": "+39 066840401",
-      "website": "http://www.exteriores.gob.es/Embajadas/Roma/es/Paginas/inicio.aspx"
+      "address": "34 Via di Campo Marzio, 00186 Roma",
+      "phone": "Phone not available"
     },
     "SE": {
       "name": "Embassy",
@@ -5832,386 +6648,438 @@ export const EMBASSIES: Record<string, Record<string, EmbassyInfo>> = {
     },
     "CH": {
       "name": "Embassy",
-      "address": "61 Via Barnaba Oriani, 00197 Roma",
-      "phone": "+39 06 809 571",
-      "website": "https://www.eda.admin.ch/roma"
+      "address": "95 Via Crescenzio, 00192 Roma",
+      "phone": "Phone not available"
     },
     "TH": {
       "name": "Embassy",
       "address": "132 Via Nomentana, 00162 Roma",
-      "phone": "+39 06 8622 051",
+      "phone": "Phone not available",
       "website": "http://www.thaiembassy.it"
     },
     "TR": {
       "name": "Embassy",
-      "address": "9-11 Via Serchio, 00198 Roma",
-      "phone": "+39 06 8550 8601;+39 06 8550 8602;+39 06 8550 8603",
-      "website": "https://vatikan-be.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Consulate",
-      "address": "4 Via Cappuccini, 20122 Milano",
-      "phone": "+39-02-763694",
-      "website": "https://www.mofaic.gov.ae/en/missions/uae-missions-abroad/uae-missions-abroad-details?countryId=2688e0f0-5db3-4b65-b2a4-932c251086d3"
+      "address": "28 Via Palestro, 00185 Roma",
+      "phone": "Phone not available",
+      "website": "http://roma.be.mfa.gov.tr"
     },
     "GB": {
-      "name": "Consulate",
-      "address": "7 Via San Paolo, 20121 Milano",
+      "name": "Embassy",
+      "address": "80/a Via XX Settembre, 00187 Roma",
       "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-consulate-general-milan"
+      "website": "https://www.gov.uk/world/organisations/british-embassy-holy-see"
     },
     "US": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://it.usembassy.gov/embassy-consulates/florence/"
+      "address": "49 Via Sallustiana, 00187 Roma",
+      "phone": "+39-06-4674-1",
+      "website": "https://va.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "156-158 Via di Bravetta, 00164 Roma",
+      "phone": "Phone not available"
     }
   },
   "JP": {
     "AR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://ejapo.cancilleria.gob.ar/"
+      "address": "一本松坂, 106-0046 東京都",
+      "phone": "Phone not available"
     },
     "AU": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "西7丁目通, 060-0806 札幌市",
+      "phone": "Phone not available"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "暗闇坂, 106-0046 東京都",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.bmeia.gv.at/en/austrian-embassy-tokyo"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "4 5, 102-0084 千代田区",
+      "phone": "+81-3-3262-0191",
+      "website": "https://diplomatie.belgium.be/en/japan"
     },
     "BR": {
       "name": "Embassy",
-      "address": "430-0946 浜松市",
-      "phone": "+81 053-450-8191",
-      "website": "http://hamamatsu.itamaraty.gov.br/"
+      "address": "環状六号線, 141-0022 東京都",
+      "phone": "+81-3-5488-5451",
+      "website": "https://www.gov.br/mre/consulado-toquio/nihongo/"
     },
     "CA": {
       "name": "Embassy",
-      "address": "107-8503 港区",
-      "phone": "+81 3-5412-6200",
-      "website": "https://www.japan.gc.ca/"
+      "address": "559-8550, 大阪市",
+      "phone": "Phone not available"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "青山渋谷橋線, 150-0011 東京都",
       "phone": "Phone not available",
-      "website": "https://egyptembassy.jp/"
+      "website": "http://jp.mvep.hr/"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "14 16, 150-0012 渋谷区",
+      "phone": "Phone not available"
     },
     "FR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "東大路通, 606-8301 京都市",
       "phone": "Phone not available",
-      "website": "http://www.ambafrance-jp.org/"
+      "website": "https://jp.ambafrance.org/Consulat-general-de-France-a-Kyoto-13380"
     },
     "DE": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "ワンダースクエア, 大阪市",
       "phone": "Phone not available",
-      "website": "https://japan.diplo.de/ja-ja"
+      "website": "https://japan.diplo.de/ja-ja/vertretungen/gk"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "大横丁坂, 106-0031 東京都",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/missionsabroad/japan.html"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "綱坂, 108-0073 東京都",
+      "phone": "+81-3-5730-7120",
+      "website": "https://tokio.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "中央大通, 541-0056 大阪市",
       "phone": "Phone not available",
-      "website": "https://www.indembassy-tokyo.gov.in/"
+      "website": "https://www.indconosaka.gov.in/"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+81-3-3264-0911",
-      "website": "https://embassies.gov.il/tokyo"
+      "address": "麹町学園通り, 102-0083 東京都",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/japan/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+81 (0)334535291",
-      "website": "https://ambtokyo.esteri.it/it/"
+      "address": "18 3, 530-0005 大阪市",
+      "phone": "Phone not available",
+      "website": "https://consosaka.esteri.it/consolato_osaka/"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "152-0023 目黒区",
-      "phone": "03-3723-4006/7",
-      "website": "https://www.kenyarep-jp.com/"
+      "address": "旧山手通り, 150-0033 東京都",
+      "phone": "Phone not available",
+      "website": "https://japan.um.dk/"
     },
     "NL": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.orandatowatashi.nl/"
+      "address": "土佐堀通, 541-0041 大阪市",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+81 3 358111315",
-      "website": "https://www.gob.mx/sre"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+81 3 54 85 71 71",
-      "website": "https://www.morocco-emba.jp/"
+      "address": "貝坂通り, 100-0014 東京都",
+      "phone": "Phone not available"
     },
     "NZ": {
       "name": "Embassy",
-      "address": "150-0047 渋谷区",
-      "phone": "+81 3 34672271",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/north-asia/japan/new-zealand-embassy/contactfull"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "http://www.nigeriaembassy.jp/"
+      "address": "ニュージーランド大使館, 150-0047 渋谷区",
+      "phone": "+81-3-3467-2271",
+      "website": "https://www.mfat.govt.nz/jp/countries-and-regions/asia/japan/new-zealand-embassy/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "30 4, 105-0011 港区",
       "phone": "+81-3-5422-1200",
       "website": "https://www.norway.no/ja/japan/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "address": "1 5, 064-0913 札幌市",
+      "phone": "Phone not available"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "新茶屋坂, 153-0062 東京都",
       "phone": "Phone not available",
-      "website": "https://embassies.mofa.gov.sa/sites/japan"
+      "website": "https://www.gov.pl/web/japonia"
     },
-    "SG": {
+    "PT": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.mfa.gov.sg/Tokyo"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.sajapan.org/"
+      "address": "6 6, 106-0046 港区",
+      "phone": "Phone not available"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "霧笛橋, 231-0017 横浜市",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://overseas.mofa.go.kr/jp-yokohama-ko/index.do"
     },
     "ES": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "六本木一丁目, 106-0032 東京都",
       "phone": "Phone not available",
       "website": "http://www.exteriores.gob.es/embajadas/dhaka/es/Paginas/inicio.aspx"
     },
     "SE": {
       "name": "Embassy",
-      "address": "106-0032 港区",
+      "address": "3 10, 106-0032 港区",
       "phone": "Phone not available",
       "website": "http://www.swedenabroad.com/Tokyo/"
     },
     "CH": {
-      "name": "Consulate",
-      "address": "Address not available",
+      "name": "Embassy",
+      "address": "木下坂, 106-8575 東京都",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.eda.admin.ch/tokyo"
     },
     "TH": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://fukuoka.thaiembassy.org/th/index"
+      "address": "北品川四谷線, 141-0021 東京都",
+      "phone": "+81-3-5789-2449",
+      "website": "http://site.thaiembassy.jp/th/"
     },
     "TR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "6 33, 150-0001 渋谷区",
       "phone": "Phone not available",
-      "website": null
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "150-0036 渋谷区",
-      "phone": "+81 3 54890804",
-      "website": "https://sp.mofaic.gov.ae/EN/DiplomaticMissions/Embassies/Tokyo/Ambassador/Pages/Ambassador.aspx"
+      "website": "http://tokyo.be.mfa.gov.tr"
     },
     "GB": {
-      "name": "Consulate",
-      "address": "函館市",
-      "phone": "+81 138 27 8159",
-      "website": "http://kakodate-kankou.com/british/"
+      "name": "Embassy",
+      "address": "内堀通り, 102-0083 東京都",
+      "phone": "Phone not available",
+      "website": "https://www.gov.uk/government/world/organisations/british-embassy-tokyo/office/british-embassy-tokyo"
     },
     "US": {
       "name": "Embassy",
-      "address": "107-8420 港区",
-      "phone": "+81-3-32245000",
-      "website": "https://jp.usembassy.gov/"
+      "address": "舞鶴橋, 810-0051 福岡市",
+      "phone": "Phone not available",
+      "website": "https://jp.usembassy.gov/ja/contact-us-ja/#fukuoka"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "11 50, 151-0062 渋谷区",
+      "phone": "Phone not available",
+      "website": "http://www.vnembassy-jp.org/"
     }
   },
-  "KE": {
+  "DK": {
     "AR": {
       "name": "Embassy",
-      "address": "United Nations Crescent",
-      "phone": "+254 (0) 202 324 673",
-      "website": "https://ekeny.cancilleria.gob.ar"
+      "address": "Borgergade, 1301 København",
+      "phone": "Phone not available",
+      "website": "https://edina.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
-      "address": "Limuru Road, Nairobi",
+      "address": "26 Dampfærgevej, 2100 København Ø",
       "phone": "Phone not available",
-      "website": "https://kenya.embassy.gov.au/"
+      "website": "http://denmark.embassy.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "1 Sølundsvej, 2100 København Ø",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-kopenhagen/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "7 Øster Allé, 2100 København Ø",
+      "phone": "+45 35 250 200",
+      "website": "https://denmark.diplomatie.belgium.be"
     },
     "BR": {
       "name": "Embassy",
-      "address": "123 Gardenia Road, 00100 Nairobi",
-      "phone": "+254 (20) 727-0000",
-      "website": "https://www.gov.br/mre/pt-br/embaixada-nairobi/endereco"
+      "address": "Jens Kofods Gade, 1268 København",
+      "phone": "Phone not available",
+      "website": "http://copenhague.itamaraty.gov.br"
     },
     "CA": {
       "name": "Embassy",
-      "address": "Limuru Road",
-      "phone": "+254-20 366 3000",
-      "website": "https://www.canadainternational.gc.ca/kenya"
+      "address": "Kristen Bernikows Gade, 1105 København",
+      "phone": "Phone not available",
+      "website": "https://www.international.gc.ca/country-pays/denmark-danemark"
+    },
+    "HR": {
+      "name": "Embassy",
+      "address": "Vendersgade, 1371 København",
+      "phone": "Phone not available",
+      "website": "http://dk.mvep.hr"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "Ryvangs Allé, 2100 København",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/copenhagen"
     },
     "FR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "4 Kongens Nytorv, 1050 København K",
       "phone": "Phone not available",
-      "website": "https://ke.ambafrance.org/"
+      "website": "http://www.ambafrance-dk.org/"
     },
     "DE": {
       "name": "Embassy",
-      "address": "113 Riverside Drive, 00100 Nairobi",
-      "phone": "+254 20 4262100",
-      "website": "https://nairobi.diplo.de/"
+      "address": "1 Göteborg Plads, 2150 Nordhavn",
+      "phone": "Phone not available"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "Hammerensgade, 1267 København",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/copenhagen"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "Strandvejen, 2900 Gentofte Kommune",
+      "phone": "+45-39-63-16-88",
+      "website": "https://koppenhaga.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Vangehusvej, 2100 København",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.indianembassycopenhagen.gov.in/"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "Bishop Road, Nairobi",
+      "address": "Fridtjof Nansens Plads, 1328 København",
       "phone": "Phone not available",
-      "website": "https://embassies.gov.il/nairobi"
+      "website": "https://www.dfa.ie/irish-embassy/denmark/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "United Nations Crescent, 00619 Nairobi",
+      "address": "7 Gammel Vartov Vej, 2900 Hellerup",
       "phone": "Phone not available",
-      "website": "https://ambnairobi.esteri.it/"
+      "website": "https://ambcopenaghen.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "25 Havneholmen, 1561 København V",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.dk.emb-japan.go.jp"
     },
     "NL": {
       "name": "Embassy",
-      "address": "95 Riverside Drive, Nairobi",
-      "phone": "Phone not available",
-      "website": null
+      "address": "33 Toldbodgade, 1253 København K",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "60 Kibagare Way, NAIROBI",
-      "phone": "+254 728 389 813",
-      "website": "https://embamex.sre.gob.mx/kenia"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "Bredgade, 1265 København",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://embamex.sre.gob.mx/dinamarca/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "58 Red Hill Road, Nairobi",
+      "address": "3 Issortarfimmut, 3900 Nuuk",
+      "phone": "Phone not available"
+    },
+    "CN": {
+      "name": "Embassy",
+      "address": "Øregårds Alle, 2900 Gentofte Kommune",
+      "phone": "+45-39460889",
+      "website": "http://dk.china-embassy.gov.cn/"
+    },
+    "PL": {
+      "name": "Embassy",
+      "address": "12 Richelieus Alle, 2900 Hellerup",
       "phone": "Phone not available",
-      "website": "https://www.norway.no/en/kenya/"
+      "website": "https://www.gov.pl/web/dania"
     },
-    "RU": {
+    "PT": {
       "name": "Embassy",
-      "address": "Lenana Road, Nairobi",
-      "phone": "+254 20 272-87-00",
-      "website": "https://russembkenya.mid.ru"
+      "address": "Toldbodgade, 1253 København",
+      "phone": "Phone not available",
+      "website": "https://copenhaga.embaixadaportugal.mne.gov.pt"
     },
-    "SA": {
+    "KR": {
       "name": "Embassy",
-      "address": "Muthaiga Road",
-      "phone": "+254204062781",
-      "website": "https://embassies.mofa.gov.sa/sites/Kenya"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "Lenana Road, Nairobi",
-      "phone": "+254 709 127 000",
-      "website": null
+      "address": "104 Svanemøllevej, 2900 Hellerup",
+      "phone": "Phone not available",
+      "website": "http://dnk.mofat.go.kr/"
     },
     "ES": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+254 20 272 02 22",
-      "website": "http://www.exteriores.gob.es/Embajadas/NAIROBI"
+      "address": "21 Kristianiagade, 2100 København Ø",
+      "phone": "Phone not available",
+      "website": "http://www.exteriores.gob.es/Embajadas/COPENHAGUE"
     },
     "SE": {
       "name": "Embassy",
-      "address": "United Nations Crescent, Nairobi",
+      "address": "Amaliegade, 1250 København",
       "phone": "Phone not available",
-      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/kenya-nairobi/"
+      "website": "http://www.swedenabroad.com/Kopenhamn/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "14 Richelieus Alle, 2900 Hellerup",
       "phone": "Phone not available",
-      "website": "https://www.eda.admin.ch/nairobi"
+      "website": "https://www.eda.admin.ch/copenhagen"
+    },
+    "TH": {
+      "name": "Embassy",
+      "address": "18 Norgesmindevej, 2900 Hellerup",
+      "phone": "Phone not available",
+      "website": "http://thaiembassy.dk"
     },
     "TR": {
       "name": "Embassy",
-      "address": "30 Gigiri Road",
-      "phone": "+254 20 7126929;+254 20 7126930",
-      "website": "https://nairobi-be.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "Nyerere Road, Nairobi",
-      "phone": "+254-709991999",
-      "website": null
+      "address": "Vestagervej, 2100 København",
+      "phone": "Phone not available",
+      "website": "http://copenhagen.emb.mfa.gov.tr"
     },
     "GB": {
       "name": "Embassy",
-      "address": "Upper Hill Road, Nairobi",
+      "address": "Den Britiske Ambassade, 1327 København",
       "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-high-commission-nairobi"
+      "website": "https://www.gov.uk/world/organisations/british-embassy-copenhagen"
     },
     "US": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "24 Dag Hammarskjölds Allé, 2100 København Ø",
       "phone": "Phone not available",
-      "website": "https://ke.usembassy.gov/"
+      "website": "https://dk.usembassy.gov/kal/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "Bernstorffsvej, 2900 Gentofte Kommune",
+      "phone": "Phone not available"
     }
   },
   "MX": {
     "AR": {
       "name": "Embassy",
-      "address": "1685 Avenida Paseo de las Palmas",
-      "phone": "+52 (55) 5520 9430",
+      "address": "1685 Avenida Paseo de las Palmas, 11000 Miguel Hidalgo",
+      "phone": "Phone not available",
       "website": "https://emexi.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
-      "address": "55 Calle Rubén Darío",
-      "phone": "+52-55-11012200",
+      "address": "55 Calle Rubén Darío, 11560 Miguel Hidalgo",
+      "phone": "Phone not available",
       "website": "https://mexico.embassy.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "420 Calle Sierra Tarahumara Poniente, 11000 Ciudad de México",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-mexiko/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "41 Calle Alfredo de Musset, 11550 Ciudad de México",
+      "phone": "+52-55-52-80-07-58",
+      "website": "https://mexico.diplomatie.belgium.be"
     },
     "BR": {
       "name": "Embassy",
-      "address": "130 Calle Lope Díaz de Armendáriz",
-      "phone": "+52 (55) 5201-4531",
+      "address": "130 Calle Lope Díaz de Armendáriz, 11000 Miguel Hidalgo",
+      "phone": "Phone not available",
       "website": "http://mexico.itamaraty.gov.br"
     },
     "CA": {
@@ -6220,107 +7088,108 @@ export const EMBASSIES: Record<string, Record<string, EmbassyInfo>> = {
       "phone": "Phone not available",
       "website": "https://www.canadainternational.gc.ca/mexico-mexique/index.aspx"
     },
-    "EG": {
+    "CZ": {
       "name": "Embassy",
-      "address": "131 Calle Alejandro Dumas",
+      "address": "22 Cuvier, 11590 Ciudad de México",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.mzv.cz/mexico"
     },
     "FR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://mx.ambafrance.org/"
+      "address": "339 Campos Elíseos, 11560 Ciudad de México",
+      "phone": "Phone not available"
     },
     "DE": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "1506 Avenida Horacio, 11530 Ciudad de México",
       "phone": "Phone not available",
       "website": "https://mexiko.diplo.de"
     },
-    "IN": {
-      "name": "Consulate",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "IL": {
+    "GR": {
       "name": "Embassy",
-      "address": "215 Calle Sierra Madre",
+      "address": "615 Calle Monte Ararat, 11000 Miguel Hidalgo",
       "phone": "Phone not available",
-      "website": "https://embassies.gov.il/mexico-city"
+      "website": "https://www.mfa.gr/missionsabroad/mexico.html"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "310 Avenida Montes Auvernia, 11000 Ciudad de México",
+      "phone": "Phone not available",
+      "website": "https://mexikovaros.mfa.gov.hu/"
+    },
+    "IN": {
+      "name": "Embassy",
+      "address": "325 Calle Alfredo de Musset, 11540 Miguel Hidalgo",
+      "phone": "Phone not available"
+    },
+    "IE": {
+      "name": "Embassy",
+      "address": "76 Manuel Ávila Camacho, 11000 Ciudad de México",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/mexico"
     },
     "IT": {
       "name": "Embassy",
-      "address": "1994 Avenida Paseo de las Palmas",
+      "address": "1994 Avenida Paseo de las Palmas, 11000 Miguel Hidalgo",
       "phone": "Phone not available",
       "website": "https://ambcittadelmessico.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "243 Paseo de la Reforma, 06500 Ciudad de México",
       "phone": "Phone not available",
-      "website": null
+      "website": "http://www.mx.emb-japan.go.jp/itprtop_ja/"
+    },
+    "DK": {
+      "name": "Embassy",
+      "address": "43 Tres Picos, 11550 Ciudad de México",
+      "phone": "Phone not available",
+      "website": "https://mexico.um.dk"
     },
     "NL": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "address": "150 Calle Volcán, 11000 Ciudad de México",
+      "phone": "Phone not available"
     },
     "NZ": {
       "name": "Embassy",
       "address": "8 Calle Jaime Balmes, 11510 Ciudad de México",
-      "phone": "+52 55 52839460",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/latin-america/mexico/embajada-de-nueva-zelandia/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "145 Calle Sierra Gorda, 11000 Ciudad de México",
-      "phone": "+52 55 5245 1487",
-      "website": "https://www.nigerianembmexico.org"
+      "phone": "+52-55-5283-9460",
+      "website": "https://www.mfat.govt.nz/en/countries-and-regions/americas/mexico/new-zealand-embassy/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "1460 Boulevard de los Virreyes",
-      "phone": "+52 (55) 50 47 37 00",
-      "website": "https://www.norway.no/es/mexico"
+      "address": "1460 Boulevard de los Virreyes, 11000 Miguel Hidalgo",
+      "phone": "Phone not available",
+      "website": "https://www.norway.no/es/mexico/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "204 Avenida Maestro José Vasconcelos, 06170 Ciudad de México",
-      "phone": "+52 (55) 5516-0870",
-      "website": "https://mexico.mid.ru"
+      "address": "339 Calle Sócrates, 11530 Miguel Hidalgo",
+      "phone": "Phone not available"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "2075 Avenida Paseo de las Palmas",
-      "phone": "+525550203161",
-      "website": "https://embassies.mofa.gov.sa/sites/mexico"
+      "address": "Calle Cracovia, 01000 Álvaro Obregón",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/meksyk"
     },
-    "ZA": {
+    "PT": {
       "name": "Embassy",
-      "address": "10 Calle Andrés Bello",
-      "phone": "+55 1100 4970",
-      "website": "https://embajadasudafrica.mx/"
+      "address": "1370 Avenida de los Alpes, 11000 México",
+      "phone": "Phone not available",
+      "website": "https://mexico.embaixadaportugal.mne.gov.pt"
     },
     "KR": {
       "name": "Embassy",
-      "address": "110 Calle Lope Díaz de Armendáriz",
-      "phone": "+52-55-5202-9866",
-      "website": "https://overseas.mofa.go.kr/mx-es/index.do"
+      "address": "110 Calle Lope Díaz de Armendáriz, 11000 Miguel Hidalgo",
+      "phone": "Phone not available",
+      "website": "https://overseas.mofa.go.kr/mx-ko/index.do"
     },
     "ES": {
       "name": "Embassy",
       "address": "114 Calle Galileo, 11550 Ciudad de México",
-      "phone": "+52 55 52 82 29 82",
-      "website": "http://www.exteriores.gob.es/Embajadas/MEXICO"
+      "phone": "Phone not available"
     },
     "SE": {
       "name": "Embassy",
@@ -6331,1616 +7200,1231 @@ export const EMBASSIES: Record<string, Record<string, EmbassyInfo>> = {
     "CH": {
       "name": "Embassy",
       "address": "405 Paseo de las Palmas, 11000 Ciudad de México",
-      "phone": "+52 55 9178 4370",
+      "phone": "Phone not available",
       "website": "https://www.eda.admin.ch/mexico"
     },
     "TH": {
       "name": "Embassy",
-      "address": "1610 Avenida Paseo de las Palmas",
-      "phone": "Phone not available",
-      "website": null
+      "address": "1610 Avenida Paseo de las Palmas, 11000 Miguel Hidalgo",
+      "phone": "Phone not available"
     },
     "TR": {
       "name": "Embassy",
-      "address": "885 Calle Monte Líbano",
-      "phone": "+52 55 5282 5446;+52 55 5282 4277;+52 55 5282 5043",
-      "website": "https://meksika-be.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "505 Avenida Paseo de la Reforma, 11000 Mexico",
-      "phone": "+52-5555400100",
-      "website": "https://www.mofaic.gov.ae/missions/UAE-Missions-Abroad/UAE-Missions-Abroad-Details?countryId=9ee8168d-9426-437d-a17d-b002d766f41d"
+      "address": "885 Calle Monte Líbano, 11000 Miguel Hidalgo",
+      "phone": "Phone not available",
+      "website": "http://meksika.be.mfa.gov.tr"
     },
     "GB": {
-      "name": "Consulate",
-      "address": "Boulevard Kukulkan, 77500 Cancún",
+      "name": "Embassy",
+      "address": "342 Avenida Paseo de la Reforma, 06600 Ciudad de México",
       "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-consulate-general-cancun"
+      "website": "https://www.gov.uk/government/world/organisations/british-embassy-mexico-city/"
     },
     "US": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Calle Plaza de la Constitución, 06060 Ciudad de México",
       "phone": "Phone not available",
       "website": "https://mx.usembassy.gov/"
-    }
-  },
-  "MA": {
-    "AR": {
-      "name": "Embassy",
-      "address": "4 Avenue Mehdi Ben Barka شارع المهدي بن بركة",
-      "phone": "+212 537 75 51 20",
-      "website": "https://emarr.cancilleria.gob.ar/"
     },
-    "AU": {
+    "VN": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://morocco.embassy.gov.au/"
-    },
-    "BR": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "http://rabat.itamaraty.gov.br"
-    },
-    "CA": {
-      "name": "Embassy",
-      "address": "66 Avenue Mehdi Ben Barka شارع المهدي بن بركة",
-      "phone": "Phone not available",
-      "website": "https://www.canadainternational.gc.ca/morocco-maroc/index.aspx"
-    },
-    "EG": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "FR": {
-      "name": "Embassy",
-      "address": "1 Rue Ibn Hajar, 10000 Rabat",
-      "phone": "+212 5 37 68 97 00",
-      "website": "http://www.ambafrance-ma.org/"
-    },
-    "DE": {
-      "name": "Embassy",
-      "address": "7 Rue Zankat Madnine, 10000 Rabat",
-      "phone": "+212 537 218600",
-      "website": "https://rabat.diplo.de/"
-    },
-    "IN": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.indianembassyrabat.gov.in"
-    },
-    "IT": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://ambrabat.esteri.it"
-    },
-    "JP": {
-      "name": "Embassy",
-      "address": "39 Avenue Ahmed Balafrej شارع أحمد بلافريج",
-      "phone": "+212 5 37 63 17 82",
-      "website": "https://www.ma.emb-japan.go.jp"
-    },
-    "NL": {
-      "name": "Embassy",
-      "address": "40 Rue de Tunis زنقة تونس, Rabat الرباط",
-      "phone": "+212 537 219600",
-      "website": "https://www.nederlandwereldwijd.nl/landen/marokko"
-    },
-    "MX": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://embamex.sre.gob.mx/marruecos"
-    },
-    "NO": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.norway.no/morocco/"
-    },
-    "RU": {
-      "name": "Embassy",
-      "address": "4 km Avenue Mohammed VI شارع محمد السادس, Rabat ⵔⴱⴰⵟ الرباط",
-      "phone": "+212 5 37 75 35 45",
-      "website": "https://marocco.mid.ru"
-    },
-    "SA": {
-      "name": "Embassy",
-      "address": "Avenue Mohammed VI شارع محمد السادس, Rabat ⵔⴱⴰⵟ الرباط",
-      "phone": "+212 537633000",
-      "website": "https://embassies.mofa.gov.sa/sites/Morocco"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "34 Rue Saadiyine زنقة السعديين, الرباط",
-      "phone": "+212 537 68 9159",
-      "website": null
-    },
-    "ES": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "SE": {
-      "name": "Embassy",
-      "address": "159 Avenue Mohamed VI, Rabat",
-      "phone": "Phone not available",
-      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/marocko-rabat/"
-    },
-    "CH": {
-      "name": "Embassy",
-      "address": "12 Rue Ouazzane زنقة وزان, 10020 Rabat الرباط",
-      "phone": "+212 537 26 80 30",
-      "website": "https://www.eda.admin.ch/rabat"
-    },
-    "TR": {
-      "name": "Embassy",
-      "address": "7 Avenue Abdelkrim Benjelloun شارع عبد الكريم بن جلون, الرباط",
-      "phone": "+212 5 37 66 15 22",
-      "website": "https://rabat-be.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+212-5377-07070",
-      "website": "https://www.mofaic.gov.ae/en/missions/uae-missions-abroad/uae-missions-abroad-details?countryId=cbdf30bc-b20d-458f-8dde-8bcf6cc9bee4"
-    },
-    "GB": {
-      "name": "Embassy",
-      "address": "28 Avenue Amir Sidi Mohammed شارع الأمير سيدي محمد, 10105 الرباط",
-      "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-embassy-rabat"
-    },
-    "US": {
-      "name": "Embassy",
-      "address": "Km. 5.7 Avenue Mohammed VI شارع محمد السادس, 10170 Rabat",
-      "phone": "+212 5 37 63 72 00",
-      "website": "https://ma.usembassy.gov"
+      "address": "255 Calle Sierra Ventana, 11000 Ciudad de México",
+      "phone": "Phone not available"
     }
   },
   "NL": {
     "AR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "20 Javastraat, 2585AN 's-Gravenhage",
       "phone": "Phone not available",
       "website": "https://epbaj.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
-      "address": "4 Carnegielaan, 2517KH 's-Gravenhage",
-      "phone": "+31 70 310 8200",
-      "website": "https://www.netherlands.embassy.gov.au"
+      "address": "20 Carnegielaan, 2517KH 's-Gravenhage",
+      "phone": "Phone not available",
+      "website": "http://www.netherlands.embassy.gov.au"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "344 Van Alkemadelaan, 2597AS 's-Gravenhage",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-den-haag/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "11C Johan van Oldenbarneveltlaan, 2582NE 's-Gravenhage",
+      "phone": "+31-70-312-34-56",
+      "website": "https://netherlands.diplomatie.belgium.be/"
     },
     "BR": {
       "name": "Embassy",
       "address": "19 Mauritskade, 2514HD 's-Gravenhage",
-      "phone": "+31 70 302 3959",
-      "website": "https://haia.itamaraty.gov.br"
+      "phone": "Phone not available",
+      "website": "http://haia.itamaraty.gov.br"
     },
     "CA": {
       "name": "Embassy",
       "address": "7 Sophialaan, 2514JP 's-Gravenhage",
-      "phone": "+31 70 311 1600",
-      "website": "https://canada.nl/"
+      "phone": "Phone not available"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "92 Badhuisweg, 2587CL 's-Gravenhage",
-      "phone": "+31 70 354 2000",
-      "website": "http://www.ambeg.nl"
+      "address": "11 Surinamestraat, 2585GG 's-Gravenhage",
+      "phone": "Phone not available",
+      "website": "http://nl.mvep.hr/"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "4 Paleisstraat, 2514JA 's-Gravenhage",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/hague"
     },
     "FR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "76 Anna Paulownastraat, 2518BJ 's-Gravenhage",
       "phone": "Phone not available",
-      "website": "http://www.consulfrance-amsterdam.org"
+      "website": "http://nl.ambafrance.org"
     },
     "DE": {
       "name": "Embassy",
-      "address": "20 Groot Hertoginnelaan, 2517EG 's-Gravenhage",
-      "phone": "+31 70 342 0600",
-      "website": "https://niederlande.diplo.de/"
+      "address": "18 Groot Hertoginnelaan, 2517EG 's-Gravenhage",
+      "phone": "Phone not available"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "1 Amaliastraat, 2514JC 's-Gravenhage",
+      "phone": "Phone not available"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "273 Laan van Nieuw-Oost-Indië, 2593BS 's-Gravenhage",
+      "phone": "+31-70-222-3939",
+      "website": "https://haga.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
       "address": "2 Buitenrustweg, 2517KD 's-Gravenhage",
-      "phone": "+31 70 346 9771",
+      "phone": "Phone not available",
       "website": "http://www.indianembassy.nl/"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "5 Johan de Wittlaan, 2517JR 's-Gravenhage",
-      "phone": "+31 70 376 0500",
-      "website": "https://embassies.gov.il/hague/Pages/default.aspx"
+      "address": "114B Scheveningseweg, 2584AE 's-Gravenhage",
+      "phone": "Phone not available"
     },
     "IT": {
       "name": "Embassy",
-      "address": "28 Parkstraat, 2514JK 's-Gravenhage",
-      "phone": "+31 70 302 10 30",
-      "website": "https://amblaja.esteri.it/"
+      "address": "12 Alexanderstraat, 2514JL 's-Gravenhage",
+      "phone": "Phone not available"
     },
     "JP": {
       "name": "Embassy",
-      "address": "5 Tobias Asserlaan, 2517KC 's-Gravenhage",
-      "phone": "+31 70 346 9544",
+      "address": "2 Tobias Asserlaan, 2517KC 's-Gravenhage",
+      "phone": "Phone not available",
       "website": "https://www.nl.emb-japan.go.jp/"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "21 Nieuwe Parklaan, 2597LA 's-Gravenhage",
-      "phone": "+31 70 350 4215",
-      "website": "https://www.kenyaembassy.nl"
+      "address": "30 Koninginnegracht, 2514AB 's-Gravenhage",
+      "phone": "Phone not available",
+      "website": "https://nederlandene.um.dk/"
     },
     "MX": {
       "name": "Embassy",
       "address": "28 Nassauplein, 2585EC 's-Gravenhage",
-      "phone": "+31 70 360 2900",
-      "website": "https://embamex.nl"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "phone": "Phone not available"
     },
     "NZ": {
       "name": "Embassy",
-      "address": "77N Eisenhowerlaan, 2517KK 's-Gravenhage",
-      "phone": "+31 70 346 9324",
+      "address": "77E Eisenhowerlaan, 2517KK 's-Gravenhage",
+      "phone": "+31-70-346-9324",
       "website": "https://www.mfat.govt.nz/en/countries-and-regions/europe/netherlands/new-zealand-embassy/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "5 Wagenaarweg, 2597LL 's-Gravenhage",
-      "phone": "+31 70 350 1703",
-      "website": "https://www.nigerianembassythehague.nl"
     },
     "NO": {
       "name": "Embassy",
       "address": "77J Eisenhowerlaan, 2517KK 's-Gravenhage",
-      "phone": "+31 70 311 7611",
-      "website": "https://www.noorwegen.nl/Embassy"
+      "phone": "Phone not available",
+      "website": "https://www.norway.no/en/netherlands"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "2 Andries Bickerweg, 2517JP 's-Gravenhage",
-      "phone": "+31 70 345 1300",
-      "website": "https://netherlands.mid.ru/"
+      "address": "10 Willem Lodewijklaan, 2517JT 's-Gravenhage",
+      "phone": "Phone not available",
+      "website": "http://nl.china-embassy.gov.cn/eng/"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "14 Alexanderstraat, 2514JL 's-Gravenhage",
-      "phone": "+31 70 361 4391",
-      "website": "https://www.saudiembassy.nl"
+      "address": "25 Alexanderstraat, 2514JM 's-Gravenhage",
+      "phone": "Phone not available",
+      "website": "http://www.haga.msz.gov.pl"
     },
-    "ZA": {
+    "PT": {
       "name": "Embassy",
-      "address": "40 Wassenaarseweg, 2596CJ 's-Gravenhage",
-      "phone": "+31 70 392 4501",
-      "website": "https://www.zuidafrika.nl/"
+      "address": "74 Zeestraat, 2518AD 's-Gravenhage",
+      "phone": "Phone not available",
+      "website": "https://www.haia.embaixadaportugal.mne.pt/"
     },
     "KR": {
       "name": "Embassy",
       "address": "8 Verlengde Tolweg, 2517JV 's-Gravenhage",
-      "phone": "+31 70 740 0200",
-      "website": "https://overseas.mofa.go.kr/nl-en/index.do"
+      "phone": "Phone not available"
     },
     "ES": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "48B Lange Voorhout, 2514EG 's-Gravenhage",
       "phone": "Phone not available",
-      "website": null
+      "website": "http://www.exteriores.gob.es/embajadas/lahaya/es/Paginas/inicio.aspx"
     },
     "SE": {
       "name": "Embassy",
       "address": "7 Johan de Wittlaan, 2517JR 's-Gravenhage",
-      "phone": "+31 70 412 0200",
-      "website": "https://www.swedenabroad.se/en/embassies/netherlands-the-hague/"
+      "phone": "Phone not available",
+      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/nederl%C3%A4nderna-haag/"
     },
     "CH": {
       "name": "Embassy",
       "address": "42 Lange Voorhout, 2514EE 's-Gravenhage",
-      "phone": "+31 70 364 2831",
-      "website": "https://www.eda.admin.ch/denhaag"
+      "phone": "Phone not available"
     },
     "TH": {
       "name": "Embassy",
-      "address": "123 Laan Copes van Cattenburch, 2585EZ 's-Gravenhage",
-      "phone": "+31 70 345 9703",
+      "address": "Laan Copes van Cattenburch, 2585 EX Den Haag",
+      "phone": "Phone not available",
       "website": "https://hague.thaiembassy.org"
     },
     "TR": {
       "name": "Embassy",
       "address": "15 Jan Evertstraat, 2514BS 's-Gravenhage",
-      "phone": "+31 70 302 3101",
-      "website": "https://lahey-be.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "130 Eisenhowerlaan, 2517KN 's-Gravenhage",
-      "phone": "+31 70 338 4370",
-      "website": "https://www.mofaic.gov.ae/missions/UAE-Missions-Abroad/UAE-Missions-Abroad-Details?countryId=d939871e-0457-4cc8-b1cd-5a307851d8d4"
+      "phone": "Phone not available",
+      "website": "http://lahey.be.mfa.gov.tr"
     },
     "GB": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Kleine Kazernestraat, 2514 ED Den Haag",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.gov.uk/government/world/organisations/british-embassy-the-hague/"
     },
     "US": {
       "name": "Embassy",
-      "address": "1 John Adams Park, 2244BZ Wassenaar",
-      "phone": "+31 70 310 2209",
+      "address": "John Adams Park, 2244 BZ Wassenaar",
+      "phone": "Phone not available",
       "website": "https://nl.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "1 Javastraat, 2585AA 's-Gravenhage",
+      "phone": "Phone not available",
+      "website": "https://vnembassy-thehague.mofa.gov.vn"
     }
   },
   "NZ": {
     "AR": {
       "name": "Embassy",
-      "address": "15-17 Murphy Street, 6011 Wellington",
-      "phone": "+64 4 472 8330",
+      "address": "15 Murphy Street, 6145 Wellington",
+      "phone": "Phone not available",
       "website": "https://enzel.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
-      "address": "188 Quay Street, 1010 Auckland",
-      "phone": "+64 9 921 8800",
-      "website": "https://newzealand.embassy.gov.au/"
+      "address": "72-76 Hobson Street, 6011 Wellington",
+      "phone": "Phone not available",
+      "website": "https://newzealand.highcommission.gov.au"
     },
     "BR": {
       "name": "Embassy",
       "address": "10 Customhouse Quay, 6011 Wellington",
-      "phone": "+64 4 473 3516",
-      "website": "http://wellington.itamaraty.gov.br/"
+      "phone": "Phone not available",
+      "website": "http://wellington.itamaraty.gov.br"
     },
     "CA": {
       "name": "Embassy",
       "address": "125 The Terrace, 6011 Wellington",
       "phone": "Phone not available",
-      "website": "https://www.newzealand.gc.ca/"
-    },
-    "EG": {
-      "name": "Embassy",
-      "address": "5 Willeston Street",
-      "phone": "+64 4 472 4900",
-      "website": null
+      "website": "https://www.canadainternational.gc.ca/new_zealand-nouvelle_zelande"
     },
     "FR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "42 Manners Street, 6040 Wellington",
       "phone": "Phone not available",
       "website": "https://nz.ambafrance.org"
     },
     "DE": {
       "name": "Embassy",
-      "address": "90-92 Hobson Street, 6011 Wellington",
+      "address": "90 Hobson Street, 6145 Wellington",
       "phone": "Phone not available",
-      "website": "https://wellington.diplo.de/"
+      "website": "https://wellington.diplo.de"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "187 Featherston Street, 6145 Wellington",
+      "phone": "Phone not available",
+      "website": "https://wellington.mfa.gov.hu"
     },
     "IN": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "11 Little Pipitea Street, 6145 Wellington",
       "phone": "Phone not available",
-      "website": "https://www.hciwellington.gov.in/"
+      "website": "https://www.hciwellington.gov.in"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "36 Brandon Street",
-      "phone": "+64 4 439 9500",
-      "website": "https://embassies.gov.il/wellington"
+      "address": "86 Victoria Street, 6040 Wellington",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/new-zealand/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "34 Grant Road, 6011 Wellington",
       "phone": "Phone not available",
       "website": "https://ambwellington.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "106 Willis Street, 6040 Wellington",
       "phone": "Phone not available",
-      "website": "https://www.auckland.nz.emb-japan.go.jp/itprtop_ja/"
+      "website": "https://www.nz.emb-japan.go.jp"
     },
     "NL": {
       "name": "Embassy",
       "address": "20 Ballance Street, 6011 Wellington",
-      "phone": "+64 4 471 6390",
-      "website": "https://www.nederlandwereldwijd.nl/landen/nieuw-zeeland/over-ons/ambassade-in-wellington"
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "187 Featherston Street",
-      "phone": "+64 4 472 0555",
+      "address": "187 Featherston Street, 6145 Wellington",
+      "phone": "Phone not available",
       "website": "https://embamex.sre.gob.mx/nuevazelandia"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "57 Messines Road, 6012",
-      "phone": "+64 4 476 6113",
-      "website": "https://newzealand.mid.ru"
+      "address": "Kilmister Avenue, 6145 Wellington",
+      "phone": "+64-4-4721382",
+      "website": "http://nz.china-embassy.gov.cn/chn/"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Featherston Street, 6145 Wellington",
       "phone": "Phone not available",
-      "website": null
-    },
-    "SG": {
-      "name": "Embassy",
-      "address": "17 Kabul Street, 6035 Wellington",
-      "phone": "+64 4 470 0850",
-      "website": "https://www.mfa.gov.sg/wellington"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "36 Brandon Street, 6011 Wellington",
-      "phone": "+64 4 815 8484",
-      "website": "https://dirco1.azurewebsites.net/Wellington/consularservices.html"
+      "website": "https://www.gov.pl/web/nowazelandia"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "address": "2 Hunter Street, 6011 Wellington Central, Wellington",
+      "phone": "Phone not available"
     },
     "ES": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "112 Victoria Street, 6011 Wellington",
       "phone": "Phone not available",
       "website": "http://www.exteriores.gob.es/Embajadas/Wellington"
     },
     "CH": {
       "name": "Embassy",
-      "address": "10 Customhouse Quay, 6011 Wellington",
-      "phone": "+64 4 472 1593",
+      "address": "Ballance Street, 6140 Wellington",
+      "phone": "Phone not available",
       "website": "https://www.eda.admin.ch/wellington"
     },
     "TH": {
       "name": "Embassy",
-      "address": "110 Molesworth Street",
-      "phone": "+64 4 496 2900",
+      "address": "110 Molesworth Street, 6145 Wellington",
+      "phone": "Phone not available",
       "website": "https://wellington.thaiembassy.org/"
     },
     "TR": {
       "name": "Embassy",
-      "address": "15-17 Murphy Street, 6011 Wellington",
-      "phone": "+64 4 472 1290;+64 4 472 1292",
-      "website": "https://wellington-be.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "119;121;123 Featherston Street, 6011 Wellington",
-      "phone": "+64 4 830 2949",
-      "website": "https://www.mofaic.gov.ae/missions/UAE-Missions-Abroad/UAE-Missions-Abroad-Details?countryId=0dca8a36-58cc-46f2-9ccc-c793b39540c0"
-    },
-    "GB": {
-      "name": "Consulate",
-      "address": "151 Queen Street, 1010 Auckland",
+      "address": "15 Murphy Street, 6145 Wellington",
       "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-consulate-general-auckland"
-    },
-    "US": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    }
-  },
-  "NG": {
-    "AR": {
-      "name": "Embassy",
-      "address": "30 Nelson Mandela Street",
-      "phone": "+234 (0) 8093664820",
-      "website": "https://enige.cancilleria.gob.ar"
-    },
-    "AU": {
-      "name": "Embassy",
-      "address": "48 Aguiyi Ironsi Street",
-      "phone": "Phone not available",
-      "website": "https://nigeria.embassy.gov.au"
-    },
-    "BR": {
-      "name": "Embassy",
-      "address": "324 Diplomatic Drive, Abuja",
-      "phone": "(234) 8036590806",
-      "website": "http://abuja.itamaraty.gov.br"
-    },
-    "CA": {
-      "name": "Embassy",
-      "address": "13010G Palm Close, Abuja",
-      "phone": "Phone not available",
-      "website": "https://www.canadainternational.gc.ca/nigeria/index.aspx"
-    },
-    "FR": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://ng.ambafrance.org/"
-    },
-    "DE": {
-      "name": "Embassy",
-      "address": "9 Maracaibo Close, 7077 Abuja",
-      "phone": "+234 92 208010",
-      "website": "https://nigeria.diplo.de"
-    },
-    "IN": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+234 7080622800",
-      "website": "https://hciabuja.gov.in"
-    },
-    "IL": {
-      "name": "Embassy",
-      "address": "12 Mary Slessor",
-      "phone": "+234 9-4605500",
-      "website": "https://embassies.gov.il/abuja"
-    },
-    "IT": {
-      "name": "Embassy",
-      "address": "European Union Crescent",
-      "phone": "+234-9-460-2970",
-      "website": "https://ambabuja.esteri.it"
-    },
-    "JP": {
-      "name": "Embassy",
-      "address": "9 Bobo Street, Abuja",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "NL": {
-      "name": "Embassy",
-      "address": "European Union Crescent, Abuja",
-      "phone": "+234 94611200",
-      "website": "https://www.nederlandwereldwijd.nl/landen/nigeria"
-    },
-    "MX": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://embamex.sre.gob.mx/nigeria"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "NO": {
-      "name": "Embassy",
-      "address": "54 T. Y. Danjuma Street",
-      "phone": "+234 813 989 0050",
-      "website": "https://www.norway.no/en/nigeria"
-    },
-    "RU": {
-      "name": "Embassy",
-      "address": "1119 Constitution Avenue, Abuja",
-      "phone": "+234 805-908-00-07",
-      "website": "https://nigeria.mid.ru/"
-    },
-    "SA": {
-      "name": "Embassy",
-      "address": "6 Orange Close",
-      "phone": "+2347098221442",
-      "website": "https://embassies.mofa.gov.sa/sites/Nigeria"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "D41004 European Union Crescent",
-      "phone": "+234-9-462-4200",
-      "website": "https://www.dirco.gov.za/abuja/index.html"
-    },
-    "ES": {
-      "name": "Embassy",
-      "address": "8 Bobo Close, Abuja",
-      "phone": "Phone not available",
-      "website": "http://www.exteriores.gob.es/Embajadas/Abuja"
-    },
-    "SE": {
-      "name": "Embassy",
-      "address": "41 T. Y. Danjuma Street",
-      "phone": "+234 9 9047 302",
-      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/nigeria-abuja/"
-    },
-    "CH": {
-      "name": "Embassy",
-      "address": "157 Adetokunbo Ademola Crescent, 900288 Abuja",
-      "phone": "+234 9 22 00 400",
-      "website": "https://www.eda.admin.ch/abuja"
-    },
-    "TR": {
-      "name": "Embassy",
-      "address": "333 Diplomatic Drive, Abuja",
-      "phone": "Phone not available",
-      "website": "https://abuja-be.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "17 Kainji Crescent, Abuja",
-      "phone": "+234-809-9009004",
-      "website": "https://sp.mofaic.gov.ae/EN/DiplomaticMissions/Embassies/Nigeria/"
+      "website": "http://wellington.emb.mfa.gov.tr"
     },
     "GB": {
       "name": "Embassy",
-      "address": "1137 Diplomatic Drive, Abuja",
+      "address": "44 Hill Street, 6011 Wellington",
       "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-high-commission-abuja"
+      "website": "https://www.gov.uk/government/world/organisations/british-high-commission-wellington/"
     },
     "US": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Murphy Street, 6145 Wellington",
       "phone": "Phone not available",
-      "website": "https://ng.usembassy.gov"
+      "website": "https://nz.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "2-6 Gilmer Terrace, 6145 Wellington",
+      "phone": "Phone not available",
+      "website": "https://vnembassy-wellington.mofa.gov.vn"
     }
   },
   "NO": {
     "AR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 22 55 24 48",
-      "website": "http://www.enoru.mrecic.gov.ar"
+      "address": "Drammensveien, 0270 Oslo",
+      "phone": "Phone not available"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "21 Thomas Heftyes gate, 0264 Oslo",
+      "phone": "Phone not available"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "Operatunnelen / Festningstunnelen, 0251 Oslo",
+      "phone": "+47-23-23-92-20",
+      "website": "https://norway.diplomatie.belgium.be"
     },
     "BR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 22540730",
-      "website": "http://oslo.itamaraty.gov.br/"
+      "address": "4 Sigurd Syrs gate, 0273 Oslo",
+      "phone": "Phone not available"
     },
     "CA": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 22 99 53 00",
-      "website": "https://www.canadainternational.gc.ca/norway-norvege/"
+      "address": "7 Wergelandsveien, 0167 Oslo",
+      "phone": "Phone not available",
+      "website": "http://www.canadainternational.gc.ca/norway-norvege/index.aspx?lang=eng"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 23 08 42 00",
-      "website": "https://mfa.gov.eg/oslo_emb"
+      "address": "Drammensveien, 0264 Oslo",
+      "phone": "Phone not available"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "Fritzners gate, 0264 Oslo",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/oslo"
     },
     "FR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 23 28 46 00",
-      "website": "https://no.ambafrance.org/"
+      "address": "69 Drammensveien, 0271 Oslo",
+      "phone": "Phone not available",
+      "website": "http://www.ambafrance-no.org/"
     },
     "DE": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 23 27 54 00",
-      "website": "https://oslo.diplo.de/"
+      "address": "45 Oscars gate, 0258 Oslo",
+      "phone": "Phone not available"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "18 Nobels gate, 0268 Oslo",
+      "phone": "Phone not available"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "3 Sophus Lies gate, 0264 Oslo",
+      "phone": "+47 22 54 76 40",
+      "website": "https://oslo.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 2411 5910",
-      "website": "http://indemb.no"
+      "address": "Niels Juels gate, 0272 Oslo",
+      "phone": "Phone not available",
+      "website": "https://www.indianembassyoslo.gov.in/"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 21 01 95 00",
-      "website": "https://embassies.gov.il/oslo"
+      "address": "Kronprinsesse Märthas plass, 0161 Oslo",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/norway/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 23 08 49 00;+47 22 55 72 50",
-      "website": "https://amboslo.esteri.it/"
+      "address": "Inkognitogata, 0258 Oslo",
+      "phone": "Phone not available",
+      "website": "https://amboslo.esteri.it/ambasciata_oslo/it/"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 22 01 29 00",
-      "website": "https://www.no.emb-japan.go.jp/"
+      "address": "Haakon VII's gate, 0161 Oslo",
+      "phone": "Phone not available",
+      "website": "http://www.no.emb-japan.go.jp/"
+    },
+    "DK": {
+      "name": "Embassy",
+      "address": "7A Olav Kyrres gate, 0273 Oslo",
+      "phone": "Phone not available",
+      "website": "http://norge.um.dk/"
     },
     "NL": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 23 33 36 00",
-      "website": "https://www.netherlandsworldwide.nl/countries/norway/about-us/embassy-in-oslo"
+      "address": "Oscars gate, 0351 Oslo",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 21 04 02 20",
-      "website": "https://embamex.sre.gob.mx/noruega/"
+      "address": "Frøyas gate, 0273 Oslo",
+      "phone": "Phone not available",
+      "website": "https://embamex.sre.gob.mx/noruega"
     },
-    "MA": {
+    "CN": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 21 38 17 99",
-      "website": null
+      "address": "Tuengen allé, 0374 Oslo",
+      "phone": "Phone not available"
     },
-    "RU": {
+    "PL": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 22 55 32 78;+47 22 44 06 08",
-      "website": "https://norway.mid.ru/"
+      "address": "1 Olav Kyrres plass, 0273 Oslo",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/norwegia/"
     },
-    "SA": {
+    "PT": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 22 04 90 10",
-      "website": "http://embassies.mofa.gov.sa/sites/Norway/"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 23 27 32 20",
-      "website": "https://www.dirco.gov.za/oslo/"
+      "address": "Josefines gate, 0351 Oslo",
+      "phone": "Phone not available"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "address": "Inkognitogata, 0258 Oslo",
+      "phone": "Phone not available"
     },
     "ES": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 22 92 66 90",
-      "website": "http://maec.es/embajadas/oslo"
+      "address": "13 Halvdan Svartes gate, 0268 Oslo",
+      "phone": "Phone not available",
+      "website": "http://www.exteriores.gob.es/embajadas/oslo/es/Paginas/inicio.aspx"
     },
     "SE": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 24 11 42 00",
-      "website": "http://sverigesambassad.no"
+      "address": "Meltzers gate, 0256 Oslo",
+      "phone": "Phone not available",
+      "website": "http://www.swedenabroad.com/Oslo/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "address": "Oscars gate, 0351 Oslo",
+      "phone": "Phone not available"
     },
     "TH": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 22 12 86 75",
-      "website": "https://thaiembassy.no/"
+      "address": "Eilert Sundts gate, 0259 Oslo",
+      "phone": "Phone not available"
     },
     "TR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 22 12 87 50",
-      "website": "https://oslo-be.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+47 22 12 24 22",
-      "website": "https://www.mofaic.gov.ae/missions/UAE-Missions-Abroad/UAE-Missions-Abroad-Details?countryId=fd558b84-77ca-404f-9d7a-d49e4cde209a"
+      "address": "Halvdan Svartes gate, 0268 Oslo",
+      "phone": "Phone not available"
     },
     "GB": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Thomas Heftyes gate, 0264 Oslo",
       "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-embassy-oslo"
+      "website": "https://www.gov.uk/government/world/organisations/british-embassy-oslo/"
     },
     "US": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Sørkedalsveien, 0378 Oslo",
       "phone": "Phone not available",
       "website": "https://no.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "21A St. Olavs gate, 0165 Oslo",
+      "phone": "Phone not available"
     }
   },
-  "RU": {
+  "CN": {
     "AR": {
       "name": "Embassy",
-      "address": "72 с1 улица Большая Ордынка, 119017 Москва",
-      "phone": "+7 495 5021020",
-      "website": "http://efrus.mrecic.gov.ar"
+      "address": "东三环, 100125 北京市",
+      "phone": "Phone not available",
+      "website": "https://echin.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
-      "address": "10 Подколокольный переулок, 109028 Москва",
+      "address": "茂名北路, 200003 静安区",
       "phone": "Phone not available",
-      "website": "https://russia.embassy.gov.au"
+      "website": "http://shanghai.china.embassy.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "5 Xiushui Nanjie, 100600 Beijing",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-peking/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "安西路, 200052 长宁区",
+      "phone": "+86-21-643-767-72",
+      "website": "https://china.diplomatie.belgium.be/en/embassy-and-consulates/consulate-general-shanghai"
     },
     "BR": {
       "name": "Embassy",
-      "address": "54 с1 Большая Никитская улица, 121069 Москва",
-      "phone": "+7 495 966-10-81",
-      "website": "http://moscou.itamaraty.gov.br/"
+      "address": "27 光华路, 100600 北京市",
+      "phone": "Phone not available",
+      "website": "http://pequim.itamaraty.gov.br"
     },
     "CA": {
       "name": "Embassy",
-      "address": "23 с1 Староконюшенный переулок",
-      "phone": "Phone not available",
-      "website": "http://www.canadainternational.gc.ca/russia-russie"
+      "address": "港景街 Harbour View Street, 中西區 Central and Western District",
+      "phone": "Phone not available"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "秀水南街, 100004 北京市",
       "phone": "Phone not available",
-      "website": null
+      "website": "http://cn.mvep.hr"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "2 Ritan Lu, 100600 Beijing",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/beijing"
     },
     "FR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+7 495 9371500",
-      "website": "https://ru.ambafrance.org"
+      "address": "天下国际公馆, 武汉市",
+      "phone": "Phone not available",
+      "website": "http://www.consulfrance-wuhan.org"
     },
     "DE": {
       "name": "Embassy",
-      "address": "56 Мосфильмовская улица, 119285 Москва",
-      "phone": "+7 495 937 95 00",
-      "website": "https://germania.diplo.de/ru-de/vertretungen/botschaft"
+      "address": "衡山路, 200031 徐汇区",
+      "phone": "Phone not available",
+      "website": "https://china.diplo.de/cn-zh/vertretungen/gk-kanton"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "光华路, 100721 北京市",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/china/"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "三里屯中街, 100027 北京市",
+      "phone": "Phone not available",
+      "website": "https://sanghaj.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "4 с2 улица Воронцово Поле",
-      "phone": "Phone not available",
-      "website": "https://indianembassy-moscow.gov.in"
+      "address": "延安西路, 200052 长宁区",
+      "phone": "Phone not available"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "56 улица Большая Ордынка",
-      "phone": "+7 (495)660 27 00",
-      "website": "https://embassies.gov.il/moscow"
+      "address": "3 日坛东路, 100600 北京市",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/china"
     },
     "IT": {
       "name": "Embassy",
-      "address": "5 Денежный переулок, 119034",
-      "phone": "Phone not available",
-      "website": "https://ambmosca.esteri.it"
+      "address": "2 Sanlitun Dongerjie, 100600 Beijing",
+      "phone": "Phone not available"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "花园酒店, 广州市",
       "phone": "Phone not available",
-      "website": "http://www.khabarovsk.ru.emb-japan.go.jp/"
+      "website": "https://www.guangzhou.cn.emb-japan.go.jp/itprtop_zh/index.html"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "5 Лопухинский переулок",
-      "phone": "+7 (495) 637 42 57",
-      "website": "https://kenemb.ru"
+      "address": "三里屯东六街, 100125 北京市",
+      "phone": "Phone not available",
+      "website": "https://kina.um.dk/"
     },
     "NL": {
       "name": "Embassy",
-      "address": "6 Калашный переулок, 115127 Москва",
-      "phone": "+7 495 7972900",
-      "website": "http://russia-ru.nlembassy.org"
+      "address": "1438号 虹桥路, 200051 上海市",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "4 с1 Большой Лёвшинский переулок, 119034",
-      "phone": "+7 495 969-28-79",
-      "website": "https://embamex.sre.gob.mx/rusia"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "8 Пречистенский переулок",
-      "phone": "+7(495)116-16-81",
-      "website": "https://www.ambmaroc.ru/"
+      "address": "5 San Li Tun Dong Wu Jie, 100001 Beijing",
+      "phone": "Phone not available",
+      "website": "https://embamex.sre.gob.mx/china"
     },
     "NZ": {
       "name": "Embassy",
-      "address": "3 Пречистенская набережная, 119034 Москва",
-      "phone": "+7 495 9563579",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/europe/russia/new-zealand-embassy/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "5 Мамоновский переулок",
-      "phone": "+7 (495) 690 3785",
-      "website": "http://www.nigerianembassy.ru"
+      "address": "复兴中路, 200021 黄浦区",
+      "phone": "+86-21-5407-5858",
+      "website": "https://www.mfat.govt.nz/en/countries-and-regions/north-asia/china/new-zealand-consulate-general-shanghai-china/contactfull"
     },
     "NO": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "馆中路, 100125 北京市",
       "phone": "Phone not available",
-      "website": "https://www.norway.no/ru/russia/"
+      "website": "https://www.norway.no/zh/china/norway-china/guangzhou/"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "3 3-й Неопалимовский переулок",
-      "phone": "+7 499 245-23-10",
-      "website": "https://embassies.mofa.gov.sa/sites/Russia"
+      "address": "合和食街 Hopewell Food Street, 香港 Hong Kong",
+      "phone": "Phone not available",
+      "website": "http://www.szanghaj.msz.gov.pl"
     },
-    "SG": {
+    "PT": {
       "name": "Embassy",
-      "address": "5 переулок Каменная Слобода, 121099",
-      "phone": "+7-499-241-3702",
-      "website": "https://www.mfa.gov.sg/moscow"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "1 с9 Гранатный переулок",
-      "phone": "+7 (495) 926 1177",
-      "website": "http://www.saembassy.ru/"
+      "address": "45 伯多祿局長街(白馬行) Rua de Pedro Nolasco da Silva, 519020 Macau",
+      "phone": "Phone not available",
+      "website": "https://www.cgportugal.org/"
     },
     "KR": {
       "name": "Embassy",
-      "address": "56 с1 улица Плющиха",
-      "phone": "+7 495 783-27-27",
-      "website": "https://overseas.mofa.go.kr/ru-ru/index.do"
+      "address": "科技路, 710068 西安市",
+      "phone": "Phone not available"
     },
     "ES": {
       "name": "Embassy",
-      "address": "5 Скарятинский переулок",
+      "address": "人民路隧道, 200010 浦东新区",
       "phone": "Phone not available",
-      "website": "http://www.exteriores.gob.es/Embajadas/Moscu/es/Paginas/inicio.aspx"
+      "website": "https://www.exteriores.gob.es/Consulados/shanghai/zh/Paginas/index.aspx"
     },
     "SE": {
       "name": "Embassy",
-      "address": "60 Мосфильмовская улица, 119590 Москва",
-      "phone": "Phone not available",
-      "website": "http://www.swedenabroad.com/Moscow/"
+      "address": "56 告士打道 Gloucester Road, Hong Kong",
+      "phone": "Phone not available"
     },
     "CH": {
       "name": "Embassy",
-      "address": "2/5 переулок Огородная Слобода, 101000 Москва",
+      "address": "三里屯东六街, 100125 北京市",
       "phone": "Phone not available",
-      "website": "https://www.eda.admin.ch/moscow"
+      "website": "https://www.eda.admin.ch/countries/china/fr/home/representations/ambassade-beijing.html"
     },
     "TH": {
       "name": "Embassy",
-      "address": "6 Серпов переулок, Москва",
-      "phone": "+7 (495) 109-3918",
-      "website": "https://moscow.thaiembassy.org"
+      "address": "光华路, 100721 北京市",
+      "phone": "Phone not available"
     },
     "TR": {
       "name": "Embassy",
-      "address": "12 7-й Ростовский переулок, Москва",
-      "phone": "+7 495 994-48-08",
-      "website": "https://moskova-be.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "4 улица Улофа Пальме, 115127 Москва",
-      "phone": "+7 495 2344060",
-      "website": "https://www.mofaic.gov.ae/missions/UAE-Missions-Abroad/UAE-Missions-Abroad-Details?countryId=76cf09aa-d15b-4b95-b038-74eb06b52125"
+      "address": "台基厂头条, 100010 北京市",
+      "phone": "+86 10 6532 1715",
+      "website": "http://beijing.emb.mfa.gov.tr"
     },
     "GB": {
       "name": "Embassy",
-      "address": "10 Смоленская набережная, 121099 Москва",
-      "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-embassy-moscow"
+      "address": "5号 珠江西路, 510623 广州市",
+      "phone": "Phone not available"
     },
     "US": {
       "name": "Embassy",
-      "address": "1 с1 площадь Донецкой Народной Республики, 121099 Москва",
-      "phone": "+7 495 7285000",
-      "website": "https://ru.usembassy.gov/"
+      "address": "天下国际公馆, 武汉市",
+      "phone": "Phone not available"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "光华路, 100004 北京市",
+      "phone": "Phone not available",
+      "website": "http://www.vnemba.org.cn/zh"
     }
   },
-  "SA": {
+  "PL": {
     "AR": {
       "name": "Embassy",
-      "address": "4 حبيب الحنظلي",
-      "phone": "+966 11-4652600",
-      "website": "https://earab.cancilleria.gob.ar"
+      "address": "6 Brukselska, 03-973 Warszawa",
+      "phone": "+48-22-617-60-28",
+      "website": "http://epolo.cancilleria.gov.ar/pl"
     },
     "AU": {
       "name": "Embassy",
-      "address": "PO 94000 Abdullah Bin Hozafa As-Shami Road, 11693 Riyadh",
-      "phone": "Phone not available",
-      "website": "https://saudiarabia.embassy.gov.au/"
+      "address": "Address not available",
+      "phone": "+48-22-521-34-44",
+      "website": "https://poland.embassy.gov.au"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "34 Jurija Gagarina, 00-748 Warszawa",
+      "phone": "+48-22-841-00-81",
+      "website": "http://www.bmeia.gv.at/pl/ambasada/warszawa.html"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "34 Senatorska, 00-095 Warszawa",
+      "phone": "+48-22-551-28-00",
+      "website": "https://poland.diplomatie.belgium.be"
     },
     "BR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "15 Bajońska, 03-963 Warszawa",
       "phone": "Phone not available",
-      "website": "http://riade.itamaraty.gov.br"
+      "website": "http://varsovia.itamaraty.gov.br/pl/"
     },
     "CA": {
       "name": "Embassy",
-      "address": "PO 94321 Omaya Abu Al Salt, 11693 Riyadh",
-      "phone": "966 (11) 202-3200",
-      "website": "https://www.saudiarabia.gc.ca/"
+      "address": "Jana Matejki, 00-481 Warszawa",
+      "phone": "+48-22-584-31-00",
+      "website": "http://www.canadainternational.gc.ca/poland-pologne/index.aspx"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "Abdullah Bin Hazafa As-Shami Road, 11693 Riyadh",
-      "phone": "+966114810159",
-      "website": null
+      "address": "25 Ignacego Krasickiego, 02-611 Warszawa",
+      "phone": "Phone not available",
+      "website": "http://pl.mvep.hr/pl/"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "18 Koszykowa, 00-555 Warszawa",
+      "phone": "Phone not available",
+      "website": "http://www.mzv.cz/warsaw"
     },
     "FR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "3 Topolowa, 31-512 Kraków",
       "phone": "Phone not available",
-      "website": "http://www.ambafrance-sa.org/"
+      "website": "https://pl.ambafrance.org/-Consulat-general-de-France-a-Cracovie-"
     },
     "DE": {
       "name": "Embassy",
-      "address": "Riyadh",
-      "phone": "+966 112 776900",
-      "website": "https://saudiarabien.diplo.de/"
+      "address": "12 Jazdów, 00-467 Warszawa",
+      "phone": "Phone not available",
+      "website": "https://polen.diplo.de"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "35 Górnośląska, 00-432 Warszawa",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/missionsabroad/poland.html"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "21 Aleje Ujazdowskie, 00-540 Warszawa",
+      "phone": "+48-22-628-44-51",
+      "website": "https://varso.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+966-11-4884144",
-      "website": "https://www.eoiriyadh.gov.in/"
+      "address": "2B Myśliwiecka, 00-459 Warszawa",
+      "phone": "+48-22-540-00-00",
+      "website": "https://www.indianembassywarsaw.gov.in/"
+    },
+    "IE": {
+      "name": "Embassy",
+      "address": "5 Mysia, 00-496 Warszawa",
+      "phone": "+48-22-849-66-33",
+      "website": "https://www.dfa.ie/irish-embassy/poland/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://ambriad.esteri.it/ambasciata_riad/"
+      "address": "6 Plac Jana Henryka Dąbrowskiego, 00-055 Warszawa",
+      "phone": "+48-22-826-34-71",
+      "website": "https://ambvarsavia.esteri.it/it/"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "0126670676",
-      "website": "https://www.jeddah.ksa.emb-japan.go.jp/"
+      "address": "8 Szwoleżerów, 00-464 Warszawa",
+      "phone": "+48-22-696-50-00",
+      "website": "http://www.pl.emb-japan.go.jp/"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "http://www.kenyaembassyriyadh.com"
+      "address": "142 Marszałkowska, 00-061 Warszawa",
+      "phone": "+48-22-565-29-00",
+      "website": "http://polen.um.dk/"
     },
     "NL": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "address": "10 Kawalerii, 00-468 Warszawa",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "3293 طريق عبد الله بن حذافة السهمي, Riyadh",
-      "phone": "Phone not available",
-      "website": "https://embamex.sre.gob.mx/arabiasaudita/"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "address": "Aleje Jerozolimskie, 02-017 Warszawa",
+      "phone": "+48-22-311-29-00",
+      "website": "http://embamex.sre.gob.mx/polonia/"
     },
     "NZ": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/middle-east/saudi-arabia/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "PO 94386 Abdullah Bin Hazafa As-Shami Road, 11693 Riyadh",
-      "phone": "Phone not available",
-      "website": "http://nigeria.org.sa/"
+      "address": "51 Aleje Ujazdowskie, 00-536 Warszawa",
+      "phone": "+48-22-521-05-00",
+      "website": "https://www.mfat.govt.nz/en/countries-and-regions/europe/poland/new-zealand-embassy/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "PO 94380 Ibn Shamil, 11693 Riyadh",
+      "address": "26 Aleja Armii Ludowej, 00-609 Warszawa",
       "phone": "Phone not available",
-      "website": "https://www.norway.no/en/Saudi-Arabia/"
+      "website": "https://www.norway.no/poland/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "1 Bonifraterska, 00-203 Warszawa",
       "phone": "Phone not available",
-      "website": "https://riyadh.mid.ru"
+      "website": "http://www.chinaembassy.org.pl"
     },
-    "SG": {
+    "PT": {
       "name": "Embassy",
-      "address": "11693 Riyadh",
-      "phone": "+966-11-480-3855",
-      "website": "https://www.mfa.gov.sg/Riyadh"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "7184 Mohamed Al Abaderi",
-      "phone": "+966 11 442 9716",
-      "website": null
+      "address": "10 Ateńska, 03-798 Warszawa",
+      "phone": "+48-22-511-10-10",
+      "website": "http://ambasada-portugalii.pl"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+966-11-488-2211",
-      "website": "https://overseas.mofa.go.kr/sa-ko/index.do"
+      "address": "6 Szwoleżerów, 00-464 Warszawa",
+      "phone": "+48-22-559-29-00",
+      "website": "https://overseas.mofa.go.kr/pl-pl/index.do"
     },
     "ES": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.exteriores.gob.es/Embajadas/riad"
+      "address": "4 Myśliwiecka, 00-459 Warszawa",
+      "phone": "+48-22-583-40-01",
+      "website": "http://www.exteriores.gob.es/Embajadas/VARSOVIA/pl/Paginas/inicio.aspx"
     },
     "SE": {
       "name": "Embassy",
-      "address": "Collector Road B, Riyadh",
-      "phone": "Phone not available",
-      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/saudiarabien-riyadh/"
+      "address": "3 Bagatela, 00-587 Warszawa",
+      "phone": "+48-22-640-89-00",
+      "website": "http://www.swedenabroad.com/Warszawa/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "Diplomatic quarter",
-      "phone": "+966 11 488 12 91",
-      "website": "https://www.eda.admin.ch/countries/saudi-arabia/en/home/representations/embassy.html"
+      "address": "27 Aleje Ujazdowskie, 00-540 Warszawa",
+      "phone": "+48-22-628-04-81",
+      "website": "https://www.eda.admin.ch/warsaw"
     },
     "TH": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://riyadh.thaiembassy.org/"
+      "address": "9 Willowa, 00-790 Warszawa",
+      "phone": "+48-22-849-26-55",
+      "website": "http://www.thaiembassy.org/warsaw/pl/"
     },
     "TR": {
       "name": "Embassy",
-      "address": "8604 Abdullah Bin Hazafa As-Shami Road",
-      "phone": "+966 11 482 0101",
-      "website": "https://riyadh-emb.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Consulate",
-      "address": "Uthman Ibn Affan, Jeddah",
-      "phone": "+96-62-6515436",
-      "website": "https://www.mofaic.gov.ae/en/missions/uae-missions-abroad/uae-missions-abroad-details?countryId=17126333-8566-4b49-af59-6b5ba4f37c62"
-    },
-    "GB": {
-      "name": "Consulate",
-      "address": "Address not available",
+      "address": "19 Rakowiecka, 02-517 Warszawa",
       "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-consulate-general-jeddah"
-    },
-    "US": {
-      "name": "Embassy",
-      "address": "Al Safa Street, Jeddah",
-      "phone": "Phone not available",
-      "website": "https://sa.usembassy.gov/"
-    }
-  },
-  "SG": {
-    "AR": {
-      "name": "Embassy",
-      "address": "7 Temasek Boulevard",
-      "phone": "+65 6887 9808",
-      "website": "https://esing.cancilleria.gob.ar"
-    },
-    "BR": {
-      "name": "Embassy",
-      "address": "101 Thomson Road, 307591 Singapore",
-      "phone": "+65 6603 9361",
-      "website": "http://cingapura.itamaraty.gov.br"
-    },
-    "CA": {
-      "name": "Embassy",
-      "address": "#11-01 1 George Street, 049145 Singapore",
-      "phone": "+65 6854 5900",
-      "website": "https://www.singapore.gc.ca/"
-    },
-    "FR": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://sg.ambafrance.org/"
-    },
-    "DE": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://singapur.diplo.de"
-    },
-    "IN": {
-      "name": "Embassy",
-      "address": "31 Grange Road",
-      "phone": "+65 6238 2518",
-      "website": "https://hcisingapore.gov.in"
-    },
-    "IL": {
-      "name": "Embassy",
-      "address": "24 Stevens Close",
-      "phone": "+65 6834 9200",
-      "website": "https://embassies.gov.il/singapore/Pages/Important%20Announcements.aspx"
-    },
-    "IT": {
-      "name": "Embassy",
-      "address": "101 Thomson Road, 307591 Singapore",
-      "phone": "+65 6250 6022",
-      "website": "https://ambsingapore.esteri.it"
-    },
-    "JP": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.sg.emb-japan.go.jp/"
-    },
-    "NL": {
-      "name": "Embassy",
-      "address": "541 Orchard Road, 238881 Singapore",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "MX": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://embamex.sre.gob.mx/singapur"
-    },
-    "NZ": {
-      "name": "Embassy",
-      "address": "1 George Street, 049145 Singapore",
-      "phone": "+65 62359966",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/south-east-asia/singapore/new-zealand-high-commission-singapore/"
-    },
-    "NO": {
-      "name": "Embassy",
-      "address": "16 Raffles Quay, 048581 Singapore",
-      "phone": "+65 6818 2000",
-      "website": "https://www.norway.no/singapore"
-    },
-    "RU": {
-      "name": "Embassy",
-      "address": "51 Nassim Road, 258439 Singapore",
-      "phone": "+65 6235 1832",
-      "website": "https://singapore.mid.ru"
-    },
-    "SA": {
-      "name": "Embassy",
-      "address": "163 Penang Road",
-      "phone": "Phone not available",
-      "website": "https://embassies.mofa.gov.sa/sites/singapore"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "331 North Bridge Road",
-      "phone": "+65 6339 3319",
-      "website": "https://www.dirco.gov.za/singapore"
-    },
-    "KR": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "ES": {
-      "name": "Embassy",
-      "address": "7 Temasek Boulevard, 038987 Singapore",
-      "phone": "+65 67259215",
-      "website": "http://www.exteriores.gob.es/Embajadas/SINGAPUR"
-    },
-    "SE": {
-      "name": "Embassy",
-      "address": "111 Somerset Road, Singapore",
-      "phone": "Phone not available",
-      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/singapore-singapore/"
-    },
-    "CH": {
-      "name": "Embassy",
-      "address": "1 Swiss Club Link, 288162 Singapore",
-      "phone": "+65 6468 5788",
-      "website": "https://www.eda.admin.ch/singapore"
-    },
-    "TR": {
-      "name": "Embassy",
-      "address": "2 Shenton Way, 068804 Singapore",
-      "phone": "+65 6422 7322;+65 6533 3390",
-      "website": "https://singapur-be.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "600 North Bridge Road, 188778 Singapore",
-      "phone": "+65 6238 8206",
-      "website": "https://sp.mofaic.gov.ae/EN/DiplomaticMissions/Embassies/Singapore/Pages/home.aspx"
+      "website": "http://warsaw.emb.mfa.gov.tr"
     },
     "GB": {
       "name": "Embassy",
-      "address": "100 Tanglin Road, 247919 Singapore",
+      "address": "10 Kawalerii, 00-468 Warszawa",
       "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-high-commission-singapore"
+      "website": "https://www.gov.uk/government/world/organisations/british-embassy-warsaw/"
     },
     "US": {
       "name": "Embassy",
-      "address": "27 Napier Road, 258508 Singapore",
-      "phone": "+6564769100",
-      "website": "https://sg.usembassy.gov/"
+      "address": "29/31 Aleje Ujazdowskie, 00-540 Warszawa",
+      "phone": "+48-22-504-20-00",
+      "website": "https://pl.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "Radosna, 02-957 Warszawa",
+      "phone": "+48-22-651-60-98",
+      "website": "https://vnembassy-warsaw.mofa.gov.vn/en-us/Pages/default.aspx"
     }
   },
-  "ZA": {
+  "PT": {
     "AR": {
       "name": "Embassy",
-      "address": "440 Hilda Street",
-      "phone": "+27 12 430 3524",
-      "website": "https://esafr.cancilleria.gob.ar"
+      "address": "8 Avenida João Crisóstomo, 1000-178 Lisboa",
+      "phone": "Phone not available",
+      "website": "https://eport.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
-      "address": "292 Orient Street, 0083 Arcadia",
-      "phone": "+27 12 423 6000",
-      "website": "https://southafrica.embassy.gov.au/"
+      "address": "200 Avenida da Liberdade, 1250-147 Lisboa",
+      "phone": "Phone not available",
+      "website": "https://portugal.embassy.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "1399-011, Lisboa",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-lissabon"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "75 Rua Castilho, 1250-068 Lisboa",
+      "phone": "+351 213-170-510",
+      "website": "http://portugal.diplomatie.belgium.be"
     },
     "BR": {
       "name": "Embassy",
-      "address": "152 Dallas Road, Pretoria",
-      "phone": "+27 12 366 5200",
-      "website": "http://pretoria.itamaraty.gov.br"
+      "address": "Estrada das Laranjeiras, 1649-021 Lisboa",
+      "phone": "Phone not available",
+      "website": "http://lisboa.itamaraty.gov.br/"
     },
     "CA": {
       "name": "Embassy",
-      "address": "1103 Arcadia Street, 0083 Hatfield",
+      "address": "200 Avenida da Liberdade, 1250-147 Lisboa",
       "phone": "Phone not available",
-      "website": "https://www.canadainternational.gc.ca/southafrica-afriquedusud/index.aspx"
+      "website": "https://www.canadainternational.gc.ca/portugal/index.aspx"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "270 Bourke Street",
-      "phone": "+27 12 343 1590",
-      "website": null
+      "address": "1400-126, Lisboa",
+      "phone": "Phone not available",
+      "website": "http://pt.mvep.hr/"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "1400-294, Lisboa",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/lisbon"
     },
     "FR": {
       "name": "Embassy",
-      "address": "250 Melk Street, 0181 Pretoria",
-      "phone": "+27 12 425 1600",
-      "website": "https://za.ambafrance.org/"
+      "address": "Rua de Santos-o-Velho, 1200-813 Lisboa",
+      "phone": "Phone not available",
+      "website": "http://www.ambafrance-pt.org/"
     },
     "DE": {
       "name": "Embassy",
-      "address": "201 Florence Ribeiro Avenue",
-      "phone": "+27 12 427 89 00",
-      "website": "https://southafrica.diplo.de"
+      "address": "1169-043, Lisboa",
+      "phone": "Phone not available",
+      "website": "https://lissabon.diplo.de/"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "13 Rua do Alto do Duque, 1449-026 Lisboa",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/missionsabroad/portugal.html"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "Calçada de Santo Amaro, 1349-042 Lisboa",
+      "phone": "+351-21-364-5928",
+      "website": "https://lisszabon.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "852 Francis Baard Street",
-      "phone": "+27 12 342 5393 x05",
-      "website": "https://www.hcipretoria.gov.in"
+      "address": "16 Rua Pêro da Covilhã, 1400-297 Lisboa",
+      "phone": "Phone not available",
+      "website": "https://www.eoilisbon.gov.in/"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "428 King's Highway",
-      "phone": "+27 12 470 3500",
-      "website": "https://embassies.gov.il/pretoria"
+      "address": "200 Avenida da Liberdade, 1250-147 Lisboa",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/portugal/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "796 George Avenue",
-      "phone": "+27 12 423 0000",
-      "website": "https://ambpretoria.esteri.it"
+      "address": "6 Largo do Conde de Pombeiro, 1150-000 Lisboa",
+      "phone": "Phone not available",
+      "website": "https://amblisbona.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "259 Baines Street",
-      "phone": "+27 12 452 1500",
-      "website": "https://www.za.emb-japan.go.jp"
+      "address": "245 Avenida da Liberdade, 1269-033 Lisboa",
+      "phone": "Phone not available",
+      "website": "https://www.pt.emb-japan.go.jp"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "302 Brooks Street",
-      "phone": "+27 12 362 2249",
-      "website": "https://kenya.org.za/"
+      "address": "14 Rua Castilho, 1250-069 Lisboa",
+      "phone": "Phone not available",
+      "website": "https://portugal.um.dk/"
     },
     "NL": {
       "name": "Embassy",
-      "address": "210 Florence Ribeiro Avenue, Pretoria",
-      "phone": "Phone not available",
-      "website": null
+      "address": "1399-011, Lisboa",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "570 Fehrsen Street",
-      "phone": "+27 12 460 1004",
-      "website": "https://embamex.sre.gob.mx/sudafrica/"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "799 Francis Baard Street",
-      "phone": "+27 12 343 0230",
-      "website": "https://www.moroccoembassy.co.za/"
-    },
-    "NZ": {
-      "name": "Embassy",
-      "address": "125 Middel Street, 0181 Pretoria",
-      "phone": "+27 12 4359000",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/africa/south-africa/new-zealand-high-commission-pretoria-south-africa/contactfull"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.nhcpsa.org"
+      "address": "Estrada de Monsanto, 1500-462 Lisboa",
+      "phone": "+351-21-762-1290",
+      "website": "https://embamex.sre.gob.mx/portugal/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "165 Lynnwood Road",
-      "phone": "+27 12 364 3700",
-      "website": "https://www.norway.no/south-africa"
+      "address": "1 Avenida Dom Vasco da Gama, 1400-127 Lisboa",
+      "phone": "+351 21 300 9100",
+      "website": "https://www.norway.no/pt/portugal"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "316 Brooks Street, 0102",
-      "phone": "+27 12 346 1508",
-      "website": "https://russianembassyza.mid.ru/"
+      "address": "11-13 Rua do Pau de Bandeira, 1200-756 Lisboa",
+      "phone": "Phone not available",
+      "website": "http://pt.china-embassy.org/"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "711 Jan Shoba Street, Pretoria",
-      "phone": "+27 12 362 4230",
-      "website": "https://www.saudiembassy.co.za"
-    },
-    "SG": {
-      "name": "Embassy",
-      "address": "980;982 Francis Baard Street, 0083 Pretoria",
-      "phone": "+27 12 430 6035",
-      "website": "https://www.mfa.gov.sg/pretoria"
+      "address": "Rua da Junqueira, 1300-343 Lisboa",
+      "phone": "Phone not available",
+      "website": "http://lizbona.msz.gov.pl/pl/"
     },
     "KR": {
       "name": "Embassy",
-      "address": "265 Melk Street, 0181 Pretoria",
-      "phone": "+27 12 460 2508",
-      "website": "http://overseas.mofa.go.kr/za-en/index.do"
+      "address": "36 Avenida Miguel Bombarda, 1051-802 Lisboa",
+      "phone": "Phone not available",
+      "website": "http://overseas.mofa.go.kr/pt-pt/"
     },
     "ES": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "http://www.exteriores.gob.es/Embajadas/Pretoria"
+      "address": "1 Rua do Salitre, 1250 Lisboa",
+      "phone": "Phone not available"
     },
     "SE": {
       "name": "Embassy",
-      "address": "Park Street, 1166 Pretoria",
+      "address": "12 Rua Miguel Lupi, 1249-077 Lissabon",
       "phone": "Phone not available",
-      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/sydafrika-pretoria/"
+      "website": "http://www.swedenabroad.com/portugal"
     },
     "CH": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Travessa do Patrocínio, 1350-230 Lisboa",
       "phone": "Phone not available",
-      "website": "https://www.eda.admin.ch/pretoria"
+      "website": "https://www.eda.admin.ch/lisbon"
     },
     "TH": {
       "name": "Embassy",
-      "address": "248 Hill Street",
-      "phone": "+27 12 342 5470",
-      "website": "https://pretoria.thaiembassy.org"
+      "address": "12 Rua de Alcolena, 1400-005 Lisboa",
+      "phone": "Phone not available",
+      "website": "https://lisbon.thaiembassy.org/"
     },
     "TR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "1400-092, Lisboa",
       "phone": "Phone not available",
-      "website": "http://pretoria.emb.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "992 Arcadia Street, 0083 Pretoria",
-      "phone": "+27 12 342 7736",
-      "website": "https://www.mofaic.gov.ae/missions/UAE-Missions-Abroad/UAE-Missions-Abroad-Details?countryId=f4d32ae9-01aa-4a43-a8ae-07aab0eb26dd"
+      "website": "http://lizbon.be.mfa.gov.tr"
     },
     "GB": {
-      "name": "Consulate",
-      "address": "8 Riebeek Street, 8000 Cape Town",
-      "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-consulate-general-cape-town"
+      "name": "Embassy",
+      "address": "33 Rua de São Bernardo, 1249-082 Lisboa",
+      "phone": "Phone not available"
     },
     "US": {
       "name": "Embassy",
-      "address": "877 Pretorius Street, 0083 Arcadia",
+      "address": "133 Avenida das Forças Armadas, 1600-081 Lisboa",
       "phone": "Phone not available",
-      "website": "https://za.usembassy.gov/"
+      "website": "https://pt.usembassy.gov"
     }
   },
   "KR": {
     "AR": {
       "name": "Embassy",
-      "address": "206 녹사평대로, 04345 서울특별시",
-      "phone": "+82 2 796 8144",
+      "address": "210-7 녹사평대로, 04345 서울특별시",
+      "phone": "Phone not available",
       "website": "https://ecore.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
       "address": "1 종로, 03154 서울특별시",
-      "phone": "+82 02-2003-0100",
+      "phone": "Phone not available",
       "website": "https://southkorea.embassy.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "1 종로, 03154 서울특별시",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-seoul/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "23 이태원로45길, 04349 서울특별시",
+      "phone": "Phone not available"
     },
     "BR": {
       "name": "Embassy",
       "address": "73 청와대로, 03054 서울특별시",
-      "phone": "+82 02-738-4970",
-      "website": "https://www.brazilhall.com/"
+      "phone": "Phone not available",
+      "website": "http://seul.itamaraty.gov.br/"
     },
     "CA": {
       "name": "Embassy",
       "address": "21 정동길, 04518 서울특별시",
-      "phone": "+82 02-3783-6000",
-      "website": "https://www.korea.gc.ca/"
+      "phone": "Phone not available"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "114 독서당로, 04420 서울특별시",
-      "phone": "+82 2 749 0787",
-      "website": null
+      "address": "24 퇴계로36가길, 04625 중구",
+      "phone": "Phone not available"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "50 종로1길, 03142 서울특별시",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/seoul"
     },
     "FR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "45 서소문로, 04510 서대문구",
       "phone": "Phone not available",
       "website": "https://kr.ambafrance.org/"
     },
     "DE": {
       "name": "Embassy",
       "address": "416 한강대로, 04637 서울특별시",
-      "phone": "+82 2 748 41 14",
+      "phone": "Phone not available",
       "website": "https://seoul.diplo.de/"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "400 청계천로, 03191 중구",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/missionsabroad/republic-of-korea.html"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "장문로, 04393 서울특별시",
+      "phone": "Phone not available",
+      "website": "https://szoul.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "101 독서당로, 04419 서울특별시",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.indembassyseoul.gov.in/"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "42 종로1길, 03152 서울특별시",
       "phone": "Phone not available",
-      "website": "https://embassies.gov.il/seoul"
+      "website": "https://www.dfa.ie/irish-embassy/republic-of-korea/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "98 한남대로, 04418 서울특별시",
       "phone": "Phone not available",
       "website": "https://ambseoul.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "6 율곡로, 03142 서울특별시",
       "phone": "Phone not available",
-      "website": null
+      "website": "http://www.kr.emb-japan.go.jp/"
+    },
+    "DK": {
+      "name": "Embassy",
+      "address": "416 한강대로, 04637 서울특별시",
+      "phone": "Phone not available",
+      "website": "https://sydkorea.um.dk"
     },
     "NL": {
       "name": "Embassy",
       "address": "21-15 정동길, 04518 서울특별시",
-      "phone": "+82 02-311-8600",
-      "website": "https://www.netherlandsandyou.nl/your-country-and-the-netherlands/south-korea"
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
       "address": "6 율곡로, 03142 서울특별시",
-      "phone": "+82 2 7981694",
-      "website": "https://embamex.sre.gob.mx/corea/index.php/menu-1"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "phone": "+82-2-798-1694",
+      "website": "https://embamex.sre.gob.mx/corea/"
     },
     "NZ": {
       "name": "Embassy",
       "address": "21-15 정동길, 04518 서울특별시",
-      "phone": "+82 2 37017700",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/north-asia/republic-of-korea-south/new-zealand-embassy/"
+      "phone": "+82-2-3701-7700",
+      "website": "https://www.mfat.govt.nz/en/countries-and-regions/asia/republic-of-korea-south/new-zealand-embassy/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "21-15 정동길, 04518 서울특별시",
-      "phone": "+82 02-727-71000",
-      "website": "https://www.norway.no/en/south-korea"
-    },
-    "RU": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "21-15 정동길, 04518 중구",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.norway.no/south-korea/"
     },
-    "SA": {
+    "CN": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "명동2길, 04535 서울특별시",
+      "phone": "+82-2-738-1038",
+      "website": "http://kr.china-embassy.org/"
+    },
+    "PL": {
+      "name": "Embassy",
+      "address": "20-1 삼청로, 03062 서울특별시",
       "phone": "Phone not available",
-      "website": "http://embassies.mofa.gov.sa/sites/SouthKorea"
+      "website": "https://www.gov.pl/web/hanguk"
     },
-    "SG": {
+    "PT": {
       "name": "Embassy",
-      "address": "136 세종대로22길, 서울특별시",
-      "phone": "+82-2-774-2464",
-      "website": "https://www.mfa.gov.sg/Seoul"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "104 독서당로, 04420 서울특별시",
-      "phone": "+82 2 2077 5900",
-      "website": "http://www.southafrica-embassy.or.kr/"
+      "address": "13 창덕궁1길, 03058 서울특별시",
+      "phone": "Phone not available",
+      "website": "https://seul.embaixadaportugal.mne.gov.pt"
     },
     "ES": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "이태원로, 04417 서울특별시",
       "phone": "Phone not available",
       "website": "http://www.exteriores.gob.es/Embajadas/Seul"
     },
@@ -7958,718 +8442,764 @@ export const EMBASSIES: Record<string, Record<string, EmbassyInfo>> = {
     },
     "TH": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "42 대사관로, 04402 서울특별시",
       "phone": "Phone not available",
       "website": "https://seoul.thaiembassy.org/th/index"
     },
     "TR": {
       "name": "Embassy",
-      "address": "40 동호로20나길, 04606 서울특별시",
-      "phone": "+82 2 3780 1600",
-      "website": "https://seul-be.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "118 독서당로, 04420 서울특별시",
-      "phone": "+82-2-7903235",
-      "website": "https://sp.mofaic.gov.ae/EN/DiplomaticMissions/Embassies/Seoul/Pages/home.aspx"
+      "address": "장충단로, 04606 서울특별시",
+      "phone": "Phone not available",
+      "website": "http://seoul.emb.mfa.gov.tr"
     },
     "GB": {
       "name": "Embassy",
-      "address": "24 세종대로19길, 04519 서울특별시",
-      "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-embassy-seoul"
+      "address": "15 세종대로21길, 04519 서울특별시",
+      "phone": "Phone not available"
     },
     "US": {
-      "name": "Consulate",
-      "address": "Address not available",
+      "name": "Embassy",
+      "address": "188 세종대로, 03141 서울특별시",
       "phone": "Phone not available",
-      "website": "https://kr.usembassy.gov/busan/"
+      "website": "https://kr.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "58 종로5길, 03151 서울특별시",
+      "phone": "Phone not available",
+      "website": "https://vnembassy-seoul.mofa.gov.vn"
     }
   },
   "ES": {
     "AR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "15 Calle de Fernando El Santo, 28010 Madrid",
       "phone": "Phone not available",
-      "website": "https://cbarc.cancilleria.gob.ar/"
+      "website": "https://eespa.cancilleria.gob.ar"
     },
     "AU": {
       "name": "Embassy",
-      "address": "259-D Paseo de la Castellana, 28046 Madrid",
-      "phone": "+34 913536600",
-      "website": "https://www.spain.embassy.gov.au"
+      "address": "259 B Paseo de la Castellana, 28046 Madrid",
+      "phone": "Phone not available",
+      "website": "https://spain.embassy.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "91 Paseo de la Castellana, 28046 Madrid",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-madrid/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "18 Paseo de la Castellana, 28046 Madrid",
+      "phone": "+34 91 577 63 00",
+      "website": "https://spain.diplomatie.belgium.be"
     },
     "BR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "5 Calle de Fernando El Santo, 28010 Madrid",
       "phone": "Phone not available",
       "website": "http://madri.itamaraty.gov.br"
     },
     "CA": {
       "name": "Embassy",
-      "address": "259D Paseo de la Castellana, 28046 Madrid",
-      "phone": "+34 91 382 8400",
+      "address": "259 B Paseo de la Castellana, 28046 Madrid",
+      "phone": "Phone not available",
       "website": "https://www.canadainternational.gc.ca/spain-espagne"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "69 Calle de Velázquez, 28006 Madrid",
-      "phone": "+34 91 577 63 08",
-      "website": null
+      "address": "78 Calle de Claudio Coello, 28001 Madrid",
+      "phone": "Phone not available",
+      "website": "http://es.mvep.hr"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "22-24 Avenida de Pío XII, 28016 Madrid",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/madrid"
     },
     "FR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://es.ambafrance.org/"
+      "address": "9 Calle de Salustiano Olózaga, 28001 Madrid",
+      "phone": "Phone not available"
     },
     "DE": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+34 932 92 10 00",
-      "website": "https://spanien.diplo.de/es-de/vertretungen/generalkonsulat1"
+      "address": "Calle de Fortuny, 28010 Madrid",
+      "phone": "Phone not available",
+      "website": "http://www.spanien.diplo.de/"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "24 Avenida del Doctor Arce, 28002 Madrid",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/spain/"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "6 Calle de Fortuny, 28010 Madrid",
+      "phone": "Phone not available",
+      "website": "https://madrid.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
       "address": "30-32 Avenida de Pío XII, 28016 Madrid",
-      "phone": "+34 91 309 88 82",
+      "phone": "Phone not available",
       "website": "https://www.eoimadrid.gov.in"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "46 Paseo de la Castellana, 28046 Madrid",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.dfa.ie/irish-embassy/spain/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Calle de Juan Bravo, 28006 Madrid",
       "phone": "Phone not available",
-      "website": "https://consbarcellona.esteri.it/consolato_barcellona"
+      "website": "https://ambmadrid.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "109 Calle de Serrano, 28006 Madrid",
-      "phone": "+34 915907600",
-      "website": "https://www.es.emb-japan.go.jp/itprtop_es/"
+      "address": "632 Avinguda Diagonal, 08017 Barcelona",
+      "phone": "Phone not available"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "13 Calle del Segre, 28002 Madrid",
-      "phone": "+34 917 81 20 00",
-      "website": "https://www.kenyaembassyspain.es/"
+      "address": "26 Calle de Serrano, 28001 Madrid",
+      "phone": "Phone not available",
+      "website": "https://spanien.um.dk/"
     },
     "NL": {
       "name": "Embassy",
-      "address": "259-D Paseo de la Castellana, 28046 Madrid",
-      "phone": "+34 913 537 500",
-      "website": "https://www.nederlandwereldwijd.nl/landen/spanje/over-ons/ambassade-in-madrid"
+      "address": "259 B Paseo de la Castellana, 28046 Madrid",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "46 Carrera de San Jerónimo, 28014 Madrid",
       "phone": "Phone not available",
-      "website": "https://consulmex.sre.gob.mx/barcelona/"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "website": "https://embamex.sre.gob.mx/espana/"
     },
     "NZ": {
       "name": "Embassy",
       "address": "7 Calle de Diego de León, 28006 Madrid",
-      "phone": "+34 915 230226",
+      "phone": "+34-915-23-02-26",
       "website": "https://www.mfat.govt.nz/en/countries-and-regions/europe/spain/new-zealand-embassy/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "23 Calle del Segre, 28002 Madrid",
-      "phone": "+34 91 563 09 11",
-      "website": "https://www.ng-embassyspain.org"
     },
     "NO": {
       "name": "Embassy",
       "address": "26 Calle de Serrano, 28001 Madrid",
-      "phone": "+34 91 436 38 40",
+      "phone": "Phone not available",
       "website": "https://www.norway.no/es/spain/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "155 Calle de Velázquez, 28002 Madrid",
-      "phone": "+34915622264",
-      "website": "https://spain.mid.ru"
+      "address": "34 Carrer de Lleó XIII, 08022 Barcelona",
+      "phone": "Phone not available"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "3 Calle del Doctor Álvarez Sierra, 28033 Madrid",
-      "phone": "+34 91 416 10 00",
-      "website": null
+      "address": "23bis Calle Guisando, 28035 Madrid",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/hiszpania"
     },
-    "ZA": {
+    "PT": {
       "name": "Embassy",
-      "address": "91 Calle de Claudio Coello, 28006 Madrid",
-      "phone": "+34 91 436 37 80",
-      "website": "https://www.dirco.gov.za/madrid/"
+      "address": "88 Calle de Lagasca, 28001 Madrid",
+      "phone": "Phone not available",
+      "website": "https://madrid.embaixadaportugal.mne.gov.pt"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "15 Calle de González Amigo, 28033 Madrid",
       "phone": "Phone not available",
-      "website": "https://overseas.mofa.go.kr/es-barcelona-es/index.do"
+      "website": "http://overseas.mofa.go.kr/es-ko"
     },
     "SE": {
       "name": "Embassy",
-      "address": "25 Calle de Caracas",
+      "address": "25 Calle de Caracas, 28010 Madrid",
       "phone": "Phone not available",
-      "website": "https://www.swedenabroad.se/es/embajada/spain-madrid/"
+      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/spanien-madrid/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "35 A Calle de Núñez de Balboa, 28001 Madrid",
-      "phone": "+34 91 436 39 60",
+      "address": "Calle de Núñez de Balboa, 28001 Madrid",
+      "phone": "Phone not available",
       "website": "https://www.eda.admin.ch/madrid"
     },
     "TH": {
       "name": "Embassy",
       "address": "29 Calle de Joaquín Costa, 28002 Madrid",
-      "phone": "+34 915632903",
+      "phone": "Phone not available",
       "website": "https://madrid.thaiembassy.org"
     },
     "TR": {
       "name": "Embassy",
-      "address": "7 Passeig de Gràcia, 08007 Barcelona",
-      "phone": "+34 933 17 92 31;+34 933 43 59 14;+34 933 17 10 51",
-      "website": "https://barselona-bk.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Consulate",
-      "address": "Address not available",
-      "phone": "+34-932-40-85-50",
-      "website": "https://www.mofaic.gov.ae/en/missions/uae-missions-abroad/uae-missions-abroad-details?countryId=9c459907-85ea-4da7-a547-e294e7122163"
+      "address": "Almagro, 28071 Madrid",
+      "phone": "Phone not available",
+      "website": "http://madrid.be.mfa.gov.tr"
     },
     "GB": {
       "name": "Embassy",
-      "address": "259D Paseo de la Castellana, 28046 Madrid",
-      "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-embassy-madrid"
+      "address": "259 B Paseo de la Castellana, 28046 Madrid",
+      "phone": "Phone not available"
     },
     "US": {
       "name": "Embassy",
-      "address": "75 Calle de Serrano, 28006",
-      "phone": "+34 91 587 2200",
-      "website": "https://es.usembassy.gov/embassy-consulates/madrid/"
+      "address": "75 Calle de Serrano, 28006 Madrid",
+      "phone": "Phone not available",
+      "website": "https://es.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "54 Avenida de Alfonso XIII, 28016 Madrid",
+      "phone": "Phone not available"
     }
   },
   "SE": {
     "AR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Narvavägen, 115 22 Stockholm",
       "phone": "Phone not available",
-      "website": "http://esuec.cancilleria.gov.ar/"
+      "website": "https://esuec.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "72 Klarabergsviadukten, 107 24 Stockholm",
       "phone": "Phone not available",
-      "website": "https://sweden.embassy.gov.au/"
+      "website": "http://www.sweden.embassy.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "35 Kommendörsgatan, 11458 Stockholm",
+      "phone": "Phone not available"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "Fleminggatan, 112 27 Stockholm",
+      "phone": "+46-8-534-802-00",
+      "website": "http://sweden.diplomatie.belgium.be/"
     },
     "BR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+46 8 545 163 00",
-      "website": "http://estocolmo.itamaraty.gov.br"
+      "address": "88 Kungsgatan, 112 27 Stockholm",
+      "phone": "Phone not available"
     },
     "CA": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+46 8 453 30 00",
-      "website": "https://www.international.gc.ca/country-pays/sweden-suede/stockholm.aspx?lang=eng"
+      "address": "Tegelbacken, 111 52 Stockholm",
+      "phone": "Phone not available"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "5 Blasieholmsgatan, 103 27 Stockholm",
       "phone": "Phone not available",
-      "website": "http://www.egyptembassy.se/"
+      "website": "http://se.mvep.hr/"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "21 Villagatan, 114 32 Stockholm",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/stockholm"
     },
     "FR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+46 8 459 53 00",
-      "website": "https://se.ambafrance.org/"
+      "address": "Kommendörsgatan, 114 44 Stockholm",
+      "phone": "+46-8-459-53-00",
+      "website": "http://www.ambafrance-se.org/"
     },
     "DE": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Skarpögatan, 115 27 Stockholm",
       "phone": "Phone not available",
-      "website": "https://stockholm.diplo.de/"
+      "website": "http://www.stockholm.diplo.de"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "Kommendörsgatan, 114 44 Stockholm",
+      "phone": "Phone not available"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "Dag Hammarskjölds Väg, 115 27 Stockholm",
+      "phone": "+46-8-662-56-75",
+      "website": "https://stockholm.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "4 Kornhamnstorg, 111 27 Stockholm",
       "phone": "Phone not available",
       "website": "https://www.indembassysweden.gov.in/"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "5 Hovslagargatan, 111 48 Stockholm",
       "phone": "Phone not available",
-      "website": "https://embassies.gov.il/STOCKHOLM/Pages/default.aspx"
+      "website": "https://www.ireland.ie/en/sweden/stockholm/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "176 Djurgårdsvägen, 115 21 Stockholm",
       "phone": "Phone not available",
-      "website": "http://www.ambstoccolma.esteri.it/ambasciata_stoccolma"
+      "website": "https://ambstoccolma.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "10 Gärdesgatan, 115 27 Stockholm",
       "phone": "Phone not available",
-      "website": "https://www.se.emb-japan.go.jp/"
+      "website": "https://www.se.emb-japan.go.jp"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "14 Gustav Adolfs Torg, 101 23 Stockholm",
       "phone": "Phone not available",
-      "website": "https://kenyaembassystockholm.com/"
+      "website": "http://sverige.um.dk/"
     },
     "NL": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+46855693300",
-      "website": "https://www.nederlandwereldwijd.nl/landen/zweden/over-ons/ambassade-in-stockholm"
+      "address": "16 Götgatan, 118 46 Stockholm",
+      "phone": "Phone not available",
+      "website": "http://sweden.nlembassy.org/"
     },
     "MX": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+46 8 511 614 00",
-      "website": "https://embamex.sre.gob.mx/suecia/index.php/en/"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "Luntmakargatan, 111 34 Stockholm",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://embamex.sre.gob.mx/suecia"
     },
     "NZ": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+46 8 40017270",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/europe/sweden/new-zealand-embassy/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "http://www.nigerianembassysweden.se/"
+      "address": "Skarpögatan, 115 27 Stockholm",
+      "phone": "+46-8-400-172-70"
     },
     "NO": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "4 Skarpögatan, 115 27 Stockholm",
       "phone": "Phone not available",
-      "website": "https://norge.se/"
+      "website": "https://www.norway.no/no/sweden/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Djurgårdsbrunnsvägen, 115 27 Stockholm",
+      "phone": "+46-8-579-364-29",
+      "website": "http://www.chinaembassy.se/eng/"
+    },
+    "PL": {
+      "name": "Embassy",
+      "address": "Karlavägen, 114 36 Stockholm",
       "phone": "Phone not available",
-      "website": "http://www.ryssland.se/"
+      "website": "http://www.sztokholm.msz.gov.pl/"
     },
-    "SA": {
+    "PT": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.mofa.gov.sa/sites/mofaen/SaudiMissionsAbroad/SaudiEmbassiesAbroad/Europe/Pages/EmbassyID40920.aspx"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+46 8 24 39 50",
-      "website": "https://dirco1.azurewebsites.net/sweden/"
+      "address": "Drottninggatan, 113 60 Stockholm",
+      "phone": "Phone not available"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Kruthusplan, 115 27 Stockholm",
       "phone": "Phone not available",
-      "website": "http://swe.mofat.go.kr/eng/index.jsp"
+      "website": "http://overseas.mofa.go.kr/se-en/index.do"
     },
     "ES": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "address": "Hazeliusporten, 115 21 Stockholm",
+      "phone": "Phone not available"
     },
     "CH": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+46 8 676 79 00",
+      "address": "Valhallavägen, 100 41 Stockholm",
+      "phone": "Phone not available",
       "website": "https://www.eda.admin.ch/stockholm"
     },
     "TH": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Floragatan, 114 32 Stockholm",
       "phone": "Phone not available",
-      "website": "https://www.thaiembassy.se/"
+      "website": "http://thaiembassy.se"
     },
     "TR": {
       "name": "Embassy",
       "address": "20 Dag Hammarskjölds Väg, 115 27 Stockholm",
-      "phone": "+46 8 667 29 60",
-      "website": "https://stokholm-be.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+46 8 411 12 44",
-      "website": "https://www.mofaic.gov.ae/missions/UAE-Missions-Abroad/UAE-Missions-Abroad-Details?countryId=149ec9b5-d0fe-46cf-8039-28d062427049"
+      "phone": "Phone not available"
     },
     "GB": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "address": "Kompaniet, 115 27 Stockholm",
+      "phone": "+46-8-671-30-00",
+      "website": "https://www.gov.uk/government/world/organisations/british-embassy-stockholm/"
     },
     "US": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+46 8 783 53 00",
+      "address": "2 Gärdesgatan, 115 27 Stockholm",
+      "phone": "Phone not available",
       "website": "https://se.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "Örby slottspark, Stockholm",
+      "phone": "Phone not available"
     }
   },
   "CH": {
     "AR": {
-      "name": "Embassy",
+      "name": "Botschaft Argentinien",
       "address": "1 Jungfraustrasse, 3005 Bern",
-      "phone": "+41 31 3564343",
+      "phone": "+41-31-356-43-43",
       "website": "http://www.esuiz.mrecic.gob.ar"
     },
     "AU": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "5 Weltpoststrasse, 3015 Bern",
       "phone": "Phone not available",
       "website": "https://geneva.mission.gov.au/gene/Australian-SwissRelationship.html"
     },
+    "AT": {
+      "name": "Botschaft Österreich",
+      "address": "77-79 Kirchenfeldstrasse, 3005 Bern",
+      "phone": "+41-31-356-52-52",
+      "website": "https://www.bmeia.gv.at/botschaft/bern.html"
+    },
+    "BE": {
+      "name": "Botschaft von Belgien",
+      "address": "4 Weltpoststrasse, 3015 Bern",
+      "phone": "+41-31-350-01-50",
+      "website": "https://switzerland.diplomatie.belgium.be/"
+    },
     "BR": {
-      "name": "Embassy",
+      "name": "Botschaft Brasilien",
       "address": "68 Monbijoustrasse, 3007 Bern",
-      "phone": "+41 31 3718515",
+      "phone": "+41-31-371-85-15",
       "website": "http://berna.itamaraty.gov.br"
     },
     "CA": {
-      "name": "Embassy",
+      "name": "Botschaft Kanada",
       "address": "88 Kirchenfeldstrasse, 3005 Bern",
-      "phone": "+41 31 3573200",
+      "phone": "+41-31-357-32-00",
       "website": "https://www.canadainternational.gc.ca/switzerland-suisse"
     },
-    "EG": {
-      "name": "Embassy",
-      "address": "61 Elfenauweg, 3006 Bern",
-      "phone": "+41 31 352 80 12",
-      "website": null
+    "HR": {
+      "name": "Botschaft Kroatien",
+      "address": "45 Thunstrasse, 3005 Bern",
+      "phone": "+41-31-352-02-75"
+    },
+    "CZ": {
+      "name": "Botschaft Tschechien",
+      "address": "53 Muristrasse, 3006 Bern",
+      "phone": "+41-31-350-40-70",
+      "website": "https://www.mzv.cz/bern"
     },
     "FR": {
       "name": "Embassy",
-      "address": "46 Schosshaldenstrasse, 3006 Bern",
-      "phone": "+41 31 3592111",
-      "website": "http://www.ambafrance-ch.org"
+      "address": "2 Cours des Bastions, 1205 Genève",
+      "phone": "Phone not available"
     },
     "DE": {
-      "name": "Embassy",
+      "name": "Konsulat Deutschland",
       "address": "78 Willadingweg, 3006 Bern",
       "phone": "+41 31 359 43 43",
       "website": "http://www.bern.diplo.de/"
     },
-    "IN": {
+    "GR": {
       "name": "Embassy",
+      "address": "4 Weltpoststrasse, 3015 Bern",
+      "phone": "+41-31-356-14-14",
+      "website": "https://www.mfa.gr/switzerland/"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "50 Muristrasse, 3006 Bern",
+      "phone": "Phone not available"
+    },
+    "IN": {
+      "name": "Botschaft Indien",
       "address": "28 Kirchenfeldstrasse, 3005 Bern",
-      "phone": "+41 31 3501130",
+      "phone": "+41-31-350-11-30",
       "website": "https://www.indembassybern.gov.in/"
     },
-    "IL": {
-      "name": "Embassy",
-      "address": "32 Alpenstrasse, 3006 Bern",
-      "phone": "+41 31 3563500",
-      "website": "https://embassies.gov.il/bern"
+    "IE": {
+      "name": "Botschaft Irland",
+      "address": "68 Kirchenfeldstrasse, 3005 Bern",
+      "phone": "+41-31-352-14-42",
+      "website": "https://www.dfa.ie/irish-embassy/switzerland/"
     },
     "IT": {
-      "name": "Embassy",
+      "name": "Botschaft Italien",
       "address": "14 Elfenstrasse, 3005 Bern",
-      "phone": "+41 31 3500777",
+      "phone": "+41-31-350-07-77",
       "website": "http://www.ambberna.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "53 Engestrasse, 3012 Bern",
-      "phone": "+41 31 3002222",
-      "website": "https://www.ch.emb-japan.go.jp/"
+      "address": "82 Rue de Lausanne, 1202 Genève",
+      "phone": "Phone not available",
+      "website": "https://www.geneve.ch.emb-japan.go.jp/itprtop_ja/"
     },
     "NL": {
       "name": "Embassy",
       "address": "7 Seftigenstrasse, 3007 Bern",
-      "phone": "+41 31 350 87 00",
-      "website": "https://www.nederlandwereldwijd.nl/landen/zwitserland/over-ons/ambassade-in-bern"
+      "phone": "Phone not available"
     },
     "MX": {
-      "name": "Embassy",
+      "name": "Botschaft Mexiko",
       "address": "20 Weltpoststrasse, 3015 Bern",
       "phone": "+41 31 357 47 47",
       "website": "https://embamex.sre.gob.mx/suiza"
     },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+41-31-351-46-30",
-      "website": null
-    },
     "NZ": {
-      "name": "Embassy",
+      "name": "Mission Permanente de Nouvelle-Zélande",
       "address": "2 Chemin des Fins, 1218 Le Grand-Saconnex",
       "phone": "+41 22 9290350",
       "website": "https://www.mfat.govt.nz/en/countries-and-regions/united-nations/new-zealand-permanent-mission-geneva/"
     },
-    "NG": {
-      "name": "Embassy",
-      "address": "45 Zieglerstrasse, 3007 Bern",
-      "phone": "+41 31 3842600",
-      "website": "https://www.nigerianbern.org/"
-    },
     "NO": {
-      "name": "Embassy",
+      "name": "Botschaft Norwegen",
       "address": "1 Giacomettistrasse, 3006 Bern",
-      "phone": "+41 31 3105555",
+      "phone": "+41-31-310-55-55",
       "website": "https://www.norway.no/switzerland"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "37 Brunnadernrain",
-      "phone": "+41 31 352 05 66",
-      "website": "https://switzerland.mid.ru"
+      "address": "10 Kalcheggweg, 3006 Bern",
+      "phone": "Phone not available"
     },
-    "SA": {
-      "name": "Embassy",
-      "address": "64 Kirchenfeldstrasse, 3005 Bern",
-      "phone": "+41 31 3521555;+41 31 3521556",
-      "website": "https://embassies.mofa.gov.sa/sites/Switzerland/EN/Pages/default.aspx"
+    "PL": {
+      "name": "Residenz Polen",
+      "address": "20 Elfenstrasse, 3006 Bern",
+      "phone": "+41-31-358-02-02",
+      "website": "https://www.gov.pl/web/schweiz"
     },
-    "ZA": {
-      "name": "Embassy",
-      "address": "29 Alpenstrasse, 3006 Bern",
-      "phone": "+41 31 3501313",
-      "website": "https://www.southafrica.ch"
+    "PT": {
+      "name": "Botschaft Portugal",
+      "address": "20 Weltpoststrasse, 3015 Bern",
+      "phone": "+41 31 352 86 68",
+      "website": "https://berna.embaixadaportugal.mne.gov.pt"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+41-31-356-24-44",
-      "website": null
+      "address": "38 Kalcheggweg, 3006 Bern",
+      "phone": "+41-31-356-24-44"
     },
     "ES": {
-      "name": "Embassy",
+      "name": "Botschaft von Spanien",
       "address": "24 Kalcheggweg, 3000 Bern",
       "phone": "+41 31 350 52 52",
       "website": "http://www.exteriores.gob.es/Embajadas/BERNA"
     },
     "SE": {
-      "name": "Embassy",
+      "name": "Botschaft Schweden",
       "address": "26 Bundesgasse, 3011 Bern",
-      "phone": "+41 31 3287000",
+      "phone": "+41-31-328-70-00",
       "website": "https://www.swedenabroad.se/en/embassies/switzerland-bern/"
     },
     "TH": {
-      "name": "Embassy",
+      "name": "Botschaft Thailand",
       "address": "56 Kirchstrasse, 3097 Liebefeld",
-      "phone": "+41 31 9703030",
+      "phone": "+41-31-970-30-30",
       "website": "https://www.thaiembassy.ch/"
     },
     "TR": {
       "name": "Embassy",
       "address": "33 Lombachweg, 3006 Bern",
-      "phone": "+41 31 359 70 70",
-      "website": "https://bern-be.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "31 Schwarztorstrasse, 3007 Bern",
-      "phone": "+41 31 3121710",
-      "website": null
+      "phone": "Phone not available",
+      "website": "http://cenevre.bk.mfa.gov.tr"
     },
     "GB": {
-      "name": "Embassy",
+      "name": "Botschaft Grossbritannien",
       "address": "50 Thunstrasse, 3005 Bern",
-      "phone": "+41-31-359-77-00",
-      "website": "https://www.gov.uk/world/organisations/british-embassy-berne"
+      "phone": "+41-31-359-77-00"
     },
     "US": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "19 Sulgeneckstrasse, 3007 Bern",
       "phone": "+41-31-357-70-11",
       "website": "https://ch.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Botschaft Vietnam",
+      "address": "26 Schlösslistrasse, 3008 Bern",
+      "phone": "+41-31-388-78-72",
+      "website": "https://www.vietnamembassy-switzerland.org/"
     }
   },
   "TH": {
     "AR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+66 (0) 2259 0401",
+      "address": "Edge Sukumvit 23 Property, กรุงเทพมหานคร",
+      "phone": "Phone not available",
       "website": "https://etail.cancilleria.gob.ar"
     },
     "AU": {
       "name": "Embassy",
-      "address": "181 Wireless Road",
-      "phone": "+66 2 344 6300",
-      "website": "https://thailand.embassy.gov.au/"
+      "address": "181 Wireless Road, 10330 กรุงเทพมหานคร",
+      "phone": "Phone not available",
+      "website": "http://www.thailand.embassy.gov.au/bkok/home.html"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "ซอยนันทา-โมซาร์ท, 10120 กรุงเทพมหานคร",
+      "phone": "Phone not available",
+      "website": "http://www.bmeia.gv.at/botschaft/bangkok.html"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "ถนนนราธิวาสราชนครินทร์, 10500 กรุงเทพมหานคร",
+      "phone": "+66 2 108 18 00",
+      "website": "https://thailand.diplomatie.belgium.be"
     },
     "BR": {
       "name": "Embassy",
-      "address": "ถนนพระรามที่ 4",
-      "phone": "+66 02-679-8567",
+      "address": "ถนนพระรามที่ 4, 10330 กรุงเทพมหานคร",
+      "phone": "Phone not available",
       "website": "http://bangkok.itamaraty.gov.br"
     },
     "CA": {
       "name": "Embassy",
-      "address": "990 Rama IV, 10500",
-      "phone": "+66 0-2646-4300",
-      "website": "https://www.thailand.gc.ca/"
+      "address": "990 Rama IV, 10500 กรุงเทพมหานคร",
+      "phone": "Phone not available",
+      "website": "https://www.canadainternational.gc.ca/thailand-thailande/"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "71/6 ซอยร่วมฤดี 2, 10330 กรุงเทพมหานคร",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/bangkok"
     },
     "FR": {
       "name": "Embassy",
-      "address": "35 ซอยเจริญกรุง 36, 10500",
+      "address": "72 ถนนเจริญกรุง, 10500 กรุงเทพมหานคร",
       "phone": "Phone not available",
       "website": "https://th.ambafrance.org/"
     },
     "DE": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "ซอยเธียรประสิทธิ์, 10120 กรุงเทพมหานคร",
       "phone": "Phone not available",
-      "website": "https://bangkok.diplo.de/"
+      "website": "http://www.bangkok.diplo.de/"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "ถนนนราธิวาสราชนครินทร์, 10500 กรุงเทพมหานคร",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/missionsabroad/thailand"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "57 ถนนวิทยุ, 10330 กรุงเทพมหานคร",
+      "phone": "Phone not available",
+      "website": "https://bangkok.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "ซอยสุขุมวิท 23",
-      "phone": "+66-2-2580300",
+      "address": "ซอยสุขุมวิท 23, 10110 กรุงเทพมหานคร",
+      "phone": "Phone not available",
       "website": "https://embassyofindiabangkok.gov.in"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "75 ซอยสุขุมวิท 19",
-      "phone": "+662 204 9200",
-      "website": "https://embassies.gov.il/bangkok"
+      "address": "208 Wireless Road, 10330 กรุงเทพมหานคร",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/thailand/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "87 ถนนวิทยุ, 10330",
-      "phone": "+66 2-2504970",
+      "address": "87 ถนนวิทยุ, 10330 กรุงเทพมหานคร",
+      "phone": "Phone not available",
       "website": "https://ambbangkok.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "เชียงใหม่",
+      "phone": "Phone not available"
+    },
+    "DK": {
+      "name": "Embassy",
+      "address": "10 สาทร ซอย 1, 10120 กรุงเทพมหานคร",
       "phone": "Phone not available",
-      "website": "http://www.th.emb-japan.go.jp/en/index.htm"
+      "website": "https://thailand.um.dk"
     },
     "NL": {
       "name": "Embassy",
-      "address": "ถนนวิทยุ, 10330",
-      "phone": "Phone not available",
-      "website": null
+      "address": "ถนนวิทยุ, 10330 กรุงเทพมหานคร",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "1 South Sathorn Road, 10120",
-      "phone": "+66 2 006 0734",
-      "website": "https://embamex.sre.gob.mx/tailandia"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "ถนนสาทรใต้, 10120 กรุงเทพมหานคร",
       "phone": "Phone not available",
-      "website": "http://www.moroccoembassybangkok.org"
+      "website": "https://embamex.sre.gob.mx/tailandia"
     },
     "NZ": {
       "name": "Embassy",
-      "address": "87 ถนนวิทยุ, 10330",
-      "phone": "+66 2 2542530",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/south-east-asia/thailand/new-zealand-embassy/"
+      "address": "ถนนวิทยุ, 10330 กรุงเทพมหานคร",
+      "phone": "+66-2-254-2530",
+      "website": "https://www.mfat.govt.nz/countries-and-regions/asia/thailand/new-zealand-embassy/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "591 ถนนสุขุมวิท",
-      "phone": "+66 (0)2204 6500",
+      "address": "ถนนสุขุมวิท, 10110 กรุงเทพมหานคร",
+      "phone": "Phone not available",
       "website": "https://www.norway.no/en/thailand"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "78 ถนนทรัพย์",
-      "phone": "+66 2 234-98-24",
-      "website": "https://thailand.mid.ru"
+      "address": "57 ถนนรัชดาภิเษก, 10400 กรุงเทพมหานคร",
+      "phone": "Phone not available"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "28 ถนนสาทรเหนือ",
-      "phone": "+6626392999",
-      "website": "https://embassies.mofa.gov.sa/sites/Thailand"
-    },
-    "SG": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "ถนนวิทยุ, 10330 แขวงลุมพินี",
       "phone": "Phone not available",
-      "website": "https://www.mfa.gov.sg/Bangkok"
+      "website": "https://www.gov.pl/web/tajlandia"
     },
-    "ZA": {
+    "PT": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+66 (0) 2 092 2900",
-      "website": "https://www.dirco.gov.za/bangkok"
+      "address": "ซอยเจริญกรุง 30, 10500 กรุงเทพมหานคร",
+      "phone": "Phone not available",
+      "website": "https://banguecoque.embaixadaportugal.mne.gov.pt"
     },
     "KR": {
       "name": "Embassy",
-      "address": "23 ถนนเทียมร่วมมิตร",
-      "phone": "+66 2 247 7537",
-      "website": "http://tha.mofa.go.kr/"
+      "address": "ถนนเทียมร่วมมิตร, 10310 กรุงเทพมหานคร",
+      "phone": "Phone not available",
+      "website": "http://tha.mofa.go.kr"
     },
     "ES": {
       "name": "Embassy",
-      "address": "ถนนรัชดาภิเษก",
+      "address": "ถนนรัชดาภิเษก, 10110 กรุงเทพมหานคร",
       "phone": "Phone not available",
-      "website": "http://www.exteriores.gob.es/Embajadas/BANGKOK"
+      "website": "http://www.exteriores.gob.es/Embajadas/Bangkok"
     },
     "SE": {
       "name": "Embassy",
-      "address": "140 ถนนสุขุมวิท, 10110",
+      "address": "ถนนสุขุมวิท, 10110 กรุงเทพมหานคร",
       "phone": "Phone not available",
       "website": "http://www.swedenabroad.com/Bangkok/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "35 North Wireless Road, 10330",
-      "phone": "+66 2 674 6900",
+      "address": "35 North Wireless Road, 10330 กรุงเทพมหานคร",
+      "phone": "Phone not available",
       "website": "https://www.eda.admin.ch/bangkok"
     },
     "TR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+66 2 355 5486;+66 2 355 5487;+66 2 355 5488;+66 2 355 5489",
-      "website": "https://bangkok-be.mfa.gov.tr"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "87 ถนนวิทยุ, 10330",
+      "address": "ซอยจัดสรร, 10310 กรุงเทพมหานคร",
       "phone": "Phone not available",
-      "website": "https://sp.mofaic.gov.ae/EN/DiplomaticMissions/Embassies/Bangkok/Pages/home.aspx"
+      "website": "http://bangkok.emb.mfa.gov.tr/"
     },
     "GB": {
       "name": "Embassy",
-      "address": "11/1 ถนนสาทรใต้, 10120",
+      "address": "A 53 Wittayu Rd. Lumpini,, 10330 กรุงเทพมหานคร",
       "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-embassy-bangkok"
+      "website": "https://www.gov.uk/government/world/thailand/british-embassy-bangkok"
     },
     "US": {
       "name": "Embassy",
-      "address": "95 ถนนวิทยุ, 10330 แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร",
-      "phone": "+6622054000",
+      "address": "ถนนวิทยุ, 10330 กรุงเทพมหานคร",
+      "phone": "Phone not available",
       "website": "https://th.usembassy.gov/th/"
     }
   },
@@ -8677,450 +9207,306 @@ export const EMBASSIES: Record<string, Record<string, EmbassyInfo>> = {
     "AR": {
       "name": "Embassy",
       "address": "19 Karaca Sokak, 06680 Ankara",
-      "phone": "+90 312 446 20 61;+90 312 446 20 62",
-      "website": "https://eturq.cancilleria.gob.ar"
+      "phone": "Phone not available",
+      "website": "https://eturq.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
-      "address": "88 Uğur Mumcu Caddesi, 06680 Ankara",
-      "phone": "+90 312 459 95 00",
-      "website": "https://turkey.embassy.gov.au/anka/home.html"
+      "address": "88 Uğur Mumcu Caddesi, 06680 Çankaya",
+      "phone": "+90-312-4599500",
+      "website": "https://turkey.embassy.gov.au/ankaturkish/home.html"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "46 Köybaşı Caddesi, 34464 Istanbul",
+      "phone": "Phone not available"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "37 Sıraselviler Caddesi, 34433 İstanbul",
+      "phone": "+90 212 243 20 68",
+      "website": "https://turkiye.diplomatie.belgium.be/tr/buyukelcilik-ve-konsolosluklar/istanbul-baskonsolosluk"
     },
     "BR": {
       "name": "Embassy",
-      "address": "69A Reşit Galip Caddesi, 06680",
-      "phone": "+90 312 448 18 40",
-      "website": "https://www.gov.br/mre/pt-br/embaixada-ancara"
+      "address": "69A Reşit Galip Caddesi, 06680 Çankaya",
+      "phone": "Phone not available",
+      "website": "http://ancara.itamaraty.gov.br"
     },
     "CA": {
       "name": "Embassy",
-      "address": "58 Cinnah Caddesi, 06690",
-      "phone": "+90 312 409 27 00",
-      "website": "https://www.international.gc.ca/country-pays/turkiye/ankara.aspx?lang=eng"
+      "address": "58 Cinnah Caddesi, 06690 Ankara",
+      "phone": "Phone not available",
+      "website": "https://www.canadainternational.gc.ca/turkey-turquie"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "126 Atatürk Bulvarı, 06680",
-      "phone": "+90 312 426 10 26",
-      "website": null
+      "address": "18 Kırkpınar Sokak, 06690 Ankara",
+      "phone": "Phone not available",
+      "website": "http://tr.mvep.hr"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "15 Kaptanpaşa Sokak, 06680 Çankaya",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/ankara"
     },
     "FR": {
       "name": "Embassy",
-      "address": "70 Paris Caddesi, 06680",
-      "phone": "+90 312 455 45 45",
+      "address": "43 Paris Caddesi, 06680 Çankaya",
+      "phone": "Phone not available",
       "website": "https://tr.ambafrance.org/"
     },
     "DE": {
       "name": "Embassy",
-      "address": "114 Atatürk Bulvarı, 06680 Ankara",
-      "phone": "+90 312 455 51 00",
-      "website": "https://ankara.diplo.de/"
+      "address": "10 İnönü Caddesi, 34427 Beyoğlu",
+      "phone": "Phone not available"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "262 Atatürk Caddesi, 35220 İzmir",
+      "phone": "+90-232-464-31-60",
+      "website": "https://www.mfa.gr/turkey/tr/consulate-general-in-izmir/"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "27 Yankı Sokak, 34400 Kâğıthane",
+      "phone": "Phone not available",
+      "website": "https://isztambul.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "77 Cinnah Caddesi, 06690",
-      "phone": "+90 312 438 21 95;+90 312 438 21 96;+90 312 438 21 97;+90 312 438 21 98",
-      "website": "https://www.indembassyankara.gov.in"
+      "address": "77 Cinnah Caddesi, 06690 Çankaya",
+      "phone": "Phone not available",
+      "website": "http://www.indembassyankara.gov.in"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "2 Söğütözü Caddesi, 06530",
-      "phone": "+90 312 459 75 00",
-      "website": "https://ankara.mfa.gov.il"
+      "address": "88 Uğur Mumcu Caddesi, 06700 Ankara",
+      "phone": "+90-312-4591000",
+      "website": "https://www.dfa.ie/irish-embassy/turkey/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "118 Atatürk Bulvarı, 06680",
-      "phone": "+90 312 457 42 00",
-      "website": "https://ambankara.esteri.it/tr"
+      "address": "118 Atatürk Bulvarı, 06680 Çankaya",
+      "phone": "Phone not available",
+      "website": "https://ambankara.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "81 Reşit Galip Caddesi, 06680",
-      "phone": "+90 312 446 05 00",
-      "website": "https://www.tr.emb-japan.go.jp/index.htm"
+      "address": "Eski Büyükdere Caddesi, 34394 Şişli",
+      "phone": "Phone not available",
+      "website": "http://www.istanbul.tr.emb-japan.go.jp/index_j.html"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "11 Fahreddin Paşa Sokağı, 06550 Ankara",
-      "phone": "+90 312 491 45 07;+90 312 491 45 08;+90 312 491 45 09",
-      "website": "https://kenyaembassy.org.tr/"
+      "address": "106 Turan Güneş Bulvarı, 06550 Çankaya/Ankara",
+      "phone": "Phone not available",
+      "website": "https://tyrkiet.um.dk"
     },
     "NL": {
       "name": "Embassy",
-      "address": "221 Mevlana Bulvarı, 06520",
-      "phone": "+90 312 409 18 00",
-      "website": "https://www.netherlandsandyou.nl/web/turkiye/"
+      "address": "197 İstiklal Caddesi, 34433 İstanbul",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "1 Pak Sokağı, 06690",
-      "phone": "+90 312 442 30 33",
-      "website": "https://embamex.sre.gob.mx/turquia/index.php/laembajada"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "11 Rabat Sokak, 06680 Ankara",
-      "phone": "+90 312 347 60 20",
-      "website": null
+      "address": "18 Kırkpınar Sokak, 06690 Ankara",
+      "phone": "Phone not available",
+      "website": "https://embamex.sre.gob.mx/turquia"
     },
     "NZ": {
       "name": "Embassy",
-      "address": "11 Kız Kulesi Sokağı, 06680 Ankara",
-      "phone": "+90 312 446 33 33",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/middle-east/turkey/new-zealand-embassy-to-turkey"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "56 Ugur Mumcu'nun Sokağı, 06680 Ankara",
-      "phone": "+90 312 448 10 76;+90 312 448 10 77;+90 312 448 10 78;+90 312 448 10 79",
-      "website": "https://ankara.foreignaffairs.gov.ng/;https://embassynigeriaturkey.com"
+      "address": "1 Kız Kulesi Sokağı, 06680 Ankara",
+      "phone": "Phone not available",
+      "website": "https://www.mfat.govt.nz/en/countries-and-regions/middle-east/turkey/new-zealand-embassy/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "106 Turan Güneş Bulvarı, 06550 Ankara",
-      "phone": "+90 312 408 48 00",
+      "address": "106 Turan Güneş Bulvarı, 06550 Çankaya",
+      "phone": "Phone not available",
       "website": "https://www.norway.no/en/turkiye/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "5 Andrey Karlov Sokağı, 06690",
-      "phone": "+90 312 439 21 83",
-      "website": "https://turkey.mid.ru"
+      "address": "Yıldırım Kemal Caddesi, 35320 Narlıdere",
+      "phone": "Phone not available"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "6 Turan Emeksiz Caddesi, 06680",
-      "phone": "+90 312 468 55 40;+90 312 468 55 41",
-      "website": "https://embassies.mofa.gov.sa/sites/Turkey/EN/Pages/default.aspx"
+      "address": "Eski Büyükdere Caddesi, 34485 Sarıyer",
+      "phone": "Phone not available",
+      "website": "http://www.stambul.msz.gov.pl"
     },
-    "SG": {
+    "PT": {
       "name": "Embassy",
-      "address": "5 719. Sokak, 06550",
-      "phone": "+90 312 442 43 30",
-      "website": "https://www.mfa.gov.sg/ankara"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "4 298. Cadde, 06610",
-      "phone": "+90 312 405 68 61;+90 312 405 68 71",
-      "website": "http://www.southafrica.org.tr/"
+      "address": "39 Kırlangıç Caddesi, 06680 Çankaya",
+      "phone": "Phone not available",
+      "website": "https://ancara.embaixadaportugal.mne.gov.pt"
     },
     "KR": {
       "name": "Embassy",
-      "address": "5 Alaçam Sokağı, 06690",
-      "phone": "+90 312 468 48 20;+90 312 468 48 23",
-      "website": "https://overseas.mofa.go.kr/tr-tr/index.do"
+      "address": "Asker Ocağı Caddesi, 34367 Şişli",
+      "phone": "Phone not available",
+      "website": "https://overseas.mofa.go.kr/tr-istanbul-tr/index.do"
     },
     "ES": {
       "name": "Embassy",
-      "address": "8 Prof. Dr. Aziz Sancar Caddesi, 06690 Ankara",
-      "phone": "+90 312 438 03 92;+90 312 405 80 76;+90 312 405 80 77",
-      "website": "http://www.exteriores.gob.es/Embajadas/ANKARA"
+      "address": "16 Karanfil Aralığı Sokağı, 34330 Beşiktaş",
+      "phone": "Phone not available",
+      "website": "http://www.exteriores.gob.es/Consulados/ESTAMBUL/es/Consulado/Paginas/LocalizacionContacto.aspx"
     },
     "SE": {
       "name": "Embassy",
-      "address": "7 Katip Çelebi Sokağı, 06690 Ankara",
-      "phone": "+90 312 455 41 00",
-      "website": "https://www.swedenabroad.se/ankara"
+      "address": "Müeyyet Sokağı, 34430 Beyoğlu",
+      "phone": "+90 212 334 06 00",
+      "website": "https://www.swedenabroad.se/tr/embassies/türkiye-İstanbul/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "247 Atatürk Bulvarı, 06690 Ankara",
-      "phone": "+90 312 457 31 00",
-      "website": "https://www.eda.admin.ch/ankara"
+      "address": "173 Büyükdere Caddesi, 34394 İstanbul",
+      "phone": "+90 212 283 12 82",
+      "website": "https://www.eda.admin.ch/istanbul"
     },
     "TH": {
       "name": "Embassy",
-      "address": "87 Koza Sokak, 06680",
-      "phone": "+90 312 437 43 18",
+      "address": "87 Koza Sokak, 06680 Çankaya",
+      "phone": "Phone not available",
       "website": "https://ankara.thaiembassy.org"
     },
-    "AE": {
-      "name": "Embassy",
-      "address": "5 596. Sokak, 06550",
-      "phone": "+90 312 490 14 14",
-      "website": "https://www.mofa.gov.ae/Missions/Ankara"
-    },
     "GB": {
       "name": "Embassy",
-      "address": "46 Şehit Ersan Caddesi, 06690 Ankara",
-      "phone": "+90 312 455 33 44",
-      "website": "https://www.gov.uk/world/organisations/british-embassy-ankara"
+      "address": "49 Mahmut Esat Bozkurt Caddesi, 35220 İzmir",
+      "phone": "Phone not available"
     },
     "US": {
       "name": "Embassy",
-      "address": "1 1480. Sokak, 06530",
-      "phone": "+90 312 294 00 00",
-      "website": "https://tr.usembassy.gov/"
-    }
-  },
-  "AE": {
-    "AR": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "9712 443 6838",
-      "website": "https://eearb.cancilleria.gob.ar"
-    },
-    "AU": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+971 2 401 7500",
-      "website": "https://www.uae.embassy.gov.au/"
-    },
-    "BR": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+971 2 632 0606",
-      "website": "http://abudhabi.itamaraty.gov.br"
-    },
-    "CA": {
-      "name": "Embassy",
-      "address": "Address not available",
+      "address": "75 Sarıyer Caddesi, 34460 İstanbul",
       "phone": "Phone not available",
-      "website": "https://www.international.gc.ca/country-pays/uae-eau/abu_dhabi-abou_dhabi.aspx"
+      "website": "https://tr.usembassy.gov/embassy-consulates/istanbul/"
     },
-    "EG": {
+    "VN": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "14 414. Cadde, 06610 Çankaya",
       "phone": "Phone not available",
-      "website": null
-    },
-    "FR": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+971 2 813 10 00",
-      "website": "https://ae.ambafrance.org/"
-    },
-    "DE": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "IN": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+971 2449 2700",
-      "website": "https://indembassyuae.gov.in"
-    },
-    "IL": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "IT": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://ambabudhabi.esteri.it"
-    },
-    "JP": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.uae.emb-japan.go.jp"
-    },
-    "NL": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "MX": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://embamex.sre.gob.mx/emiratosarabesunidos"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "NZ": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+971 2 4963333",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/middle-east/dubai/new-zealand-embassy/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "NO": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+971 02 403 8400",
-      "website": "https://www.norway.no/en/united-arab-emirates"
-    },
-    "RU": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+971 50-463-54-80",
-      "website": "https://uae.mid.ru"
-    },
-    "SA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+97124445700",
-      "website": "https://embassies.mofa.gov.sa/sites/uae"
-    },
-    "SG": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.mfa.gov.sg/Abu-Dhabi"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "http://www.dirco.gov.za/abudhabi"
-    },
-    "ES": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+971 (02) 407 90 00",
-      "website": "http://www.exteriores.gob.es/Embajadas/ABUDHABI"
-    },
-    "SE": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/f%C3%B6renade-arabemiraten-abu-dhabi/"
-    },
-    "CH": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://www.eda.admin.ch/uae"
-    },
-    "TR": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+971 2 410 9999;+971 2 410 9947",
-      "website": "https://abudhabi-be.mfa.gov.tr"
-    },
-    "GB": {
-      "name": "Embassy",
-      "address": "شارع الحِصِن, أبو ظبي",
-      "phone": "Phone not available",
-      "website": "https://www.gov.uk/world/organisations/british-embassy-abu-dhabi"
-    },
-    "US": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "(+971-2) 414-2200",
-      "website": "https://ae.usembassy.gov/"
+      "website": "https://vnembassy-ankara.mofa.gov.vn"
     }
   },
   "GB": {
     "AR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "W1K 4HS, London",
       "phone": "Phone not available",
       "website": "https://eruni.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
-      "address": "Strand, WC2B 4LA London",
-      "phone": "+44 20 7379 4334",
-      "website": "https://uk.embassy.gov.au/"
+      "address": "WC2B 4LU, London",
+      "phone": "Phone not available",
+      "website": "https://uk.embassy.gov.au/lhlh/home.html"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "17 Belgrave Square, SW1X 8PG London",
+      "phone": "Phone not available"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "SW1X 7EP, London",
+      "phone": "+44 20-747-037-00",
+      "website": "http://unitedkingdom.diplomatie.belgium.be/"
     },
     "BR": {
       "name": "Embassy",
       "address": "14/16 Cockspur Street, SW1Y 5BL London",
-      "phone": "Phone not available",
-      "website": "http://londres.itamaraty.gov.br"
+      "phone": "Phone not available"
     },
     "CA": {
       "name": "Embassy",
-      "address": "5 Trafalgar Square, SW1Y 5BJ London",
-      "phone": "+44 20 7258 6600",
-      "website": "https://www.canadainternational.gc.ca/united_kingdom-royaume_uni"
-    },
-    "EG": {
-      "name": "Embassy",
-      "address": "26 South Street, London",
+      "address": "SW1Y 5BQ, London",
       "phone": "Phone not available",
-      "website": null
+      "website": "http://www.canadainternational.gc.ca/united_kingdom-royaume_uni"
+    },
+    "HR": {
+      "name": "Embassy",
+      "address": "23 Conway Street, W1T 6BW London",
+      "phone": "Phone not available",
+      "website": "http://uk.mvep.hr"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "26-30 Kensington Palace Gardens, W8 4QY London",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/london"
     },
     "FR": {
       "name": "Embassy",
-      "address": "58 Knightsbridge, SW1X 7JT London",
+      "address": "West Parliament Square, EH1 1RF Edinburgh",
       "phone": "Phone not available",
-      "website": "http://www.ambafrance-uk.org/"
+      "website": "https://uk.ambafrance.org/-Consulat-general-Edimbourg-"
     },
     "DE": {
       "name": "Embassy",
-      "address": "23 Belgrave Square, SW1X 8PZ London",
-      "phone": "+44 20 78 24 13 00",
-      "website": "https://uk.diplo.de/uk-en/01/1embassy"
+      "address": "Belgrave Square, SW1X 8PG London",
+      "phone": "Phone not available",
+      "website": "https://uk.diplo.de"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "W11 3TP, London",
+      "phone": "Phone not available"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "SW1X 8BY, London",
+      "phone": "Phone not available",
+      "website": "https://london.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "India Place, WC2B 4NA London",
       "phone": "+44-20-8629-5950",
       "website": "https://www.hcilondon.gov.in"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "2 Palace Green, W8 4QB London",
-      "phone": "Phone not available",
-      "website": "http://embassies.gov.il/london/"
+      "address": "SW1X 7HR, London",
+      "phone": "Phone not available"
     },
     "IT": {
       "name": "Embassy",
-      "address": "14 Three Kings Yard, W1K 4EH London",
-      "phone": "+44 20 7312 2200",
-      "website": "http://www.amblondra.esteri.it/ambasciata_londra/"
+      "address": "W1K 4AE, London",
+      "phone": "Phone not available",
+      "website": "https://amblondra.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "101-104 Piccadilly, W1J 7JT London",
       "phone": "Phone not available",
-      "website": "https://www.edinburgh.uk.emb-japan.go.jp/itprtop_ja/"
+      "website": "http://www.uk.emb-japan.go.jp"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "45 Portland Place, London",
+      "address": "Hans Street, SW1X 0NJ London",
       "phone": "Phone not available",
-      "website": null
+      "website": "http://storbritannien.um.dk/"
     },
     "NL": {
       "name": "Embassy",
-      "address": "38 Hyde Park Gate, SW7 5DP London",
-      "phone": "+44 20 7590 3200",
-      "website": "https://www.nederlandwereldwijd.nl/landen/verenigd-koninkrijk/over-ons/ambassade-in-londen"
+      "address": "SW7 5DP, London",
+      "phone": "Phone not available",
+      "website": "http://unitedkingdom.nlembassy.org/"
     },
     "MX": {
       "name": "Embassy",
-      "address": "48 Belgrave Square, London",
-      "phone": "Phone not available",
-      "website": null
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "49 Queen's Gate Gardens, SW7 5NE London",
-      "phone": "Phone not available",
-      "website": null
+      "address": "W1S 1FH, London",
+      "phone": "Phone not available"
     },
     "NZ": {
       "name": "Embassy",
-      "address": "80 Haymarket, SW1Y 4TQ London",
-      "phone": "+44 20 7930 8422",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/europe/united-kingdom/new-zealand-high-commission/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "9 Northumberland Avenue, WC2N 5BX London",
-      "phone": "+44 20 7839 1244",
-      "website": "https://www.nigeriahc.org.uk"
+      "address": "80 Haymarket, SW1Y 4TE London",
+      "phone": "Phone not available",
+      "website": "http://www.nzembassy.com"
     },
     "NO": {
       "name": "Embassy",
@@ -9128,399 +9514,580 @@ export const EMBASSIES: Record<string, Record<string, EmbassyInfo>> = {
       "phone": "+44 207 591 5500",
       "website": "https://www.norway.no/uk/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Portland Place, W1B 1JH London",
       "phone": "Phone not available",
-      "website": "http://www.rus.rusemb.org.uk/index"
+      "website": "http://gb.china-embassy.gov.cn/"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "30 Charles Street, London",
-      "phone": "+44 20 7917 3000",
-      "website": "https://embassies.mofa.gov.sa/sites/uk"
-    },
-    "SG": {
-      "name": "Embassy",
-      "address": "9 Wilton Crescent, SW1X 8SP London",
-      "phone": "+44 20 7235 8315",
-      "website": "https://www.mfa.gov.sg/content/mfa/overseasmission/london.html"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "Trafalgar Square, London",
+      "address": "Weymouth Street, W1G 7HR London",
       "phone": "Phone not available",
-      "website": null
+      "website": "http://www.manchester.msz.gov.pl"
+    },
+    "PT": {
+      "name": "Embassy",
+      "address": "11 Belgrave Square, SW1X 8PP London",
+      "phone": "Phone not available",
+      "website": "https://www.londres.embaixadaportugal.mne.pt/pt/"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Palace Gate, W8 5NF London",
+      "address": "Spenser Street, SW1E 6AJ London",
       "phone": "Phone not available",
       "website": "https://overseas.mofa.go.kr/gb-ko/index.do"
     },
     "ES": {
       "name": "Embassy",
-      "address": "39 Chesham Place, London",
+      "address": "SW1X 8QA, London",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.exteriores.gob.es/Consulados/edimburgo/es/Paginas/index.aspx"
     },
     "SE": {
       "name": "Embassy",
-      "address": "11 Montagu Place, W1H 2AL London",
+      "address": "W1H 2AL, London",
       "phone": "Phone not available",
       "website": "http://www.swedenabroad.com/London/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "16-18 Montagu Place, W1H 2BQ London",
+      "address": "W1H 2DR, London",
       "phone": "Phone not available",
       "website": "https://www.eda.admin.ch/london"
     },
     "TH": {
       "name": "Embassy",
-      "address": "29-30 Queen's Gate, SW7 5JB London",
-      "phone": "+44 20 7589 2944",
-      "website": "https://london.thaiembassy.org/"
+      "address": "SW7 5JB, London",
+      "phone": "Phone not available",
+      "website": "http://www.thaiembassyuk.org.uk/"
     },
     "TR": {
       "name": "Embassy",
-      "address": "39 Drumsheugh Gardens, EH3 7SW Edinburgh",
-      "phone": "+44 131 285 9282",
-      "website": "https://edinburg-bk.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "1;2 Grosvenor Crescent, SW1X 7EE London",
-      "phone": "+44 20 7581 1281",
-      "website": "https://www.mofaic.gov.ae/missions/UAE-Missions-Abroad/UAE-Missions-Abroad-Details?countryId=6a569bf9-7922-4923-b43b-b44dd105e32a"
+      "address": "Rutland Gardens, SW7 1BW London",
+      "phone": "Phone not available"
     },
     "US": {
       "name": "Embassy",
-      "address": "33 Nine Elms Lane, SW11 7US London",
-      "phone": "+44 20 7499 9000",
-      "website": "https://uk.usembassy.gov/embassy-consulates/london/"
+      "address": "SW11 7BL, London",
+      "phone": "Phone not available",
+      "website": "https://uk.usembassy.gov/"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "14 Albert Place, W8 5PD London",
+      "phone": "Phone not available"
     }
   },
   "US": {
     "AR": {
-      "name": "Consulate",
-      "address": "12 West 56th Street, 10019",
+      "name": "Embassy",
+      "address": "New Hampshire Avenue Northwest, 20036 Washington",
       "phone": "Phone not available",
-      "website": "https://cnyor.cancilleria.gob.ar/en"
+      "website": "https://eeeuu.cancilleria.gob.ar/"
     },
     "AU": {
       "name": "Embassy",
-      "address": "123 North Wacker Drive, 60606 Chicago",
-      "phone": "+1-312-419-1480",
+      "address": "1601 Massachusetts Avenue Northwest, 20036 Washington",
+      "phone": "Phone not available",
       "website": "https://usa.embassy.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "3524 International Court Northwest, 20008 Washington",
+      "phone": "Phone not available",
+      "website": "https://www.austria.org/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "K Street Northwest, 20005 Washington",
+      "phone": "+1 202-333-69-00",
+      "website": "https://unitedstates.diplomatie.belgium.be"
     },
     "BR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Massachusetts Avenue Northwest, 20008 Washington",
       "phone": "Phone not available",
-      "website": "https://www.gov.br/mre/pt-br/consulado-miami"
+      "website": "http://washington.itamaraty.gov.br/en-us/"
     },
     "CA": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "address": "501 Pennsylvania Avenue Northwest, 20001 Washington",
+      "phone": "+1-844-880-6519",
+      "website": "https://www.international.gc.ca/country-pays/us-eu/washington.aspx"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "3521 International Court Northwest, 20008 Washington",
-      "phone": "+1-202-895-5400;+1-202-895-5408",
-      "website": "https://egyptembassy.net"
+      "address": "2343 Massachusetts Avenue Northwest, 20008 Washington",
+      "phone": "Phone not available",
+      "website": "http://www.croatiaemb.org/"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "3900 Spring of Freedom Street Northwest, 20008 Washington",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/washington/en/index.html"
     },
     "FR": {
       "name": "Embassy",
-      "address": "4101 Reservoir Road Northwest, 20007 Washington",
-      "phone": "+1-202-944-6000",
-      "website": "https://www.franceintheus.org"
+      "address": "11th Street, 94102 San Francisco",
+      "phone": "Phone not available",
+      "website": "http://www.consulfrance-sanfrancisco.org"
     },
     "DE": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "4645 Reservoir Road Northwest, 20007 Washington",
       "phone": "Phone not available",
-      "website": "https://www.germany.info/us-en/embassy-consulates/newyork"
+      "website": "http://www.germany.info/Vertretung/usa/en/01__Embassy/Washington/__Home.html"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "2221 Massachusetts Avenue Northwest, 20526 Washington",
+      "phone": "Phone not available",
+      "website": "http://www.mfa.gr/usa/en/the-embassy/"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "2950 Linnean Avenue Northwest, 20008 Washington",
+      "phone": "+1-202-362-6730",
+      "website": "https://washington.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "455 North Cityfront Plaza Drive, 60611 Chicago",
+      "address": "Q Street Northwest, 20036 Washington",
       "phone": "Phone not available",
-      "website": "https://www.cgichicago.gov.in/"
+      "website": "https://www.indianembassyusa.gov.in/"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "2236 Massachusetts Avenue Northwest, 20008 Washington",
       "phone": "Phone not available",
-      "website": "https://embassies.gov.il/chicago-he/Pages/default.aspx"
+      "website": "https://www.ireland.ie/en/usa/washington/"
     },
     "IT": {
       "name": "Embassy",
       "address": "3000 Whitehaven Street Northwest, 20008 Washington",
-      "phone": "+1-202-612-4400",
-      "website": "https://ambwashingtondc.esteri.it/en/"
+      "phone": "Phone not available",
+      "website": "https://ambwashingtondc.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "2520 Massachusetts Avenue Northwest, 20008 Washington",
       "phone": "Phone not available",
-      "website": "https://www.anchorage.us.emb-japan.go.jp/itprtop_ja/"
+      "website": "https://www.us.emb-japan.go.jp/itprtop_ja/"
     },
-    "KE": {
+    "DK": {
       "name": "Embassy",
-      "address": "2249 R Street Northwest, 20008 Washington",
-      "phone": "+1 202-387-6101",
-      "website": "http://www.kenyaembassy.com/"
+      "address": "3200 Whitehaven Street Northwest, 20008 Washington",
+      "phone": "Phone not available",
+      "website": "http://usa.um.dk/"
     },
     "NL": {
       "name": "Embassy",
-      "address": "4200 Linnean Avenue Northwest, 20008 Washington",
-      "phone": "+1 202-244-5300",
-      "website": "https://www.netherlandsworldwide.nl/contact/embassies-consulates-general/united-states/embassy-washington-dc"
+      "address": "2347 S Street Northwest, 20008 Washington",
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://consulmex.sre.gob.mx/nogales/"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": null
+      "address": "1911 Pennsylvania Avenue Northwest, 20006 Washington",
+      "phone": "Phone not available"
     },
     "NZ": {
       "name": "Embassy",
-      "address": "733 Bishop Street, 96813 Honolulu",
-      "phone": "+1 808 6755555",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/north-america/united-states-of-america/new-zealand-consulate-general-honolulu/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "3519 International Drive Northwest, 20008 Washington",
-      "phone": "+1-202-800-7201 ext. 100",
-      "website": "https://nigeriaembassyusa.org/"
+      "address": "37 Observatory Circle Northwest, 20008 Washington",
+      "phone": "+1-202-328-4800",
+      "website": "https://www.mfat.govt.nz/en/countries-and-regions/north-america/united-states-of-america/new-zealand-embassy-washington/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "2720 34th Street Northwest, 20008 Washington",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.norway.no/en/usa/"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "9 East 91st Street, 10128 New York",
-      "phone": "+1-212-534-3782",
-      "website": "https://newyork.mid.ru/"
-    },
-    "SA": {
-      "name": "Embassy",
-      "address": "601 New Hampshire Avenue Northwest, 20037 Washington",
-      "phone": "+1-202-342-3800",
-      "website": "https://us.saudiembassy.sa/en/Pages/default.aspx"
-    },
-    "SG": {
-      "name": "Embassy",
-      "address": "3501 International Place Northwest, 20008 Washington",
-      "phone": "+1-202-537-3100",
-      "website": "https://washington.mfa.gov.sg/"
-    },
-    "ZA": {
-      "name": "Embassy",
-      "address": "3051 Massachusetts Avenue Northwest, 20008 Washington",
+      "address": "International Place Northwest, 20008 Washington",
       "phone": "Phone not available",
-      "website": "https://www.saembassy.org/"
+      "website": "http://www.china-embassy.org/eng"
+    },
+    "PL": {
+      "name": "Embassy",
+      "address": "2640 16th Street Northwest, 20009 Washington",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/usa"
+    },
+    "PT": {
+      "name": "Embassy",
+      "address": "2121 P Street Northwest, 20037 Washington",
+      "phone": "Phone not available"
     },
     "KR": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "Phone not available",
-      "website": "https://overseas.mofa.go.kr/us-losangeles-ko/index.do"
+      "address": "2320 Massachusetts Avenue Northwest, 20008 Washington",
+      "phone": "Phone not available"
     },
     "ES": {
       "name": "Embassy",
-      "address": "2375 Pennsylvania Avenue Northwest, 20037 Washington",
-      "phone": "+1-202-452-0100",
-      "website": "http://www.exteriores.gob.es/Embajadas/WASHINGTON/en/Embajada/Pages/inicio.aspx"
+      "address": "East 58th Street, 10062 New York",
+      "phone": "Phone not available"
     },
     "SE": {
-      "name": "Consulate",
-      "address": "Address not available",
+      "name": "Embassy",
+      "address": "2900 K Street Northwest, 20007 Washington",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/usa-washington/"
     },
     "CH": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "29th Street Northwest, 20008 Washington",
       "phone": "Phone not available",
-      "website": "https://www.eda.admin.ch/atlanta"
+      "website": "https://www.eda.admin.ch/washington"
     },
     "TH": {
       "name": "Embassy",
-      "address": "1024 Wisconsin Avenue Northwest, 20007 Washington",
-      "phone": "+1-202-944-3600",
-      "website": "https://washingtondc.thaiembassy.org/en/index"
+      "address": "1028 Wisconsin Avenue Northwest, 20566 Washington",
+      "phone": "Phone not available"
     },
     "TR": {
       "name": "Embassy",
       "address": "2525 Massachusetts Avenue Northwest, 20008 Washington",
-      "phone": "+1 202-612-6700;+1 202-612-6701",
-      "website": "https://washington-emb.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Consulate",
-      "address": "1 International Place, 02110 Boston",
-      "phone": "+1-617-5053300",
-      "website": "https://www.mofaic.gov.ae/en/missions/uae-missions-abroad/uae-missions-abroad-details?countryId=100429f6-3c58-4674-8f88-ae439f94408a"
+      "phone": "Phone not available",
+      "website": "http://www.washington.emb.mfa.gov.tr/"
     },
     "GB": {
-      "name": "Consulate",
-      "address": "133 Peachtree Street Northeast, 30303 Atlanta",
-      "phone": "+1 404-954-7700",
-      "website": "https://www.gov.uk/world/organisations/british-consulate-general-atlanta"
+      "name": "Embassy",
+      "address": "3114 Massachusetts Avenue Northwest, 20008 Washington",
+      "phone": "Phone not available",
+      "website": "https://www.gov.uk/world/organisations/british-embassy-washington"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "2253 R Street Northwest, 20008 Washington",
+      "phone": "Phone not available",
+      "website": "http://vietnamembassy-usa.org/vi"
+    }
+  },
+  "VN": {
+    "AR": {
+      "name": "Embassy",
+      "address": "41A Phố Lý Thái Tổ, 10207 Hà Nội",
+      "phone": "Phone not available",
+      "website": "https://eviet.cancilleria.gob.ar/"
+    },
+    "AU": {
+      "name": "Embassy",
+      "address": "8 Phố Đào Tấn, 10303 Hà Nội",
+      "phone": "Phone not available",
+      "website": "https://vietnam.embassy.gov.au"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "Phố Quang Trung, 10292 Hà Nội",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-hanoi/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "10221, Hà Nội",
+      "phone": "+84 24 393 461 79",
+      "website": "http://vietnam.diplomatie.belgium.be"
+    },
+    "BR": {
+      "name": "Embassy",
+      "address": "44B Phố Lý Thường Kiệt, 10307 Hà Nội",
+      "phone": "Phone not available",
+      "website": "http://hanoi.itamaraty.gov.br"
+    },
+    "CA": {
+      "name": "Embassy",
+      "address": "235 Ðồng Khởi, 71006 Ho Chi Minh City",
+      "phone": "Phone not available",
+      "website": "http://www.canadainternational.gc.ca/vietnam/offices-bureaux/ho_chi_minh_city-ho_chi_minh_ville.aspx"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "15 Phố Chu Văn An, 11120 Hà Nội",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/hanoi"
+    },
+    "FR": {
+      "name": "Embassy",
+      "address": "10312, Hà Nội",
+      "phone": "Phone not available",
+      "website": "https://ho-chi-minh-ville.consulfrance.org"
+    },
+    "DE": {
+      "name": "Embassy",
+      "address": "27 Phố Trần Phú, 11120 Hà Nội",
+      "phone": "Phone not available"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "Đường Âu Cơ, 11214 Hà Nội",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/missionsabroad/vietnam.html"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "1 Thanh Niên, 11214 Hà Nội",
+      "phone": "+84-24-3771-5717",
+      "website": "https://hanoi.mfa.gov.hu/"
+    },
+    "IN": {
+      "name": "Embassy",
+      "address": "Phố Thợ Nhuộm, 11018 Hà Nội",
+      "phone": "Phone not available",
+      "website": "https://www.indembassyhanoi.gov.in"
+    },
+    "IE": {
+      "name": "Embassy",
+      "address": "41A Phố Lý Thái Tổ, 10207 Hà Nội",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/vietnam"
+    },
+    "IT": {
+      "name": "Embassy",
+      "address": "9 Phố Lê Phụng Hiểu, 11024 Hanoi",
+      "phone": "Phone not available",
+      "website": "https://ambhanoi.esteri.it"
+    },
+    "JP": {
+      "name": "Embassy",
+      "address": "261 Đường Ðiện Biên Phủ, 70001 Ho Chi Minh City",
+      "phone": "Phone not available"
+    },
+    "DK": {
+      "name": "Embassy",
+      "address": "194 Đường Trần Quang Khải, 10262 Hanoi",
+      "phone": "Phone not available",
+      "website": "https://vietnam.um.dk"
+    },
+    "NL": {
+      "name": "Embassy",
+      "address": "194 Đường Trần Quang Khải, 10262 Hanoi",
+      "phone": "Phone not available"
+    },
+    "MX": {
+      "name": "Embassy",
+      "address": "Đường Thụy Khuê, 11214 Hà Nội",
+      "phone": "Phone not available",
+      "website": "https://embamex.sre.gob.mx/vietnam"
+    },
+    "NZ": {
+      "name": "Embassy",
+      "address": "Phố Lý Thái Tổ, 11024 Hà Nội",
+      "phone": "+84-24-3824-1481",
+      "website": "https://www.mfat.govt.nz/en/countries-and-regions/south-east-asia/viet-nam/new-zealand-embassy/"
+    },
+    "NO": {
+      "name": "Embassy",
+      "address": "10221, Hà Nội",
+      "phone": "Phone not available",
+      "website": "https://www.norway.no/en/vietnam/"
+    },
+    "CN": {
+      "name": "Embassy",
+      "address": "46 Đường Hoàng Diệu, 11120 Hà Nội",
+      "phone": "Phone not available"
+    },
+    "PL": {
+      "name": "Embassy",
+      "address": "3 Phố Chùa Một Cột, 11120 Hà Nội",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/wietnam"
+    },
+    "KR": {
+      "name": "Embassy",
+      "address": "Hẻm 156 Lý Tự Trọng, 71009 Thành phố Hồ Chí Minh",
+      "phone": "Phone not available"
+    },
+    "ES": {
+      "name": "Embassy",
+      "address": "6A Phố Lê Hồng Phong, 11120 Hà Nội",
+      "phone": "Phone not available",
+      "website": "http://www.exteriores.gob.es/Embajadas/Hanoi"
+    },
+    "SE": {
+      "name": "Embassy",
+      "address": "2 Phố Núi Trúc, 11119 Hà Nội",
+      "phone": "Phone not available",
+      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/vietnam-hanoi/"
+    },
+    "CH": {
+      "name": "Embassy",
+      "address": "44B Phố Lý Thường Kiệt, 10307 Hà Nội",
+      "phone": "Phone not available",
+      "website": "https://www.eda.admin.ch/hanoi"
+    },
+    "TR": {
+      "name": "Embassy",
+      "address": "44B Phố Lý Thường Kiệt, 10307 Hà Nội",
+      "phone": "Phone not available",
+      "website": "http://hanoi.emb.mfa.gov.tr"
+    },
+    "GB": {
+      "name": "Embassy",
+      "address": "31 Phố Hai Bà Trưng, 11018 Hà Nội",
+      "phone": "Phone not available"
+    },
+    "US": {
+      "name": "Embassy",
+      "address": "Lê Duẩn, 71006 Thành phố Hồ Chí Minh",
+      "phone": "Phone not available",
+      "website": "https://vn.usembassy.gov/vi/embassy-consulate-vi/embassy-consulates-ho-chi-minh-city-vi/"
     }
   },
   "AR": {
     "AU": {
       "name": "Embassy",
       "address": "1400 Villanueva, 1426 Ciudad Aurónoma de Buenos Aires",
-      "phone": "+54 11 4779-3500",
-      "website": "https://argentina.embassy.gov.au/"
+      "phone": "+54 11 4779 3500",
+      "website": "http://argentina.embassy.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "3671 French, 1425 Ciudad Autónoma de Buenos Aires",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-buenos-aires/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "831 Olga Cossetini, 1107 Ciudad Autónoma de Buenos Aires",
+      "phone": "+54 11 431 372 72",
+      "website": "https://argentina.diplomatie.belgium.be"
     },
     "BR": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "Arroyo, C1014AAA Buenos Aires",
       "phone": "Phone not available",
       "website": "http://buenosaires.itamaraty.gov.br"
     },
     "CA": {
       "name": "Embassy",
       "address": "2828 Tagle, 1425 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4808-1000",
-      "website": "https://www.argentina.gc.ca/"
+      "phone": "Phone not available",
+      "website": "https://www.canadainternational.gc.ca/argentina-argentine"
     },
-    "EG": {
+    "HR": {
       "name": "Embassy",
-      "address": "3140 Virrey Del Pino, 1426 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4553-3311",
-      "website": null
+      "address": "2104 Gorostiaga, 1426 Ciudad Aurónoma de Buenos Aires",
+      "phone": "Phone not available",
+      "website": "http://ar.mvep.hr"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "1461 Junín, 1113 Ciudad Autónoma de Buenos Aires",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/buenosaires"
     },
     "FR": {
       "name": "Embassy",
       "address": "1399 Cerrito, 1010 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4515-7030",
-      "website": "https://ar.ambafrance.org"
+      "phone": "Phone not available"
     },
     "DE": {
       "name": "Embassy",
-      "address": "Address not available",
-      "phone": "+54-11-4778-2500",
-      "website": null
+      "address": "1960 Olleros, C1426AAH Comuna 14",
+      "phone": "+54-11-4778-2500"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "Avenida Ortiz de Ocampo, C1425DSQ Comuna 14",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/missionsabroad/argentina.html"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "1109 Suipacha, C1054AAQ Buenos Aires",
+      "phone": "+54 11 4312 6830",
+      "website": "https://buenosaires.mfa.gov.hu/"
     },
     "IN": {
       "name": "Embassy",
-      "address": "942 Avenida Eduardo Madero, 1106 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4393-4001",
-      "website": "http://www.indembarg.org.ar/"
+      "address": "Ingeniero Enrique Butty, C1001AFB Buenos Aires",
+      "phone": "+54-351-422-0023"
     },
-    "IL": {
+    "IE": {
       "name": "Embassy",
-      "address": "701 Avenida de Mayo, 1084 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 3724-4500",
-      "website": "https://buenosaires.mfa.gov.il/"
+      "address": "1050 Avenida Del Libertador, C1059ABD Comuna 2",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/argentina/"
     },
     "IT": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "2577 Billinghurst, 1425 Ciudad Autónoma de Buenos Aires",
       "phone": "Phone not available",
       "website": "https://ambbuenosaires.esteri.it"
     },
     "JP": {
       "name": "Embassy",
-      "address": "547 Bouchard, 1106 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4318-8200",
-      "website": "https://www.ar.emb-japan.go.jp/"
+      "address": "547 Bouchard, C1106ABG Buenos Aires",
+      "phone": "Phone not available",
+      "website": "https://www.ar.emb-japan.go.jp"
     },
     "NL": {
       "name": "Embassy",
       "address": "831 Olga Cossetini, 1107 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4338-0050",
-      "website": "http://argentina.nlembajada.org/"
+      "phone": "Phone not available"
     },
     "MX": {
       "name": "Embassy",
       "address": "1650 Arcos, 1426 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4118-8800",
+      "phone": "Phone not available",
       "website": "https://embamex.sre.gob.mx/argentina/"
-    },
-    "MA": {
-      "name": "Embassy",
-      "address": "3461 Castex, 1425 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4801-8154",
-      "website": null
     },
     "NZ": {
       "name": "Embassy",
-      "address": "1427 Carlos Pellegrini, 1011 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 5070-0700",
-      "website": "https://www.mfat.govt.nz/en/countries-and-regions/latin-america/argentina/new-zealand-embassy/"
-    },
-    "NG": {
-      "name": "Embassy",
-      "address": "2746 Juez Estrada, Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 48070985",
-      "website": null
+      "address": "1433 Carlos Pellegrini, C1059ABD Buenos Aires",
+      "phone": "+54-11-5070-0700",
+      "website": "https://www.mfat.govt.nz/en/countries-and-regions/americas/argentina/new-zealand-embassy/"
     },
     "NO": {
       "name": "Embassy",
-      "address": "1427 Carlos Pellegrini, 1011 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 3724-1200",
+      "address": "1433 Carlos Pellegrini, C1059ABD Buenos Aires",
+      "phone": "Phone not available",
       "website": "https://www.norway.no/es/argentina"
     },
-    "RU": {
+    "CN": {
       "name": "Embassy",
-      "address": "1741 Rodríguez Peña, 1021 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4813-1552",
-      "website": "https://argentina.mid.ru"
+      "address": "5349 Crisólogo Larralde, 1431 Ciudad Autónoma de Buenos Aires",
+      "phone": "Phone not available",
+      "website": "http://ar.china-embassy.org"
     },
-    "SA": {
+    "PL": {
       "name": "Embassy",
-      "address": "2881 Alejandro María de Aguado, 1425 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4802-4303",
-      "website": "https://embassies.mofa.gov.sa/sites/Argentina/"
+      "address": "2870 Alejandro María de Aguado, C1425DSQ Comuna 14",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/argentyna"
     },
-    "ZA": {
+    "PT": {
       "name": "Embassy",
-      "address": "590 Marcelo T. de Alvear, 1058 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4317-2900",
-      "website": "https://www.embajadasudafrica.org.ar/en/index.html"
+      "address": "Maipú, 1106 Ciudad Autónoma de Buenos Aires",
+      "phone": "Phone not available",
+      "website": "https://buenosaires.embaixadaportugal.mne.gov.pt"
     },
     "KR": {
       "name": "Embassy",
       "address": "2395 Avenida Del Libertador, 1425 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4802-8865",
-      "website": "http://arg.mofa.go.kr/"
+      "phone": "Phone not available",
+      "website": "https://overseas.mofa.go.kr/ar-ko/index.do"
     },
     "ES": {
       "name": "Embassy",
-      "address": "3102 Avenida Presidente Figueroa Alcorta, 1425 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4809-4900",
-      "website": "http://www.exteriores.gob.es/embajadas/buenosaires/"
+      "address": "764 Santa Fe, 2000 Rosario",
+      "phone": "Phone not available"
     },
     "SE": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "731 Olga Cossetini, C1107CDA Ciudad Autónoma de Buenos Aires",
       "phone": "Phone not available",
       "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/argentina-buenos-aires/"
     },
     "CH": {
       "name": "Embassy",
       "address": "846 Avenida Santa Fe, 1059 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 4311-6491",
-      "website": "https://www.eda.admin.ch/buenosaires"
+      "phone": "Phone not available",
+      "website": "http://www.eda.admin.ch/ccrsudamerica"
     },
     "TH": {
       "name": "Embassy",
@@ -9531,34 +10098,188 @@ export const EMBASSIES: Record<string, Record<string, EmbassyInfo>> = {
     "TR": {
       "name": "Embassy",
       "address": "1382 11 de Septiembre de 1888, 1426 Ciudad Aurónoma de Buenos Aires",
-      "phone": "+54 11 4788-3239;+54 11 4788-5106",
-      "website": "https://buenosaires-be.mfa.gov.tr/"
-    },
-    "AE": {
-      "name": "Embassy",
-      "address": "2021 Olleros, 1426 Ciudad Aurónoma de Buenos Aires",
-      "phone": "+54 11 4772-9709",
-      "website": "http://www.embajadaemiratos.org.ar/"
+      "phone": "Phone not available",
+      "website": "http://buenosaires.emb.mfa.gov.tr"
     },
     "GB": {
       "name": "Embassy",
-      "address": "2575 Newton, Ciudad Autónoma de Buenos Aires",
+      "address": "2575 Newton, C1128ACJ Ciudad Autónoma de Buenos Aires",
       "phone": "Phone not available",
       "website": "https://www.gov.uk/government/world/organisations/british-embassy-buenos-aires/"
     },
     "US": {
       "name": "Embassy",
       "address": "4300 Avenida Colombia, 1425 Ciudad Autónoma de Buenos Aires",
-      "phone": "+54 11 5777-4533",
-      "website": "https://ar.usembassy.gov/"
+      "phone": "Phone not available",
+      "website": "https://ar.usembassy.gov"
+    },
+    "VN": {
+      "name": "Embassy",
+      "address": "1442 11 de Septiembre de 1888, 1426 Ciudad Autónoma de Buenos Aires",
+      "phone": "Phone not available"
     }
   },
-  "DK": {
+  "HR": {
+    "AU": {
+      "name": "Embassy",
+      "address": "Nova Ves, 10112 Zagreb",
+      "phone": "Phone not available",
+      "website": "http://croatia.embassy.gov.au/"
+    },
+    "AT": {
+      "name": "Embassy",
+      "address": "80 Radnička cesta, 10114 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://www.bmeia.gv.at/oeb-agram/"
+    },
+    "BE": {
+      "name": "Embassy",
+      "address": "125D Pantovčak, 10000 Zagreb",
+      "phone": "+385 1 457 89 01",
+      "website": "http://croatia.diplomatie.belgium.be"
+    },
+    "BR": {
+      "name": "Embassy",
+      "address": "10 Trg Drage Iblera, 10101 Zagreb",
+      "phone": "Phone not available",
+      "website": "http://zagreb.itamaraty.gov.br"
+    },
+    "CA": {
+      "name": "Embassy",
+      "address": "4 Prilaz Gjure Deželića, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "http://www.canadainternational.gc.ca/croatia-croatie/index.aspx?lang=eng"
+    },
+    "CZ": {
+      "name": "Embassy",
+      "address": "47/VI Radnička cesta, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://www.mzv.cz/zagreb"
+    },
+    "FR": {
+      "name": "Embassy",
+      "address": "14 Trg Nikole Zrinskog, 10130 Zagreb",
+      "phone": "Phone not available",
+      "website": "http://www.ambafrance-hr.org/"
+    },
+    "DE": {
+      "name": "Embassy",
+      "address": "64 Ulica grada Vukovara, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://zagreb.diplo.de"
+    },
+    "GR": {
+      "name": "Embassy",
+      "address": "12 Opatička ulica, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://www.mfa.gr/missionsabroad/croatia.html"
+    },
+    "HU": {
+      "name": "Embassy",
+      "address": "18 Tuškanac, 10103 Zagreb",
+      "phone": "+385-1-4890-900",
+      "website": "https://zagrab.mfa.gov.hu/"
+    },
+    "IN": {
+      "name": "Embassy",
+      "address": "152b Bijenik, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://www.indianembassyzagreb.gov.in/"
+    },
+    "IE": {
+      "name": "Embassy",
+      "address": "23 Miramarska cesta, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://www.dfa.ie/irish-embassy/croatia/"
+    },
+    "IT": {
+      "name": "Embassy",
+      "address": "22 Medulićeva ulica, 10115 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://ambzagabria.esteri.it"
+    },
+    "JP": {
+      "name": "Embassy",
+      "address": "2 Boškovićeva ulica, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://www.hr.emb-japan.go.jp"
+    },
+    "DK": {
+      "name": "Embassy",
+      "address": "1 Boškovićeva ulica, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://kroatien.um.dk"
+    },
     "NL": {
       "name": "Embassy",
-      "address": "Address not available",
+      "address": "6 Ulica Augusta Cesarca, 10000 Zagreb",
+      "phone": "Phone not available"
+    },
+    "NO": {
+      "name": "Embassy",
+      "address": "2 Ulica Petra Hektorovića, 10151 Zagreb",
       "phone": "Phone not available",
-      "website": null
+      "website": "https://www.norway.no/croatia"
+    },
+    "CN": {
+      "name": "Embassy",
+      "address": "132 Mlinovi, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "http://hr.china-embassy.org"
+    },
+    "PL": {
+      "name": "Embassy",
+      "address": "23 Miramarska cesta, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://www.gov.pl/web/chorwacja"
+    },
+    "PT": {
+      "name": "Embassy",
+      "address": "3 Ulica Ante Kovačića, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://zagreb.embaixadaportugal.mne.gov.pt"
+    },
+    "KR": {
+      "name": "Embassy",
+      "address": "111A Ksaverska cesta, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://overseas.mofa.go.kr/hr-ko/"
+    },
+    "ES": {
+      "name": "Embassy",
+      "address": "21a Tuškanac, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "http://www.exteriores.gob.es/embajadas/zagreb"
+    },
+    "SE": {
+      "name": "Embassy",
+      "address": "13 Frankopanska ulica, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://www.swedenabroad.se/sv/utlandsmyndigheter/kroatien-zagreb/"
+    },
+    "CH": {
+      "name": "Embassy",
+      "address": "10 Ulica Augusta Cesarca, 10101 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://www.eda.admin.ch/zagreb"
+    },
+    "TR": {
+      "name": "Embassy",
+      "address": "34 Ulica Andrije Hebranga, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "http://zagreb.emb.mfa.gov.tr"
+    },
+    "GB": {
+      "name": "Embassy",
+      "address": "4 Ulica Ivana Lučića, 10000 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://www.gov.uk/world/organisations/british-embassy-zagreb"
+    },
+    "US": {
+      "name": "Embassy",
+      "address": "2 Ulica Thomasa Jeffersona, 10175 Zagreb",
+      "phone": "Phone not available",
+      "website": "https://hr.usembassy.gov"
     }
   }
 };

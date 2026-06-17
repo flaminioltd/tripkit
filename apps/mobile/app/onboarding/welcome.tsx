@@ -101,8 +101,8 @@ export default function WelcomeScreen() {
       style={[styles.container, { backgroundColor: theme.colors.background }]} 
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
-      <View style={[styles.header, { paddingTop: insets.top }]}>
-        <Text variant="titleLarge" style={[styles.headerTitle, { color: theme.colors.primary }]}>{t('welcomeScreen.title')}</Text>
+      <View style={[styles.header, { paddingTop: insets.top + 32 }]}>
+        <Image source={require('../../assets/images/Logo.png')} style={{ height: 32, width: 120, resizeMode: 'contain' }} />
       </View>
 
       {step === 0 ? (

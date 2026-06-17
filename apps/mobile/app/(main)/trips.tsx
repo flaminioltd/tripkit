@@ -213,6 +213,9 @@ export default function TripsScreen() {
     return '#F44336'; // Red
   };
 
+  const miniButtonContentStyle = { height: 24 };
+  const miniButtonLabelStyle = { fontSize: 10, fontWeight: 'bold' as const, marginHorizontal: 12, marginVertical: 2 };
+
   return (
     <>
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
@@ -302,8 +305,8 @@ export default function TripsScreen() {
                     variant="alternative"
                     compact
                     onPress={() => router.push('/modules/budget-tracker')}
-                    contentStyle={{ height: 26 }}
-                    labelStyle={{ fontSize: 11, marginHorizontal: 8, marginVertical: 4 }}
+                    contentStyle={miniButtonContentStyle}
+                    labelStyle={miniButtonLabelStyle}
                   >
                     {(!activeTrip.budget || activeTrip.budget <= 0) ? t('tripsScreen.budgetSet') : t('tripsScreen.budgetAdjust')}
                   </Button>
@@ -333,18 +336,22 @@ export default function TripsScreen() {
               <Divider style={{ marginVertical: 16 }} />
 
               {/* Action Buttons */}
-              <View style={{ flexDirection: 'row', gap: 12 }}>
+              <View style={{ flexDirection: 'row', gap: 12, justifyContent: 'flex-start' }}>
                 <Button 
                   variant="alternative"
+                  compact
                   onPress={() => openEditModal(activeTrip)} 
-                  style={{ flex: 1 }}
+                  contentStyle={miniButtonContentStyle}
+                  labelStyle={miniButtonLabelStyle}
                 >
                   {t('tripsScreen.editTripButton')}
                 </Button>
                 <Button 
                   variant="destructive"
+                  compact
                   onPress={() => handleDelete(activeTrip.id, activeTrip.destinationCountry)} 
-                  style={{ flex: 1 }}
+                  contentStyle={miniButtonContentStyle}
+                  labelStyle={miniButtonLabelStyle}
                 >
                   {t('tripsScreen.deleteTripButton')}
                 </Button>
@@ -399,8 +406,8 @@ export default function TripsScreen() {
                         variant="alternative"
                         compact
                         onPress={() => openEditModal(trip)} 
-                        style={{ width: 85 }}
-                        labelStyle={{ marginHorizontal: 0, fontSize: 12 }}
+                        contentStyle={miniButtonContentStyle}
+                        labelStyle={miniButtonLabelStyle}
                       >
                         {t('tripsScreen.editButton')}
                       </Button>
@@ -408,8 +415,8 @@ export default function TripsScreen() {
                         variant="destructive"
                         compact
                         onPress={() => handleDelete(trip.id, trip.destinationCountry)} 
-                        style={{ width: 85 }}
-                        labelStyle={{ marginHorizontal: 0, fontSize: 12 }}
+                        contentStyle={miniButtonContentStyle}
+                        labelStyle={miniButtonLabelStyle}
                       >
                         {t('tripsScreen.deleteButton')}
                       </Button>
@@ -418,8 +425,8 @@ export default function TripsScreen() {
                       variant="main"
                       compact
                       onPress={() => useTripStore.getState().setActiveTrip(trip.id)} 
-                      style={{ width: 85 }}
-                      labelStyle={{ marginHorizontal: 0, fontSize: 12 }}
+                      contentStyle={miniButtonContentStyle}
+                      labelStyle={miniButtonLabelStyle}
                     >
                       {t('tripsScreen.setActiveButton')}
                     </Button>

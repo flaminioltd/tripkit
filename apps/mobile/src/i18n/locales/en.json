@@ -178,7 +178,10 @@
       "es": "Spanish",
       "de": "German"
     },
-    "forceSyncButton": "Sync Online Data"
+    "forceSyncButton": "Sync Online Data",
+    "customizeCurrencyUnitsTitle": "Customize Currency & Units",
+    "measurementSystem": "Measurement System",
+    "searchCurrencyPlaceholder": "Enter a currency..."
   },
   "access": {
     "upgrade": {
@@ -343,7 +346,9 @@
       "visitButton": "Visit",
       "embassyUnavailable": "Embassy information for {{homeCountry}} in {{destCountry}} is currently unavailable.",
       "embassyTitle": "Embassy",
-      "origin": "Origin"
+      "origin": "Origin",
+      "address": "Address",
+      "showOnMap": "Show on map"
     },
     "plugVoltage": {
       "headerTitle": "Plug & Voltage",

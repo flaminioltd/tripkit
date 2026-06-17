@@ -363,12 +363,12 @@ export default function TipCalculatorScreen() {
           </Card.Content>
         </Card>
 
-        <View style={{ flexDirection: 'row', gap: 12, marginTop: 16 }}>
-          <Button mode="contained" onPress={handleSync} style={{ flex: 1 }} disabled={syncSuccess || !billAmount || parseFloat(billAmount) === 0}>
-            {syncSuccess ? t("modules.tipCalculator.synced", "Synced!") : t("modules.tipCalculator.syncToBudget", "Sync to Budget")}
-          </Button>
-          <Button mode="outlined" onPress={handleReset} style={{ flex: 1 }}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 16 }}>
+          <Button variant="alternative" onPress={handleReset}>
             Reset
+          </Button>
+          <Button variant="main" onPress={handleSync} disabled={syncSuccess || !billAmount || parseFloat(billAmount) === 0}>
+            {syncSuccess ? t("modules.tipCalculator.synced", "Synced!") : t("modules.tipCalculator.syncToBudget", "Sync to Budget")}
           </Button>
         </View>
 

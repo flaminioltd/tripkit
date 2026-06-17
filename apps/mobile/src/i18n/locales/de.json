@@ -178,7 +178,10 @@
       "es": "Spanisch",
       "de": "Deutsch"
     },
-    "forceSyncButton": "Daten Synchronisieren"
+    "forceSyncButton": "Daten Synchronisieren",
+    "customizeCurrencyUnitsTitle": "Währung & Einheiten anpassen",
+    "measurementSystem": "Maßsystem",
+    "searchCurrencyPlaceholder": "Währung eingeben..."
   },
   "access": {
     "upgrade": {
@@ -343,7 +346,9 @@
       "visitButton": "Besuchen",
       "embassyUnavailable": "Botschaftsinformationen für {{homeCountry}} in {{destCountry}} sind derzeit nicht verfügbar.",
       "embassyTitle": "Botschaft",
-      "origin": "Herkunft"
+      "origin": "Herkunft",
+      "address": "Adresse",
+      "showOnMap": "Auf der Karte anzeigen"
     },
     "plugVoltage": {
       "headerTitle": "Stecker & Spannung",

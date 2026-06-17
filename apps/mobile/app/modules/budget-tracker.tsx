@@ -418,8 +418,7 @@ export default function BudgetTrackerScreen() {
         ListFooterComponent={
           <View style={{ padding: 16, alignItems: 'center', marginTop: 8, marginBottom: 64 }}>
             <Button 
-              mode="text" 
-              textColor={theme.colors.error} 
+              variant="destructive"
               icon="delete-sweep"
               onPress={handleReset}
             >
