@@ -1,7 +1,7 @@
 import Button from '../../src/components/ui/Button';
 import React, { useState } from 'react';
 import { View, StyleSheet, Image } from 'react-native';
-import { Text, useTheme, List } from 'react-native-paper';
+import { Text, useTheme, List, Switch } from 'react-native-paper';
 import { useAppStore } from '../../src/stores/app-store';
 import { COUNTRIES } from '../../src/lib/countries';
 import { FLAG_IMAGES } from '../../src/lib/assets';
@@ -123,6 +123,17 @@ export default function SettingsScreen() {
         <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant, marginTop: 8 }}>
           {t('settingsScreen.lastUpdated', 'Last updated:')} {formatSyncDate(lastSyncDate)}
         </Text>
+
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginTop: 24, padding: 16, backgroundColor: theme.colors.surfaceVariant, borderRadius: 12 }}>
+          <View>
+            <Text variant="titleMedium" style={{ color: theme.colors.onSurface }}>Dev: Premium Tier</Text>
+            <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>Toggle premium features for testing</Text>
+          </View>
+          <Switch value={settings?.isPremium ?? false} onValueChange={(val) => {
+             const updateSettingsFn = useAppStore.getState().updateSettings;
+             updateSettingsFn({ isPremium: val });
+          }} />
+        </View>
       </View>
 
       <ChangeHomeCountryModal 

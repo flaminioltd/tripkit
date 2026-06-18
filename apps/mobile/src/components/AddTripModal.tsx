@@ -15,10 +15,20 @@ interface AddTripModalProps {
   onDismiss: () => void;
 }
 
+import PremiumUpgradeModal from './PremiumUpgradeModal';
+import { useAppStore } from '../stores/app-store';
+
 export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) {
   const theme = useTheme();
-  const { createTrip } = useTripStore();
+  const { createTrip, trips } = useTripStore();
+  const { settings } = useAppStore();
   const { t, i18n } = useTranslation();
+  
+  const isPremium = settings?.isPremium;
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const activeAndUpcomingTrips = trips.filter(t => !t.endDate || new Date(t.endDate) >= today);
+  const isLimitReached = !isPremium && activeAndUpcomingTrips.length >= 2;
   
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCountry, setSelectedCountry] = useState<any | null>(null);
@@ -127,6 +137,10 @@ export default function AddTripModal({ visible, onDismiss }: AddTripModalProps) 
     setIsFocused(false);
     Keyboard.dismiss();
   };
+
+  if (isLimitReached) {
+    return <PremiumUpgradeModal visible={visible} onDismiss={onDismiss} />;
+  }
 
   return (
     <Portal>

@@ -8,13 +8,19 @@ import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import { useTripStore } from '../../src/stores/trip-store';
 import { COUNTRIES } from '../../src/lib/countries';
 import { PHRASES_DATA, getLanguageForCountry, getSpeechLanguageCode } from '../../src/lib/basic-phrases-data';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import { useAppStore } from '../../src/stores/app-store';
+import PremiumUpgradeModal from '../../src/components/PremiumUpgradeModal';
 
 export default function BasicPhrasesScreen() {
   const theme = useTheme();
   const { activeTrip } = useTripStore();
+  const { settings } = useAppStore();
   const { t, i18n } = useTranslation();
   
+  const isPremium = settings?.isPremium;
+  const [isPremiumModalVisible, setPremiumModalVisible] = useState(false);
+
   const activeCountryData = COUNTRIES.find((c: any) => c.name === activeTrip?.destinationCountry);
   const destinationCode = activeCountryData?.code || 'FR';
 
@@ -22,9 +28,16 @@ export default function BasicPhrasesScreen() {
   const speechLanguageCode = getSpeechLanguageCode(languageKey);
   const phrasesCategories = PHRASES_DATA[languageKey] || PHRASES_DATA['EN'];
 
-  const [activeTab, setActiveTab] = useState(phrasesCategories[0]?.category || 'Basics');
+  const sortedCategories = [...phrasesCategories].sort((a, b) => {
+    const order: Record<string, number> = { 'Basics': 0, 'Emergencies': 1, 'Shopping': 2, 'Hotel & Dining': 3 };
+    const aOrder = order[a.category] ?? 99;
+    const bOrder = order[b.category] ?? 99;
+    return aOrder - bOrder;
+  });
 
-  const activeCategoryData = phrasesCategories.find(c => c.category === activeTab);
+  const [activeTab, setActiveTab] = useState(sortedCategories[0]?.category || 'Basics');
+
+  const activeCategoryData = sortedCategories.find(c => c.category === activeTab);
 
   const speakPhrase = (text: string) => {
     // Remove text in parentheses like "(Konnichiwa)" so the TTS engine doesn't read it twice
@@ -58,12 +71,21 @@ export default function BasicPhrasesScreen() {
           <View style={{ width: '100%', position: 'relative', marginTop: 16 }}>
             <View style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 1, backgroundColor: tokens.colors.ui.warmBorder, zIndex: 0 }} />
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: 'row', gap: 4, paddingHorizontal: 16 }}>
-              {phrasesCategories.map((tab) => {
+              {sortedCategories.map((tab) => {
                 const isSelected = activeTab === tab.category;
+                const isFreeTab = tab.category === 'Basics' || tab.category === 'Emergencies';
+                const isLocked = !isPremium && !isFreeTab;
+
                 return (
                   <Pressable
                     key={tab.category}
-                    onPress={() => setActiveTab(tab.category)}
+                    onPress={() => {
+                      if (isLocked) {
+                        setPremiumModalVisible(true);
+                      } else {
+                        setActiveTab(tab.category);
+                      }
+                    }}
                     style={[
                       { 
                         paddingHorizontal: 16, 
@@ -85,13 +107,16 @@ export default function BasicPhrasesScreen() {
                       }
                     ]}
                   >
-                    <Text style={{ 
-                      fontSize: 14, 
-                      fontWeight: isSelected ? '600' : '500', 
-                      color: isSelected ? tokens.colors.ui.primaryPurple : tokens.colors.ui.textSecondary 
-                    }}>
-                      {t(`phrases.categories.${tab.category}`)}
-                    </Text>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+                      <Text style={{ 
+                        fontSize: 14, 
+                        fontWeight: isSelected ? '600' : '500', 
+                        color: isSelected ? tokens.colors.ui.primaryPurple : tokens.colors.ui.textSecondary 
+                      }}>
+                        {t(`phrases.categories.${tab.category}`)}
+                      </Text>
+                      {isLocked && <MaterialIcons name="workspace-premium" size={16} color="#007AFF" />}
+                    </View>
                   </Pressable>
                 );
               })}
@@ -136,6 +161,11 @@ export default function BasicPhrasesScreen() {
           </ScrollView>
         </>
       )}
+
+      <PremiumUpgradeModal 
+        visible={isPremiumModalVisible} 
+        onDismiss={() => setPremiumModalVisible(false)} 
+      />
     </SafeAreaView>
   );
 }

@@ -508,6 +508,25 @@
       "expensesCount": "Spese ({{count}})",
       "noExpenses": "Nessuna spesa registrata per questo viaggio.",
       "close": "Chiudi"
+    },
+    "premium": {
+      "title": "tripkit Premium",
+      "freeTier": "Gratuito",
+      "premiumTier": "Premium",
+      "features": {
+        "basicPhrasesLite": "Frasi Utili Lite",
+        "max2Trips": "Max 2 Viaggi",
+        "fullBasicPhrases": "Frasi Utili Complete",
+        "unlimitedTrips": "Viaggi Illimitati"
+      },
+      "price": "$19.99 / anno",
+      "upgradeBtn": "Passa a Premium",
+      "continueBtn": "Continua Gratis"
+    },
+    "tripSelection": {
+      "title": "Mantieni 2 Viaggi",
+      "subtitle": "La versione gratuita consente un massimo di 2 viaggi salvati. Seleziona fino a 2 viaggi che desideri mantenere. I viaggi non selezionati verranno eliminati.",
+      "keepSelected": "Mantieni"
     }
   },
   "categories": {
@@ -689,5 +708,8 @@
     "Europe/Asia": "Europa/Asia",
     "Europe": "Europa",
     "Asia": "Asia"
+  },
+  "general": {
+    "processing": "Elaborazione..."
   }
 }

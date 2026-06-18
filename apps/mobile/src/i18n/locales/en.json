@@ -509,6 +509,25 @@
       "expensesCount": "Expenses ({{count}})",
       "noExpenses": "No expenses recorded for this trip.",
       "close": "Close"
+    },
+    "premium": {
+      "title": "tripkit Premium",
+      "freeTier": "Free",
+      "premiumTier": "Premium",
+      "features": {
+        "basicPhrasesLite": "Basic Phrases Lite",
+        "max2Trips": "Max 2 Trips",
+        "fullBasicPhrases": "Full Basic Phrases",
+        "unlimitedTrips": "Unlimited Trips"
+      },
+      "price": "$19.99 / year",
+      "upgradeBtn": "Upgrade to Premium",
+      "continueBtn": "Continue with Free"
+    },
+    "tripSelection": {
+      "title": "Keep 2 Trips",
+      "subtitle": "The Free version allows a maximum of 2 saved trips. Please select up to 2 trips you'd like to keep. Unselected trips will be deleted.",
+      "keepSelected": "Keep"
     }
   },
   "categories": {
@@ -690,5 +709,8 @@
     "Europe/Asia": "Europe/Asia",
     "Europe": "Europe",
     "Asia": "Asia"
+  },
+  "general": {
+    "processing": "Processing..."
   }
 }

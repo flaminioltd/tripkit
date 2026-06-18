@@ -508,6 +508,25 @@
       "expensesCount": "Dépenses ({{count}})",
       "noExpenses": "Aucune dépense enregistrée.",
       "close": "Fermer"
+    },
+    "premium": {
+      "title": "tripkit Premium",
+      "freeTier": "Gratuit",
+      "premiumTier": "Premium",
+      "features": {
+        "basicPhrasesLite": "Phrases Simples Lite",
+        "max2Trips": "Max 2 Voyages",
+        "fullBasicPhrases": "Phrases Simples Complètes",
+        "unlimitedTrips": "Voyages Illimités"
+      },
+      "price": "$19.99 / an",
+      "upgradeBtn": "Passer à Premium",
+      "continueBtn": "Continuer avec Gratuit"
+    },
+    "tripSelection": {
+      "title": "Garder 2 Voyages",
+      "subtitle": "La version gratuite permet un maximum de 2 voyages enregistrés. Veuillez sélectionner jusqu'à 2 voyages que vous souhaitez conserver. Les voyages non sélectionnés seront supprimés.",
+      "keepSelected": "Garder"
     }
   },
   "categories": {
@@ -689,5 +708,8 @@
     "Europe/Asia": "Europe/Asie",
     "Europe": "Europe",
     "Asia": "Asie"
+  },
+  "general": {
+    "processing": "Traitement..."
   }
 }

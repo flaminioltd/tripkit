@@ -8,6 +8,7 @@ import { useTripStore } from '../../src/stores/trip-store';
 import { useAppStore } from '../../src/stores/app-store';
 import { FLAG_IMAGES } from '../../src/lib/assets';
 import AddTripModal from '../../src/components/AddTripModal';
+import PremiumUpgradeModal from '../../src/components/PremiumUpgradeModal';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../src/i18n';
 
@@ -28,12 +29,13 @@ export default function HomeScreen() {
   const theme = useTheme();
   const router = useRouter();
   const { trips, activeTrip, setActiveTrip, loadTrips } = useTripStore();
-  const { loadSettings } = useAppStore();
+  const { loadSettings, settings } = useAppStore();
   const { t } = useTranslation();
   const [menuVisible, setMenuVisible] = useState(false);
   const [activeCountryCode, setActiveCountryCode] = useState<string | null>(null);
   const [isAddTripVisible, setAddTripVisible] = useState(false);
   const [isNoTripModalVisible, setNoTripModalVisible] = useState(false);
+  const [isPremiumModalVisible, setPremiumModalVisible] = useState(false);
 
   useEffect(() => {
     loadTrips();
@@ -82,7 +84,9 @@ export default function HomeScreen() {
       <Pressable
         key={idx}
         onPress={() => {
-          if (!activeTrip) {
+          if (mod.isPremium && !settings?.isPremium) {
+            setPremiumModalVisible(true);
+          } else if (!activeTrip) {
             setNoTripModalVisible(true);
           } else {
             router.push(mod.route as any);
@@ -122,12 +126,18 @@ export default function HomeScreen() {
             
             <View style={{ marginRight: -4, marginTop: -4 }}>
               {mod.CustomIcon ? (
-                <mod.CustomIcon size={48} color={mod.color} />
+                <mod.CustomIcon size={48} />
               ) : (
                 <MaterialIcons name={mod.fallbackIcon} size={48} color={mod.color} />
               )}
             </View>
           </View>
+
+          {mod.isPremium && !settings?.isPremium && (
+            <View style={{ position: 'absolute', bottom: 12, right: 12 }}>
+              <MaterialIcons name="workspace-premium" size={16} color="#007AFF" />
+            </View>
+          )}
 
           <View style={{ flex: 1, justifyContent: 'flex-end', paddingLeft: 8, paddingBottom: 8 }}>
             <Text 
@@ -296,6 +306,11 @@ export default function HomeScreen() {
       <AddTripModal 
         visible={isAddTripVisible} 
         onDismiss={() => setAddTripVisible(false)} 
+      />
+      
+      <PremiumUpgradeModal 
+        visible={isPremiumModalVisible} 
+        onDismiss={() => setPremiumModalVisible(false)} 
       />
     </SafeAreaView>
   );
