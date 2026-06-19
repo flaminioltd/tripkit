@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "TripKit",
+    "owner": "flaminioltd",
     "slug": "tripkit",
     "scheme": "tripkit",
     "version": "1.0.0",
@@ -17,6 +18,11 @@
       "bundleIdentifier": "com.tripkit.app"
     },
     "android": {
+      "splash": {
+        "image": "./assets/icon.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#ffffff"
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
@@ -26,8 +32,15 @@
     "plugins": [
       "expo-router",
       "expo-localization",
-      "expo-font"
+      "expo-font",
+      "@react-native-community/datetimepicker",
+      "expo-sqlite"
     ],
-    "extra": {}
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "13e758fa-4814-4858-8de8-93f342f70bce"
+      }
+    }
   }
 }

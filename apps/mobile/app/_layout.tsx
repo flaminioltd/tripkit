@@ -11,6 +11,22 @@ import { seedDatabase } from '../src/db/seed';
 import { updateExchangeRates, shouldUpdateRates } from '../src/services/exchangeRates';
 import { useFonts, DMSans_900Black, DMSans_700Bold, DMSans_400Regular } from '@expo-google-fonts/dm-sans';
 import { useAppStore } from '../src/stores/app-store';
+import { Text, View, ScrollView } from 'react-native';
+import * as SplashScreen from 'expo-splash-screen';
+
+SplashScreen.preventAutoHideAsync().catch(() => {});
+
+export function ErrorBoundary({ error, retry }: { error: Error; retry: () => void }) {
+  return (
+    <View style={{ flex: 1, backgroundColor: '#ffcccc', paddingTop: 60, padding: 20 }}>
+      <Text style={{ fontSize: 22, fontWeight: 'bold', color: 'red', marginBottom: 10 }}>Startup Error</Text>
+      <ScrollView>
+        <Text style={{ fontSize: 14, color: 'black' }}>{error.message}</Text>
+        <Text style={{ fontSize: 12, color: 'gray', marginTop: 10 }}>{error.stack}</Text>
+      </ScrollView>
+    </View>
+  );
+}
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -43,6 +59,12 @@ export default function RootLayout() {
       unsubscribeNetInfo();
     };
   }, []);
+
+  useEffect(() => {
+    if (fontsLoaded) {
+      SplashScreen.hideAsync().catch(() => {});
+    }
+  }, [fontsLoaded]);
 
   if (!fontsLoaded) {
     return null;
