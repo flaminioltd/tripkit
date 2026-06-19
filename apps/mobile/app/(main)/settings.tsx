@@ -18,7 +18,7 @@ import { Alert } from 'react-native';
 export default function SettingsScreen() {
   const router = useRouter();
   const theme = useTheme();
-  const { settings } = useAppStore();
+  const { settings, updateSettings } = useAppStore();
   const [countryModalVisible, setCountryModalVisible] = useState(false);
   const [languageModalVisible, setLanguageModalVisible] = useState(false);
   const [customizeModalVisible, setCustomizeModalVisible] = useState(false);
@@ -114,6 +114,17 @@ export default function SettingsScreen() {
           right={props => <List.Icon {...props} icon="chevron-right" />}
           onPress={() => setSyncModalVisible(true)}
         />
+        <List.Item
+          title="Premium Tier (Admin)"
+          description="Enable or disable premium features"
+          left={props => <List.Icon {...props} icon="star" color={theme.colors.primary} />}
+          right={props => (
+            <Switch
+              value={settings?.isPremium || false}
+              onValueChange={(val) => updateSettings({ isPremium: val })}
+            />
+          )}
+        />
       </View>
 
       <View style={{ marginTop: 'auto', width: '100%', alignItems: 'center' }}>
@@ -123,17 +134,6 @@ export default function SettingsScreen() {
         <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant, marginTop: 8 }}>
           {t('settingsScreen.lastUpdated', 'Last updated:')} {formatSyncDate(lastSyncDate)}
         </Text>
-
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginTop: 24, padding: 16, backgroundColor: theme.colors.surfaceVariant, borderRadius: 12 }}>
-          <View>
-            <Text variant="titleMedium" style={{ color: theme.colors.onSurface }}>Dev: Premium Tier</Text>
-            <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant }}>Toggle premium features for testing</Text>
-          </View>
-          <Switch value={settings?.isPremium ?? false} onValueChange={(val) => {
-             const updateSettingsFn = useAppStore.getState().updateSettings;
-             updateSettingsFn({ isPremium: val });
-          }} />
-        </View>
       </View>
 
       <ChangeHomeCountryModal 
