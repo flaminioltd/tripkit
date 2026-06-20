@@ -114,17 +114,6 @@ export default function SettingsScreen() {
           right={props => <List.Icon {...props} icon="chevron-right" />}
           onPress={() => setSyncModalVisible(true)}
         />
-        <List.Item
-          title="Premium Tier (Admin)"
-          description="Enable or disable premium features"
-          left={props => <List.Icon {...props} icon="star" color={theme.colors.primary} />}
-          right={props => (
-            <Switch
-              value={settings?.isPremium || false}
-              onValueChange={(val) => updateSettings({ isPremium: val })}
-            />
-          )}
-        />
       </View>
 
       <View style={{ marginTop: 'auto', width: '100%', alignItems: 'center' }}>

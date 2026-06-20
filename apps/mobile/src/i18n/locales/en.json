@@ -489,7 +489,8 @@
     },
     "noTrip": {
       "title": "No Active Trip",
-      "message": "Please set an active trip or add a new trip to access the modules."
+      "message": "Please set an active trip or add a new trip to access the modules.",
+      "addTripButton": "Add Trip"
     },
     "changeHomeCountry": {
       "title": "Change country of origin",
@@ -522,12 +523,14 @@
       },
       "price": "$19.99 / year",
       "upgradeBtn": "Upgrade to Premium",
-      "continueBtn": "Continue with Free"
+      "continueBtn": "Continue with Free",
+      "allFreeModulesPlus": "Everything in free, plus:"
     },
     "tripSelection": {
       "title": "Keep 2 Trips",
       "subtitle": "The Free version allows a maximum of 2 saved trips. Please select up to 2 trips you'd like to keep. Unselected trips will be deleted.",
-      "keepSelected": "Keep"
+      "keepSelected": "Keep",
+      "continueBtn": "Continue"
     }
   },
   "categories": {
@@ -712,5 +715,8 @@
   },
   "general": {
     "processing": "Processing..."
+  },
+  "common": {
+    "close": "Close"
   }
 }

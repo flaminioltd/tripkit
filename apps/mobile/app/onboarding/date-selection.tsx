@@ -152,9 +152,19 @@ export default function DateSelectionScreen() {
       style={[styles.container, { backgroundColor: theme.colors.background }]} 
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
-      <View style={[styles.header, { paddingTop: insets.top + 16 }]}>
-        <Text variant="titleLarge" style={[styles.headerTitle, { color: theme.colors.primary }]}>{t('dateSelectionScreen.headerTitle')}</Text>
-        <Button mode="text" onPress={handleSkip}>{t('dateSelectionScreen.skipButton')}</Button>
+      <View style={[styles.header, { paddingTop: insets.top + 32, paddingBottom: 32, position: 'relative', justifyContent: 'center' }]}>
+        <Pressable 
+          style={{ position: 'absolute', left: 16, top: insets.top + 16, zIndex: 10, padding: 8 }} 
+          onPress={() => router.back()}
+        >
+          <MaterialIcons name="arrow-back" size={28} color={theme.colors.primary} />
+        </Pressable>
+        
+        <Image source={require('../../assets/images/Logo.png')} style={{ height: 32, width: 120, resizeMode: 'contain' }} />
+
+        <View style={{ position: 'absolute', right: 8, top: insets.top + 12, zIndex: 10 }}>
+          <Button mode="text" labelStyle={{ textAlign: 'right' }} contentStyle={{ justifyContent: 'flex-end' }} onPress={handleSkip}>{t('dateSelectionScreen.skipButton')}</Button>
+        </View>
       </View>
 
       <View style={styles.content}>

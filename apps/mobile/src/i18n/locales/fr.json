@@ -521,12 +521,19 @@
       },
       "price": "$19.99 / an",
       "upgradeBtn": "Passer à Premium",
-      "continueBtn": "Continuer avec Gratuit"
+      "continueBtn": "Continuer avec Gratuit",
+      "allFreeModulesPlus": "Tout ce qui est gratuit, plus :"
     },
     "tripSelection": {
       "title": "Garder 2 Voyages",
       "subtitle": "La version gratuite permet un maximum de 2 voyages enregistrés. Veuillez sélectionner jusqu'à 2 voyages que vous souhaitez conserver. Les voyages non sélectionnés seront supprimés.",
-      "keepSelected": "Garder"
+      "keepSelected": "Garder",
+      "continueBtn": "Continuer"
+    },
+    "noTrip": {
+      "title": "Aucun Voyage Actif",
+      "message": "Veuillez définir un voyage actif ou en ajouter un nouveau pour accéder aux modules.",
+      "addTripButton": "Ajouter"
     }
   },
   "categories": {
@@ -711,5 +718,8 @@
   },
   "general": {
     "processing": "Traitement..."
+  },
+  "common": {
+    "close": "Fermer"
   }
 }

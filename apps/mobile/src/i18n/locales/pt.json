@@ -521,12 +521,19 @@
       },
       "price": "$19.99 / ano",
       "upgradeBtn": "Mudar para Premium",
-      "continueBtn": "Continuar com Grátis"
+      "continueBtn": "Continuar com Grátis",
+      "allFreeModulesPlus": "Tudo na versão gratuita, mais:"
     },
     "tripSelection": {
       "title": "Manter 2 Viagens",
       "subtitle": "A versão gratuita permite um máximo de 2 viagens salvas. Por favor, selecione até 2 viagens que deseja manter. Viagens não selecionadas serão excluídas.",
-      "keepSelected": "Manter"
+      "keepSelected": "Manter",
+      "continueBtn": "Continuar"
+    },
+    "noTrip": {
+      "title": "Nenhuma Viagem Ativa",
+      "message": "Por favor, defina uma viagem ativa ou adicione uma nova para acessar os módulos.",
+      "addTripButton": "Adicionar Viagem"
     }
   },
   "categories": {
@@ -711,5 +718,8 @@
   },
   "general": {
     "processing": "Processando..."
+  },
+  "common": {
+    "close": "Fechar"
   }
 }

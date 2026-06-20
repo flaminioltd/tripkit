@@ -101,7 +101,8 @@ export default function WelcomeScreen() {
       style={[styles.container, { backgroundColor: theme.colors.background }]} 
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
-      <View style={[styles.header, { paddingTop: insets.top + 32 }]}>
+      <View style={[styles.header, { paddingTop: insets.top + 32, position: 'relative' }]}>
+
         <Image source={require('../../assets/images/Logo.png')} style={{ height: 32, width: 120, resizeMode: 'contain' }} />
       </View>
 

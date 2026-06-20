@@ -28,13 +28,22 @@ export default function TripSelectionModal({ visible, onDismiss, onConfirm }: Tr
   const trips = useTripStore(state => state.trips);
   const removeTrip = useTripStore(state => state.removeTrip);
   
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const activeTrips = trips.filter(t => {
+    if (!t.endDate) return true;
+    const e = new Date(t.endDate);
+    e.setHours(0,0,0,0);
+    return e >= today;
+  });
+  
   const [selectedTripIds, setSelectedTripIds] = useState<string[]>([]);
   const [isProcessing, setIsProcessing] = useState(false);
 
-  // Auto-select the first two trips when modal opens
+  // Auto-select the first two active trips when modal opens
   useEffect(() => {
-    if (visible && trips.length > 2) {
-      setSelectedTripIds(trips.slice(0, 2).map(t => t.id));
+    if (visible && activeTrips.length > 2) {
+      setSelectedTripIds(activeTrips.slice(0, 2).map(t => t.id));
     }
   }, [visible, trips]);
 
@@ -51,10 +60,9 @@ export default function TripSelectionModal({ visible, onDismiss, onConfirm }: Tr
   };
 
   const handleConfirm = async () => {
-    if (selectedTripIds.length === 0) return;
     setIsProcessing(true);
     try {
-      const tripsToDelete = trips.filter(t => !selectedTripIds.includes(t.id));
+      const tripsToDelete = activeTrips.filter(t => !selectedTripIds.includes(t.id));
       for (const trip of tripsToDelete) {
         await removeTrip(trip.id);
       }
@@ -85,7 +93,7 @@ export default function TripSelectionModal({ visible, onDismiss, onConfirm }: Tr
             {t('modals.tripSelection.subtitle', "The Free version allows a maximum of 2 saved trips. Please select up to 2 trips you'd like to keep. Unselected trips will be deleted.")}
           </Text>
 
-          {trips.map(trip => {
+          {activeTrips.map(trip => {
             const isSelected = selectedTripIds.includes(trip.id);
             const countryInfo = COUNTRIES.find(c => c.name === trip.destinationCountry);
             const flagSource = countryInfo ? FLAG_IMAGES[countryInfo.code as keyof typeof FLAG_IMAGES] : null;
@@ -97,7 +105,7 @@ export default function TripSelectionModal({ visible, onDismiss, onConfirm }: Tr
                   styles.tripItem,
                   { 
                     backgroundColor: theme.colors.surface,
-                    borderColor: isSelected ? '#007AFF' : theme.colors.outlineVariant,
+                    borderColor: isSelected ? '#8A61FF' : theme.colors.outlineVariant,
                     borderWidth: isSelected ? 2 : 1,
                   }
                 ]}
@@ -122,7 +130,7 @@ export default function TripSelectionModal({ visible, onDismiss, onConfirm }: Tr
                   <MaterialIcons 
                     name={isSelected ? "check-circle" : "radio-button-unchecked"} 
                     size={24} 
-                    color={isSelected ? "#007AFF" : theme.colors.onSurfaceVariant} 
+                    color={isSelected ? '#8A61FF' : theme.colors.onSurfaceVariant} 
                   />
                 </View>
               </Pressable>
@@ -138,41 +146,45 @@ export default function TripSelectionModal({ visible, onDismiss, onConfirm }: Tr
                 flex: 1,
                 backgroundColor: 'transparent',
                 borderWidth: 1,
-                borderColor: '#007AFF',
+                borderColor: '#8A61FF',
                 height: 48,
                 borderRadius: 24,
                 alignItems: 'center',
                 justifyContent: 'center',
                 paddingHorizontal: 8,
               },
-              pressed && !isProcessing && { opacity: 0.8, backgroundColor: 'rgba(0, 122, 255, 0.1)' },
+              pressed && !isProcessing && { opacity: 0.8, backgroundColor: 'rgba(138, 97, 255, 0.1)' },
               isProcessing && { opacity: 0.5 }
             ]}
           >
-            <Text style={{ color: '#007AFF', fontSize: 14, fontWeight: 'bold' }} numberOfLines={1} adjustsFontSizeToFit>
+            <Text style={{ color: '#8A61FF', fontSize: 14, fontWeight: 'bold' }} numberOfLines={1} adjustsFontSizeToFit>
               {t('general.cancel', 'Cancel')}
             </Text>
           </Pressable>
 
           <Pressable
             onPress={handleConfirm}
-            disabled={selectedTripIds.length === 0 || isProcessing}
+            disabled={isProcessing}
             style={({ pressed }) => [
               {
                 flex: 1,
                 marginLeft: 12,
-                backgroundColor: (selectedTripIds.length === 0 || isProcessing) ? theme.colors.surfaceVariant : '#007AFF',
+                backgroundColor: isProcessing ? theme.colors.surfaceVariant : '#8A61FF',
                 height: 48,
                 borderRadius: 24,
                 alignItems: 'center',
                 justifyContent: 'center',
                 paddingHorizontal: 8,
               },
-              pressed && !(selectedTripIds.length === 0 || isProcessing) && { opacity: 0.8 },
+              pressed && !isProcessing && { opacity: 0.8 },
             ]}
           >
-            <Text style={{ color: (selectedTripIds.length === 0 || isProcessing) ? theme.colors.onSurfaceDisabled : '#FFFFFF', fontSize: 14, fontWeight: 'bold' }} numberOfLines={1} adjustsFontSizeToFit>
-              {isProcessing ? t('general.processing', 'Processing...') : t('modals.tripSelection.keepSelected', 'Keep')}
+            <Text style={{ color: isProcessing ? theme.colors.onSurfaceDisabled : '#FFFFFF', fontSize: 14, fontWeight: 'bold' }} numberOfLines={1} adjustsFontSizeToFit>
+              {isProcessing 
+                ? t('general.processing', 'Processing...') 
+                : (selectedTripIds.length === 0 
+                  ? t('modals.tripSelection.continueBtn', 'Continue') 
+                  : t('modals.tripSelection.keepSelected', 'Keep'))}
             </Text>
           </Pressable>
         </View>

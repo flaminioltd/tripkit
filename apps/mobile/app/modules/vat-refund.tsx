@@ -382,19 +382,15 @@ export default function VatRefundScreen() {
                 <Pressable
                   key={cat.value}
                   onPress={() => setModalCategory(cat.value)}
-                  style={{
-                    paddingHorizontal: 8,
-                    paddingVertical: 6,
-                    borderRadius: 16,
-                    borderWidth: 1,
-                    borderColor: modalCategory === cat.value ? theme.colors.primary : theme.colors.outline,
-                    backgroundColor: modalCategory === cat.value ? theme.colors.primaryContainer : 'transparent',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    gap: 4
-                  }}
+                  style={[
+                    styles.categoryChip,
+                    {
+                      borderColor: modalCategory === cat.value ? theme.colors.primary : theme.colors.outline,
+                      backgroundColor: modalCategory === cat.value ? theme.colors.primaryContainer : 'transparent',
+                    }
+                  ]}
                 >
-                  <IconButton icon={cat.icon} size={16} style={{ margin: 0, padding: 0, width: 16, height: 16 }} />
+                  <IconButton icon={cat.icon} size={16} style={{ margin: 0, width: 16, height: 16 }} />
                   <Text style={{ color: modalCategory === cat.value ? theme.colors.onPrimaryContainer : theme.colors.onSurface, fontSize: 12 }}>
                     {t(`modules.vatRefund.cat${cat.label}`, cat.label)}
                   </Text>
@@ -446,4 +442,5 @@ const styles = StyleSheet.create({
   resultCard: { elevation: 0, marginBottom: 16 },
   resultContent: { gap: 12 },
   resultRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  categoryChip: { paddingHorizontal: 8, paddingVertical: 6, borderRadius: 16, borderWidth: 1, flexDirection: 'row', alignItems: 'center', gap: 4 }
 });

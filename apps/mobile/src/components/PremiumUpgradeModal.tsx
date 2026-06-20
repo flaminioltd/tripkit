@@ -10,12 +10,22 @@ import TripSelectionModal from './TripSelectionModal';
 interface PremiumUpgradeModalProps {
   visible: boolean;
   onDismiss: () => void;
+  isEligibleForTrial?: boolean;
 }
 
-export default function PremiumUpgradeModal({ visible, onDismiss }: PremiumUpgradeModalProps) {
+export default function PremiumUpgradeModal({ visible, onDismiss, isEligibleForTrial = true }: PremiumUpgradeModalProps) {
   const theme = useTheme();
   const { t } = useTranslation();
   const trips = useTripStore(state => state.trips);
+  
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const activeTrips = trips.filter(t => {
+    if (!t.endDate) return true;
+    const e = new Date(t.endDate);
+    e.setHours(0,0,0,0);
+    return e >= today;
+  });
   
   const [tripSelectionVisible, setTripSelectionVisible] = React.useState(false);
 
@@ -40,11 +50,11 @@ export default function PremiumUpgradeModal({ visible, onDismiss }: PremiumUpgra
     { ...allModules.find(m => m.id === 'atmExchange'), title: t('homeScreen.modules.atmExchange.title', 'ATM & Exchange Impact') },
     { ...allModules.find(m => m.id === 'timezoneHelper'), title: t('homeScreen.modules.timezoneHelper.title', 'Time Zones Helper') },
     { ...allModules.find(m => m.id === 'basicPhrases'), title: t('modals.premium.features.fullBasicPhrases', 'Full Basic Phrases') },
-    { title: t('modals.premium.features.unlimitedTrips', 'Unlimited Trips'), fallbackIcon: 'flight-takeoff', color: '#007AFF', backgroundColor: '#E6F0FF' },
+    { title: t('modals.premium.features.unlimitedTrips', 'Unlimited Trips'), fallbackIcon: 'flight-takeoff', color: '#8A61FF', backgroundColor: 'rgba(138, 97, 255, 0.1)' },
   ];
 
   const renderFeature = (feat: any, isPremiumSide: boolean) => {
-    const iconColor = isPremiumSide ? '#007AFF' : theme.colors.onSurfaceVariant;
+    const iconColor = isPremiumSide ? '#8A61FF' : theme.colors.onSurfaceVariant;
     return (
       <View style={styles.featureItem}>
         <View style={{ width: 20, alignItems: 'center', justifyContent: 'center' }}>
@@ -93,8 +103,11 @@ export default function PremiumUpgradeModal({ visible, onDismiss }: PremiumUpgra
             <View style={[styles.divider, { backgroundColor: theme.colors.outlineVariant }]} />
             
             <View style={styles.column}>
-              <Text variant="titleMedium" style={[styles.columnHeader, { color: '#007AFF' }]}>
+              <Text variant="titleMedium" style={[styles.columnHeader, { color: '#8A61FF' }]}>
                 {t('modals.premium.premiumTier', 'Premium')}
+              </Text>
+              <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant, fontSize: 10, textAlign: 'center', marginBottom: 12, marginTop: -14 }}>
+                {t('modals.premium.allFreeModulesPlus', 'Everything in free, plus:')}
               </Text>
               {premiumFeatures.map((feat, idx) => (
                 <View key={`prem-${idx}`}>
@@ -105,16 +118,21 @@ export default function PremiumUpgradeModal({ visible, onDismiss }: PremiumUpgra
           </View>
 
           <View style={styles.footerBox}>
-            <Text variant="titleMedium" style={{ textAlign: 'center', color: theme.colors.onSurface, marginBottom: 16, fontWeight: 'bold' }}>
+            <Text variant="titleMedium" style={{ textAlign: 'center', color: theme.colors.onSurface, marginBottom: isEligibleForTrial ? 4 : 16, fontWeight: 'bold' }}>
               {t('modals.premium.price', '$19.99 / year')}
             </Text>
+            {isEligibleForTrial && (
+              <Text variant="labelSmall" style={{ textAlign: 'center', color: '#8A61FF', marginBottom: 16, fontWeight: 'bold' }}>
+                {t('modals.premium.trialSublabel', '7-day free trial')}
+              </Text>
+            )}
             
             <View style={{ gap: 12 }}>
               <Pressable
                 onPress={handleUpgrade}
                 style={({ pressed }) => [
                   {
-                    backgroundColor: '#007AFF',
+                    backgroundColor: '#8A61FF',
                     height: 48,
                     borderRadius: 24,
                     alignItems: 'center',
@@ -125,13 +143,15 @@ export default function PremiumUpgradeModal({ visible, onDismiss }: PremiumUpgra
                 ]}
               >
                 <Text style={{ color: '#FFFFFF', fontSize: 14, fontWeight: 'bold' }} numberOfLines={1} adjustsFontSizeToFit>
-                  {t('modals.premium.upgradeBtn', 'Upgrade to Premium')}
+                  {isEligibleForTrial 
+                    ? t('modals.premium.startTrialBtn', 'Start Your Free Trial')
+                    : t('modals.premium.upgradeBtn', 'Upgrade to Premium')}
                 </Text>
               </Pressable>
               
               <Pressable
                 onPress={() => {
-                  if (trips.length > 2) {
+                  if (activeTrips.length > 2) {
                     setTripSelectionVisible(true);
                   } else {
                     onDismiss();
@@ -141,18 +161,18 @@ export default function PremiumUpgradeModal({ visible, onDismiss }: PremiumUpgra
                   {
                     backgroundColor: 'transparent',
                     borderWidth: 1,
-                    borderColor: '#007AFF',
+                    borderColor: '#8A61FF',
                     height: 48,
                     borderRadius: 24,
                     alignItems: 'center',
                     justifyContent: 'center',
                     paddingHorizontal: 8,
                   },
-                  pressed && { opacity: 0.8, backgroundColor: 'rgba(0, 122, 255, 0.1)' }
+                  pressed && { opacity: 0.8, backgroundColor: 'rgba(138, 97, 255, 0.1)' }
                 ]}
               >
-                <Text style={{ color: '#007AFF', fontSize: 14, fontWeight: 'bold' }} numberOfLines={1} adjustsFontSizeToFit>
-                  {t('modals.premium.continueBtn', 'Continue with Free')}
+                <Text style={{ color: '#8A61FF', fontSize: 14, fontWeight: 'bold' }} numberOfLines={1} adjustsFontSizeToFit>
+                  {t('modals.premium.continueFree', 'Continue with Free')}
                 </Text>
               </Pressable>
             </View>

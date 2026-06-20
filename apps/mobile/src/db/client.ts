@@ -2,12 +2,16 @@ import { openDatabaseSync } from 'expo-sqlite';
 import { drizzle } from 'drizzle-orm/expo-sqlite';
 import * as schema from './schema';
 
-export const sqliteClient = openDatabaseSync('tripkit_v2.db');
+export let sqliteClient: any;
+export let db: any;
 
-// Initialize database schema
-sqliteClient.execSync(`
-  PRAGMA journal_mode = WAL;
-  PRAGMA foreign_keys = ON;
+try {
+  sqliteClient = openDatabaseSync('tripkit_v2.db');
+  
+  // Initialize database schema
+  sqliteClient.execSync(`
+    PRAGMA journal_mode = WAL;
+    PRAGMA foreign_keys = ON;
 
   CREATE TABLE IF NOT EXISTS countries (
     code TEXT PRIMARY KEY,
@@ -88,41 +92,50 @@ sqliteClient.execSync(`
     created_at INTEGER NOT NULL
   );
 `);
+} catch (error) {
+  console.error("FATAL: Failed to init DB schema", error);
+}
 
 try {
-  sqliteClient.execSync('ALTER TABLE countries ADD COLUMN tipping_standard TEXT;');
+  sqliteClient?.execSync('ALTER TABLE countries ADD COLUMN tipping_standard TEXT;');
 } catch (e) {}
 try {
-  sqliteClient.execSync('ALTER TABLE countries ADD COLUMN tipping_type TEXT;');
+  sqliteClient?.execSync('ALTER TABLE countries ADD COLUMN tipping_type TEXT;');
 } catch (e) {}
 try {
-  sqliteClient.execSync('ALTER TABLE countries ADD COLUMN vat_rate REAL;');
+  sqliteClient?.execSync('ALTER TABLE countries ADD COLUMN vat_rate REAL;');
 } catch (e) {}
 try {
 } catch (e) {}
 try {
-  sqliteClient.execSync('ALTER TABLE countries ADD COLUMN timezones TEXT;');
+  sqliteClient?.execSync('ALTER TABLE countries ADD COLUMN timezones TEXT;');
 } catch (e) {}
 try {
-  sqliteClient.execSync('ALTER TABLE countries ADD COLUMN plugs TEXT;');
+  sqliteClient?.execSync('ALTER TABLE countries ADD COLUMN plugs TEXT;');
 } catch (e) {}
 try {
-  sqliteClient.execSync('ALTER TABLE trips ADD COLUMN budget_type TEXT;');
+  sqliteClient?.execSync('ALTER TABLE trips ADD COLUMN budget_type TEXT;');
 } catch (e) {}
 try {
-  sqliteClient.execSync('ALTER TABLE trips ADD COLUMN track_currency TEXT;');
+  sqliteClient?.execSync('ALTER TABLE trips ADD COLUMN track_currency TEXT;');
 } catch (e) {}
 try {
-  sqliteClient.execSync('ALTER TABLE trips ADD COLUMN is_editing_budget INTEGER DEFAULT 1;');
+  sqliteClient?.execSync('ALTER TABLE trips ADD COLUMN is_editing_budget INTEGER DEFAULT 1;');
 } catch (e) {}
 try {
-  sqliteClient.execSync('ALTER TABLE settings ADD COLUMN system_language TEXT;');
+  sqliteClient?.execSync('ALTER TABLE settings ADD COLUMN system_language TEXT;');
 } catch (e) {}
 try {
-  sqliteClient.execSync("ALTER TABLE settings ADD COLUMN exchange_rate_sync_preference TEXT DEFAULT 'wifi_only';");
+  sqliteClient?.execSync("ALTER TABLE settings ADD COLUMN exchange_rate_sync_preference TEXT DEFAULT 'wifi_only';");
 } catch (e) {}
 try {
-  sqliteClient.execSync("ALTER TABLE settings ADD COLUMN is_premium INTEGER DEFAULT 0 NOT NULL;");
+  sqliteClient?.execSync("ALTER TABLE settings ADD COLUMN is_premium INTEGER DEFAULT 0 NOT NULL;");
 } catch (e) {}
 
-export const db = drizzle(sqliteClient, { schema });
+try {
+  if (sqliteClient) {
+    db = drizzle(sqliteClient, { schema });
+  }
+} catch (e) {
+  console.error("FATAL: Failed to init drizzle", e);
+}

@@ -176,7 +176,7 @@ export default function ModuleHeader({ title }: Props) {
                 title={
                   <Text>
                     {t(`homeScreen.modules.${mod.id}.title`, mod.title)}
-                    {isLocked && <Text> <MaterialIcons name="workspace-premium" size={16} color="#007AFF" /></Text>}
+                    {isLocked && <Text> <MaterialIcons name="workspace-premium" size={16} color="#8A61FF" /></Text>}
                   </Text>
                 }
                 leadingIcon={({ size }) => (
@@ -205,7 +205,7 @@ export default function ModuleHeader({ title }: Props) {
                 title={
                   <Text>
                     {t(`homeScreen.modules.${mod.id}.title`, mod.title)}
-                    {isLocked && <Text> <MaterialIcons name="workspace-premium" size={16} color="#007AFF" /></Text>}
+                    {isLocked && <Text> <MaterialIcons name="workspace-premium" size={16} color="#8A61FF" /></Text>}
                   </Text>
                 }
                 leadingIcon={({ size }) => (

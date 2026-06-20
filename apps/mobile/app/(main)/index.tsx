@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, ScrollView, Pressable, Image, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Text, useTheme, Menu, Portal, Dialog, Button } from 'react-native-paper';
+import { Text, useTheme, Menu, Portal, Dialog, Button as PaperButton } from 'react-native-paper';
+import Button from '../../src/components/ui/Button';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useTripStore } from '../../src/stores/trip-store';
@@ -135,7 +136,7 @@ export default function HomeScreen() {
 
           {mod.isPremium && !settings?.isPremium && (
             <View style={{ position: 'absolute', bottom: 12, right: 12 }}>
-              <MaterialIcons name="workspace-premium" size={16} color="#007AFF" />
+              <MaterialIcons name="workspace-premium" size={16} color="#8A61FF" />
             </View>
           )}
 
@@ -283,20 +284,24 @@ export default function HomeScreen() {
               {t('modals.noTrip.message', 'Please set an active trip or add a new trip to access the modules.')}
             </Text>
           </Dialog.Content>
-          <Dialog.Actions>
-            <Button onPress={() => setNoTripModalVisible(false)} textColor={theme.colors.primary}>
+          <Dialog.Actions style={{ paddingHorizontal: 24, paddingBottom: 24, paddingTop: 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Button 
+              variant="alternative"
+              onPress={() => setNoTripModalVisible(false)}
+            >
               {t('common.close', 'Close')}
             </Button>
             {trips.length === 0 && (
               <Button 
-                mode="contained" 
+                variant="main" 
+                contentStyle={{ paddingHorizontal: 0 }}
+                labelStyle={{ marginHorizontal: 8 }}
                 onPress={() => {
                   setNoTripModalVisible(false);
                   setAddTripVisible(true);
-                }} 
-                buttonColor={theme.colors.primary}
+                }}
               >
-                {t('modals.addTrip.title', 'Plan New Trip')}
+                {t('modals.noTrip.addTripButton', 'Add Trip')}
               </Button>
             )}
           </Dialog.Actions>

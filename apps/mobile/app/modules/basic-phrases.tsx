@@ -115,7 +115,7 @@ export default function BasicPhrasesScreen() {
                       }}>
                         {t(`phrases.categories.${tab.category}`)}
                       </Text>
-                      {isLocked && <MaterialIcons name="workspace-premium" size={16} color="#007AFF" />}
+                      {isLocked && <MaterialIcons name="workspace-premium" size={16} color="#8A61FF" />}
                     </View>
                   </Pressable>
                 );
