@@ -7,9 +7,9 @@
     }
   },
   "welcomeScreen": {
-    "title": "TripKit",
+    "title": "triphandy",
     "heroTitle": "Qual é o seu país de origem?",
-    "heroSubtitle": "O TripKit define padrões úteis com base no seu país de origem.",
+    "heroSubtitle": "O triphandy define padrões úteis com base no seu país de origem.",
     "searchPlaceholder": "Insira um país...",
     "settingsTitle": "Configurações para {{countryName}}",
     "baseCurrency": "Moeda Base",
@@ -44,7 +44,7 @@
     "inferredCurrency": "Moeda Deduzida",
     "inferredSizeFormat": "Formato de Tamanhos",
     "note": "Você poderá adicionar mais detalhes depois.",
-    "enterTripKitButton": "Entrar no TripKit"
+    "entertriphandyButton": "Entrar no triphandy"
   },
   "upgradeScreen": {
     "heroTitle": "Desbloquear Tudo",
@@ -52,11 +52,11 @@
     "whatRemainsFree": "O que continua grátis:",
     "unlockIncludes": "O desbloqueio inclui:",
     "oneTimePayment": "Pagamento único",
-    "unlockButton": "Desbloquear TripKit",
+    "unlockButton": "Desbloquear triphandy",
     "restorePurchaseButton": "Restaurar Compra"
   },
   "homeScreen": {
-    "headerTitle": "TripKit",
+    "headerTitle": "triphandy",
     "activeTripSubtitle": "{{days}} dias em {{country}}",
     "currentLocation": "Localização Atual",
     "modulesTitle": "Módulos",
@@ -302,7 +302,7 @@
       "detailsOptional": "Descrição (Opcional)",
       "amountLocal": "Valor ({{currency}})",
       "saveExpenseButton": "Salvar",
-      "resetBudgetButton": "Zerar Orçamento",
+      "resetBudgetButton": "Redefinir Orçamento e Limpar Despesas",
       "tags": {
         "food": "Alimentação",
         "transport": "Transporte",
@@ -311,7 +311,21 @@
         "entertainment": "Diversão",
         "shopping": "Compras",
         "other": "Outros"
-      }
+      },
+      "budgetLabel": "Orçamento",
+      "budgetSettings": "Configurações de Orçamento",
+      "day": "dia",
+      "notSet": "Não definido",
+      "adjustButton": "Ajustar",
+      "pieChartTitle": "Desdobramento de Despesas",
+      "noData": "Sem dados disponíveis.",
+      "includeRemaining": "Incluir Orçamento Restante",
+      "doneButton": "Concluído",
+      "clearExpensesButton": "Limpar Despesas",
+      "clearExpensesAlertTitle": "Limpar Despesas",
+      "clearExpensesAlertMessage": "Tem certeza de que deseja excluir todas as despesas? Isso não pode ser desfeito.",
+      "clearButton": "Limpar",
+      "addExpenseDesc": "Rastrear uma nova transação"
     },
     "emergencyEssentials": {
       "headerTitle": "Emergência",
@@ -355,7 +369,7 @@
       "holidaysIn": "Feriados em {{country}}",
       "duringTrip": "DURANTE A VIAGEM",
       "noHolidayData": "Sem feriados encontrados para {{year}}.",
-      "embassyDesc": "Seu país de origem está definido como {{homeCountry}}. Mostrando detalhes da embaixada em {{destCountry}}.",
+      "embassyDesc": "A embaixada de {{homeCountry}} em {{destCountry}}.",
       "embassyConsulate": "Embaixada / Consulado",
       "visitButton": "Visitar",
       "embassyUnavailable": "Informações da embaixada indisponíveis.",
@@ -472,7 +486,13 @@
       "catJewelry": "Joias",
       "catAccessories": "Acessórios",
       "catGifts": "Presentes",
-      "catOther": "Outro"
+      "catOther": "Outros",
+      "pieChartTitle": "Desdobramento de Compras",
+      "noData": "Sem dados disponíveis.",
+      "showRefundToggle": "Mostrar Reembolso Estimado",
+      "closeButton": "Fechar",
+      "amountLocal": "Valor ({{currency}})",
+      "addNewDesc": "Adicione um item para estimar seu reembolso"
     },
     "atm": {
       "headerTitle": "Caixas & Câmbio"
@@ -510,7 +530,7 @@
       "close": "Fechar"
     },
     "premium": {
-      "title": "tripkit Premium",
+      "title": "triphandy Premium",
       "freeTier": "Grátis",
       "premiumTier": "Premium",
       "features": {
@@ -540,11 +560,13 @@
     "food": "Alimentação",
     "transport": "Transporte",
     "accommodation": "Alojamento",
-    "activities": "Atividades",
+    "activities": "Atividades e Passeios",
     "shopping": "Compras",
     "other": "Outros",
     "Essentials": "Essenciais",
-    "Finance": "Finanças"
+    "Finance": "Finanças",
+    "flights": "Voos",
+    "entertainment": "Diversão"
   },
   "countries": {
     "US": "Estados Unidos",
@@ -698,14 +720,15 @@
   "components": {
     "pastTripSummary": {
       "title": "Resumo de {{country}}",
-      "configuredBudget": "ORÇAMENTO",
+      "configuredBudget": "Orçamento Configurado",
       "perDayForDays": "{{amount}} {{currency}} / dia",
-      "usedBudget": "ORÇAMENTO USADO",
+      "usedBudget": "Orçamento Usado",
       "underBudget": "Abaixo do orçamento!",
       "overBudget": "Acima do orçamento",
       "noBudgetLimit": "Sem limite",
       "expensesCount": "Despesas ({{count}})",
-      "noExpenses": "Sem despesas."
+      "noExpenses": "Nenhuma despesa registrada para esta viagem.",
+      "breakdown": "Detalhamento de Despesas"
     }
   },
   "regions": {

@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "TripKit",
-    "owner": "flaminioltd",
-    "slug": "tripkit",
-    "scheme": "tripkit",
+    "name": "triphandy",
+    "owner": "flaminio",
+    "slug": "triphandy",
+    "scheme": "triphandy",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,7 +15,7 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.tripkit.app"
+      "bundleIdentifier": "com.triphandy.app"
     },
     "android": {
       "splash": {
@@ -27,7 +27,7 @@
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.tripkit.app"
+      "package": "com.triphandy.app"
     },
     "plugins": [
       "expo-router",
@@ -37,9 +37,11 @@
       "expo-sqlite"
     ],
     "extra": {
-      "router": {},
+      "router": {
+        "origin": false
+      },
       "eas": {
-        "projectId": "13e758fa-4814-4858-8de8-93f342f70bce"
+        "projectId": "2cfb01d8-5678-4662-b046-537992fde022"
       }
     }
   }

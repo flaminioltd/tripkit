@@ -62,7 +62,7 @@ const MathSlider = ({ title, homeLabel, destLabel, min, max, step, convertHomeTo
         <View style={styles.ioContainer}>
           <View style={styles.ioBox}>
             <Text variant="labelMedium" style={styles.ioLabel}>{homeLabel}</Text>
-            <TextInput 
+            <TextInput placeholderTextColor="#B7B0AA" theme={{ colors: { onSurfaceVariant: "#B7B0AA" } }} 
               value={homeStr}
               onChangeText={handleHomeChange}
               keyboardType="numeric"
@@ -72,7 +72,7 @@ const MathSlider = ({ title, homeLabel, destLabel, min, max, step, convertHomeTo
           <MaterialCommunityIcons name="arrow-right" size={24} color={theme.colors.onSurfaceVariant} style={{ marginTop: 16 }} />
           <View style={styles.ioBox}>
             <Text variant="labelMedium" style={styles.ioLabel}>{destLabel}</Text>
-            <TextInput 
+            <TextInput placeholderTextColor="#B7B0AA" theme={{ colors: { onSurfaceVariant: "#B7B0AA" } }} 
               value={destStr}
               onChangeText={handleDestChange}
               keyboardType="numeric"
@@ -202,7 +202,7 @@ const ArraySlider = ({ title, homeLabel, destLabel, homeArray, destArray, min, m
         <View style={styles.ioContainer}>
           <View style={styles.ioBox}>
             <Text variant="labelMedium" style={styles.ioLabel}>{homeLabel}</Text>
-            <TextInput 
+            <TextInput placeholderTextColor="#B7B0AA" theme={{ colors: { onSurfaceVariant: "#B7B0AA" } }} 
               value={homeStr}
               onChangeText={handleHomeChange}
               keyboardType={isLetters ? "default" : "numeric"}
@@ -212,7 +212,7 @@ const ArraySlider = ({ title, homeLabel, destLabel, homeArray, destArray, min, m
           <MaterialCommunityIcons name="arrow-right" size={24} color={theme.colors.onSurfaceVariant} style={{ marginTop: 16 }} />
           <View style={styles.ioBox}>
             <Text variant="labelMedium" style={styles.ioLabel}>{destLabel}</Text>
-            <TextInput 
+            <TextInput placeholderTextColor="#B7B0AA" theme={{ colors: { onSurfaceVariant: "#B7B0AA" } }} 
               value={destStr}
               onChangeText={handleDestChange}
               keyboardType={destIsNumeric ? "numeric" : "default"}

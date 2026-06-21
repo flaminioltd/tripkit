@@ -80,7 +80,7 @@ export default function PremiumUpgradeModal({ visible, onDismiss, isEligibleForT
       >
         <View style={styles.header}>
           <Text variant="headlineSmall" style={{ color: theme.colors.primary, fontWeight: 'bold' }}>
-            {t('modals.premium.title', 'tripkit Premium')}
+            {t('modals.premium.title', 'triphandy Premium')}
           </Text>
           <Pressable onPress={onDismiss} style={styles.closeButton}>
             <MaterialIcons name="close" size={24} color={theme.colors.onSurfaceVariant} />

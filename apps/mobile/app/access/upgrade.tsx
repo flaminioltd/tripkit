@@ -56,7 +56,7 @@ export default function UpgradeScreen() {
       
       <View style={styles.footer}>
         <Button mode="contained" onPress={() => {}} style={styles.button} labelStyle={{ paddingVertical: 4 }}>
-          Unlock TripKit
+          Unlock triphandy
         </Button>
         <Button mode="text" onPress={() => {}} style={{ marginTop: 8 }}>
           Restore Purchase

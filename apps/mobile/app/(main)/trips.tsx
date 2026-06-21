@@ -220,11 +220,13 @@ export default function TripsScreen() {
     <>
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       {/* Header */}
-      <View style={styles.header}>
-        <Text variant="headlineLarge" style={{ color: theme.colors.onSurface, }}>{t('tripsScreen.headerTitle')}</Text>
-        <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant, marginTop: 4 }}>
-          {t('tripsScreen.headerSubtitle')}
-        </Text>
+      <View style={[styles.header, { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }]}>
+        <View>
+          <Text variant="headlineLarge" style={{ color: theme.colors.onSurface, }}>{t('tripsScreen.headerTitle')}</Text>
+          <Text variant="bodyLarge" style={{ color: theme.colors.onSurfaceVariant, marginTop: 4 }}>
+            {t('tripsScreen.headerSubtitle')}
+          </Text>
+        </View>
       </View>
 
       {/* Plan New Trip */}
@@ -374,17 +376,18 @@ export default function TripsScreen() {
             return (
               <View key={trip.id} style={[styles.tripCard, { borderColor: theme.colors.outlineVariant, backgroundColor: theme.colors.surface }]}>
                 {countryCode && COVER_IMAGES[countryCode] ? (
-                  <ImageBackground 
-                    source={COVER_IMAGES[countryCode]} 
-                    style={styles.tripCardImagePlaceholder}
-                    imageStyle={{ resizeMode: 'cover' }}
-                  >
+                  <View style={styles.tripCardImagePlaceholder}>
+                    <Image 
+                      source={COVER_IMAGES[countryCode]} 
+                      style={[StyleSheet.absoluteFillObject, { width: '100%', height: '100%' }]}
+                      resizeMode="cover"
+                    />
                     <View style={styles.tripCardOverlay}>
                       <Text variant="titleLarge" style={{  color: '#fff' }}>
                         {countryCode ? t(`countries.${countryCode}`, trip.destinationCountry) : trip.destinationCountry}
                       </Text>
                     </View>
-                  </ImageBackground>
+                  </View>
                 ) : (
                   <View style={[styles.tripCardImagePlaceholder, { backgroundColor: theme.colors.surfaceVariant }]}>
                     <View style={styles.tripCardOverlay}>

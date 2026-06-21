@@ -7,9 +7,9 @@
     }
   },
   "welcomeScreen": {
-    "title": "TripKit",
+    "title": "triphandy",
     "heroTitle": "Was ist Ihr Herkunftsland?",
-    "heroSubtitle": "TripKit legt nützliche Standardwerte basierend auf Ihrem Herkunftsland fest.",
+    "heroSubtitle": "triphandy legt nützliche Standardwerte basierend auf Ihrem Herkunftsland fest.",
     "searchPlaceholder": "Ein Land eingeben...",
     "settingsTitle": "{{countryName}} Einstellungen",
     "baseCurrency": "Basiswährung",
@@ -44,7 +44,7 @@
     "inferredCurrency": "Abgeleitete Währung",
     "inferredSizeFormat": "Abgeleitetes Größenformat",
     "note": "Du kannst später weitere Reisedetails hinzufügen.",
-    "enterTripKitButton": "TripKit Betreten"
+    "entertriphandyButton": "triphandy Betreten"
   },
   "upgradeScreen": {
     "heroTitle": "Alles Freischalten",
@@ -52,11 +52,11 @@
     "whatRemainsFree": "Was kostenlos bleibt:",
     "unlockIncludes": "Freischaltung beinhaltet:",
     "oneTimePayment": "Einmalige Zahlung",
-    "unlockButton": "TripKit Freischalten",
+    "unlockButton": "triphandy Freischalten",
     "restorePurchaseButton": "Kauf Wiederherstellen"
   },
   "homeScreen": {
-    "headerTitle": "TripKit",
+    "headerTitle": "triphandy",
     "activeTripSubtitle": "{{days}} Tage in {{country}}",
     "currentLocation": "Aktueller Standort",
     "modulesTitle": "Module",
@@ -299,7 +299,7 @@
       "detailsOptional": "Beschreibung (Optional)",
       "amountLocal": "Betrag ({{currency}})",
       "saveExpenseButton": "Speichern",
-      "resetBudgetButton": "Budget Zurücksetzen & Ausgaben Löschen",
+      "resetBudgetButton": "Budget zurücksetzen & Ausgaben löschen",
       "tags": {
         "food": "Essen",
         "transport": "Transport",
@@ -308,7 +308,21 @@
         "entertainment": "Spaß",
         "shopping": "Einkaufen",
         "other": "Sonstiges"
-      }
+      },
+      "budgetLabel": "Budget",
+      "budgetSettings": "Budget-Einstellungen",
+      "day": "Tag",
+      "notSet": "Nicht festgelegt",
+      "adjustButton": "Anpassen",
+      "pieChartTitle": "Ausgabenaufteilung",
+      "noData": "Keine Daten verfügbar.",
+      "includeRemaining": "Verbleibendes Budget einbeziehen",
+      "doneButton": "Fertig",
+      "clearExpensesButton": "Ausgaben löschen",
+      "clearExpensesAlertTitle": "Ausgaben löschen",
+      "clearExpensesAlertMessage": "Möchten Sie wirklich alle Ausgaben löschen? Dies kann nicht rückgängig gemacht werden.",
+      "clearButton": "Löschen",
+      "addExpenseDesc": "Neue Transaktion verfolgen"
     },
     "emergencyEssentials": {
       "headerTitle": "Notrufnummern",
@@ -352,7 +366,7 @@
       "holidaysIn": "Feiertage in {{country}}",
       "duringTrip": "WÄHREND DER REISE",
       "noHolidayData": "Für {{year}} sind keine Feiertagsdaten verfügbar.",
-      "embassyDesc": "Ihr Herkunftsland ist auf {{homeCountry}} eingestellt. Zeige Botschaftsdetails in {{destCountry}}.",
+      "embassyDesc": "Die Botschaft von {{homeCountry}} in {{destCountry}}.",
       "embassyConsulate": "Botschaft / Konsulat",
       "visitButton": "Besuchen",
       "embassyUnavailable": "Botschaftsinformationen für {{homeCountry}} in {{destCountry}} sind derzeit nicht verfügbar.",
@@ -467,9 +481,15 @@
       "catClothes": "Kleidung",
       "catElectronics": "Elektronik",
       "catJewelry": "Schmuck",
-      "catAccessories": "Zubehör",
+      "catAccessories": "Accessoires",
       "catGifts": "Geschenke",
-      "catOther": "Andere"
+      "catOther": "Sonstiges",
+      "pieChartTitle": "Einkaufsaufteilung",
+      "noData": "Keine Daten verfügbar.",
+      "showRefundToggle": "Geschätzte Erstattung anzeigen",
+      "closeButton": "Schließen",
+      "amountLocal": "Betrag ({{currency}})",
+      "addNewDesc": "Fügen Sie einen Artikel hinzu, um Ihre Rückerstattung zu schätzen"
     },
     "atm": {
       "headerTitle": "Geld & Wechsel"
@@ -507,7 +527,7 @@
       "close": "Schließen"
     },
     "premium": {
-      "title": "tripkit Premium",
+      "title": "triphandy Premium",
       "freeTier": "Kostenlos",
       "premiumTier": "Premium",
       "features": {
@@ -541,7 +561,9 @@
     "shopping": "Einkaufen",
     "other": "Andere",
     "Essentials": "Wesentliches",
-    "Finance": "Finanzen"
+    "Finance": "Finanzen",
+    "flights": "Flüge",
+    "entertainment": "Spaß"
   },
   "countries": {
     "US": "Vereinigte Staaten",
@@ -704,14 +726,15 @@
   "components": {
     "pastTripSummary": {
       "title": "{{country}} Zusammenfassung",
-      "configuredBudget": "KONFIGURIERTES BUDGET",
+      "configuredBudget": "Geplantes Budget",
       "perDayForDays": "{{amount}} {{currency}} / Tag für {{days}} Tage",
-      "usedBudget": "VERBRAUCHTES BUDGET",
-      "underBudget": "Im Budget!",
+      "usedBudget": "Genutztes Budget",
+      "underBudget": "Unter Budget!",
       "overBudget": "Budget überschritten",
       "noBudgetLimit": "Kein Budgetlimit",
       "expensesCount": "Ausgaben ({{count}})",
-      "noExpenses": "Keine Ausgaben für diese Reise erfasst."
+      "noExpenses": "Keine Ausgaben für diese Reise erfasst.",
+      "breakdown": "Ausgabenaufschlüsselung"
     }
   },
   "regions": {

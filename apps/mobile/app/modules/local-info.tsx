@@ -299,7 +299,7 @@ export default function LocalInfoScreen() {
               {t("modules.localInfo.embassyTitle", "Embassy Info")}
             </Text>
             <Text variant="bodyMedium" style={{ marginBottom: 16, color: theme.colors.onSurfaceVariant }}>
-              {t("modules.localInfo.embassyDesc", "Your home country is set to {{homeCountry}}. Showing embassy details in {{destCountry}}.", { homeCountry: translatedHomeCountryName, destCountry: translatedDestCountryName })}
+              {t("modules.localInfo.embassyDesc", "The embassy of {{homeCountry}} in {{destCountry}}.", { homeCountry: translatedHomeCountryName, destCountry: translatedDestCountryName })}
             </Text>
 
             {embassyData ? (

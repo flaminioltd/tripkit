@@ -4,7 +4,7 @@ import ModuleHeader from '../../src/components/app-header/ModuleHeader';
 import React, { useState, useEffect } from 'react';
 import { COUNTRIES } from '../../src/lib/countries';
 import { useTripStore } from '../../src/stores/trip-store';
-import { View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';;
+import { View, StyleSheet, ScrollView, TouchableOpacity, Platform } from 'react-native';
 import { Text, useTheme, Card, Menu, IconButton, Switch, ThemeProvider } from 'react-native-paper';
 import { TimePicker, en, registerTranslation } from 'react-native-paper-dates';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
@@ -277,7 +277,21 @@ export default function TimezoneHelperScreen() {
         </View>
         
         <View style={{ alignSelf: 'center', marginVertical: 8, paddingVertical: 4 }}>
-          <ThemeProvider theme={{ ...theme, colors: { ...theme.colors, surfaceVariant: '#EFE7DC' } }}>
+          <ThemeProvider theme={{ 
+            ...theme, 
+            colors: { ...theme.colors, surfaceVariant: '#EFE7DC' },
+            fonts: {
+              ...theme.fonts,
+              titleMedium: {
+                ...theme.fonts.titleMedium,
+                fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
+              },
+              displayLarge: {
+                ...theme.fonts.displayLarge,
+                fontFamily: Platform.OS === 'ios' ? 'System' : 'sans-serif',
+              }
+            }
+          }}>
             <TimePicker 
               hours={sliderHours}
               minutes={sliderMinutes}

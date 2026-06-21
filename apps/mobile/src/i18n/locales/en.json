@@ -7,9 +7,9 @@
     }
   },
   "welcomeScreen": {
-    "title": "TripKit",
+    "title": "triphandy",
     "heroTitle": "What is your country of origin?",
-    "heroSubtitle": "TripKit sets helpful defaults based on your country of origin.",
+    "heroSubtitle": "triphandy sets helpful defaults based on your country of origin.",
     "searchPlaceholder": "Enter a country...",
     "settingsTitle": "{{countryName}} Settings",
     "baseCurrency": "Base Currency",
@@ -44,7 +44,7 @@
     "inferredCurrency": "Inferred Currency",
     "inferredSizeFormat": "Inferred Size Format",
     "note": "You can add more trip details later.",
-    "enterTripKitButton": "Enter TripKit"
+    "entertriphandyButton": "Enter triphandy"
   },
   "upgradeScreen": {
     "heroTitle": "Unlock Everything",
@@ -52,11 +52,11 @@
     "whatRemainsFree": "What remains free:",
     "unlockIncludes": "Unlock includes:",
     "oneTimePayment": "One-time payment",
-    "unlockButton": "Unlock TripKit",
+    "unlockButton": "Unlock triphandy",
     "restorePurchaseButton": "Restore Purchase"
   },
   "homeScreen": {
-    "headerTitle": "TripKit",
+    "headerTitle": "triphandy",
     "activeTripSubtitle": "{{days}} days in {{country}}",
     "currentLocation": "Current Location",
     "modulesTitle": "Modules",
@@ -308,7 +308,21 @@
         "entertainment": "Fun",
         "shopping": "Shopping",
         "other": "Other"
-      }
+      },
+      "budgetLabel": "Budget",
+      "budgetSettings": "Budget Settings",
+      "day": "day",
+      "notSet": "Not set",
+      "adjustButton": "Adjust",
+      "pieChartTitle": "Expense Breakdown",
+      "noData": "No data available.",
+      "includeRemaining": "Include Remaining Budget",
+      "doneButton": "Done",
+      "clearExpensesButton": "Clear Expenses",
+      "clearExpensesAlertTitle": "Clear Expenses",
+      "clearExpensesAlertMessage": "Are you sure you want to delete all expenses? This cannot be undone.",
+      "clearButton": "Clear",
+      "addExpenseDesc": "Track a new transaction"
     },
     "emergencyEssentials": {
       "headerTitle": "Emergency Numbers",
@@ -352,7 +366,7 @@
       "holidaysIn": "Public Holidays in {{country}}",
       "duringTrip": "DURING TRIP",
       "noHolidayData": "No holiday data available for {{year}}.",
-      "embassyDesc": "Your country of origin is set to {{homeCountry}}. Showing embassy details in {{destCountry}}.",
+      "embassyDesc": "The embassy of {{homeCountry}} in {{destCountry}}.",
       "embassyConsulate": "Embassy / Consulate",
       "visitButton": "Visit",
       "embassyUnavailable": "Embassy information for {{homeCountry}} in {{destCountry}} is currently unavailable.",
@@ -469,7 +483,13 @@
       "catJewelry": "Jewelry",
       "catAccessories": "Accessories",
       "catGifts": "Gifts",
-      "catOther": "Other"
+      "catOther": "Other",
+      "pieChartTitle": "Purchases Breakdown",
+      "noData": "No data available.",
+      "showRefundToggle": "Show Estimated Refund",
+      "closeButton": "Close",
+      "amountLocal": "Amount ({{currency}})",
+      "addNewDesc": "Add an item to estimate your refund"
     },
     "atm": {
       "headerTitle": "ATM & Exchange"
@@ -512,7 +532,7 @@
       "close": "Close"
     },
     "premium": {
-      "title": "tripkit Premium",
+      "title": "triphandy Premium",
       "freeTier": "Free",
       "premiumTier": "Premium",
       "features": {
@@ -541,7 +561,9 @@
     "shopping": "Shopping",
     "other": "Other",
     "Essentials": "Essentials",
-    "Finance": "Finance"
+    "Finance": "Finance",
+    "flights": "Flights",
+    "entertainment": "Fun"
   },
   "countries": {
     "US": "United States",
@@ -695,14 +717,15 @@
   "components": {
     "pastTripSummary": {
       "title": "{{country}} Summary",
-      "configuredBudget": "CONFIGURED BUDGET",
+      "configuredBudget": "Configured Budget",
       "perDayForDays": "{{amount}} {{currency}} / day for {{days}} days",
-      "usedBudget": "USED BUDGET",
+      "usedBudget": "Used Budget",
       "underBudget": "Under budget!",
       "overBudget": "Over budget",
       "noBudgetLimit": "No budget limit set",
       "expensesCount": "Expenses ({{count}})",
-      "noExpenses": "No expenses recorded for this trip."
+      "noExpenses": "No expenses recorded for this trip.",
+      "breakdown": "Expense Breakdown"
     }
   },
   "regions": {

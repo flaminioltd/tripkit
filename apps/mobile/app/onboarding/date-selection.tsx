@@ -160,7 +160,7 @@ export default function DateSelectionScreen() {
           <MaterialIcons name="arrow-back" size={28} color={theme.colors.primary} />
         </Pressable>
         
-        <Image source={require('../../assets/images/Logo.png')} style={{ height: 32, width: 120, resizeMode: 'contain' }} />
+        <Image source={require('../../assets/images/Logo.png')} style={{ height: 32, width: 110, resizeMode: 'contain' }} />
 
         <View style={{ position: 'absolute', right: 8, top: insets.top + 12, zIndex: 10 }}>
           <Button mode="text" labelStyle={{ textAlign: 'right' }} contentStyle={{ justifyContent: 'flex-end' }} onPress={handleSkip}>{t('dateSelectionScreen.skipButton')}</Button>

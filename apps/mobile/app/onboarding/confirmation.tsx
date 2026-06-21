@@ -60,7 +60,7 @@ export default function ConfirmationScreen() {
           onPress={handleEnter} 
           style={styles.button}
         >
-          {t('confirmationScreen.enterTripKitButton')}
+          {t('confirmationScreen.entertriphandyButton')}
         </Button>
       </View>
     </SafeAreaView>

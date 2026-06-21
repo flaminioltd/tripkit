@@ -92,7 +92,7 @@ export default function MainAppHeader() {
       }
     ]}>
       <View style={styles.content}>
-        <Image source={require('../../../assets/images/Logo.png')} style={{ height: 28, width: 100, resizeMode: 'contain', marginLeft: 8 }} />
+        <Image source={require('../../../assets/images/Logo.png')} style={{ height: 28, width: 90, resizeMode: 'contain', marginLeft: 8 }} />
 
         <View style={styles.nav}>
           <NavItem active={isHome} title={t('navigation.tabs.home', 'Home')} icon="home" onPress={() => handleNav('/(main)')} theme={theme} />

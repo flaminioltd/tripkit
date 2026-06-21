@@ -7,7 +7,7 @@ import { FLAG_IMAGES } from '../../src/lib/assets';
 import { View, Image, StyleSheet, SafeAreaView, ScrollView, Pressable } from 'react-native';
 import { Text, TextInput, Card, useTheme, SegmentedButtons, IconButton, Checkbox, Portal, Dialog } from 'react-native-paper';
 import { useRouter, useFocusEffect } from 'expo-router';
-import { calculateTip } from '@tripkit/shared';
+import { calculateTip } from '@triphandy/shared';
 import { db } from '../../src/db/client';
 import { trips, countries, expenses, exchangeRates, settings as dbSettings } from '../../src/db/schema';
 import { eq } from 'drizzle-orm';
@@ -277,7 +277,7 @@ export default function TipCalculatorScreen() {
 
         <Card style={styles.card} mode="contained">
           <Card.Content>
-            <TextInput
+            <TextInput placeholderTextColor="#B7B0AA" theme={{ colors: { onSurfaceVariant: "#B7B0AA" } }}
               label={t("modules.tipCalculator.billAmountLabel", "Bill Amount ({{symbol}})", { symbol: currencySymbol })}
               value={billAmount}
               onChangeText={setBillAmount}
@@ -393,7 +393,7 @@ export default function TipCalculatorScreen() {
                   { value: 'amount', label: t('modules.tipCalculator.amountLabel', 'Amount ({{symbol}})', { symbol: currencySymbol }) },
                 ]}
               />
-              <TextInput
+              <TextInput placeholderTextColor="#B7B0AA" theme={{ colors: { onSurfaceVariant: "#B7B0AA" } }}
                 value={customTipType === 'percentage' ? customPercentStr : customAmountStr}
                 onChangeText={customTipType === 'percentage' ? handleCustomPercentChange : handleCustomAmountChange}
                 keyboardType="numeric"

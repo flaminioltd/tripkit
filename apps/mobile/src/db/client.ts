@@ -6,7 +6,7 @@ export let sqliteClient: any;
 export let db: any;
 
 try {
-  sqliteClient = openDatabaseSync('tripkit_v2.db');
+  sqliteClient = openDatabaseSync('triphandy_v2.db');
   
   // Initialize database schema
   sqliteClient.execSync(`

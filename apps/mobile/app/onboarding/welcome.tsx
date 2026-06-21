@@ -103,7 +103,7 @@ export default function WelcomeScreen() {
     >
       <View style={[styles.header, { paddingTop: insets.top + 32, position: 'relative' }]}>
 
-        <Image source={require('../../assets/images/Logo.png')} style={{ height: 32, width: 120, resizeMode: 'contain' }} />
+        <Image source={require('../../assets/images/Logo.png')} style={{ height: 32, width: 110, resizeMode: 'contain' }} />
       </View>
 
       {step === 0 ? (

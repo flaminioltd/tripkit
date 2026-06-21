@@ -1,5 +1,5 @@
 {
-  "name": "@tripkit/mobile",
+  "name": "@triphandy/mobile",
   "version": "1.0.0",
   "private": true,
   "main": "expo-router/entry",
@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "@tripkit/shared": "workspace:*",
+    "@triphandy/shared": "workspace:*",
     "@types/react": "~18.3.31",
     "drizzle-kit": "^0.20.14",
     "jest-expo": "~52.0.6",
