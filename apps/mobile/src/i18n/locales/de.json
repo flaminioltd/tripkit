@@ -82,7 +82,7 @@
         "description": "Ausgaben verfolgen und im Budget bleiben"
       },
       "atmExchange": {
-        "title": "Geld & Wechsel",
+        "title": "Geld und Wechsel",
         "description": "Kurse, Gebühren und Währungsrechner"
       },
       "vatRefund": {
@@ -94,7 +94,7 @@
         "description": "Zielorte Trinkgeldgewohnheiten und Rechnen"
       },
       "sizeConverter": {
-        "title": "Größen & Einheiten",
+        "title": "Größen und Einheiten",
         "description": "Schuhe, Kleidung und Maße"
       },
       "timezoneHelper": {
@@ -165,7 +165,7 @@
     "systemLanguage": "Systemsprache",
     "homeCountry": "Herkunftsland",
     "homeCurrency": "Herkunftswährung",
-    "sectionData": "DATEN & SPEICHER",
+    "sectionData": "DATEN und SPEICHER",
     "exportData": "Alle Daten Exportieren",
     "clearData": "Alle Daten Löschen",
     "version": "Version",
@@ -179,7 +179,7 @@
       "de": "Deutsch"
     },
     "forceSyncButton": "Daten Synchronisieren",
-    "customizeCurrencyUnitsTitle": "Währung & Einheiten anpassen",
+    "customizeCurrencyUnitsTitle": "Währung und Einheiten anpassen",
     "measurementSystem": "Maßsystem",
     "searchCurrencyPlaceholder": "Währung eingeben...",
     "exchangeRateSyncTitle": "Wechselkurs-Synchronisation",
@@ -197,14 +197,14 @@
   "access": {
     "upgrade": {
       "freeTitle": "Was kostenlos bleibt:",
-      "freePlug": "Stecker & Spannung",
+      "freePlug": "Stecker und Spannung",
       "unlockTitle": "Freischaltung beinhaltet:",
       "oneTimePayment": "Einmalige Zahlung"
     }
   },
   "modules": {
     "atmExchange": {
-      "headerTitle": "Geld & Wechsel",
+      "headerTitle": "Geld und Wechsel",
       "tabExchange": "Wechseln",
       "tabFees": "Gebühren",
       "amountToConvert": "Betrag zum Umrechnen",
@@ -278,7 +278,7 @@
       "saveBudgetButton": "Budget Speichern",
       "cancelButton": "Abbrechen",
       "resetButton": "Zurücksetzen",
-      "resetBudgetAlertTitle": "Budget & Ausgaben Zurücksetzen",
+      "resetBudgetAlertTitle": "Budget und Ausgaben Zurücksetzen",
       "resetBudgetAlertMessage": "Bist du sicher, dass du dein Budget auf 0 setzen und alle Ausgaben löschen möchtest? Dies kann nicht rückgängig gemacht werden.",
       "availableLabel": "VERFÜGBAR",
       "spentLabel": "AUSGEGEBEN",
@@ -299,7 +299,7 @@
       "detailsOptional": "Beschreibung (Optional)",
       "amountLocal": "Betrag ({{currency}})",
       "saveExpenseButton": "Speichern",
-      "resetBudgetButton": "Budget zurücksetzen & Ausgaben löschen",
+      "resetBudgetButton": "Budget zurücksetzen und Ausgaben löschen",
       "tags": {
         "food": "Essen",
         "transport": "Transport",
@@ -376,7 +376,7 @@
       "showOnMap": "Auf der Karte anzeigen"
     },
     "plugVoltage": {
-      "headerTitle": "Stecker & Spannung",
+      "headerTitle": "Stecker und Spannung",
       "compatibleTitle": "Kein Adapter Benötigt",
       "compatibleDesc": "Deine Stecker passen in {{country}}.",
       "incompatibleTitle": "Adapter Erforderlich",
@@ -394,7 +394,7 @@
       "destCountryCode": "ZIELORT ({{code}})"
     },
     "sizeConverter": {
-      "headerTitle": "Größen & Einheiten",
+      "headerTitle": "Größen und Einheiten",
       "tabShoes": "Schuhe",
       "tabClothes": "Kleidung",
       "tabUnits": "Einheiten",
@@ -492,7 +492,7 @@
       "addNewDesc": "Fügen Sie einen Artikel hinzu, um Ihre Rückerstattung zu schätzen"
     },
     "atm": {
-      "headerTitle": "Geld & Wechsel"
+      "headerTitle": "Geld und Wechsel"
     },
     "destinationInfo": {
       "headerTitle": "Lokale Infos"
@@ -554,10 +554,10 @@
     }
   },
   "categories": {
-    "food": "Essen & Restaurants",
+    "food": "Essen und Restaurants",
     "transport": "Transport",
     "accommodation": "Unterkunft",
-    "activities": "Aktivitäten & Touren",
+    "activities": "Aktivitäten und Touren",
     "shopping": "Einkaufen",
     "other": "Andere",
     "Essentials": "Wesentliches",
@@ -679,7 +679,7 @@
     "categories": {
       "Basics": "Grundlagen",
       "Shopping": "Einkaufen",
-      "Hotel & Dining": "Hotel & Gastronomie",
+      "Hotel und Dining": "Hotel und Gastronomie",
       "Emergencies": "Notfälle",
       "Dining": "Essen gehen",
       "Emergency": "Notfall"

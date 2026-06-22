@@ -82,7 +82,7 @@
         "description": "Suivez vos dépenses"
       },
       "atmExchange": {
-        "title": "DAB & Change",
+        "title": "DAB et Change",
         "description": "Taux, frais et convertisseur"
       },
       "vatRefund": {
@@ -94,7 +94,7 @@
         "description": "Coutumes et calculs"
       },
       "sizeConverter": {
-        "title": "Tailles & Unités",
+        "title": "Tailles et Unités",
         "description": "Chaussures, vêtements et mesures"
       },
       "timezoneHelper": {
@@ -207,7 +207,7 @@
   },
   "modules": {
     "atmExchange": {
-      "headerTitle": "DAB & Change",
+      "headerTitle": "DAB et Change",
       "tabExchange": "Change",
       "tabFees": "Frais",
       "amountToConvert": "Montant à convertir",
@@ -397,7 +397,7 @@
       "destCountryCode": "DESTINATION ({{code}})"
     },
     "sizeConverter": {
-      "headerTitle": "Tailles & Unités",
+      "headerTitle": "Tailles et Unités",
       "tabShoes": "Chaussures",
       "tabClothes": "Vêtements",
       "tabUnits": "Unités",
@@ -495,7 +495,7 @@
       "addNewDesc": "Ajouter un article pour estimer votre remboursement"
     },
     "atm": {
-      "headerTitle": "DAB & Change"
+      "headerTitle": "DAB et Change"
     },
     "destinationInfo": {
       "headerTitle": "Infos Locales"
@@ -682,7 +682,7 @@
     "categories": {
       "Basics": "Bases",
       "Shopping": "Achats",
-      "Hotel & Dining": "Hôtel et repas",
+      "Hotel et Dining": "Hôtel et repas",
       "Emergencies": "Urgences"
     },
     "items": {
