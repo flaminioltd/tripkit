@@ -82,7 +82,7 @@
         "description": "Tieni traccia delle spese"
       },
       "atmExchange": {
-        "title": "Bancomat & Cambio",
+        "title": "Bancomat e Cambio",
         "description": "Tassi, commissioni e cambi"
       },
       "vatRefund": {
@@ -94,7 +94,7 @@
         "description": "Costi e usanze di destinazionei"
       },
       "sizeConverter": {
-        "title": "Taglie & Unità",
+        "title": "Taglie e Unità",
         "description": "Scarpe, vestiti e misure"
       },
       "timezoneHelper": {
@@ -207,7 +207,7 @@
   },
   "modules": {
     "atmExchange": {
-      "headerTitle": "Bancomat & Cambio",
+      "headerTitle": "Bancomat e Cambio",
       "tabExchange": "Cambio",
       "tabFees": "Commissioni",
       "amountToConvert": "Importo da convertire",
@@ -397,7 +397,7 @@
       "destCountryCode": "DESTINAZIONE ({{code}})"
     },
     "sizeConverter": {
-      "headerTitle": "Taglie & Unità",
+      "headerTitle": "Taglie e Unità",
       "tabShoes": "Scarpe",
       "tabClothes": "Vestiti",
       "tabUnits": "Unità",
@@ -495,7 +495,7 @@
       "addNewDesc": "Aggiungi un articolo per stimare il tuo rimborso"
     },
     "atm": {
-      "headerTitle": "Bancomat & Cambio"
+      "headerTitle": "Bancomat e Cambio"
     },
     "destinationInfo": {
       "headerTitle": "Info Locali"
@@ -682,7 +682,7 @@
     "categories": {
       "Basics": "Basi",
       "Shopping": "Acquisti",
-      "Hotel & Dining": "Hotel e Ristoranti",
+      "Hotel e Dining": "Hotel e Ristoranti",
       "Emergencies": "Emergenze"
     },
     "items": {

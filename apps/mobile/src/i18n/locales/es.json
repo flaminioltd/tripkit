@@ -82,7 +82,7 @@
         "description": "Rastrea gastos y mantente dentro del presupuesto"
       },
       "atmExchange": {
-        "title": "Cajeros & Cambio",
+        "title": "Cajeros y Cambio",
         "description": "Tarifas, propinas y convertidor de moneda"
       },
       "vatRefund": {
@@ -94,7 +94,7 @@
         "description": "Costumbres destinoes de propinas y matemáticas"
       },
       "sizeConverter": {
-        "title": "Tallas & Unidades",
+        "title": "Tallas y Unidades",
         "description": "Zapatos, ropa y medidas"
       },
       "timezoneHelper": {
@@ -204,7 +204,7 @@
   },
   "modules": {
     "atmExchange": {
-      "headerTitle": "Cajeros & Cambio",
+      "headerTitle": "Cajeros y Cambio",
       "tabExchange": "Cambio",
       "tabFees": "Tarifas",
       "amountToConvert": "Cantidad a convertir",
@@ -394,7 +394,7 @@
       "destCountryCode": "DESTINO ({{code}})"
     },
     "sizeConverter": {
-      "headerTitle": "Tallas & Unidades",
+      "headerTitle": "Tallas y Unidades",
       "tabShoes": "Zapatos",
       "tabClothes": "Ropa",
       "tabUnits": "Unidades",
@@ -492,7 +492,7 @@
       "addNewDesc": "Agrega un artículo para estimar tu reembolso"
     },
     "atm": {
-      "headerTitle": "Cajeros & Cambio"
+      "headerTitle": "Cajeros y Cambio"
     },
     "destinationInfo": {
       "headerTitle": "Info Local"
@@ -679,7 +679,7 @@
     "categories": {
       "Basics": "Básicos",
       "Shopping": "Compras",
-      "Hotel & Dining": "Hotel y Comida",
+      "Hotel y Dining": "Hotel y Comida",
       "Emergencies": "Emergencias",
       "Dining": "Comida",
       "Emergency": "Emergencia"
