@@ -2,7 +2,7 @@
   "navigation": {
     "tabs": {
       "home": "Home",
-      "myTrips": "I Miei Viaggi",
+      "myTrips": "Viaggi",
       "settings": "Impostazioni"
     }
   },
@@ -146,7 +146,7 @@
     "editTripModalTitle": "Modifica {{country}}",
     "selectDateRange": "Seleziona Date",
     "datesNotSetYet": "Date non ancora impostate",
-    "editTripSave": "Salva Modifiche",
+    "editTripSave": "Save",
     "tripStatus": {
       "pending": "In attesa",
       "pendingSubtitle": "Nessuna data impostata",
@@ -280,7 +280,7 @@
       "totalTripBudget": "Totale",
       "saveBudgetButton": "Salva Budget",
       "cancelButton": "Annulla",
-      "resetButton": "Ripristina",
+      "resetButton": "Reimposta",
       "resetBudgetAlertTitle": "Ripristina Budget",
       "resetBudgetAlertMessage": "Sei sicuro di voler azzerare il budget ed eliminare le spese? Non è possibile annullare.",
       "availableLabel": "DISPONIBILE",
@@ -743,6 +743,7 @@
     "processing": "Elaborazione..."
   },
   "common": {
-    "close": "Chiudi"
+    "close": "Chiudi",
+    "reset": "Reimposta"
   }
 }

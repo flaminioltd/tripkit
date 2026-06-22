@@ -365,7 +365,7 @@ export default function TipCalculatorScreen() {
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 16 }}>
           <Button variant="alternative" onPress={handleReset}>
-            Reset
+            {t('common.reset', 'Reset')}
           </Button>
           <Button variant="main" onPress={handleSync} disabled={syncSuccess || !billAmount || parseFloat(billAmount) === 0}>
             {syncSuccess ? t("modules.tipCalculator.synced", "Synced!") : t("modules.tipCalculator.syncToBudget", "Sync to Budget")}

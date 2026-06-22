@@ -11,6 +11,8 @@ import { COUNTRIES } from '../../src/lib/countries';
 import { COVER_IMAGES } from '../../src/lib/assets';
 import AddTripModal from '../../src/components/AddTripModal';
 import PastTripSummaryModal from '../../src/components/PastTripSummaryModal';
+import PremiumUpgradeModal from '../../src/components/PremiumUpgradeModal';
+import PremiumIcon from '../../src/components/PremiumIcon';
 import { useTranslation } from 'react-i18next';
 
 export default function TripsScreen() {
@@ -29,6 +31,7 @@ export default function TripsScreen() {
   const [budgetViewMode, setBudgetViewMode] = useState<'total' | 'daily'>('total');
   const [summaryTrip, setSummaryTrip] = useState<any>(null);
   const [isSummaryVisible, setIsSummaryVisible] = useState(false);
+  const [isPremiumModalVisible, setPremiumModalVisible] = useState(false);
   
   const [editTempStart, setEditTempStart] = useState<string | null>(null);
   const [editMarkedDates, setEditMarkedDates] = useState<any>({});
@@ -306,22 +309,29 @@ export default function TripsScreen() {
                   <Button 
                     variant="alternative"
                     compact
-                    onPress={() => router.push('/modules/budget-tracker')}
-                    contentStyle={miniButtonContentStyle}
+                    onPress={() => {
+                      if (!settings?.isPremium) {
+                        setPremiumModalVisible(true);
+                      } else {
+                        router.push('/modules/budget-tracker');
+                      }
+                    }}
+                    icon={!settings?.isPremium ? () => <PremiumIcon size={14} /> : undefined}
+                    contentStyle={[miniButtonContentStyle, !settings?.isPremium && { flexDirection: 'row-reverse' }]}
                     labelStyle={miniButtonLabelStyle}
                   >
                     {(!activeTrip.budget || activeTrip.budget <= 0) ? t('tripsScreen.budgetSet') : t('tripsScreen.budgetAdjust')}
                   </Button>
                     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12 }}>
                       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Text style={{ fontSize: 12, marginRight: 8, color: budgetViewMode === 'daily' ? theme.colors.onSurface : theme.colors.onSurfaceVariant, fontWeight: budgetViewMode === 'daily' ? 'bold' : 'normal' }}>{t('tripsScreen.budgetDaily')}</Text>
+                        <Text style={{ fontSize: 12, marginRight: 0, color: budgetViewMode === 'daily' ? theme.colors.onSurface : theme.colors.onSurfaceVariant, fontWeight: budgetViewMode === 'daily' ? 'bold' : 'normal' }}>{t('tripsScreen.budgetDaily')}</Text>
                         <Switch 
                           value={budgetViewMode === 'total'} 
                           onValueChange={(val) => setBudgetViewMode(val ? 'total' : 'daily')} 
                           color={theme.colors.primary}
-                          style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }] }}
+                          style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }], marginHorizontal: -4 }}
                         />
-                        <Text style={{ fontSize: 12, marginLeft: 8, color: budgetViewMode === 'total' ? theme.colors.onSurface : theme.colors.onSurfaceVariant, fontWeight: budgetViewMode === 'total' ? 'bold' : 'normal' }}>{t('tripsScreen.budgetTrip')}</Text>
+                        <Text style={{ fontSize: 12, marginLeft: 0, color: budgetViewMode === 'total' ? theme.colors.onSurface : theme.colors.onSurfaceVariant, fontWeight: budgetViewMode === 'total' ? 'bold' : 'normal' }}>{t('tripsScreen.budgetTrip')}</Text>
                       </View>
                     </View>
                 </View>
@@ -569,6 +579,11 @@ export default function TripsScreen() {
       visible={isSummaryVisible} 
       trip={summaryTrip} 
       onDismiss={() => setIsSummaryVisible(false)} 
+    />
+    
+    <PremiumUpgradeModal 
+      visible={isPremiumModalVisible} 
+      onDismiss={() => setPremiumModalVisible(false)} 
     />
     </>
   );

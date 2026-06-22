@@ -308,11 +308,10 @@ export default function AtmExchangeScreen() {
                   value={exchangeBureauFeeCurrency}
                   onValueChange={setExchangeBureauFeeCurrency}
                   buttons={[
-                    { value: 'home', label: homeSymbol, style: { flex: 1, paddingVertical: 2 } },
-                    { value: 'local', label: localSymbol, style: { flex: 1, paddingVertical: 2 } },
-                    { value: 'percentage', label: '%', style: { flex: 1, paddingVertical: 2 } },
+                    { value: 'home', label: homeSymbol, style: { flex: 1, paddingVertical: 2, paddingHorizontal: 4 }, labelStyle: { fontSize: 10 } },
+                    { value: 'local', label: localSymbol, style: { flex: 1, paddingVertical: 2, paddingHorizontal: 4 }, labelStyle: { fontSize: 10 } },
+                    { value: 'percentage', label: '%', style: { flex: 1, paddingVertical: 2, paddingHorizontal: 4 }, labelStyle: { fontSize: 10 } },
                   ]}
-                  style={{ height: 30 }}
                 />
               </View>
             </View>
@@ -376,8 +375,8 @@ export default function AtmExchangeScreen() {
           </Card.Content>
         </Card>
         <View style={{ marginTop: 32, marginBottom: 40, paddingHorizontal: 16, alignItems: 'center' }}>
-          <Button variant="alternative" onPress={handleReset} style={{ width: 160 }}>
-            {t('modules.atmExchange.resetValues', 'Reset Values')}
+          <Button variant="alternative" onPress={handleReset} style={{ width: 160, paddingHorizontal: 8 }}>
+            {t('common.reset', 'Reset')}
           </Button>
         </View>
         <View style={{ height: 40 }} />

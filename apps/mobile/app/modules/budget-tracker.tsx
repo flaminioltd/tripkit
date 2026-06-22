@@ -298,7 +298,7 @@ export default function BudgetTrackerScreen() {
       
       let pathData = '';
       if (percent === 1) {
-        pathData = `M 1 0 A 1 1 0 1 1 0.99 -0.01 Z`;
+        pathData = `M 0 -1 A 1 1 0 1 1 0 1 A 1 1 0 1 1 0 -1 Z`;
       } else {
         const [startX, startY] = getCoordinatesForPercent(cumulativePercent);
         cumulativePercent += percent;
@@ -371,13 +371,14 @@ export default function BudgetTrackerScreen() {
                       {viewMode === 'total' ? t('modules.budgetTracker.totalSpent', 'Total Spent') : t('modules.budgetTracker.spentToday', 'Spent Today')}
                     </Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                      <Text style={{ fontSize: 14, marginRight: 8, color: viewMode === 'daily' ? theme.colors.onPrimaryContainer : theme.colors.onSurfaceVariant, fontWeight: viewMode === 'daily' ? 'bold' : 'normal' }}>{t('modules.budgetTracker.dailyBudget', 'Daily')}</Text>
+                      <Text style={{ fontSize: 12, marginRight: 0, color: viewMode === 'daily' ? theme.colors.onPrimaryContainer : theme.colors.onSurfaceVariant, fontWeight: viewMode === 'daily' ? 'bold' : 'normal' }}>{t('modules.budgetTracker.dailyBudget', 'Daily')}</Text>
                       <Switch 
                         value={viewMode === 'total'} 
                         onValueChange={(val) => setViewMode(val ? 'total' : 'daily')} 
                         color={theme.colors.primary}
+                        style={{ transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }], marginHorizontal: -4 }}
                       />
-                      <Text style={{ fontSize: 14, marginLeft: 8, color: viewMode === 'total' ? theme.colors.onPrimaryContainer : theme.colors.onSurfaceVariant, fontWeight: viewMode === 'total' ? 'bold' : 'normal' }}>{t('modules.budgetTracker.totalTripBudget', 'Trip')}</Text>
+                      <Text style={{ fontSize: 12, marginLeft: 0, color: viewMode === 'total' ? theme.colors.onPrimaryContainer : theme.colors.onSurfaceVariant, fontWeight: viewMode === 'total' ? 'bold' : 'normal' }}>{t('modules.budgetTracker.totalTripBudget', 'Trip')}</Text>
                     </View>
                   </View>
                   <View style={{ alignItems: 'flex-end', marginBottom: 8 }}>
@@ -532,8 +533,8 @@ export default function BudgetTrackerScreen() {
                 onValueChange={handleToggleInputCurrency}
                 style={{ width: 86, padding: 0, borderRadius: 18 }}
                 buttons={[
-                  { value: 'local', label: CURRENCY_SYMBOLS[localCurrency] || localCurrency, style: { borderRadius: 18 }, labelStyle: { fontSize: 12 } },
-                  { value: 'home', label: CURRENCY_SYMBOLS[homeCurrencyState] || homeCurrencyState, style: { borderRadius: 18 }, labelStyle: { fontSize: 12 } },
+                  { value: 'local', label: CURRENCY_SYMBOLS[localCurrency] || localCurrency, style: { borderRadius: 18, paddingHorizontal: 4 }, labelStyle: { fontSize: 10 } },
+                  { value: 'home', label: CURRENCY_SYMBOLS[homeCurrencyState] || homeCurrencyState, style: { borderRadius: 18, paddingHorizontal: 4 }, labelStyle: { fontSize: 10 } },
                 ]}
               />
             </View>
@@ -547,8 +548,16 @@ export default function BudgetTrackerScreen() {
         </Dialog>
 
         <Dialog visible={isPieChartVisible} onDismiss={() => setIsPieChartVisible(false)} style={{ backgroundColor: theme.colors.surface }}>
-          <Dialog.Title style={{ color: theme.colors.onSurface }}>{t('modules.budgetTracker.pieChartTitle', 'Expense Breakdown')}</Dialog.Title>
-          <Dialog.Content>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingRight: 12 }}>
+            <Dialog.Title style={{ color: theme.colors.onSurface, flex: 1, marginBottom: 0, marginTop: 0 }}>{t('modules.budgetTracker.pieChartTitle', 'Expense Breakdown')}</Dialog.Title>
+            <IconButton 
+              icon="close" 
+              size={20} 
+              onPress={() => setIsPieChartVisible(false)} 
+              style={{ margin: 0 }}
+            />
+          </View>
+          <Dialog.Content style={{ paddingTop: 16 }}>
             {pieChartData.length > 0 ? (
               <View style={{ alignItems: 'center' }}>
                 <Svg height="200" width="200" viewBox="-1.2 -1.2 2.4 2.4">
@@ -598,9 +607,6 @@ export default function BudgetTrackerScreen() {
               </Pressable>
             )}
           </Dialog.Content>
-          <Dialog.Actions style={{ paddingHorizontal: 24, paddingBottom: 24 }}>
-            <Button variant="alternative" style={{ width: 125 }} onPress={() => setIsPieChartVisible(false)}>{t('modules.budgetTracker.closeButton', 'Close')}</Button>
-          </Dialog.Actions>
         </Dialog>
         <Dialog visible={isSettingsModalVisible} onDismiss={() => setIsSettingsModalVisible(false)} style={{ backgroundColor: theme.colors.surface }}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingRight: 12 }}>
@@ -652,7 +658,7 @@ export default function BudgetTrackerScreen() {
           </Dialog.Content>
           <Dialog.Actions style={{ flexDirection: 'row', gap: 12, paddingHorizontal: 16, justifyContent: 'center', paddingBottom: 16 }}>
             <Button variant="alternative" onPress={() => setBudgetAmount('0')} style={{ width: 130 }}>
-              {t('modules.budgetTracker.resetButton', 'Reset')}
+              {t('common.reset', 'Reset')}
             </Button>
             <Button variant="main" onPress={() => setIsSettingsModalVisible(false)} style={{ width: 130 }}>
               {t('modules.budgetTracker.doneButton', 'Done')}

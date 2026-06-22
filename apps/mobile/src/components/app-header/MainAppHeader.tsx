@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { usePathname, useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
-
+import { useAppStore } from '../../stores/app-store';
 const NavItem = ({ active, title, icon, onPress, theme }: { active: boolean, title: string, icon: keyof typeof MaterialIcons.glyphMap, onPress: () => void, theme: any }) => {
   const anim = useRef(new Animated.Value(active ? 1 : 0)).current;
 
@@ -65,6 +65,7 @@ export default function MainAppHeader() {
   const router = useRouter();
   const pathname = usePathname();
   const { t } = useTranslation();
+  const { settings } = useAppStore();
 
   const [localActive, setLocalActive] = useState<string>(pathname);
 
@@ -92,7 +93,11 @@ export default function MainAppHeader() {
       }
     ]}>
       <View style={styles.content}>
-        <Image source={require('../../../assets/images/Logo.png')} style={{ height: 28, width: 90, resizeMode: 'contain', marginLeft: 8 }} />
+        {settings?.isPremium ? (
+          <Image source={require('../../../assets/full-logo-premium.png')} style={{ height: 28, width: 90, resizeMode: 'contain', marginLeft: 8 }} />
+        ) : (
+          <Image source={require('../../../assets/images/Logo.png')} style={{ height: 28, width: 90, resizeMode: 'contain', marginLeft: 8 }} />
+        )}
 
         <View style={styles.nav}>
           <NavItem active={isHome} title={t('navigation.tabs.home', 'Home')} icon="home" onPress={() => handleNav('/(main)')} theme={theme} />

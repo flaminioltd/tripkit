@@ -10,6 +10,7 @@ import { useAppStore } from '../../src/stores/app-store';
 import { FLAG_IMAGES } from '../../src/lib/assets';
 import AddTripModal from '../../src/components/AddTripModal';
 import PremiumUpgradeModal from '../../src/components/PremiumUpgradeModal';
+import PremiumIcon from '../../src/components/PremiumIcon';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../src/i18n';
 
@@ -136,7 +137,7 @@ export default function HomeScreen() {
 
           {mod.isPremium && !settings?.isPremium && (
             <View style={{ position: 'absolute', bottom: 12, right: 12 }}>
-              <MaterialIcons name="workspace-premium" size={16} color="#8A61FF" />
+              <PremiumIcon size={16} />
             </View>
           )}
 

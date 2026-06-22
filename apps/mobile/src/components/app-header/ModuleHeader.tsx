@@ -10,7 +10,7 @@ import { FINANCE_MODULES, ESSENTIALS_MODULES } from '../../lib/modules';
 import { useTranslation } from 'react-i18next';
 import { useAppStore } from '../../stores/app-store';
 import PremiumUpgradeModal from '../PremiumUpgradeModal';
-
+import PremiumIcon from '../PremiumIcon';
 const formatDateRange = (start: Date | null | undefined, end: Date | null | undefined, locale: string = 'en-US', tbdStr: string = 'TBD') => {
   if (!start || !end) return tbdStr;
   const s = new Date(start);
@@ -157,7 +157,7 @@ export default function ModuleHeader({ title }: Props) {
           }
         >
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingRight: 4 }}>
-            <Text style={styles.menuSectionHeader}>{t('categories.finance', 'Finance')}</Text>
+            <Text style={styles.menuSectionHeader}>{t('categories.Finance', 'Finance')}</Text>
             <IconButton icon="close" size={20} onPress={() => setNavMenuVisible(false)} style={{ margin: 0 }} />
           </View>
           {FINANCE_MODULES.map(mod => {
@@ -176,7 +176,7 @@ export default function ModuleHeader({ title }: Props) {
                 title={
                   <Text>
                     {t(`homeScreen.modules.${mod.id}.title`, mod.title)}
-                    {isLocked && <Text> <MaterialIcons name="workspace-premium" size={16} color="#8A61FF" /></Text>}
+                    {isLocked && <Text> <PremiumIcon size={16} /></Text>}
                   </Text>
                 }
                 leadingIcon={({ size }) => (
@@ -188,7 +188,7 @@ export default function ModuleHeader({ title }: Props) {
             );
           })}
           <Divider />
-          <Text style={styles.menuSectionHeader}>{t('categories.essentials', 'Essentials')}</Text>
+          <Text style={styles.menuSectionHeader}>{t('categories.Essentials', 'Essentials')}</Text>
           {ESSENTIALS_MODULES.map(mod => {
             const isLocked = mod.isPremium && !settings?.isPremium;
             return (
@@ -205,7 +205,7 @@ export default function ModuleHeader({ title }: Props) {
                 title={
                   <Text>
                     {t(`homeScreen.modules.${mod.id}.title`, mod.title)}
-                    {isLocked && <Text> <MaterialIcons name="workspace-premium" size={16} color="#8A61FF" /></Text>}
+                    {isLocked && <Text> <PremiumIcon size={16} /></Text>}
                   </Text>
                 }
                 leadingIcon={({ size }) => (
@@ -245,9 +245,7 @@ const styles = StyleSheet.create({
     paddingTop: 8,
     paddingBottom: 4,
     fontSize: 12,
-    color: '#888',
-    
-    textTransform: 'uppercase'
+    color: '#888'
   },
   flagPlaceholder: {
     width: 24,

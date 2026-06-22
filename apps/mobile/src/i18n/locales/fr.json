@@ -2,7 +2,7 @@
   "navigation": {
     "tabs": {
       "home": "Accueil",
-      "myTrips": "Mes Voyages",
+      "myTrips": "Voyages",
       "settings": "Paramètres"
     }
   },
@@ -146,7 +146,7 @@
     "editTripModalTitle": "Modifier {{country}}",
     "selectDateRange": "Sélectionner les dates",
     "datesNotSetYet": "Dates non définies",
-    "editTripSave": "Enregistrer",
+    "editTripSave": "Save",
     "tripStatus": {
       "pending": "En attente",
       "pendingSubtitle": "Aucune date définie",
@@ -743,6 +743,7 @@
     "processing": "Traitement..."
   },
   "common": {
-    "close": "Fermer"
+    "close": "Fermer",
+    "reset": "Réinitialiser"
   }
 }

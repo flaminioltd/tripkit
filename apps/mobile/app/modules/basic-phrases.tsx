@@ -11,7 +11,7 @@ import { PHRASES_DATA, getLanguageForCountry, getSpeechLanguageCode } from '../.
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { useAppStore } from '../../src/stores/app-store';
 import PremiumUpgradeModal from '../../src/components/PremiumUpgradeModal';
-
+import PremiumIcon from '../../src/components/PremiumIcon';
 export default function BasicPhrasesScreen() {
   const theme = useTheme();
   const { activeTrip } = useTripStore();
@@ -115,7 +115,7 @@ export default function BasicPhrasesScreen() {
                       }}>
                         {t(`phrases.categories.${tab.category}`)}
                       </Text>
-                      {isLocked && <MaterialIcons name="workspace-premium" size={16} color="#8A61FF" />}
+                      {isLocked && <PremiumIcon size={16} />}
                     </View>
                   </Pressable>
                 );

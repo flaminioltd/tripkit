@@ -2,7 +2,7 @@
   "navigation": {
     "tabs": {
       "home": "Home",
-      "myTrips": "My Trips",
+      "myTrips": "Trips",
       "settings": "Settings"
     }
   },
@@ -146,7 +146,7 @@
     "editTripModalTitle": "Edit {{country}}",
     "selectDateRange": "Select Date Range",
     "datesNotSetYet": "Dates not set yet",
-    "editTripSave": "Save Changes",
+    "editTripSave": "Save",
     "tripStatus": {
       "pending": "Pending",
       "pendingSubtitle": "No dates set yet",
@@ -740,6 +740,7 @@
     "processing": "Processing..."
   },
   "common": {
-    "close": "Close"
+    "close": "Close",
+    "reset": "Reset"
   }
 }

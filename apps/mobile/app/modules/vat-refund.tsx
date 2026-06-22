@@ -247,40 +247,38 @@ export default function VatRefundScreen() {
 
     if (totalPurchases === 0) return [];
 
+    let slicesList: { category: string, value: number, color: string, label: string }[] = Object.keys(categoryTotals).map(cat => {
+      const catObj = CATEGORIES.find(c => c.value === cat) || CATEGORIES[CATEGORIES.length - 1];
+      return {
+        category: cat,
+        value: categoryTotals[cat],
+        color: getCategoryColor(cat, theme),
+        label: t(`modules.vatRefund.cat${catObj.label}`, catObj.label)
+      };
+    });
+
+    slicesList.sort((a, b) => b.value - a.value);
+    
     let slices: { category: string, value: number, color: string, label: string }[] = [];
 
     if (showEstimatedRefund && estimatedRefund > 0) {
       const refundRatio = estimatedRefund / totalPurchases;
       
+      slicesList.forEach(s => {
+        slices.push({
+          ...s,
+          value: s.value - (s.value * refundRatio)
+        });
+      });
+
       slices.push({
         category: 'refund',
         value: estimatedRefund,
         color: getCategoryColor('refund', theme),
         label: t('modules.vatRefund.estimatedRefund', 'Estimated Refund')
       });
-
-      Object.keys(categoryTotals).forEach(cat => {
-        const catObj = CATEGORIES.find(c => c.value === cat) || CATEGORIES[CATEGORIES.length - 1];
-        const originalValue = categoryTotals[cat];
-        const scaledValue = originalValue - (originalValue * refundRatio);
-        
-        slices.push({
-          category: cat,
-          value: scaledValue,
-          color: getCategoryColor(cat, theme),
-          label: t(`modules.vatRefund.cat${catObj.label}`, catObj.label)
-        });
-      });
     } else {
-      slices = Object.keys(categoryTotals).map(cat => {
-        const catObj = CATEGORIES.find(c => c.value === cat) || CATEGORIES[CATEGORIES.length - 1];
-        return {
-          category: cat,
-          value: categoryTotals[cat],
-          color: getCategoryColor(cat, theme),
-          label: t(`modules.vatRefund.cat${catObj.label}`, catObj.label)
-        };
-      });
+      slices = slicesList;
     }
 
     const total = slices.reduce((acc, s) => acc + s.value, 0);
@@ -291,7 +289,7 @@ export default function VatRefundScreen() {
       
       let pathData = '';
       if (percent === 1) {
-        pathData = `M 1 0 A 1 1 0 1 1 0.99 -0.01 Z`;
+        pathData = `M 0 -1 A 1 1 0 1 1 0 1 A 1 1 0 1 1 0 -1 Z`;
       } else if (percent > 0) {
         const [startX, startY] = getCoordinatesForPercent(cumulativePercent);
         cumulativePercent += percent;
@@ -527,7 +525,7 @@ export default function VatRefundScreen() {
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 16 }}>
           <Button mode="outlined" onPress={handleReset}>
-            Reset
+            {t('common.reset', 'Reset')}
           </Button>
           <Button mode="contained" onPress={handleSync} disabled={syncSuccess || purchases.length === 0}>
             {syncSuccess ? t("modules.tipCalculator.synced", "Synced!") : t("modules.tipCalculator.syncToBudget", "Sync to Budget")}
@@ -590,8 +588,8 @@ export default function VatRefundScreen() {
                 onValueChange={handleToggleInputCurrency}
                 style={{ width: 86, padding: 0, borderRadius: 18 }}
                 buttons={[
-                  { value: 'local', label: CURRENCY_SYMBOLS[currencyCode] || currencyCode, style: { borderRadius: 18 }, labelStyle: { fontSize: 12 } },
-                  { value: 'home', label: CURRENCY_SYMBOLS[homeCurrencyState] || homeCurrencyState, style: { borderRadius: 18 }, labelStyle: { fontSize: 12 } },
+                  { value: 'local', label: CURRENCY_SYMBOLS[currencyCode] || currencyCode, style: { borderRadius: 18, paddingHorizontal: 4 }, labelStyle: { fontSize: 10 } },
+                  { value: 'home', label: CURRENCY_SYMBOLS[homeCurrencyState] || homeCurrencyState, style: { borderRadius: 18, paddingHorizontal: 4 }, labelStyle: { fontSize: 10 } },
                 ]}
               />
             </View>
@@ -603,8 +601,16 @@ export default function VatRefundScreen() {
         </Dialog>
 
         <Dialog visible={isPieChartVisible} onDismiss={() => setIsPieChartVisible(false)} style={{ backgroundColor: theme.colors.surface }}>
-          <Dialog.Title style={{ color: theme.colors.onSurface }}>{t('modules.vatRefund.pieChartTitle', 'Purchases Breakdown')}</Dialog.Title>
-          <Dialog.Content>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingRight: 12 }}>
+            <Dialog.Title style={{ color: theme.colors.onSurface, flex: 1, marginBottom: 0, marginTop: 0 }}>{t('modules.vatRefund.pieChartTitle', 'Purchases Breakdown')}</Dialog.Title>
+            <IconButton 
+              icon="close" 
+              size={20} 
+              onPress={() => setIsPieChartVisible(false)} 
+              style={{ margin: 0 }}
+            />
+          </View>
+          <Dialog.Content style={{ paddingTop: 16 }}>
             {pieChartData.length > 0 ? (
               <View style={{ alignItems: 'center' }}>
                 <Svg height="200" width="200" viewBox="-1.2 -1.2 2.4 2.4">
@@ -654,9 +660,6 @@ export default function VatRefundScreen() {
               </Pressable>
             )}
           </Dialog.Content>
-          <Dialog.Actions style={{ paddingHorizontal: 24, paddingBottom: 24 }}>
-            <Button variant="alternative" style={{ width: 125 }} onPress={() => setIsPieChartVisible(false)}>{t('modules.vatRefund.closeButton', 'Close')}</Button>
-          </Dialog.Actions>
         </Dialog>
       </Portal>
     </SafeAreaView>

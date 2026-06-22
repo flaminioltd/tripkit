@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, ScrollView, Pressable } from 'react-native';
+import { View, StyleSheet, ScrollView, Pressable, Image } from 'react-native';
 import { Text, useTheme, Modal, Portal, Button } from 'react-native-paper';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -90,9 +90,12 @@ export default function PremiumUpgradeModal({ visible, onDismiss, isEligibleForT
         <ScrollView contentContainerStyle={styles.content}>
           <View style={styles.featuresBox}>
             <View style={styles.column}>
-              <Text variant="titleMedium" style={[styles.columnHeader, { color: theme.colors.onSurfaceVariant }]}>
-                {t('modals.premium.freeTier', 'Free')}
-              </Text>
+              <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginBottom: 16 }}>
+                <Image source={require('../../assets/icon-free.png')} style={{ width: 24, height: 24, marginRight: 8 }} resizeMode="contain" />
+                <Text variant="titleMedium" style={{ fontWeight: 'bold', color: theme.colors.onSurfaceVariant }}>
+                  {t('modals.premium.freeTier', 'Free')}
+                </Text>
+              </View>
               {freeFeatures.map((feat, idx) => (
                 <View key={`free-${idx}`}>
                   {renderFeature(feat, false)}
@@ -103,9 +106,12 @@ export default function PremiumUpgradeModal({ visible, onDismiss, isEligibleForT
             <View style={[styles.divider, { backgroundColor: theme.colors.outlineVariant }]} />
             
             <View style={styles.column}>
-              <Text variant="titleMedium" style={[styles.columnHeader, { color: '#8A61FF' }]}>
-                {t('modals.premium.premiumTier', 'Premium')}
-              </Text>
+              <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginBottom: 16 }}>
+                <Image source={require('../../assets/icon-premium.png')} style={{ width: 24, height: 24, marginRight: 8 }} resizeMode="contain" />
+                <Text variant="titleMedium" style={{ fontWeight: 'bold', color: '#8A61FF' }}>
+                  {t('modals.premium.premiumTier', 'Premium')}
+                </Text>
+              </View>
               <Text variant="bodySmall" style={{ color: theme.colors.onSurfaceVariant, fontSize: 10, textAlign: 'center', marginBottom: 12, marginTop: -14 }}>
                 {t('modals.premium.allFreeModulesPlus', 'Everything in free, plus:')}
               </Text>
@@ -118,8 +124,12 @@ export default function PremiumUpgradeModal({ visible, onDismiss, isEligibleForT
           </View>
 
           <View style={styles.footerBox}>
-            <Text variant="titleMedium" style={{ textAlign: 'center', color: theme.colors.onSurface, marginBottom: isEligibleForTrial ? 4 : 16, fontWeight: 'bold' }}>
-              {t('modals.premium.price', '$19.99 / year')}
+            <Text variant="titleMedium" style={{ textAlign: 'center', color: theme.colors.onSurfaceVariant, marginBottom: 2, textDecorationLine: 'line-through' }}>
+              $7.99/year
+            </Text>
+            <Text variant="titleMedium" style={{ textAlign: 'center', color: theme.colors.onSurface, marginBottom: isEligibleForTrial ? 4 : 16, fontWeight: 'bold' }} numberOfLines={1} adjustsFontSizeToFit>
+              {t('modals.premium.promoText', 'Special Launch Sale: ')}
+              <Text style={{ color: '#8A61FF', fontWeight: '900' }}>{t('modals.premium.promoPrice', '$4.99/year')}</Text>
             </Text>
             {isEligibleForTrial && (
               <Text variant="labelSmall" style={{ textAlign: 'center', color: '#8A61FF', marginBottom: 16, fontWeight: 'bold' }}>
@@ -215,7 +225,7 @@ const styles = StyleSheet.create({
     paddingBottom: 24,
   },
   featuresBox: {
-    marginBottom: 24,
+    marginBottom: 8,
     flexDirection: 'row',
   },
   column: {
@@ -236,6 +246,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   footerBox: {
-    marginTop: 8,
+    marginTop: 0,
   }
 });
