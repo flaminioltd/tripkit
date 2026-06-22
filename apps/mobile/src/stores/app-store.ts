@@ -22,6 +22,7 @@ export const useAppStore = create<AppState>((set) => ({
     set({ isLoading: true });
     try {
       const data = await settingsRepo.getSettings();
+      if (data) data.isPremium = true;
       set({ settings: data });
       if (data?.systemLanguage) {
         import('../i18n').then((i18n) => i18n.default.changeLanguage(data.systemLanguage!));
@@ -37,6 +38,7 @@ export const useAppStore = create<AppState>((set) => ({
     try {
       const result = await settingsRepo.saveSettings(data);
       if (result && result.length > 0) {
+        result[0].isPremium = true;
         set({ settings: result[0] });
         if (data.systemLanguage) {
           import('../i18n').then((i18n) => i18n.default.changeLanguage(data.systemLanguage!));
